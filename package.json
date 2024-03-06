@@ -1,0 +1,45 @@
+{
+    "name": "anygraph",
+    "version": "4.3.01",
+    "author": "jackeyHoo",
+    "homepage": "https://www.graphanywhere.com/",
+    "description": "A JavaScript library of graph render",
+    "type": "module",
+    "--main": "dist/anygraph.esm.js",
+    "module": "dist/anygraph.esm.js",
+    "style": "style/graph.css",
+    "files": [
+        "dist",
+        "src",
+        "style",
+        "examples",
+        "CHANGELOG.md"
+    ],
+    "brower": "graph",
+    "html": {
+        "test": "http://localhost:8080/graph/examples/02_graph/2-1-1.html"
+    },
+    "keywords": [
+        "map",
+        "gis",
+        "grow",
+        "graph",
+        "graphics",
+        "library",
+        "render",
+        "javascript",
+        "AnyGraph",
+        "HTML5",
+        "SVG"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/hujq88/anygraph.git"
+    },
+    "readmeFilename": "README.md",
+    "license": "MIT",
+    "@std/esm": {
+        "esm": "js",
+        "cjs": true
+    }
+}

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>内置点</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/data_box.js"></script>
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "AnyGraph内置点类型";
+        var pageDesc = "显示AnyGraph内置点类型";
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:800px; height:300px; border:solid 1px #CCC;"></div>
+    <h3>Data</h3>
+    <div id="divData" style="height:300px"></div>
+</body>
+<script>
+    let graph;
+</script>
+
+<script type="module">
+    import { Graph, Geometry, Point, Text, BgUtil } from "../../src/index.js";
+
+    // graph对象
+    graph = new Graph({
+        "target": "graphWrapper",
+        "enabledGeomEvent": true
+    });
+
+    // 网格水印层
+    BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+
+    // 新建绘图图层
+    let layer = graph.addLayer();
+
+    // 在画布中绘制图像
+    let pointType = 0;
+    for (let y = 60, jj = graph.getSize().height; y < jj; y += 80) {
+        for (let x = 50, ii = graph.getSize().width; x < ii; x += 114) {
+            //"rotation": 30 * pointType % 360,
+            let point = layer.getSource().add(new Point({ "x": x, "y": y, "pointType": pointType, "size": 20, "style": { "fillStyle": 1, "fillColor": "red", "color": "none" } }));
+            point.on("click", activeShape);
+            layer.getSource().add(new Text({ "x": x, "y": y + 16, "text": "pointType=" + pointType, "style": { "fontSize": 14, "fontName": "Arial", "fillColor": "#003333", "textAlign": "center" } }));
+            pointType++;
+            if (pointType > 19) break;
+        }
+        if (pointType > 19) break;
+    }
+
+    // render
+    graph.render();
+</script>
+
+</html>

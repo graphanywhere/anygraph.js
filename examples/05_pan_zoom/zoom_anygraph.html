@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>缩放和平移(AnyGraph)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "缩放和平移";
+        var pageDesc = "AnyGraph的缩放和平移功能 (AnyGraph默认通过矩阵变换将图形坐标转换为屏幕坐标，实现图形的缩放和平移功能) ";
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:800px; height:400px; border:solid 1px #CCC;"></div>
+</body>
+<script type="module">
+    import { Graph, Layer, VectorSource, Text, BgUtil } from "../../src/index.js";
+
+    $(document).ready(function () {
+        // 绘图层graph对象
+        let graph = new Graph({
+            "target": "graphWrapper",
+            "layers": [
+                new Layer({
+                    "source": new VectorSource({
+                        "data": [
+                            { "type": "Polygon", "coords": [[0, 0], [80, 0], [40, 40]], "style": { "fillStyle": 1, "fillColor": "#caff67" } },
+                            { "type": "Polygon", "coords": [[0, 0], [40, 40], [0, 80]], "style": { "fillStyle": 1, "fillColor": "#67becf" } },
+                            { "type": "Polygon", "coords": [[80, 0], [80, 40], [60, 60], [60, 20]], "style": { "fillStyle": 1, "fillColor": "#ef3d61" } },
+                            { "type": "Polygon", "coords": [[60, 20], [60, 60], [40, 40]], "style": { "fillStyle": 1, "fillColor": "#f9f51a" } },
+                            { "type": "Polygon", "coords": [[40, 40], [60, 60], [40, 80], [20, 60]], "style": { "fillStyle": 1, "fillColor": "#a54c09" } },
+                            { "type": "Polygon", "coords": [[20, 60], [40, 80], [0, 80]], "style": { "fillStyle": 1, "fillColor": "#fa8ccc" } },
+                            { "type": "Polygon", "coords": [[80, 40], [80, 80], [40, 80]], "style": { "fillStyle": 1, "fillColor": "#f6ca29" } }
+                        ]
+                    })
+                })
+            ]
+        });
+
+        // 显示辅助网格
+        let bgLayer = BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+        bgLayer.getSource().add(new Text({
+            "text": "AnyGraph 将图形坐标转换为屏幕坐标",
+            "x": graph.getSize().width - 20,
+            "y": graph.getSize().height - 90,
+            "vectorSize": false,
+            "style": { "lineWidth": 4, "fillStyle": 0, "fillColor": "#A2A2A2", "fontSize": 24, "fontName": "黑体", "textAlign": "right", "textBaseline": "middle" }
+        }));
+        bgLayer.getSource().add(new Text({
+            "text": "实现图形的缩放和漫游功能",
+            "x": graph.getSize().width - 20,
+            "y": graph.getSize().height - 50,
+            "vectorSize": false,
+            "style": { "lineWidth": 4, "fillStyle": 0, "fillColor": "#A2A2A2", "fontSize": 24, "fontName": "黑体", "textAlign": "right", "textBaseline": "middle" }
+        }));
+
+        graph.render();
+    })
+</script>
+
+</html>

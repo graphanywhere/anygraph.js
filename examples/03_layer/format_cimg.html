@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>CIM/G示例</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+	<link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "加载CIM/G格式的电网数据";
+        var pageDesc = "加载CIM/G格式的电网数据";
+    </script>
+
+    <script type="module">
+        import { Graph, Layer, VectorSource, CimgFormat, CimgSymbol, Color, getCimgColor } from "../../src/index.js";
+
+        document.addEventListener('DOMContentLoaded', function () {
+			
+			let symbolManager = new CimgSymbol();
+            let symbolFileUrl = "../../demo-data/meta/cimg-symbol.json";
+			
+			// graph对象
+            let graph = new Graph({
+                "target": "graphWrapper",
+                "originAtLeftTop": true,
+                "fullView": true
+            });
+            
+            // 加载cimg符号
+            symbolManager.loadFile(function () {
+	            let source = new VectorSource({
+	                "dataType": "json",
+	                "format": new CimgFormat({
+	                    "symbol": symbolManager
+	                })
+	            });
+	            
+	            let layer = new Layer({
+	                source: source,
+	                zIndex: 10010,
+	                name: "CIM/G Data",
+	                visible: true
+	            })
+	            graph.addLayer(layer);
+	
+	            // 加载cimg文件
+	            source.loadFile("../../demo-data/devp//mix0/cimg.json", function(file){
+					if (file == null) {
+	                    return false;
+	                } else {
+	                    if (file != null && file.backgroundColor != null) {
+	                        graph.setBgColor(Color.fromString(getCimgColor(file.backgroundColor)).toString());
+	                    } else {
+	                        graph.setBgColor(null);
+	                    }
+	                    graph.render();
+	                }
+				});
+	        }, symbolFileUrl);
+        });
+    </script>
+</head>
+
+<body oncontextmenu="return false;">
+    <div id="graphWrapper" data-type="graph" style="width:100%; height:500px; border:solid 1px #CCCCCC;"></div>
+</body>
+
+</html>

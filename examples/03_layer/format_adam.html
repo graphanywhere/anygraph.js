@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>Adam AXFG format data(单个图层)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+	<link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "加载电网数据";
+        var pageDesc = "加载电网数据";
+    </script>
+
+    <script type="module">
+        import { Graph, View, Layer, VectorSource, Geometry, BgUtil, AxfgFormat, AxfgLoader } from "../../src/index.js";
+
+        let fileUrl = "../../demo-data/devp/bd/station.json";
+        let symbolFileUrl = "../../demo-data/meta/meta_symbol.xml";
+        let nodeTypeFileUrl = "../../demo-data/meta/meta_nodetype.awg";
+        let layerStyleUrl = "../../demo-data/meta/meta_layer_style.awg";
+        let adamGraph;
+
+        $(document).ready(function () {
+            // graph对象
+            adamGraph = new Graph({
+                "target": "graphWrapper",
+                "fullView": true,
+                "originAtLeftTop": false
+            });
+
+            // 显示辅助网格
+            BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": adamGraph }, adamGraph.getSize()));
+
+            // 使用loader加载元数据，使用dataSource加载单个adam文件
+            let loader = new AxfgLoader(adamGraph, { symbolFileUrl, nodeTypeFileUrl, layerStyleUrl });
+            loader.loadMetaData(function () {
+                let dataLayer = new Layer({
+                    source: new VectorSource({
+                        "fileUrl": fileUrl,
+                        "format": new AxfgFormat({
+                            "symbol": loader.getSymbolManager(),
+                            "style": loader.getStyleManager()
+                        })
+                    }),
+                    name: "GROW Data"
+                })
+                adamGraph.addLayer(dataLayer);
+            });
+        });
+
+
+    </script>
+</head>
+
+<body style="margin:0px;" oncontextmenu="return false;">
+    <div id="graphWrapper" data-type="graph" style="width:100%; height:600px; border:solid 1px #CCC;"></div>
+</body>
+
+</html>

@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1994" height="2970" viewBox="0 0 1994 2970" coordinateExtent="-25766.933594 -14019.122070 -25368.117188 -13424.989258" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  xmlns:cge="http://iec.ch/TC57/2005/SVG-schema#" preserveAspectRatio="xMidYMid">
+	<defs>
+<style type="text/css">
+<![CDATA[
+.lkv220 {fill:none;stroke:rgb(69,45,210);stroke-width:6.000000}
+.kv220 {fill:rgb(69,45,210);stroke:rgb(69,45,210);stroke-width:2}
+.lkv110 {fill:none;stroke:rgb(204,0,0);stroke-width:6.000000}
+.kv110 {fill:rgb(204,0,0);stroke:rgb(204,0,0);stroke-width:2}
+.lkv10 {fill:none;stroke:rgb(0,128,0);stroke-width:6.000000}
+.kv10 {fill:rgb(0,128,0);stroke:rgb(0,128,0);stroke-width:2}
+.char {fill:rgb(0,0,255);font-family:'SimSun';stroke-width:1}
+.buskv110 {fill:none;stroke:rgb(204,0,0);stroke-width:9.000000}
+.buskv220 {fill:none;stroke:rgb(69,45,210);stroke-width:9.000000}
+.buskv10 {fill:none;stroke:rgb(0,128,0);stroke-width:9.000000}
+.lv380 {fill:none;stroke:rgb(255,0,255);stroke-width:6.000000}
+.v380 {fill:rgb(255,0,255);stroke:rgb(255,0,255);stroke-width:2}
+.busv380 {fill:none;stroke:rgb(255,0,255);stroke-width:9.000000}
+.jxtdl {fill:none;stroke:rgb(255,128,0);stroke-width:6.000000}
+.lkv35 {fill:none;stroke:rgb(255,128,0);stroke-width:6.000000}
+.kv35 {fill:rgb(255,128,0);stroke:rgb(255,128,0);stroke-width:2}
+.buskv35 {fill:none;stroke:rgb(255,128,0);stroke-width:9.000000}
+.lkv500 {fill:none;stroke:rgb(128,64,0);stroke-width:6.000000}
+.kv500 {fill:rgb(128,64,0);stroke:rgb(128,64,0);stroke-width:2}
+.buskv500 {fill:none;stroke:rgb(128,64,0);stroke-width:9.000000}
+.buskv6 {fill:none;stroke:rgb(147,158,0);stroke-width:9.000000}
+.lkv6 {fill:none;stroke:rgb(147,158,0);stroke-width:6.000000}
+.kv6 {fill:rgb(147,158,0);stroke:rgb(147,158,0);stroke-width:2}
+]]>
+</style>
+<!-- 定义端子位置 -->
+<symbol id="terminal" >
+	<circle style="fill:none" stroke="rgb(0,200,255)" stroke-width="0.02" cx="0" cy="0" r="0.08"/>
+</symbol>
+		<symbol id="Substation_10250" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<rect stroke-width="1" fill="none" stroke="4343993"  x="12.500000" y="12.500000" width="25.000000" height="25.000000" transform="rotate(-0.000000,25.000000,25.000000)"  />
+			<text font-size="15.651099" font-family="SimSun" transform="translate(17.063000,29.345730) rotate(0.000000)">XB</text>
+			<!-- 定义端子位置 -->
+		</symbol>
+		<symbol id="Substation_10110" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<rect stroke-width="1" fill="none" stroke="4343993"  x="13.000000" y="16.000000" width="24.000000" height="18.000000" transform="rotate(-0.000000,25.000000,25.000000)"  />
+			<rect stroke-width="1" fill="4343993" stroke="4343993"  x="13.000000" y="16.000000" width="3.000000" height="3.000000" transform="rotate(-0.000000,14.500000,17.500000)"  />
+			<!-- 定义端子位置 -->
+		</symbol>
+		<symbol id="Substation_10100" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<rect stroke-width="1" fill="none" stroke="4343993"  x="9.999999" y="15.000000" width="30.000002" height="20.000000" transform="rotate(-0.000000,25.000000,25.000000)"  />
+			<!-- 定义端子位置 -->
+		</symbol>
+		<symbol id="Substation_10070" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<rect stroke-width="1" fill="none" stroke="4343993"  x="12.500000" y="17.500000" width="25.000000" height="15.000001"  />
+			<!-- 定义端子位置 -->
+		</symbol>
+	</defs>
+<g id="BackGround_Layer">
+<rect x="0" y="0" width="1994" height="2970" fill="rgb(0,0,0)" src_x1="-25766.933594" src_y1="-14019.122070" src_x2="-25368.117188" src_y2="-13424.989258" title="(null)" />
+</g>
+<g id="Substation_Layer">
+		<g id="30000000_SS-3-1051-58b90f3c" >
+				<use class="kv35" x="684.639771" y="84.989105" width="499.979431" height="499.979431" transform="rotate(-0.000000,934.629517,334.978821) " xlink:href="#Substation_10070" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="30000000_SS-3-1051-58b90f3c" ObjectName="前湾站" PSRType="30000000" GlobeID="09M00010080005111" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105644-58dc9f84" >
+				<use class="kv10" x="809.634644" y="469.925842" width="249.989716" height="249.989716" transform="rotate(-0.000000,934.629517,594.920715) " xlink:href="#Substation_10100" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105644-58dc9f84" ObjectName="友绿配电站" PSRType="30000005" GlobeID="09M00010080001621" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-2388-5b5037f7" >
+				<use class="kv10" x="909.630493" y="729.867676" width="249.989716" height="249.989716" transform="rotate(-0.000000,1034.625366,854.862549) " xlink:href="#Substation_10110" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-2388-5b5037f7" ObjectName="地头蛇" PSRType="" GlobeID="09M2SJ00000087428" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105150-58dc9f84" >
+				<use class="kv10" x="409.651123" y="729.867676" width="249.989716" height="249.989716" transform="rotate(-0.000000,534.645996,854.862549) " xlink:href="#Substation_10100" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105150-58dc9f84" ObjectName="语芙配电站" PSRType="30000005" GlobeID="09M00010080010355" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105221-58dc9f84" >
+				<use class="kv10" x="384.652161" y="1054.808716" width="99.995888" height="99.995888" transform="rotate(-0.000000,434.650116,1104.806641) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105221-58dc9f84" ObjectName="语芙1号箱变站" PSRType="32300000" GlobeID="09M00010080010356" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105220-58dc9f84" >
+				<use class="kv10" x="384.652161" y="1304.752808" width="99.995888" height="99.995888" transform="rotate(-0.000000,434.650116,1354.750732) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105220-58dc9f84" ObjectName="语芙2号箱变站" PSRType="32300000" GlobeID="09M00010080010357" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105215-58dc9f84" >
+				<use class="kv10" x="184.660370" y="1054.808716" width="99.995888" height="99.995888" transform="rotate(-0.000000,234.658310,1104.806641) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105215-58dc9f84" ObjectName="语芙5号箱变站" PSRType="32300000" GlobeID="09M00010080010360" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105216-58dc9f84" >
+				<use class="kv10" x="184.660370" y="1304.752808" width="99.995888" height="99.995888" transform="rotate(-0.000000,234.658310,1354.750732) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105216-58dc9f84" ObjectName="语芙6号箱变站" PSRType="32300000" GlobeID="09M00010080010361" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105222-58dc9f84" >
+				<use class="kv10" x="584.643982" y="1054.808716" width="99.995888" height="99.995888" transform="rotate(-0.000000,634.641907,1104.806641) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105222-58dc9f84" ObjectName="语芙8号箱变站" PSRType="32300000" GlobeID="09M00010080013741" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105223-58dc9f84" >
+				<use class="kv10" x="584.643982" y="1304.752808" width="99.995888" height="99.995888" transform="rotate(-0.000000,634.641907,1354.750732) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105223-58dc9f84" ObjectName="语芙9号箱变站" PSRType="32300000" GlobeID="09M00010080013755" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105226-58dc9f84" >
+				<use class="kv10" x="784.635742" y="1054.808716" width="99.995888" height="99.995888" transform="rotate(-0.000000,834.633667,1104.806641) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105226-58dc9f84" ObjectName="语芙12号箱变站" PSRType="32300000" GlobeID="09M00010080013773" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105227-58dc9f84" >
+				<use class="kv10" x="784.635742" y="1304.752808" width="99.995888" height="99.995888" transform="rotate(-0.000000,834.633667,1354.750732) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105227-58dc9f84" ObjectName="语芙13号箱变站" PSRType="32300000" GlobeID="09M00010080013775" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105626-58dc9f84" >
+				<use class="kv10" x="1309.614014" y="729.867676" width="249.989716" height="249.989716" transform="rotate(-0.000000,1434.608887,854.862549) " xlink:href="#Substation_10100" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105626-58dc9f84" ObjectName="优衷2号配电站" PSRType="30000005" GlobeID="09M00010080005197" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105610-58dc9f84" >
+				<use class="kv10" x="1184.619263" y="1054.808716" width="99.995888" height="99.995888" transform="rotate(-0.000000,1234.617188,1104.806641) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105610-58dc9f84" ObjectName="优衷18号箱变站" PSRType="32300000" GlobeID="09M00010080005924" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105611-58dc9f84" >
+				<use class="kv10" x="1184.619263" y="1304.752808" width="99.995888" height="99.995888" transform="rotate(-0.000000,1234.617188,1354.750732) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105611-58dc9f84" ObjectName="优衷19号箱变站" PSRType="32300000" GlobeID="09M00010080005925" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105612-58dc9f84" >
+				<use class="kv10" x="1184.619263" y="1554.696899" width="99.995888" height="99.995888" transform="rotate(-0.000000,1234.617188,1604.694824) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105612-58dc9f84" ObjectName="优衷20号箱变站" PSRType="32300000" GlobeID="09M00010080005926" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105613-58dc9f84" >
+				<use class="kv10" x="1184.619263" y="1804.641113" width="99.995888" height="99.995888" transform="rotate(-0.000000,1234.617188,1854.639038) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105613-58dc9f84" ObjectName="优衷21号箱变站" PSRType="32300000" GlobeID="09M00010080005927" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105618-58dc9f84" >
+				<use class="kv10" x="1584.602783" y="1054.808716" width="99.995888" height="99.995888" transform="rotate(-0.000000,1634.600708,1104.806641) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105618-58dc9f84" ObjectName="优衷6号箱变站" PSRType="32300000" GlobeID="09M00010080005268" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105622-58dc9f84" >
+				<use class="kv10" x="1584.602783" y="1304.752808" width="99.995888" height="99.995888" transform="rotate(-0.000000,1634.600708,1354.750732) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105622-58dc9f84" ObjectName="优衷7号箱变站" PSRType="32300000" GlobeID="09M00010080005365" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105623-58dc9f84" >
+				<use class="kv10" x="1584.602783" y="1554.696899" width="99.995888" height="99.995888" transform="rotate(-0.000000,1634.600708,1604.694824) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105623-58dc9f84" ObjectName="优衷8号箱变站" PSRType="32300000" GlobeID="09M00010080005366" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105624-58dc9f84" >
+				<use class="kv10" x="1584.602783" y="1804.641113" width="99.995888" height="99.995888" transform="rotate(-0.000000,1634.600708,1854.639038) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105624-58dc9f84" ObjectName="优衷9号箱变站" PSRType="32300000" GlobeID="09M00010080005367" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105619-58dc9f84" >
+				<use class="kv10" x="1584.602783" y="2054.584961" width="99.995888" height="99.995888" transform="rotate(-0.000000,1634.600708,2104.583008) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105619-58dc9f84" ObjectName="优衷10号箱变站" PSRType="32300000" GlobeID="09M00010080005368" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105620-58dc9f84" >
+				<use class="kv10" x="1584.602783" y="2304.529053" width="99.995888" height="99.995888" transform="rotate(-0.000000,1634.600708,2354.527100) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105620-58dc9f84" ObjectName="优衷11号箱变站" PSRType="32300000" GlobeID="09M00010080005369" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105621-58dc9f84" >
+				<use class="kv10" x="1584.602783" y="2554.473389" width="99.995888" height="99.995888" transform="rotate(-0.000000,1634.600708,2604.471436) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105621-58dc9f84" ObjectName="优衷12号箱变站" PSRType="32300000" GlobeID="09M00010080005370" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105625-58dc9f84" >
+				<use class="kv10" x="1384.610962" y="1054.808716" width="99.995888" height="99.995888" transform="rotate(-0.000000,1434.608887,1104.806641) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105625-58dc9f84" ObjectName="优衷13号箱变站" PSRType="32300000" GlobeID="09M00010080005371" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105616-58dc9f84" >
+				<use class="kv10" x="1384.610962" y="1304.752808" width="99.995888" height="99.995888" transform="rotate(-0.000000,1434.608887,1354.750732) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105616-58dc9f84" ObjectName="优衷14号箱变站" PSRType="32300000" GlobeID="09M00010080005373" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105614-58dc9f84" >
+				<use class="kv10" x="1384.610962" y="1554.696899" width="99.995888" height="99.995888" transform="rotate(-0.000000,1434.608887,1604.694824) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105614-58dc9f84" ObjectName="优衷15号箱变站" PSRType="32300000" GlobeID="09M00010080005374" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105615-58dc9f84" >
+				<use class="kv10" x="1384.610962" y="1804.641113" width="99.995888" height="99.995888" transform="rotate(-0.000000,1434.608887,1854.639038) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105615-58dc9f84" ObjectName="优衷16号箱变站" PSRType="32300000" GlobeID="09M00010080005375" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+		<g id="SS-3-105617-58dc9f84" >
+				<use class="kv10" x="1384.610962" y="2054.584961" width="99.995888" height="99.995888" transform="rotate(-0.000000,1434.608887,2104.583008) " xlink:href="#Substation_10250" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="SS-3-105617-58dc9f84" ObjectName="优衷17号箱变站" PSRType="32300000" GlobeID="09M00010080005923" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="Substation_Layer"/>
+				</metadata>
+		</g>
+</g>
+<g id="ConnLine_Layer">
+</g>
+<g id="ACLineSegment_Layer">
+		<g id="AL-32-1130055336-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 934.629517 409.962036 L 934.629517 544.931885" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130055336-58dc9f84" ObjectName="未定义32_1130055336" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130032755-5b5037f7" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 934.629517 644.909546 L 934.629517 774.880432 L 1014.626221 774.880432 L 1010.622437 809.872620" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130032755-5b5037f7" ObjectName="未定义32_1130032755" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130081537-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 534.645996 804.873779 L 534.645996 754.884949 L 914.630371 754.884949 L 914.630371 644.909546 L 919.630127 644.909546" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130081537-58dc9f84" ObjectName="未定义32_1130081537" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080240-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 534.645996 904.851318 L 534.645996 1054.817871 L 434.650116 1054.817871 L 434.650116 1079.812256" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080240-58dc9f84" ObjectName="未定义32_1130080240" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080251-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 434.650116 1129.801025 L 434.650116 1329.756348" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080251-58dc9f84" ObjectName="未定义32_1130080251" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080242-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 234.658310 1079.812256 L 234.658310 1034.822266 L 514.646790 1034.822266 L 514.646790 904.851318 L 519.646606 904.851318" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080242-58dc9f84" ObjectName="未定义32_1130080242" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080259-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 234.658310 1129.801025 L 234.658310 1329.756348" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080259-58dc9f84" ObjectName="未定义32_1130080259" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080244-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 549.645386 904.851318 L 554.645142 904.851318 L 554.645142 1034.822266 L 614.642700 1034.822266 L 614.642700 1079.812256" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080244-58dc9f84" ObjectName="未定义32_1130080244" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130055256-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 634.641907 1129.801025 L 634.641907 1329.756348" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130055256-58dc9f84" ObjectName="未定义32_1130055256" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080246-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 609.642883 854.862549 L 834.633667 854.862549 L 834.633667 1079.812256" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080246-58dc9f84" ObjectName="未定义32_1130080246" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080253-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 834.633667 1129.801025 L 834.633667 1329.756348" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080253-58dc9f84" ObjectName="未定义32_1130080253" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130081535-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 949.628906 644.909546 L 954.628723 644.909546 L 954.628723 754.884949 L 1414.609741 754.884949 L 1414.609741 804.873779 L 1419.609497 804.873779" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130081535-58dc9f84" ObjectName="未定义32_1130081535" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080801-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1234.617188 1079.812256 L 1234.617188 1034.822266 L 1414.609741 1034.822266 L 1414.609741 904.851318 L 1419.609497 904.851318" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080801-58dc9f84" ObjectName="未定义32_1130080801" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080791-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1234.617188 1329.756348 L 1234.617188 1129.801025" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080791-58dc9f84" ObjectName="未定义32_1130080791" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080792-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1234.617188 1579.700439 L 1234.617188 1379.745117" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080792-58dc9f84" ObjectName="未定义32_1130080792" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080794-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1234.617188 1829.644531 L 1234.617188 1629.689331" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080794-58dc9f84" ObjectName="未定义32_1130080794" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080797-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1614.601440 1079.812256 L 1614.601440 1034.822266 L 1454.608032 1034.822266 L 1454.608032 904.851318 L 1449.608276 904.851318" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080797-58dc9f84" ObjectName="未定义32_1130080797" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080805-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1634.600708 1129.801025 L 1634.600708 1329.756348" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080805-58dc9f84" ObjectName="未定义32_1130080805" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080806-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1634.600708 1379.745117 L 1634.600708 1579.700439" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080806-58dc9f84" ObjectName="未定义32_1130080806" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080807-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1634.600708 1629.689331 L 1634.600708 1829.644531" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080807-58dc9f84" ObjectName="未定义32_1130080807" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080808-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1634.600708 2079.588623 L 1634.600708 1879.633423" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080808-58dc9f84" ObjectName="未定义32_1130080808" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080785-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1634.600708 2129.577393 L 1634.600708 2329.532715" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080785-58dc9f84" ObjectName="未定义32_1130080785" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080786-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1634.600708 2379.521729 L 1634.600708 2579.476807" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080786-58dc9f84" ObjectName="未定义32_1130080786" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080799-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1434.608887 1079.812256 L 1434.608887 904.851318" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080799-58dc9f84" ObjectName="未定义32_1130080799" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080787-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1434.608887 1329.756348 L 1434.608887 1129.801025" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080787-58dc9f84" ObjectName="未定义32_1130080787" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080788-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1434.608887 1379.745117 L 1434.608887 1579.700439" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080788-58dc9f84" ObjectName="未定义32_1130080788" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080789-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1434.608887 1829.644531 L 1434.608887 1629.689331" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080789-58dc9f84" ObjectName="未定义32_1130080789" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-32-1130080790-58dc9f84" >
+			<path class="lkv10" fill="none" stroke-width="2" stroke-dasharray="5 5" d="M 1434.608887 2079.588623 L 1434.608887 1879.633423" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-32-1130080790-58dc9f84" ObjectName="未定义32_1130080790" PSRType="20100000" GlobeID="" LineType="Branch" />
+					<cge:Layer_Ref ObjectName="ACLineSegment_Layer"/>
+				</metadata>
+		</g>
+</g>
+<g id="Text_Layer">
+		<g attach_id="30000000_SS-3-1051-58b90f3c" id="TXT-10000103--100-64892f95" >
+			<text style="text-anchor:left" x="830.893494" y="390.967285" font-size="69.997124" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">前湾站</text>
+			<text style="text-anchor:left" x="830.893494" y="320.982910" font-size="69.997124" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">35kV</text>
+		</g>
+		<g attach_id="SS-3-105644-58dc9f84" id="TXT-10000103--101-64892f95" >
+			<text style="text-anchor:left" x="868.626343" y="617.361938" font-size="26.400482" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">友绿配电站</text>
+			<text style="text-anchor:left" x="901.623047" y="590.463684" font-size="26.400482" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">81210</text>
+		</g>
+		<g attach_id="AL-32-1130055336-58dc9f84" id="TXT-10000103--102-64892f95" >
+			<text style="text-anchor:left" x="947.129028" y="504.940826" font-size="24.998972" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">计量点:5846 </text>
+			<text style="text-anchor:left" x="947.129028" y="479.448456" font-size="24.998972" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">表号:1239065 </text>
+			<text style="text-anchor:left" x="947.129028" y="453.951202" font-size="24.998972" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">前25电缆线路</text>
+		</g>
+		<g attach_id="SS-3-2388-5b5037f7" id="TXT-10000103--103-64892f95" >
+			<text style="text-anchor:left" x="997.497986" y="889.503235" font-size="24.750689" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">315kVA</text>
+			<text style="text-anchor:left" x="997.497986" y="864.259888" font-size="24.750689" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">地头蛇</text>
+			<text style="text-anchor:left" x="1003.689209" y="839.011658" font-size="24.750689" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">53058</text>
+		</g>
+		<g attach_id="AL-32-1130032755-5b5037f7" id="TXT-10000103--104-64892f95" >
+			<text style="text-anchor:left" x="936.631409" y="707.893494" transform="translate(936.631409,707.893494) scale(0.624974, 0.624974) rotate(90.000003) translate(-936.631409,-707.893494)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >友绿6进出线</text>
+		</g>
+		<g attach_id="SS-3-105150-58dc9f84" id="TXT-10000103--105-64892f95" >
+			<text style="text-anchor:left" x="475.253876" y="891.812256" font-size="26.398142" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">2x1000kVA</text>
+			<text style="text-anchor:left" x="468.652588" y="864.918945" font-size="26.398142" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语芙配电站</text>
+			<text style="text-anchor:left" x="501.649292" y="838.025513" font-size="26.398142" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">16263</text>
+		</g>
+		<g attach_id="AL-32-1130081537-58dc9f84" id="TXT-10000103--106-64892f95" >
+			<text style="text-anchor:left" x="697.139282" y="750.881958" transform="translate(697.139282,750.881958) scale(0.624974, 0.624974) translate(-697.139282,-750.881958)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">友绿4进出线</text>
+		</g>
+		<g attach_id="SS-3-105221-58dc9f84" id="TXT-10000103--107-64892f95" >
+			<text style="text-anchor:left" x="302.907471" y="1138.656494" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="266.160919" y="1117.162354" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语芙1号箱变站</text>
+			<text style="text-anchor:left" x="308.161133" y="1095.663330" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">60857</text>
+		</g>
+		<g attach_id="AL-32-1130080240-58dc9f84" id="TXT-10000103--108-64892f95" >
+			<text style="text-anchor:left" x="536.647827" y="977.833130" transform="translate(536.647827,977.833130) scale(0.624974, 0.624974) rotate(90.000003) translate(-536.647827,-977.833130)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >语芙1进出线</text>
+		</g>
+		<g attach_id="SS-3-105220-58dc9f84" id="TXT-10000103--109-64892f95" >
+			<text style="text-anchor:left" x="402.903351" y="1468.582764" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="366.156799" y="1447.088623" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语芙2号箱变站</text>
+			<text style="text-anchor:left" x="408.157013" y="1425.589478" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">66313</text>
+		</g>
+		<g attach_id="AL-32-1130080251-58dc9f84" id="TXT-10000103--110-64892f95" >
+			<text style="text-anchor:left" x="436.651978" y="1227.777222" transform="translate(436.651978,1227.777222) scale(0.624974, 0.624974) rotate(90.000003) translate(-436.651978,-1227.777222)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >语芙1号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105215-58dc9f84" id="TXT-10000103--111-64892f95" >
+			<text style="text-anchor:left" x="202.911591" y="1028.681030" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="166.165039" y="1007.186951" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语芙5号箱变站</text>
+			<text style="text-anchor:left" x="208.165253" y="985.687866" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">31818</text>
+		</g>
+		<g attach_id="AL-32-1130080242-58dc9f84" id="TXT-10000103--112-64892f95" >
+			<text style="text-anchor:left" x="347.153717" y="1030.819336" transform="translate(347.153717,1030.819336) scale(0.624974, 0.624974) translate(-347.153717,-1030.819336)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语芙3进出线</text>
+		</g>
+		<g attach_id="SS-3-105216-58dc9f84" id="TXT-10000103--113-64892f95" >
+			<text style="text-anchor:left" x="202.911591" y="1468.572998" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="166.165039" y="1447.078857" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语芙6号箱变站</text>
+			<text style="text-anchor:left" x="208.165253" y="1425.579712" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">96328</text>
+		</g>
+		<g attach_id="AL-32-1130080259-58dc9f84" id="TXT-10000103--114-64892f95" >
+			<text style="text-anchor:left" x="236.660202" y="1227.777222" transform="translate(236.660202,1227.777222) scale(0.624974, 0.624974) rotate(90.000003) translate(-236.660202,-1227.777222)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >语芙5号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105222-58dc9f84" id="TXT-10000103--115-64892f95" >
+			<text style="text-anchor:left" x="607.904663" y="1028.681030" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="571.158142" y="1007.186951" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语芙8号箱变站</text>
+			<text style="text-anchor:left" x="613.158386" y="985.687866" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">93767</text>
+		</g>
+		<g attach_id="AL-32-1130080244-58dc9f84" id="TXT-10000103--116-64892f95" >
+			<text style="text-anchor:left" x="556.647034" y="967.835388" transform="translate(556.647034,967.835388) scale(0.624974, 0.624974) rotate(90.000003) translate(-556.647034,-967.835388)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >语芙5进出线</text>
+		</g>
+		<g attach_id="SS-3-105223-58dc9f84" id="TXT-10000103--117-64892f95" >
+			<text style="text-anchor:left" x="602.904907" y="1468.582764" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="566.158325" y="1447.088623" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语芙9号箱变站</text>
+			<text style="text-anchor:left" x="608.158569" y="1425.589478" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">94283</text>
+		</g>
+		<g attach_id="AL-32-1130055256-58dc9f84" id="TXT-10000103--118-64892f95" >
+			<text style="text-anchor:left" x="636.643738" y="1227.777222" transform="translate(636.643738,1227.777222) scale(0.624974, 0.624974) rotate(90.000003) translate(-636.643738,-1227.777222)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >语芙8号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105226-58dc9f84" id="TXT-10000103--119-64892f95" >
+			<text style="text-anchor:left" x="922.901489" y="1138.656494" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="880.901245" y="1117.162354" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语芙12号箱变站</text>
+			<text style="text-anchor:left" x="928.145447" y="1095.663330" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">26955</text>
+		</g>
+		<g attach_id="AL-32-1130080246-58dc9f84" id="TXT-10000103--120-64892f95" >
+			<text style="text-anchor:left" x="694.639404" y="850.859558" transform="translate(694.639404,850.859558) scale(0.624974, 0.624974) translate(-694.639404,-850.859558)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语芙7进出线</text>
+		</g>
+		<g attach_id="SS-3-105227-58dc9f84" id="TXT-10000103--121-64892f95" >
+			<text style="text-anchor:left" x="802.906433" y="1468.582764" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="760.906189" y="1447.088623" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语芙13号箱变站</text>
+			<text style="text-anchor:left" x="808.150391" y="1425.589478" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">77922</text>
+		</g>
+		<g attach_id="AL-32-1130080253-58dc9f84" id="TXT-10000103--122-64892f95" >
+			<text style="text-anchor:left" x="836.635498" y="1227.777222" transform="translate(836.635498,1227.777222) scale(0.624974, 0.624974) rotate(90.000003) translate(-836.635498,-1227.777222)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >语芙12号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105626-58dc9f84" id="TXT-10000103--123-64892f95" >
+			<text style="text-anchor:left" x="1368.605835" y="872.119446" font-size="20.307228" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷2号配电站</text>
+			<text style="text-anchor:left" x="1409.219360" y="851.318420" font-size="20.307228" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">40025</text>
+		</g>
+		<g attach_id="AL-32-1130081535-58dc9f84" id="TXT-10000103--124-64892f95" >
+			<text style="text-anchor:left" x="1157.120361" y="750.881958" transform="translate(1157.120361,750.881958) scale(0.624974, 0.624974) translate(-1157.120361,-750.881958)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">友绿2进出线</text>
+		</g>
+		<g attach_id="SS-3-105610-58dc9f84" id="TXT-10000103--125-64892f95" >
+			<text style="text-anchor:left" x="1182.881104" y="1028.681030" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1140.880737" y="1007.186951" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷18号箱变站</text>
+			<text style="text-anchor:left" x="1188.125000" y="985.687866" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">C4959</text>
+		</g>
+		<g attach_id="AL-32-1130080801-58dc9f84" id="TXT-10000103--126-64892f95" >
+			<text style="text-anchor:left" x="1289.614990" y="1030.819336" transform="translate(1289.614990,1030.819336) scale(0.624974, 0.624974) translate(-1289.614990,-1030.819336)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷2号5进出线</text>
+		</g>
+		<g attach_id="SS-3-105611-58dc9f84" id="TXT-10000103--127-64892f95" >
+			<text style="text-anchor:left" x="1082.875366" y="1388.600586" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1040.875122" y="1367.106445" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷19号箱变站</text>
+			<text style="text-anchor:left" x="1088.119263" y="1345.607422" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">N4184</text>
+		</g>
+		<g attach_id="AL-32-1130080791-58dc9f84" id="TXT-10000103--128-64892f95" >
+			<text style="text-anchor:left" x="1232.615356" y="1227.777222" transform="translate(1232.615356,1227.777222) scale(0.624974, 0.624974) rotate(-90.000003) translate(-1232.615356,-1227.777222)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >优衷18号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105612-58dc9f84" id="TXT-10000103--129-64892f95" >
+			<text style="text-anchor:left" x="1082.885132" y="1638.544678" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1040.884888" y="1617.050537" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷20号箱变站</text>
+			<text style="text-anchor:left" x="1088.129028" y="1595.551514" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">X1075</text>
+		</g>
+		<g attach_id="AL-32-1130080792-58dc9f84" id="TXT-10000103--130-64892f95" >
+			<text style="text-anchor:left" x="1232.615356" y="1477.721313" transform="translate(1232.615356,1477.721313) scale(0.624974, 0.624974) rotate(-90.000003) translate(-1232.615356,-1477.721313)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >优衷19号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105613-58dc9f84" id="TXT-10000103--131-64892f95" >
+			<text style="text-anchor:left" x="1202.880249" y="1968.471069" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1160.880005" y="1946.976685" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷21号箱变站</text>
+			<text style="text-anchor:left" x="1208.124146" y="1925.477783" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">T2933</text>
+		</g>
+		<g attach_id="AL-32-1130080794-58dc9f84" id="TXT-10000103--132-64892f95" >
+			<text style="text-anchor:left" x="1232.615356" y="1727.665527" transform="translate(1232.615356,1727.665527) scale(0.624974, 0.624974) rotate(-90.000003) translate(-1232.615356,-1727.665527)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >优衷20号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105618-58dc9f84" id="TXT-10000103--133-64892f95" >
+			<text style="text-anchor:left" x="1502.858032" y="1138.656494" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1466.111694" y="1117.162354" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷6号箱变站</text>
+			<text style="text-anchor:left" x="1513.355713" y="1095.663330" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">H365</text>
+		</g>
+		<g attach_id="AL-32-1130080797-58dc9f84" id="TXT-10000103--134-64892f95" >
+			<text style="text-anchor:left" x="1499.606201" y="1032.820801" transform="translate(1499.606201,1032.820801) scale(0.624974, 0.624974) translate(-1499.606201,-1032.820801)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷2号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105622-58dc9f84" id="TXT-10000103--135-64892f95" >
+			<text style="text-anchor:left" x="1502.867920" y="1388.600586" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1466.121338" y="1367.106445" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷7号箱变站</text>
+			<text style="text-anchor:left" x="1513.365479" y="1345.607422" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">G318</text>
+		</g>
+		<g attach_id="AL-32-1130080805-58dc9f84" id="TXT-10000103--136-64892f95" >
+			<text style="text-anchor:left" x="1636.602539" y="1227.777222" transform="translate(1636.602539,1227.777222) scale(0.624974, 0.624974) rotate(90.000003) translate(-1636.602539,-1227.777222)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >优衷6号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105623-58dc9f84" id="TXT-10000103--137-64892f95" >
+			<text style="text-anchor:left" x="1502.867920" y="1638.535034" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1466.121338" y="1617.040771" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷8号箱变站</text>
+			<text style="text-anchor:left" x="1513.365479" y="1595.541748" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">U475</text>
+		</g>
+		<g attach_id="AL-32-1130080806-58dc9f84" id="TXT-10000103--138-64892f95" >
+			<text style="text-anchor:left" x="1636.602539" y="1477.721313" transform="translate(1636.602539,1477.721313) scale(0.624974, 0.624974) rotate(90.000003) translate(-1636.602539,-1477.721313)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >优衷7号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105624-58dc9f84" id="TXT-10000103--139-64892f95" >
+			<text style="text-anchor:left" x="1502.858032" y="1888.488892" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1466.111694" y="1866.994629" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷9号箱变站</text>
+			<text style="text-anchor:left" x="1513.355713" y="1845.495605" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">T154</text>
+		</g>
+		<g attach_id="AL-32-1130080807-58dc9f84" id="TXT-10000103--140-64892f95" >
+			<text style="text-anchor:left" x="1636.602539" y="1727.665527" transform="translate(1636.602539,1727.665527) scale(0.624974, 0.624974) rotate(90.000003) translate(-1636.602539,-1727.665527)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >优衷8号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105619-58dc9f84" id="TXT-10000103--141-64892f95" >
+			<text style="text-anchor:left" x="1722.848999" y="2138.433105" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1680.848755" y="2116.938721" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷10号箱变站</text>
+			<text style="text-anchor:left" x="1733.346558" y="2095.439697" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">O106</text>
+		</g>
+		<g attach_id="AL-32-1130080808-58dc9f84" id="TXT-10000103--142-64892f95" >
+			<text style="text-anchor:left" x="1632.598755" y="1977.609619" transform="translate(1632.598755,1977.609619) scale(0.624974, 0.624974) rotate(-90.000003) translate(-1632.598755,-1977.609619)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >优衷9号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105620-58dc9f84" id="TXT-10000103--143-64892f95" >
+			<text style="text-anchor:left" x="1482.878418" y="2388.367188" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1440.878174" y="2366.873047" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷11号箱变站</text>
+			<text style="text-anchor:left" x="1493.376099" y="2345.374023" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">M786</text>
+		</g>
+		<g attach_id="AL-32-1130080785-58dc9f84" id="TXT-10000103--144-64892f95" >
+			<text style="text-anchor:left" x="1636.602539" y="2227.553711" transform="translate(1636.602539,2227.553711) scale(0.624974, 0.624974) rotate(90.000003) translate(-1636.602539,-2227.553711)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >优衷10号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105621-58dc9f84" id="TXT-10000103--145-64892f95" >
+			<text style="text-anchor:left" x="1602.873535" y="2718.303467" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1560.873291" y="2696.809082" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷12号箱变站</text>
+			<text style="text-anchor:left" x="1613.371094" y="2675.310059" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">A989</text>
+		</g>
+		<g attach_id="AL-32-1130080786-58dc9f84" id="TXT-10000103--146-64892f95" >
+			<text style="text-anchor:left" x="1636.602539" y="2477.497803" transform="translate(1636.602539,2477.497803) scale(0.624974, 0.624974) rotate(90.000003) translate(-1636.602539,-2477.497803)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >优衷11号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105625-58dc9f84" id="TXT-10000103--147-64892f95" >
+			<text style="text-anchor:left" x="1497.868164" y="1018.683350" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1455.867920" y="997.189209" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷13号箱变站</text>
+			<text style="text-anchor:left" x="1508.365723" y="975.690125" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">n135</text>
+		</g>
+		<g attach_id="AL-32-1130080799-58dc9f84" id="TXT-10000103--148-64892f95" >
+			<text style="text-anchor:left" x="1432.607056" y="990.330322" transform="translate(1432.607056,990.330322) scale(0.624974, 0.624974) rotate(-90.000003) translate(-1432.607056,-990.330322)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >优衷2号3进出线</text>
+		</g>
+		<g attach_id="SS-3-105616-58dc9f84" id="TXT-10000103--149-64892f95" >
+			<text style="text-anchor:left" x="1497.877808" y="1303.619629" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1455.877563" y="1282.125488" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷14号箱变站</text>
+			<text style="text-anchor:left" x="1508.375488" y="1260.626343" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">z473</text>
+		</g>
+		<g attach_id="AL-32-1130080787-58dc9f84" id="TXT-10000103--150-64892f95" >
+			<text style="text-anchor:left" x="1432.607056" y="1227.777222" transform="translate(1432.607056,1227.777222) scale(0.624974, 0.624974) rotate(-90.000003) translate(-1432.607056,-1227.777222)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >优衷13号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105614-58dc9f84" id="TXT-10000103--151-64892f95" >
+			<text style="text-anchor:left" x="1497.868164" y="1553.554077" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1455.867920" y="1532.059814" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷15号箱变站</text>
+			<text style="text-anchor:left" x="1508.365723" y="1510.560669" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">f785</text>
+		</g>
+		<g attach_id="AL-32-1130080788-58dc9f84" id="TXT-10000103--152-64892f95" >
+			<text style="text-anchor:left" x="1436.610718" y="1477.721313" transform="translate(1436.610718,1477.721313) scale(0.624974, 0.624974) rotate(90.000003) translate(-1436.610718,-1477.721313)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >优衷14号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105615-58dc9f84" id="TXT-10000103--153-64892f95" >
+			<text style="text-anchor:left" x="1497.877808" y="1803.507935" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1455.877563" y="1782.013550" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷16号箱变站</text>
+			<text style="text-anchor:left" x="1508.375488" y="1760.514648" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">k823</text>
+		</g>
+		<g attach_id="AL-32-1130080789-58dc9f84" id="TXT-10000103--154-64892f95" >
+			<text style="text-anchor:left" x="1432.607056" y="1727.665527" transform="translate(1432.607056,1727.665527) scale(0.624974, 0.624974) rotate(-90.000003) translate(-1432.607056,-1727.665527)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >优衷15号1进出线</text>
+		</g>
+		<g attach_id="SS-3-105617-58dc9f84" id="TXT-10000103--155-64892f95" >
+			<text style="text-anchor:left" x="1402.872070" y="2218.415283" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">500kVA</text>
+			<text style="text-anchor:left" x="1360.871826" y="2196.920898" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">优衷17号箱变站</text>
+			<text style="text-anchor:left" x="1408.115967" y="2175.421875" font-size="20.999136" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">L8003</text>
+		</g>
+		<g attach_id="AL-32-1130080790-58dc9f84" id="TXT-10000103--156-64892f95" >
+			<text style="text-anchor:left" x="1432.607056" y="1977.609619" transform="translate(1432.607056,1977.609619) scale(0.624974, 0.624974) rotate(-90.000003) translate(-1432.607056,-1977.609619)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)" >优衷16号1进出线</text>
+		</g>
+</g>
+</svg>

@@ -1,0 +1,33 @@
+[{
+"name": "A", 
+"data":[{"type":"Polygon","coords":[[[310,67],[310,227],[230,147]]],"style":{"fillStyle":1,"fillColor":"#caff67"}},
+{"type":"Polygon","coords":[[[137,237],[137,124],[250,124]]],"style":{"fillStyle":1,"fillColor":"#67becf"}},
+{"type":"Polygon","coords":[[[252,8],[195,64],[138,64],[195,8]]],"style":{"fillStyle":1,"fillColor":"#ef3d61"}},
+{"type":"Polygon","coords":[[[255,175],[311,231],[255,231]]],"style":{"fillStyle":1,"fillColor":"#f9f51a"}},
+{"type":"Polygon","coords":[[[194,66],[194,122],[138,122],[138,66]]],"style":{"fillStyle":1,"fillColor":"#a54c09"}},
+{"type":"Polygon","coords":[[[253,65],[309,65],[253,121]]],"style":{"fillStyle":1,"fillColor":"#fa8ccc"}},
+{"type":"Polygon","coords":[[[198,63],[255,7],[311,63]]],"style":{"fillStyle":1,"fillColor":"#f6ca29"}}]},{
+"name": "B", 
+"data":[{"type":"Polygon","coords":[[[451,6],[338,120],[338,6]]],"style":{"fillStyle":1,"fillColor":"#caff67"}},
+{"type":"Polygon","coords":[[[451,235],[337,235],[337,122]]],"style":{"fillStyle":1,"fillColor":"#67becf"}},
+{"type":"Polygon","coords":[[[509,65],[452,121],[395,121],[452,65]]],"style":{"fillStyle":1,"fillColor":"#ef3d61"}},
+{"type":"Polygon","coords":[[[339,121],[419,121],[379,161]]],"style":{"fillStyle":1,"fillColor":"#f9f51a"}},
+{"type":"Polygon","coords":[[[455,157],[495,197],[455,237],[415,197]]],"style":{"fillStyle":1,"fillColor":"#a54c09"}},
+{"type":"Polygon","coords":[[[453,63],[453,7],[509,63]]],"style":{"fillStyle":1,"fillColor":"#fa8ccc"}},
+{"type":"Polygon","coords":[[[417,123],[497,123],[497,203]]],"style":{"fillStyle":1,"fillColor":"#f6ca29"}}]},{
+"name": "C", 
+"data":[{"type":"Polygon","coords":[[[599,-3],[599,157],[519,77]]],"style":{"fillStyle":1,"fillColor":"#caff67"}},
+{"type":"Polygon","coords":[[[631,190],[517,190],[517,77]]],"style":{"fillStyle":1,"fillColor":"#67becf"}},
+{"type":"Polygon","coords":[[[692,192],[635,248],[578,248],[635,192]]],"style":{"fillStyle":1,"fillColor":"#ef3d61"}},
+{"type":"Polygon","coords":[[[634,191],[691,135],[691,191]]],"style":{"fillStyle":1,"fillColor":"#f9f51a"}},
+{"type":"Polygon","coords":[[[657,-2],[657,54],[601,54],[601,-2]]],"style":{"fillStyle":1,"fillColor":"#a54c09"}},
+{"type":"Polygon","coords":[[[698,36],[658,76],[658,-4]]],"style":{"fillStyle":1,"fillColor":"#fa8ccc"}},
+{"type":"Polygon","coords":[[[634,191],[577,248],[520,191]]],"style":{"fillStyle":1,"fillColor":"#f6ca29"}}]},{
+"name": "D", 
+"data":[{"type":"Polygon","coords":[[[823,6],[710,120],[710,6]]],"style":{"fillStyle":1,"fillColor":"#caff67"}},
+{"type":"Polygon","coords":[[[823,235],[710,235],[710,122]]],"style":{"fillStyle":1,"fillColor":"#67becf"}},
+{"type":"Polygon","coords":[[[885,119],[829,62],[829,5],[885,62]]],"style":{"fillStyle":1,"fillColor":"#ef3d61"}},
+{"type":"Polygon","coords":[[[771,61],[827,5],[827,61]]],"style":{"fillStyle":1,"fillColor":"#f9f51a"}},
+{"type":"Polygon","coords":[[[886,121],[886,177],[830,177],[830,121]]],"style":{"fillStyle":1,"fillColor":"#a54c09"}},
+{"type":"Polygon","coords":[[[884,179],[827,236],[770,179]]],"style":{"fillStyle":1,"fillColor":"#f6ca29"}},
+{"type":"Polygon","coords":[[[830,121],[830,65],[886,121]]],"style":{"fillStyle":1,"fillColor":"#fa8ccc"}}]}]

@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>图形坐标</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "坐标转换";
+        var pageDesc = "像素坐标转换为图形坐标";
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:1006px; height:606px; border: solid 3px #FF0000;"></div>
+    <span id="txtPixel" style="position:absolute; font-size: 40px; top:500px; left:20px;"></span>
+    <span id="txtCoord" style="position:absolute; font-size: 40px; top:560px; left:20px;"></span>
+</body>
+<script type="module">
+    import { Graph, Polyline, Rect, Circle, Text, BgUtil, Extent, EventType } from "../../src/index.js";
+
+    // graph对象
+    let graph = new Graph({
+        "target": "graphWrapper"
+    });
+    // 新建图层
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // 网格
+        //BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+
+        let layer = graph.addLayer({ "name": "图形层" });
+        let res = 0;
+
+        // 格子
+        let colNames = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+        let gridRange = [40, 20];
+        let cellSize = 1000;
+        let textStyle = { "fontSize": 150, "fontName": "Verdana", "fillColor": "#3385FF", "textAlign": "center", "textBaseline": "middle" };   // Inconsolata
+
+        for (let x = 0; x < gridRange[0]; x++) {
+            for (let y = 0; y < gridRange[1]; y++) {
+                let fillColor = (x % 2 == 0 && y % 2 == 0 || x % 2 == 1 && y % 2 == 1 ? "#FFFFFF" : "#FFDFDF");
+                layer.getSource().add(new Rect({
+                    "x": x * cellSize, "y": y * cellSize, "width": cellSize, "height": cellSize, "style": { "fillColor": fillColor, "fillStyle": 1, "color": "none" }
+                }));
+                layer.getSource().add(new Text({ "x": x * cellSize + cellSize / 2, "y": y * cellSize + cellSize / 2, "text": colNames[y] + (x + 1), "style": textStyle }));
+            }
+        }
+        
+        layer.getSource().add(new Text({
+			"text":"屏幕坐标转图形坐标",
+            "x": 9000, 
+            "y": 5000, 
+            "style": { "lineWidth": 4, "fillStyle": 0, "fillColor": "#D0D0D0", "fontSize":500, "fontName":"黑体", "textAlign":"center", "textBaseline":"middle" }
+        }));
+        
+        graph.getRenderObject().on('mousemove', function(e) {
+			let posi = [e.offsetX, e.offsetY];
+            let coord = graph.getCoordinateFromPixel(posi, false);
+            $("#txtPixel").html("像素坐标: " + posi.join(","));
+            $("#txtCoord").html("图形坐标: " + coord.join(","));
+		})
+
+        graph.showExtent([4000, 2000, 14000, 8000]);
+    });
+
+</script>
+
+</html>

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>Bounding Box</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/data_box.js"></script>
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "Bounding Box";
+        var pageDesc = "Bounding Box";
+    </script>
+    
+    <script type="module">
+        import { Graph, VectorSource, Layer, Text, Rect, Polygon, rect2LineRing, BgUtil, Animation } from "../../src/index.js";
+
+        // 初始化graph对象
+        let graph = new Graph({
+            "target": "graphWrapper"
+        });
+        
+        // 矩形
+        let rect = {"x": 150, "y": 120, "width": 200, "height": 100};
+
+        // 显示辅助网格
+        let bgLayer = BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+        bgLayer.getSource().add(new Text({"x":20, "y":20, "text":"红色外框是蓝色矩形的Bounding Box", "style":{"fontSize": 18, "fontName":"黑体"}}));
+
+        // 增加数据层
+        let layer = graph.addLayer({"name":"数据层"});
+        
+        // 矩形Obj
+        let rectObj = new Polygon({ "coords": rect2LineRing(rect.x, rect.y, rect.width, rect.height), "style":{"lineWidth":4 , "fillStyle":1, "fillColor": "blue", "color":"none"} });
+        layer.getSource().add(rectObj);
+        
+        // 矩形Obj的bbox
+        let polygonObj = new Polygon({"coords": rect2LineRing(rect.x, rect.y, rect.width, rect.height), "style":{"lineWidth":1, "color":"red"}});
+        layer.getSource().add(polygonObj);
+        
+        let rotation = 0;
+        function frame(direct) {
+			let angle = direct === true ? 30 : direct === false ? -30 : 2;
+			rectObj.rotate(angle * Math.PI / 180, [rect.x + rect.width/2, rect.y + rect.height/2]);
+			
+			let bbox = rectObj.getBBox();
+			polygonObj.setCoord(rect2LineRing(bbox[0], bbox[1], bbox[2]-bbox[0], bbox[3]-bbox[1]));
+			
+			// 图形渲染
+			graph.render();
+		}
+        
+        let rafid = 0;
+        $("#btn1").on("click", function(){
+			frame(true);
+		})
+		$("#btn2").on("click", function(){
+			frame(false);
+		})
+		$("#btnStart").on("click", function(){
+			rafid = Animation.start(frame, 0, 15);
+		})
+		$("#btnStop").on("click", function(){
+			Animation.stop(rafid);
+		})
+        $("#btnStart").click();
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:500px; height:340px; border:solid 1px #CCC;"></div>
+    <div style="margin:20px">
+		<button class="btn" id="btnStart">开始</button>
+		<button class="btn" id="btnStop">停止</button><span style="margin-left:20px;"></span>
+		<button class="btn btn-success" id="btn1">顺时针</button>
+		<button class="btn btn-success" id="btn2">逆时针</button class="btn btn-success">
+	</div>
+</body>
+
+</html>

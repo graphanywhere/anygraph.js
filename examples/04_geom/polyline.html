@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>绘制基本图形(线)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/data_box.js"></script>
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "AnyGraph 折线";
+        var pageDesc = "显示AnyGraph折线";
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:800px; height:320px; border:solid 1px #CCC;"></div>
+    <h3>Data</h3>
+    <div id="divData" style="height:150px;"></div>
+</body>
+<script>
+    let graph;
+</script>
+<script type="module">
+    import { Graph, Polyline, BgUtil } from "../../src/index.js";
+
+    // graph对象
+    graph = new Graph({
+        "target": "graphWrapper",
+        "enabledGeomEvent": true
+    });
+       
+    // 网格水印层
+    BgUtil.generateGrid(Object.assign({ "interval": 10, "graph":graph }, graph.getSize()));
+    
+    // 新建绘图图层
+    let layer = graph.addLayer();
+    
+    // 绘制线
+    layer.getSource().add(new Polyline({ "coords" : [[50, 50], [150, 80], [250, 50], [350, 80], [450, 50], [550, 80], [650, 50], [750, 80]], "style":{"lineWidth": 2, "color":"red"}}));
+    layer.getSource().add(new Polyline({ "coords" : [[50, 110], [150, 140], [250, 110], [350, 140], [450, 110], [550, 140], [650, 110], [750, 140]], "style":{"lineWidth": 8, "color":"gold"}}));
+    layer.getSource().add(new Polyline({ "coords" : [[50, 170], [150, 200], [250, 170], [350, 200], [450, 170], [550, 200], [650, 170], [750, 200]], "style":{"lineWidth": 4, "color":"green", "dash": [8, 8, 8, 8] }}));
+    layer.getSource().add(new Polyline({ "coords" : [[50, 230], [150, 270], [250, 230], [350, 270], [450, 230], [550, 270], [650, 230], [750, 270]], "style":{"lineWidth": 4, "color": "blue", "dash": [20, 8, 8, 8]}}));
+    
+    // 为geom绑定click事件
+    let geoms = layer.getSource().getData();
+    geoms.forEach( geom => {
+		geom.on("click", activeShape);
+	})
+    
+    graph.render();
+</script>
+
+</html>

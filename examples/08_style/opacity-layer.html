@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>图层透明度</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+	<link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../../style/graph.css">
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "图层透明度";
+        var pageDesc = "调整图层透明度";
+    </script>
+    <style>
+        .layerControl .list {
+            height:120px;
+        }
+	</style>
+    
+    <script type="module">
+        import { Graph, VectorSource, Layer, SvgFormat, BgUtil, LayerControl } from "../../src/index.js";
+
+        let layer1 = new Layer({
+            "name": "篮球",
+            "opacity": 0.5,
+            "source": new VectorSource({
+                "dataType": "xml",
+                "fileUrl": "../images/basketball1.svg",
+                "format": new SvgFormat()
+            })
+        });
+        let layer2 = new Layer({
+            "name": "足球",
+            "opacity": 0.7,
+            "source": new VectorSource({
+                "dataType": "xml",
+                "fileUrl": "../images/football1.svg",
+                "format": new SvgFormat()
+            })
+        });
+
+        // graph对象
+        let graph = new Graph({
+            "target": "graphWrapper",
+            "layers": [layer1, layer2],
+        });
+
+        // 显示辅助网格
+        BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+    
+        // 图层控件
+        graph.addControl(new LayerControl());
+
+        // 图层1透明度控制
+        let slideBar1 = document.getElementById("slideBar1");
+        slideBar1.addEventListener("change", function (e) {
+            layer1.setOpacity(this.value / 100);
+            graph.render();
+        })
+
+        // 图层2透明度控制
+        let slideBar2 = document.getElementById("slideBar2");
+        slideBar2.addEventListener("change", function (e) {
+            layer2.setOpacity(this.value / 100);
+            graph.render();
+        })
+    </script>
+</head>
+
+<body style="margin:10px;" oncontextmenu="return false;">
+    <div id="graphWrapper" data-type="graph" style="width:850px; height:400px; border:solid 1px #CCC;"></div>
+    <label style="margin-top:20px; display:block;">篮球透明度</label>
+    <input type="range" id="slideBar1" min="0" max="100" style="width:550px" value="50" />
+    <label style="margin-top:20px; display:block;">足球透明度</label>
+    <input type="range" id="slideBar2" min="0" max="100" style="width:550px" value="70" />
+</body>
+
+</html>

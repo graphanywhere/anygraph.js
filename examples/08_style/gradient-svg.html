@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>渐变效果</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+	<link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../../style/graph.css">
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "渐变效果";
+        var pageDesc = "使用渐变效果渲染图形，模拟真实世界的光照效果";
+    </script>
+    <style>
+        .layerControl .list {
+            height:120px;
+        }
+	</style>
+</head>
+
+<body>
+    <div id="graphWrapper" data-type="graph" style="width:850px; height:400px; border:solid 1px #CCC;"></div>
+</body>
+<script type="module">
+    import { Graph, VectorSource, Layer, SvgFormat, BgUtil, LayerControl, MousePositionControl } from "../../src/index.js";
+
+    // graph对象
+    let graph = new Graph({
+        "target": "graphWrapper",
+        "layers": [
+            new Layer({
+                "name": "篮球",
+                "source": new VectorSource({
+                    "dataType": "xml",
+                    "fileUrl": "../images/basketball1.svg",
+                    "format": new SvgFormat()
+                })
+            }),
+            new Layer({
+                "name": "足球",
+                "source": new VectorSource({
+                    "dataType": "xml",
+                    "fileUrl": "../images/football1.svg",
+                    "format": new SvgFormat()
+                })
+            })
+        ]
+    });
+
+    // 图层控件
+    graph.addControl(new LayerControl());
+
+    // 显示辅助网格
+    BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+</script>
+</html>

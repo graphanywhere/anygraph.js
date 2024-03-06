@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>拾取-几何法</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "采用“几何法”实现拾取功能";
+        var pageDesc = "通过几何碰撞检测算法，判断鼠标位置(x,y)是否存在几何图形对象。<br>实现要点：<br>1、在图形对象中增加mouseMove事件; <br>2、判断鼠标位置是否与几何图形对象碰撞;";
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:850px; height:500px; border:solid 1px #CCC;"></div>
+    <div style="margin:10px; text-align: left;">
+        <div class="checkbox" style="font-size: 16px;">
+			<label style="margin-right:20px"><input id="chkPoint" type="checkbox">点</label>
+            <label style="margin-right:20px"><input id="chkRect" type="checkbox">矩形</label>
+            <label style="margin-right:20px"><input id="chkPolyline" type="checkbox">线</label>
+            <label style="margin-right:20px"><input id="chkPolygon" type="checkbox">多边形</label>
+            <label style="margin-right:20px"><input id="chkCircle" type="checkbox">圆形</label>
+            <label style="margin-right:20px"><input id="chkEllipse" type="checkbox">椭圆</label>
+            <label style="margin-right:20px"><input id="chkText" type="checkbox">文字</label>
+        </div>
+    </div>
+</body>
+<script type="module">
+    import {
+        Graph, Layer, VectorSource, BgUtil, Color, MathUtil, Collide, circle2LineRing, getStarLineRing,
+        GGeometryType, Rect, Point, Circle, Ellipse, Text, Polyline, Polygon,
+    } from "../../src/index.js";
+
+    // graph对象
+    let graph = new Graph({
+        "target": "graphWrapper"
+    });
+
+    // 网格水印层
+    let bgLayer = BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+    bgLayer.getSource().add(new Text({
+        "text": "按点拾取（几何法）Demo",
+        "x": graph.getSize().width / 2,
+        "y": graph.getSize().height / 2,
+        "vectorSize": false,
+        "style": { "lineWidth": 4, "fillStyle": 0, "fillColor": "#D0D0D0", "fontSize": 30, "fontName": "黑体", "textAlign": "center", "textBaseline": "middle" }
+    }));
+
+    // 新建绘图图层
+    let layer = graph.addLayer();
+    // 浮动层
+    let overLayer = graph.addOverLayer();
+
+    // pageload
+    $(document).ready(function () {
+
+        graph.getRenderObject().on('mousemove', function (e) {
+            let point = [e.offsetX, e.offsetY];
+            let coord = graph.getCoordinateFromPixel(point, true);
+
+            // 清空浮动层数据
+            overLayer.getSource().clearData();
+
+            // 碰撞检测
+            _collideCheck(coord);
+
+            // 鼠标位置点
+            overLayer.getSource().add(new Point({
+                "x": coord[0],
+                "y": coord[1],
+                "size": -5,
+                "style": { "fillColor": "blue", "fillStyle": 1, "color": "none" }
+            }));
+
+            // 图形重绘
+            graph.renderLayer(overLayer);
+        });
+
+        // 逐一与数据层中的对象进行碰撞检测
+        function _collideCheck(coord) {
+            let datas = layer.getSource().getData();
+            for (let i = 0, len = datas.length; i < len; i++) {
+                if (datas[i].contain([coord[0], coord[1]])) {
+                    let clone = datas[i].clone();
+                    clone.setStyle({ "fillColor": "#FF2020", "color": "#FF2020", "lineWidth":4 });
+                    overLayer.getSource().add(clone);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // 复选框状态事件：清空或随机生成对象
+        $("#chkPoint").on("change", function () {
+            if ($(this).prop("checked")) {
+                for (let i = 0; i < MathUtil.getRandomNum(6, 10); i++) {
+                    layer.getSource().add(new Point({
+                        "x": MathUtil.getRandomNum(50, 800),
+                        "y": MathUtil.getRandomNum(50, 450),
+                        "size": MathUtil.getRandomNum(10, 20),
+                        "style": { "fillColor": "#FFDFDF", "fillStyle": 1, "lineWidth": 1, "color": "#FFA5E8" }
+                    }));
+                }
+            } else {
+                layer.getSource().clearTypeData(GGeometryType.POINT);
+            }
+            graph.render();
+        });
+
+        $("#chkRect").on("change", function () {
+            if ($(this).prop("checked")) {
+                for (let i = 0; i < MathUtil.getRandomNum(6, 10); i++) {
+                    layer.getSource().add(new Rect({
+                        "x": MathUtil.getRandomNum(50, 800),
+                        "y": MathUtil.getRandomNum(50, 450),
+                        "width": MathUtil.getRandomNum(40, 70),
+                        "height": MathUtil.getRandomNum(20, 40),
+                        "style": { "fillColor": "#FFDFDF", "fillStyle": 1, "lineWidth": 1, "color": "#FFA5E8" }
+                    }));
+                }
+            } else {
+                layer.getSource().clearTypeData(GGeometryType.RECT);
+            }
+            graph.render();
+        });
+
+        $("#chkCircle").on("change", function () {
+            if ($(this).prop("checked")) {
+                for (let i = 0; i < MathUtil.getRandomNum(6, 10); i++) {
+                    layer.getSource().add(new Circle({
+                        "x": MathUtil.getRandomNum(50, 800),
+                        "y": MathUtil.getRandomNum(50, 450),
+                        "radius": MathUtil.getRandomNum(20, 40),
+                        "style": { "fillColor": "#DFFFBF", "fillStyle": 1, "lineWidth": 1, "color": "#FFA5E8" }
+                    }));
+                }
+            } else {
+                layer.getSource().clearTypeData(GGeometryType.CIRCLE);
+            }
+            graph.render();
+        });
+
+        $("#chkText").on("change", function () {
+            if ($(this).prop("checked")) {
+                for (let i = 0; i < MathUtil.getRandomNum(6, 10); i++) {
+                    layer.getSource().add(new Text({
+                        "x": MathUtil.getRandomNum(50, 800),
+                        "y": MathUtil.getRandomNum(50, 450),
+                        "text": "碰撞检测文本",
+                        "style": { "fontSize": 24, "fontName": "黑体", "fillColor": "#0000FF", }
+                    }));
+                }
+            } else {
+                layer.getSource().clearTypeData(GGeometryType.TEXT);
+            }
+            graph.render();
+        });
+
+        $("#chkEllipse").on("change", function () {
+            if ($(this).prop("checked")) {
+                for (let i = 0; i < MathUtil.getRandomNum(6, 10); i++) {
+                    layer.getSource().add(new Ellipse({
+                        "x": MathUtil.getRandomNum(50, 800),
+                        "y": MathUtil.getRandomNum(50, 450),
+                        "radiusX": MathUtil.getRandomNum(20, 40),
+                        "radiusY": MathUtil.getRandomNum(20, 20),
+                        "style": { "fillColor": "#9FFFFF", "fillStyle": 1, "lineWidth": 1, "color": "#FFA5E8" }
+                    }));
+                }
+            } else {
+                layer.getSource().clearTypeData(GGeometryType.ELLIPSE);
+            }
+            graph.render();
+        });
+
+        $("#chkPolyline").on("change", function () {
+            if ($(this).prop("checked")) {
+                for (let i = 0; i < MathUtil.getRandomNum(6, 10); i++) {
+                    let [x, y] = [MathUtil.getRandomNum(50, 620), MathUtil.getRandomNum(50, 400)];
+                    layer.getSource().add(new Polyline({
+                        "coords": [[x, y], [x + MathUtil.getRandomNum(10, 300), y + MathUtil.getRandomNum(-100, 100)]],
+                        "style": { "lineWidth": 4, "color": "#00957D" }
+                    }));
+                }
+            } else {
+                layer.getSource().clearTypeData(GGeometryType.POLYLINE);
+            }
+            graph.render();
+        });
+
+        $("#chkPolygon").on("change", function () {
+            if ($(this).prop("checked")) {
+                for (let i = 0; i < MathUtil.getRandomNum(3, 5); i++) {
+                    let center = [MathUtil.getRandomNum(150, 620), MathUtil.getRandomNum(50, 400)];
+                    let sideNum = MathUtil.getRandomNum(3, 8);
+                    let radius = MathUtil.getRandomNum(20, 40);
+                    layer.getSource().add(new Polygon({
+                        "coords": circle2LineRing(center, radius, sideNum),
+                        "style": { "fillColor": "#E5FFF5", "fillStyle": 1, "lineWidth": 1, "color": "#FF9F9F" }
+                    }));
+
+                    center = [MathUtil.getRandomNum(150, 620), MathUtil.getRandomNum(50, 400)];
+                    layer.getSource().add(new Polygon({
+                        "coords": getStarLineRing(center, radius, null, sideNum >= 6 ? sideNum - 3 : sideNum),
+                        "style": { "fillColor": "#E5FFF5", "fillStyle": 1, "lineWidth": 1, "color": "#FF9F9F" }
+                    }));
+                }
+            } else {
+                layer.getSource().clearTypeData(GGeometryType.POLYGON);
+            }
+            graph.render();
+        });
+
+        $("#chkRect").click();
+        $("#chkPolygon").click();
+    })
+
+</script>
+
+</html>

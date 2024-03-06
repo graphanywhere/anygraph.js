@@ -1,0 +1,9078 @@
+{
+	"gwi": 4,
+	"title": "站房接线图--16263语芙配电站[No33]",
+	"ZFBID": 3,
+	"ZFID": 105150,
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiPolygon",
+				"coordinates": [
+					[
+						[
+							14.608931,
+							-9.250001
+						],
+						[
+							38.608932,
+							-9.250001
+						],
+						[
+							38.608932,
+							7.37
+						],
+						[
+							14.608931,
+							7.37
+						],
+						[
+							14.608931,
+							-9.250001
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 6292739,
+				"BID": 105150,
+				"ID": 105150,
+				"LAYER_ID": 12,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					25.5,
+					1.6
+				]
+			},
+			"mark": [
+				{
+					"text": "段",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							25.688736,
+							0.872921
+						],
+						[
+							25.988735,
+							0.572921
+						]
+					]
+				},
+				{
+					"text": "分",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							25.688736,
+							1.172921
+						],
+						[
+							25.988735,
+							0.872921
+						]
+					]
+				},
+				{
+					"text": "伏",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							25.688736,
+							1.472921
+						],
+						[
+							25.988735,
+							1.172921
+						]
+					]
+				},
+				{
+					"text": "千",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							25.688736,
+							1.772921
+						],
+						[
+							25.988735,
+							1.472921
+						]
+					]
+				},
+				{
+					"text": "10",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							25.688736,
+							2.072921
+						],
+						[
+							25.988735,
+							1.772921
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 184549392,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2035,
+				"SYMBOL_STATE": 1,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549462,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549461,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					28.9,
+					4.5
+				]
+			},
+			"mark": [
+				{
+					"text": "线",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							28.343243,
+							3.780457
+						],
+						[
+							28.703243,
+							3.420456
+						]
+					]
+				},
+				{
+					"text": "出",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							28.343243,
+							4.140456
+						],
+						[
+							28.703243,
+							3.780457
+						]
+					]
+				},
+				{
+					"text": "进",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							28.343243,
+							4.500456
+						],
+						[
+							28.703243,
+							4.140456
+						]
+					]
+				},
+				{
+					"text": "5",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							28.433243,
+							4.860456
+						],
+						[
+							28.703243,
+							4.500456
+						]
+					]
+				},
+				{
+					"text": "绿",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							28.343243,
+							5.220457
+						],
+						[
+							28.703243,
+							4.860456
+						]
+					]
+				},
+				{
+					"text": "友",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							28.343243,
+							5.580457
+						],
+						[
+							28.703243,
+							5.220457
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 184549393,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2024,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549588,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549554,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					28.9,
+					6.2
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 184549394,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2812323,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549554,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					30.9,
+					4.4
+				]
+			},
+			"mark": [
+				{
+					"text": "线",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							30.04295,
+							3.792984
+						],
+						[
+							30.40295,
+							3.432983
+						]
+					]
+				},
+				{
+					"text": "出",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							30.04295,
+							4.152984
+						],
+						[
+							30.40295,
+							3.792984
+						]
+					]
+				},
+				{
+					"text": "进",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							30.04295,
+							4.512983
+						],
+						[
+							30.40295,
+							4.152984
+						]
+					]
+				},
+				{
+					"text": "2",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							30.13295,
+							4.872983
+						],
+						[
+							30.40295,
+							4.512983
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							30.04295,
+							5.232984
+						],
+						[
+							30.40295,
+							4.872983
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							30.04295,
+							5.592983
+						],
+						[
+							30.40295,
+							5.232984
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 184549395,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 5015,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 3,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549587,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549610,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					30.9,
+					6.2
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 184549396,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2805400,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549610,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					33,
+					4.4
+				]
+			},
+			"mark": [
+				{
+					"text": "线",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							32.142952,
+							3.792984
+						],
+						[
+							32.502953,
+							3.432983
+						]
+					]
+				},
+				{
+					"text": "出",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							32.142952,
+							4.152984
+						],
+						[
+							32.502953,
+							3.792984
+						]
+					]
+				},
+				{
+					"text": "进",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							32.142952,
+							4.512983
+						],
+						[
+							32.502953,
+							4.152984
+						]
+					]
+				},
+				{
+					"text": "4",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							32.232952,
+							4.872983
+						],
+						[
+							32.502953,
+							4.512983
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							32.142952,
+							5.232984
+						],
+						[
+							32.502953,
+							4.872983
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							32.142952,
+							5.592983
+						],
+						[
+							32.502953,
+							5.232984
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 184549397,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 5015,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 3,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549855,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549856,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					33,
+					6.2
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 184549398,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2805403,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549856,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					35.099998,
+					4.4
+				]
+			},
+			"mark": [
+				{
+					"text": "线",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							34.24295,
+							3.792984
+						],
+						[
+							34.602951,
+							3.432983
+						]
+					]
+				},
+				{
+					"text": "出",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							34.24295,
+							4.152984
+						],
+						[
+							34.602951,
+							3.792984
+						]
+					]
+				},
+				{
+					"text": "进",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							34.24295,
+							4.512983
+						],
+						[
+							34.602951,
+							4.152984
+						]
+					]
+				},
+				{
+					"text": "6",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							34.332951,
+							4.872983
+						],
+						[
+							34.602951,
+							4.512983
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							34.24295,
+							5.232984
+						],
+						[
+							34.602951,
+							4.872983
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							34.24295,
+							5.592983
+						],
+						[
+							34.602951,
+							5.232984
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 184549399,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 5015,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 3,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549589,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549613,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					35.099998,
+					6.2
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 184549400,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2805405,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549613,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					37.199997,
+					4.4
+				]
+			},
+			"mark": [
+				{
+					"text": "线",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							36.342949,
+							3.792984
+						],
+						[
+							36.70295,
+							3.432983
+						]
+					]
+				},
+				{
+					"text": "出",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							36.342949,
+							4.152984
+						],
+						[
+							36.70295,
+							3.792984
+						]
+					]
+				},
+				{
+					"text": "进",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							36.342949,
+							4.512983
+						],
+						[
+							36.70295,
+							4.152984
+						]
+					]
+				},
+				{
+					"text": "8",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							36.432949,
+							4.872983
+						],
+						[
+							36.70295,
+							4.512983
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							36.342949,
+							5.232984
+						],
+						[
+							36.70295,
+							4.872983
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							36.342949,
+							5.592983
+						],
+						[
+							36.70295,
+							5.232984
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 184549401,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 5015,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 3,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549863,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549864,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					37.199997,
+					6.2
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 184549402,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2800221,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549864,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					30.799999,
+					1.2
+				]
+			},
+			"mark": [
+				{
+					"text": "伏",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							31.3416,
+							0.411386
+						],
+						[
+							31.701601,
+							0.051386
+						]
+					]
+				},
+				{
+					"text": "千",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							31.3416,
+							0.771387
+						],
+						[
+							31.701601,
+							0.411386
+						]
+					]
+				},
+				{
+					"text": "10",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							31.3416,
+							1.131387
+						],
+						[
+							31.701601,
+							0.771387
+						]
+					]
+				},
+				{
+					"text": "变",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							31.3416,
+							1.491387
+						],
+						[
+							31.701601,
+							1.131387
+						]
+					]
+				},
+				{
+					"text": "配",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							31.3416,
+							1.851387
+						],
+						[
+							31.701601,
+							1.491387
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							31.3416,
+							2.211387
+						],
+						[
+							31.701601,
+							1.851387
+						]
+					]
+				},
+				{
+					"text": "2",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							31.431601,
+							2.571386
+						],
+						[
+							31.701601,
+							2.211387
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 184549403,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 5015,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 3,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549553,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549562,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					30.799999,
+					-1.3
+				]
+			},
+			"mark": [
+				{
+					"text": "1000kVA",
+					"angle": 0,
+					"textheight": 0.48,
+					"coordinates": [
+						[
+							28.635082,
+							-1.265656
+						],
+						[
+							30.315083,
+							-1.745656
+						]
+					]
+				},
+				{
+					"text": "2号配变",
+					"angle": 0,
+					"textheight": 0.48,
+					"coordinates": [
+						[
+							28.635082,
+							-0.685656
+						],
+						[
+							30.315083,
+							-1.217656
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 263430,
+				"BID": 105150,
+				"ID": 184549404,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2329,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 3,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549638,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549642,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					22,
+					-1.3
+				]
+			},
+			"mark": [
+				{
+					"text": "1000kVA",
+					"angle": 0,
+					"textheight": 0.48,
+					"coordinates": [
+						[
+							19.835083,
+							-1.265656
+						],
+						[
+							21.515083,
+							-1.745656
+						]
+					]
+				},
+				{
+					"text": "1号配变",
+					"angle": 0,
+					"textheight": 0.48,
+					"coordinates": [
+						[
+							19.835083,
+							-0.685656
+						],
+						[
+							21.515083,
+							-1.217656
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 263430,
+				"BID": 105150,
+				"ID": 184549405,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2329,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 3,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549598,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549637,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					22,
+					1.2
+				]
+			},
+			"mark": [
+				{
+					"text": "伏",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							22.541601,
+							0.411386
+						],
+						[
+							22.901602,
+							0.051386
+						]
+					]
+				},
+				{
+					"text": "千",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							22.541601,
+							0.771387
+						],
+						[
+							22.901602,
+							0.411386
+						]
+					]
+				},
+				{
+					"text": "10",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							22.541601,
+							1.131387
+						],
+						[
+							22.901602,
+							0.771387
+						]
+					]
+				},
+				{
+					"text": "变",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							22.541601,
+							1.491387
+						],
+						[
+							22.901602,
+							1.131387
+						]
+					]
+				},
+				{
+					"text": "配",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							22.541601,
+							1.851387
+						],
+						[
+							22.901602,
+							1.491387
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							22.541601,
+							2.211387
+						],
+						[
+							22.901602,
+							1.851387
+						]
+					]
+				},
+				{
+					"text": "1",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							22.631601,
+							2.571386
+						],
+						[
+							22.901602,
+							2.211387
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 184549406,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 5015,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 3,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549558,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549611,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					24,
+					6.3
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 184549407,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2805398,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549556,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					24,
+					4.6
+				]
+			},
+			"mark": [
+				{
+					"text": "线",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							23.443245,
+							3.880456
+						],
+						[
+							23.803246,
+							3.520456
+						]
+					]
+				},
+				{
+					"text": "出",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							23.443245,
+							4.240457
+						],
+						[
+							23.803246,
+							3.880456
+						]
+					]
+				},
+				{
+					"text": "进",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							23.443245,
+							4.600456
+						],
+						[
+							23.803246,
+							4.240457
+						]
+					]
+				},
+				{
+					"text": "4",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							23.533245,
+							4.960456
+						],
+						[
+							23.803246,
+							4.600456
+						]
+					]
+				},
+				{
+					"text": "绿",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							23.443245,
+							5.320457
+						],
+						[
+							23.803246,
+							4.960456
+						]
+					]
+				},
+				{
+					"text": "友",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							23.443245,
+							5.680456
+						],
+						[
+							23.803246,
+							5.320457
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 184549408,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2024,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549557,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549556,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					22.1,
+					6.3
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 184549409,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2805399,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549559,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					22.1,
+					4.5
+				]
+			},
+			"mark": [
+				{
+					"text": "线",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							21.242952,
+							3.892983
+						],
+						[
+							21.602953,
+							3.532983
+						]
+					]
+				},
+				{
+					"text": "出",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							21.242952,
+							4.252983
+						],
+						[
+							21.602953,
+							3.892983
+						]
+					]
+				},
+				{
+					"text": "进",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							21.242952,
+							4.612983
+						],
+						[
+							21.602953,
+							4.252983
+						]
+					]
+				},
+				{
+					"text": "1",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							21.332952,
+							4.972983
+						],
+						[
+							21.602953,
+							4.612983
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							21.242952,
+							5.332983
+						],
+						[
+							21.602953,
+							4.972983
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							21.242952,
+							5.692983
+						],
+						[
+							21.602953,
+							5.332983
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 184549410,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 5015,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 3,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549552,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549559,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					20,
+					6.3
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 184549411,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2805401,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549563,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					20,
+					4.5
+				]
+			},
+			"mark": [
+				{
+					"text": "线",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							19.14295,
+							3.892983
+						],
+						[
+							19.502951,
+							3.532983
+						]
+					]
+				},
+				{
+					"text": "出",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							19.14295,
+							4.252983
+						],
+						[
+							19.502951,
+							3.892983
+						]
+					]
+				},
+				{
+					"text": "进",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							19.14295,
+							4.612983
+						],
+						[
+							19.502951,
+							4.252983
+						]
+					]
+				},
+				{
+					"text": "3",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							19.23295,
+							4.972983
+						],
+						[
+							19.502951,
+							4.612983
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							19.14295,
+							5.332983
+						],
+						[
+							19.502951,
+							4.972983
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							19.14295,
+							5.692983
+						],
+						[
+							19.502951,
+							5.332983
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 184549412,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 5015,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 3,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549560,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549563,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					17.9,
+					6.3
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 184549413,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2805404,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549840,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					17.9,
+					4.5
+				]
+			},
+			"mark": [
+				{
+					"text": "线",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							17.042952,
+							3.892983
+						],
+						[
+							17.402952,
+							3.532983
+						]
+					]
+				},
+				{
+					"text": "出",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							17.042952,
+							4.252983
+						],
+						[
+							17.402952,
+							3.892983
+						]
+					]
+				},
+				{
+					"text": "进",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							17.042952,
+							4.612983
+						],
+						[
+							17.402952,
+							4.252983
+						]
+					]
+				},
+				{
+					"text": "5",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							17.132952,
+							4.972983
+						],
+						[
+							17.402952,
+							4.612983
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							17.042952,
+							5.332983
+						],
+						[
+							17.402952,
+							4.972983
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							17.042952,
+							5.692983
+						],
+						[
+							17.402952,
+							5.332983
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 184549414,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 5015,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 3,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549839,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549840,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					15.799999,
+					6.3
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 184549415,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2805406,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549848,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					15.799999,
+					4.5
+				]
+			},
+			"mark": [
+				{
+					"text": "线",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							14.942949,
+							3.892983
+						],
+						[
+							15.302949,
+							3.532983
+						]
+					]
+				},
+				{
+					"text": "出",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							14.942949,
+							4.252983
+						],
+						[
+							15.302949,
+							3.892983
+						]
+					]
+				},
+				{
+					"text": "进",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							14.942949,
+							4.612983
+						],
+						[
+							15.302949,
+							4.252983
+						]
+					]
+				},
+				{
+					"text": "7",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							15.032949,
+							4.972983
+						],
+						[
+							15.302949,
+							4.612983
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							14.942949,
+							5.332983
+						],
+						[
+							15.302949,
+							4.972983
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							14.942949,
+							5.692983
+						],
+						[
+							15.302949,
+							5.332983
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 184549416,
+				"LAYER_ID": 67,
+				"SYMBOL_ID": 5015,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 3.141593,
+				"SYMBOL_SCALE": 3,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549847,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549848,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					15.056858,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549457,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549551,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					25.99777,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549458,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549466,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					25.5,
+					-0.2
+				]
+			},
+			"properties": {
+				"NODETYPE": 7079174,
+				"BID": 105150,
+				"ID": 184549460,
+				"LAYER_ID": 57,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.1,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549462,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549473,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							25.5,
+							2.2
+						],
+						[
+							25.5,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549461,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549392,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549465,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							25.5,
+							1
+						],
+						[
+							25.5,
+							-0.2
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549462,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549392,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549460,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					30.799999,
+					-0.1
+				]
+			},
+			"properties": {
+				"NODETYPE": 7079174,
+				"BID": 105150,
+				"ID": 184549463,
+				"LAYER_ID": 57,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.1,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549638,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549562,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					22,
+					-0.1
+				]
+			},
+			"properties": {
+				"NODETYPE": 7079174,
+				"BID": 105150,
+				"ID": 184549464,
+				"LAYER_ID": 57,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.1,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549637,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549611,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					25.5,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549465,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549635,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549466,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549461,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							25.5,
+							2.8
+						],
+						[
+							25.99777,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549466,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549465,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549458,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					27.299999,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549469,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549619,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549472,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549473,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					22,
+					-2.699999
+				]
+			},
+			"properties": {
+				"NODETYPE": 7079174,
+				"BID": 105150,
+				"ID": 184549470,
+				"LAYER_ID": 61,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.1,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549598,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549632,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					27.200001,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549471,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549625,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549628,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549630,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							27.299999,
+							2.8
+						],
+						[
+							26.697935,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549472,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549469,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549498,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							27.299999,
+							2.8
+						],
+						[
+							27.299999,
+							-0.2
+						],
+						[
+							25.5,
+							-0.2
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549473,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549469,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549460,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					30.799999,
+					-2.699999
+				]
+			},
+			"properties": {
+				"NODETYPE": 7079174,
+				"BID": 105150,
+				"ID": 184549484,
+				"LAYER_ID": 61,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.1,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549642,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549608,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					16.200001,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549485,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549570,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					25.912046,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549486,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549627,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					24.5,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549487,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549575,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549629,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549569,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					23.4,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549488,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549575,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549644,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549568,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					25.5,
+					-7.799998
+				]
+			},
+			"properties": {
+				"NODETYPE": 7079174,
+				"BID": 105150,
+				"ID": 184549489,
+				"LAYER_ID": 61,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.1,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549630,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549622,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					17.199997,
+					-6.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 1312006,
+				"BID": 105150,
+				"ID": 184549491,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 5020,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549573,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549571,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					17.799999,
+					-5.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 2360582,
+				"BID": 105150,
+				"ID": 184549492,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 5018,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": -3.141593,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549573,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					17.199997,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549493,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549570,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549582,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549572,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					21.199999,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549494,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549577,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549581,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549566,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					36.151146,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549495,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549617,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					20.099998,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549496,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549581,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549584,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549565,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					18.999998,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549497,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549582,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549584,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549585,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					26.697935,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549498,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549472,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					38.100948,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549499,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549623,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					26.798122,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549500,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549628,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					28.9,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549505,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549626,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549588,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549619,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					35.200001,
+					-5.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 2360582,
+				"BID": 105150,
+				"ID": 184549511,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 5018,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": -3.141593,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549600,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					34.599998,
+					-6.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 1312006,
+				"BID": 105150,
+				"ID": 184549512,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 5020,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549600,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549591,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					34.599998,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549527,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549606,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549617,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549599,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					33.200001,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549528,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549602,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549606,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549592,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					32.099998,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549529,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549602,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549605,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549593,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					31,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549530,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549603,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549605,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549594,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					29.9,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549531,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549616,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549641,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549595,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					20,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549532,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549643,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549836,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549560,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					35.099998,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549533,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549624,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549860,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549589,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					30.9,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549534,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549614,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549852,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549587,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					24,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549535,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549631,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549557,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549635,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					28.799999,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549537,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549616,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549620,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549596,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					27.700001,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549538,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549620,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549625,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549579,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					25.5,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549539,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549627,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549629,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549621,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					30.799999,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549541,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549614,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549626,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549553,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					22.1,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549542,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549555,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549643,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549552,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					22,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549543,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549555,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549631,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549558,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					22,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549548,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549577,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549640,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549639,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					30.799999,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549549,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549603,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549641,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549612,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					22.299999,
+					-4.5
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549550,
+				"LAYER_ID": 45,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549640,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549644,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549567,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							15.056858,
+							2.8
+						],
+						[
+							15.799999,
+							2.8
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "10千伏一段母线",
+					"angle": 0,
+					"textheight": 0.25,
+					"coordinates": [
+						[
+							15.931858,
+							2.49
+						],
+						[
+							17.681858,
+							2.24
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549551,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549457,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549843,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							22.1,
+							3
+						],
+						[
+							22.1,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549552,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549410,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549542,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							30.799999,
+							2.7
+						],
+						[
+							30.799999,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549553,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549403,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549541,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							28.9,
+							5.06
+						],
+						[
+							28.9,
+							6.05
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549554,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549393,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549394,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							22.1,
+							2.8
+						],
+						[
+							22,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549555,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549542,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549543,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							24,
+							5.16
+						],
+						[
+							24,
+							6.15
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549556,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549408,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549407,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							24,
+							3.960001
+						],
+						[
+							24,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549557,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549408,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549535,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							22,
+							2.7
+						],
+						[
+							22,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549558,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549406,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549543,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							22.1,
+							6.15
+						],
+						[
+							22.1,
+							5.7
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549559,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549409,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549410,
+				"TAILRNODE_LID": 2,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							20,
+							3
+						],
+						[
+							20,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549560,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549412,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549532,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							30.799999,
+							0
+						],
+						[
+							30.799999,
+							-0.1
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549562,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549403,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549463,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							20,
+							6.15
+						],
+						[
+							20,
+							5.7
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549563,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549411,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549412,
+				"TAILRNODE_LID": 2,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							20.099998,
+							-5.68
+						],
+						[
+							20.099998,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549565,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210025134,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549496,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							21.199999,
+							-5.68
+						],
+						[
+							21.199999,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549566,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210018539,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549494,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							22.299999,
+							-5.68
+						],
+						[
+							22.299999,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549567,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210021885,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549550,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							23.4,
+							-5.68
+						],
+						[
+							23.4,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549568,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210019886,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549488,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							24.5,
+							-5.68
+						],
+						[
+							24.5,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549569,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210023160,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549487,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							16.200001,
+							-4.5
+						],
+						[
+							17.199997,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549570,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549485,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549493,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							17.199997,
+							-6.2
+						],
+						[
+							17.199997,
+							-5.88
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549571,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549491,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 200033264,
+				"TAILRNODE_LID": 2,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							17.199997,
+							-4.98
+						],
+						[
+							17.199997,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549572,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 200033264,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549493,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							17.799999,
+							-6.15
+						],
+						[
+							17.799999,
+							-6.199999
+						],
+						[
+							17.199997,
+							-6.2
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549573,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549492,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549491,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							24.5,
+							-7.12
+						],
+						[
+							24.5,
+							-8.050001
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549574,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210023160,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 290052352,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							23.4,
+							-4.5
+						],
+						[
+							24.5,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549575,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549488,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549487,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							23.4,
+							-7.12
+						],
+						[
+							23.4,
+							-8.050001
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549576,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210019886,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 290044122,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							21.199999,
+							-4.5
+						],
+						[
+							22,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549577,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549494,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549548,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							22.299999,
+							-7.12
+						],
+						[
+							22.299999,
+							-8.050001
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549578,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210021885,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 290052351,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							27.700001,
+							-5.679999
+						],
+						[
+							27.700001,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549579,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210024744,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549538,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							21.199999,
+							-7.12
+						],
+						[
+							21.199999,
+							-8.050001
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549580,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210018539,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 290031957,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							20.099998,
+							-4.5
+						],
+						[
+							21.199999,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549581,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549496,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549494,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							17.199997,
+							-4.5
+						],
+						[
+							18.999998,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549582,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549493,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549497,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							20.099998,
+							-7.12
+						],
+						[
+							20.099998,
+							-8.050001
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549583,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210025134,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 290010431,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							18.999998,
+							-4.5
+						],
+						[
+							20.099998,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549584,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549497,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549496,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							18.999998,
+							-5.679999
+						],
+						[
+							18.999998,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549585,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210022514,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549497,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							18.999998,
+							-7.119999
+						],
+						[
+							18.999998,
+							-8.05
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549586,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210022514,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 290057876,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							30.9,
+							2.9
+						],
+						[
+							30.9,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549587,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549395,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549534,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							28.9,
+							3.860001
+						],
+						[
+							28.9,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549588,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549393,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549505,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							35.099998,
+							2.9
+						],
+						[
+							35.099998,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549589,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549399,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549533,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							34.599998,
+							-6.2
+						],
+						[
+							34.599998,
+							-5.88
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549591,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549512,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 200021834,
+				"TAILRNODE_LID": 2,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							33.200001,
+							-5.68
+						],
+						[
+							33.200001,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549592,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210026992,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549528,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							32.099998,
+							-5.679999
+						],
+						[
+							32.099998,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549593,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210025920,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549529,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							31,
+							-5.679999
+						],
+						[
+							31,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549594,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210024743,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549530,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							29.9,
+							-5.679999
+						],
+						[
+							29.9,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549595,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210025133,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549531,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							28.799999,
+							-5.679999
+						],
+						[
+							28.799999,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549596,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210025921,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549537,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							27.700001,
+							-7.119999
+						],
+						[
+							27.700001,
+							-8.05
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549597,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210024744,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 290044123,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							22,
+							-2.14
+						],
+						[
+							22,
+							-2.699999
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549598,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549405,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549470,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							34.599998,
+							-4.98
+						],
+						[
+							34.599998,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549599,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 200021834,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549527,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							35.200001,
+							-6.15
+						],
+						[
+							35.200001,
+							-6.199999
+						],
+						[
+							34.599998,
+							-6.2
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549600,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549511,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549512,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							33.200001,
+							-7.12
+						],
+						[
+							33.200001,
+							-8.050001
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549601,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210026992,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 290069436,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							33.200001,
+							-4.5
+						],
+						[
+							32.099998,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549602,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549528,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549529,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							31,
+							-4.5
+						],
+						[
+							30.799999,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549603,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549530,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549549,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							32.099998,
+							-7.119999
+						],
+						[
+							32.099998,
+							-8.05
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549604,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210025920,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 290044510,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							32.099998,
+							-4.5
+						],
+						[
+							31,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549605,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549529,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549530,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							34.599998,
+							-4.5
+						],
+						[
+							33.200001,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549606,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549527,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549528,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							31,
+							-7.119999
+						],
+						[
+							31,
+							-8.05
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549607,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210024743,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 290034681,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							30.799999,
+							-2.879999
+						],
+						[
+							30.799999,
+							-2.699999
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549608,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210023161,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549484,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							29.9,
+							-7.119999
+						],
+						[
+							29.9,
+							-8.05
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549609,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210025133,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 290076604,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							30.9,
+							6.05
+						],
+						[
+							30.9,
+							5.6
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549610,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549396,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549395,
+				"TAILRNODE_LID": 2,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							22,
+							0
+						],
+						[
+							22,
+							-0.1
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549611,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549406,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549464,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							30.799999,
+							-4.32
+						],
+						[
+							30.799999,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549612,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210023161,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549549,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							35.099998,
+							6.05
+						],
+						[
+							35.099998,
+							5.6
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549613,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549400,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549399,
+				"TAILRNODE_LID": 2,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							30.9,
+							2.8
+						],
+						[
+							30.799999,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549614,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549534,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549541,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							29.9,
+							-4.5
+						],
+						[
+							28.799999,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549616,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549531,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549537,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							36.151146,
+							-4.5
+						],
+						[
+							34.599998,
+							-4.5
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "低压二段母线",
+					"angle": 0,
+					"textheight": 0.25,
+					"coordinates": [
+						[
+							33.776146,
+							-4.00789
+						],
+						[
+							35.276146,
+							-4.25789
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549617,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549495,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549527,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							28.799999,
+							-7.119999
+						],
+						[
+							28.799999,
+							-8.05
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549618,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210025921,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 290069437,
+				"TAILRNODE_LID": 1,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							28.9,
+							2.8
+						],
+						[
+							27.299999,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549619,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549505,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549469,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							28.799999,
+							-4.5
+						],
+						[
+							27.700001,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549620,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549537,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549538,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							25.5,
+							-5.379998
+						],
+						[
+							25.5,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549621,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210021884,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549539,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							25.5,
+							-6.819998
+						],
+						[
+							25.5,
+							-7.799998
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549622,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210021884,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549489,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							38.100948,
+							2.8
+						],
+						[
+							37.199997,
+							2.8
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "10千伏二段母线",
+					"angle": 0,
+					"textheight": 0.25,
+					"coordinates": [
+						[
+							35.475948,
+							2.469713
+						],
+						[
+							37.225948,
+							2.219713
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549623,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549499,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549859,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							35.099998,
+							2.8
+						],
+						[
+							33,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549624,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549533,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549851,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							27.700001,
+							-4.5
+						],
+						[
+							27.200001,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549625,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549538,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549471,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							30.799999,
+							2.8
+						],
+						[
+							28.9,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549626,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549541,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549505,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							25.5,
+							-4.5
+						],
+						[
+							25.912046,
+							-4.5
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "低压一段母线",
+					"angle": 0,
+					"textheight": 0.25,
+					"coordinates": [
+						[
+							17.075001,
+							-3.987272
+						],
+						[
+							18.575001,
+							-4.237272
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549627,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549539,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549486,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							27.200001,
+							-4.5
+						],
+						[
+							26.798122,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549628,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549471,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549500,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							24.5,
+							-4.5
+						],
+						[
+							25.5,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549629,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549487,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549539,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							25.5,
+							-7.799998
+						],
+						[
+							27.200001,
+							-7.8
+						],
+						[
+							27.200001,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549630,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549489,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549471,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							22,
+							2.8
+						],
+						[
+							24,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549631,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549543,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549535,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							22,
+							-2.879999
+						],
+						[
+							22,
+							-2.699999
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549632,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210022550,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549470,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							24,
+							2.8
+						],
+						[
+							25.5,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549635,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549535,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549465,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							22,
+							-0.46
+						],
+						[
+							22,
+							-0.1
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549637,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549405,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549464,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							30.799999,
+							-0.46
+						],
+						[
+							30.799999,
+							-0.1
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549638,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549404,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549463,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							22,
+							-4.32
+						],
+						[
+							22,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549639,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 210022550,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549548,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							22,
+							-4.5
+						],
+						[
+							22.299999,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549640,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549548,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549550,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							30.799999,
+							-4.5
+						],
+						[
+							29.9,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549641,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549549,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549531,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							30.799999,
+							-2.14
+						],
+						[
+							30.799999,
+							-2.699999
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549642,
+				"LAYER_ID": 60,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549404,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549484,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							20,
+							2.8
+						],
+						[
+							22.1,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549643,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549532,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549542,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							22.299999,
+							-4.5
+						],
+						[
+							23.4,
+							-4.5
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549644,
+				"LAYER_ID": 44,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549550,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549488,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					17.9,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549835,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549836,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549844,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549839,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							17.9,
+							2.8
+						],
+						[
+							20,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549836,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549835,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549532,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							17.9,
+							3
+						],
+						[
+							17.9,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549839,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549414,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549835,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							17.9,
+							6.15
+						],
+						[
+							17.9,
+							5.7
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549840,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549413,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549414,
+				"TAILRNODE_LID": 2,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					15.799999,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549843,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549551,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549844,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549847,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							15.799999,
+							2.8
+						],
+						[
+							17.9,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549844,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549843,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549835,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							15.799999,
+							3
+						],
+						[
+							15.799999,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549847,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549416,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549843,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							15.799999,
+							6.15
+						],
+						[
+							15.799999,
+							5.7
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549848,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549415,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549416,
+				"TAILRNODE_LID": 2,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					33,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549851,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549624,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549852,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549855,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							33,
+							2.8
+						],
+						[
+							30.9,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549852,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549851,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549534,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							33,
+							2.9
+						],
+						[
+							33,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549855,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549397,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549851,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							33,
+							6.05
+						],
+						[
+							33,
+							5.6
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549856,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549398,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549397,
+				"TAILRNODE_LID": 2,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					37.199997,
+					2.8
+				]
+			},
+			"properties": {
+				"NODETYPE": 5244166,
+				"BID": 105150,
+				"ID": 184549859,
+				"LAYER_ID": 41,
+				"SYMBOL_ID": 2202,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 0.12,
+				"REDGE_NUM": 3,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549623,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549860,
+				"REDGE2_BID": 105150,
+				"REDGE2_ID": 184549863,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							37.199997,
+							2.8
+						],
+						[
+							35.099998,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 525575,
+				"BID": 105150,
+				"ID": 184549860,
+				"LAYER_ID": 40,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549859,
+				"HEADRNODE_LID": 0,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549533,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							37.199997,
+							2.9
+						],
+						[
+							37.199997,
+							2.8
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549863,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549401,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549859,
+				"TAILRNODE_LID": 0,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							37.199997,
+							6.05
+						],
+						[
+							37.199997,
+							5.6
+						]
+					]
+				]
+			},
+			"properties": {
+				"NODETYPE": 4982023,
+				"BID": 105150,
+				"ID": 184549864,
+				"LAYER_ID": 56,
+				"HEADRNODE_BID": 105150,
+				"HEADRNODE_ID": 184549402,
+				"HEADRNODE_LID": 1,
+				"TAILRNODE_BID": 105150,
+				"TAILRNODE_ID": 184549401,
+				"TAILRNODE_LID": 2,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					34.599998,
+					-5.5
+				]
+			},
+			"mark": [
+				{
+					"text": "器",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							35.487103,
+							-7.072273
+						],
+						[
+							35.862103,
+							-7.372273
+						]
+					]
+				},
+				{
+					"text": "容",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							35.487103,
+							-6.772274
+						],
+						[
+							35.862103,
+							-7.072273
+						]
+					]
+				},
+				{
+					"text": "电",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							35.487103,
+							-6.472273
+						],
+						[
+							35.862103,
+							-6.772274
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							35.487103,
+							-6.172274
+						],
+						[
+							35.862103,
+							-6.472273
+						]
+					]
+				},
+				{
+					"text": "2",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							35.562103,
+							-5.872273
+						],
+						[
+							35.862103,
+							-6.172274
+						]
+					]
+				},
+				{
+					"text": "伏",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							35.487103,
+							-5.572273
+						],
+						[
+							35.862103,
+							-5.872273
+						]
+					]
+				},
+				{
+					"text": "千",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							35.487103,
+							-5.272273
+						],
+						[
+							35.862103,
+							-5.572273
+						]
+					]
+				},
+				{
+					"text": "0.4",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							35.412102,
+							-4.972273
+						],
+						[
+							35.862103,
+							-5.272274
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 1049862,
+				"BID": 105150,
+				"ID": 200021834,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 5016,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549591,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549599,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					17.199997,
+					-5.5
+				]
+			},
+			"mark": [
+				{
+					"text": "器",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							18.087097,
+							-7.072273
+						],
+						[
+							18.462097,
+							-7.372273
+						]
+					]
+				},
+				{
+					"text": "容",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							18.087097,
+							-6.772274
+						],
+						[
+							18.462097,
+							-7.072273
+						]
+					]
+				},
+				{
+					"text": "电",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							18.087097,
+							-6.472273
+						],
+						[
+							18.462097,
+							-6.772274
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							18.087097,
+							-6.172274
+						],
+						[
+							18.462097,
+							-6.472273
+						]
+					]
+				},
+				{
+					"text": "1",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							18.162096,
+							-5.872273
+						],
+						[
+							18.462097,
+							-6.172274
+						]
+					]
+				},
+				{
+					"text": "伏",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							18.087097,
+							-5.572273
+						],
+						[
+							18.462097,
+							-5.872273
+						]
+					]
+				},
+				{
+					"text": "千",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							18.087097,
+							-5.272273
+						],
+						[
+							18.462097,
+							-5.572273
+						]
+					]
+				},
+				{
+					"text": "0.4",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							18.012096,
+							-4.972273
+						],
+						[
+							18.462097,
+							-5.272274
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 1049862,
+				"BID": 105150,
+				"ID": 200033264,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 5016,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549571,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549572,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					21.199999,
+					-6.4
+				]
+			},
+			"mark": [
+				{
+					"text": "5",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							21.494526,
+							-7.365105
+						],
+						[
+							21.764526,
+							-7.725105
+						]
+					]
+				},
+				{
+					"text": "变",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							21.404526,
+							-7.005105
+						],
+						[
+							21.764526,
+							-7.365105
+						]
+					]
+				},
+				{
+					"text": "配",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							21.404526,
+							-6.645105
+						],
+						[
+							21.764526,
+							-7.005105
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							21.404526,
+							-6.285105
+						],
+						[
+							21.764526,
+							-6.645105
+						]
+					]
+				},
+				{
+					"text": "1",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							21.494526,
+							-5.925105
+						],
+						[
+							21.764526,
+							-6.285105
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							21.404526,
+							-5.565104
+						],
+						[
+							21.764526,
+							-5.925105
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							21.404526,
+							-5.205105
+						],
+						[
+							21.764526,
+							-5.565104
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210018539,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549566,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549580,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					23.4,
+					-6.4
+				]
+			},
+			"mark": [
+				{
+					"text": "17",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							23.604527,
+							-7.365105
+						],
+						[
+							23.964527,
+							-7.725105
+						]
+					]
+				},
+				{
+					"text": "变",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							23.604527,
+							-7.005105
+						],
+						[
+							23.964527,
+							-7.365105
+						]
+					]
+				},
+				{
+					"text": "配",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							23.604527,
+							-6.645105
+						],
+						[
+							23.964527,
+							-7.005105
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							23.604527,
+							-6.285105
+						],
+						[
+							23.964527,
+							-6.645105
+						]
+					]
+				},
+				{
+					"text": "1",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							23.694527,
+							-5.925105
+						],
+						[
+							23.964527,
+							-6.285105
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							23.604527,
+							-5.565104
+						],
+						[
+							23.964527,
+							-5.925105
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							23.604527,
+							-5.205105
+						],
+						[
+							23.964527,
+							-5.565104
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210019886,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549568,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549576,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					25.5,
+					-6.099998
+				]
+			},
+			"mark": [
+				{
+					"text": "段",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							25.675518,
+							-6.496231
+						],
+						[
+							25.975517,
+							-6.796231
+						]
+					]
+				},
+				{
+					"text": "分",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							25.675518,
+							-6.196231
+						],
+						[
+							25.975517,
+							-6.496231
+						]
+					]
+				},
+				{
+					"text": "压",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							25.675518,
+							-5.896231
+						],
+						[
+							25.975517,
+							-6.196231
+						]
+					]
+				},
+				{
+					"text": "低",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							25.675518,
+							-5.596231
+						],
+						[
+							25.975517,
+							-5.896231
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210021884,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 1,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549621,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549622,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					22.299999,
+					-6.4
+				]
+			},
+			"mark": [
+				{
+					"text": "1",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							22.594526,
+							-6.825105
+						],
+						[
+							22.864527,
+							-7.185105
+						]
+					]
+				},
+				{
+					"text": "低",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							22.504526,
+							-6.465105
+						],
+						[
+							22.864527,
+							-6.825105
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							22.504526,
+							-6.105105
+						],
+						[
+							22.864527,
+							-6.465105
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							22.504526,
+							-5.745105
+						],
+						[
+							22.864527,
+							-6.105105
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210021885,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 1,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549567,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549578,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					18.999998,
+					-6.399999
+				]
+			},
+			"mark": [
+				{
+					"text": "16",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							19.204525,
+							-7.365104
+						],
+						[
+							19.564526,
+							-7.725104
+						]
+					]
+				},
+				{
+					"text": "变",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							19.204525,
+							-7.005104
+						],
+						[
+							19.564526,
+							-7.365104
+						]
+					]
+				},
+				{
+					"text": "配",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							19.204525,
+							-6.645104
+						],
+						[
+							19.564526,
+							-7.005104
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							19.204525,
+							-6.285104
+						],
+						[
+							19.564526,
+							-6.645104
+						]
+					]
+				},
+				{
+					"text": "1",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							19.294525,
+							-5.925104
+						],
+						[
+							19.564526,
+							-6.285104
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							19.204525,
+							-5.565104
+						],
+						[
+							19.564526,
+							-5.925104
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							19.204525,
+							-5.205104
+						],
+						[
+							19.564526,
+							-5.565104
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210022514,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549585,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549586,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					22,
+					-3.599999
+				]
+			},
+			"mark": [
+				{
+					"text": "压",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							22.228428,
+							-4.197986
+						],
+						[
+							22.528427,
+							-4.497986
+						]
+					]
+				},
+				{
+					"text": "低",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							22.228428,
+							-3.897986
+						],
+						[
+							22.528427,
+							-4.197986
+						]
+					]
+				},
+				{
+					"text": "变",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							22.228428,
+							-3.597986
+						],
+						[
+							22.528427,
+							-3.897986
+						]
+					]
+				},
+				{
+					"text": "配",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							22.228428,
+							-3.297986
+						],
+						[
+							22.528427,
+							-3.597986
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							22.228428,
+							-2.997986
+						],
+						[
+							22.528427,
+							-3.297986
+						]
+					]
+				},
+				{
+					"text": "1",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							22.303429,
+							-2.697986
+						],
+						[
+							22.528427,
+							-2.997986
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210022550,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549632,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549639,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					24.5,
+					-6.4
+				]
+			},
+			"mark": [
+				{
+					"text": "24",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							24.704527,
+							-7.365105
+						],
+						[
+							25.064528,
+							-7.725105
+						]
+					]
+				},
+				{
+					"text": "变",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							24.704527,
+							-7.005105
+						],
+						[
+							25.064528,
+							-7.365105
+						]
+					]
+				},
+				{
+					"text": "配",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							24.704527,
+							-6.645105
+						],
+						[
+							25.064528,
+							-7.005105
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							24.704527,
+							-6.285105
+						],
+						[
+							25.064528,
+							-6.645105
+						]
+					]
+				},
+				{
+					"text": "1",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							24.794527,
+							-5.925105
+						],
+						[
+							25.064528,
+							-6.285105
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							24.704527,
+							-5.565104
+						],
+						[
+							25.064528,
+							-5.925105
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							24.704527,
+							-5.205105
+						],
+						[
+							25.064528,
+							-5.565104
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210023160,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549569,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549574,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					30.799999,
+					-3.599999
+				]
+			},
+			"mark": [
+				{
+					"text": "压",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							31.028427,
+							-4.197986
+						],
+						[
+							31.328426,
+							-4.497986
+						]
+					]
+				},
+				{
+					"text": "低",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							31.028427,
+							-3.897986
+						],
+						[
+							31.328426,
+							-4.197986
+						]
+					]
+				},
+				{
+					"text": "变",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							31.028427,
+							-3.597986
+						],
+						[
+							31.328426,
+							-3.897986
+						]
+					]
+				},
+				{
+					"text": "配",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							31.028427,
+							-3.297986
+						],
+						[
+							31.328426,
+							-3.597986
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							31.028427,
+							-2.997986
+						],
+						[
+							31.328426,
+							-3.297986
+						]
+					]
+				},
+				{
+					"text": "2",
+					"angle": 0,
+					"textheight": 0.3,
+					"coordinates": [
+						[
+							31.103428,
+							-2.697986
+						],
+						[
+							31.328426,
+							-2.997986
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210023161,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549608,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549612,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					31,
+					-6.399999
+				]
+			},
+			"mark": [
+				{
+					"text": "9",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							31.294527,
+							-7.365104
+						],
+						[
+							31.564528,
+							-7.725104
+						]
+					]
+				},
+				{
+					"text": "变",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							31.204527,
+							-7.005104
+						],
+						[
+							31.564528,
+							-7.365104
+						]
+					]
+				},
+				{
+					"text": "配",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							31.204527,
+							-6.645104
+						],
+						[
+							31.564528,
+							-7.005104
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							31.204527,
+							-6.285104
+						],
+						[
+							31.564528,
+							-6.645104
+						]
+					]
+				},
+				{
+					"text": "2",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							31.294527,
+							-5.925104
+						],
+						[
+							31.564528,
+							-6.285104
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							31.204527,
+							-5.565104
+						],
+						[
+							31.564528,
+							-5.925104
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							31.204527,
+							-5.205104
+						],
+						[
+							31.564528,
+							-5.565104
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210024743,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549594,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549607,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					27.700001,
+					-6.399999
+				]
+			},
+			"mark": [
+				{
+					"text": "16",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							27.904528,
+							-7.365104
+						],
+						[
+							28.264528,
+							-7.725104
+						]
+					]
+				},
+				{
+					"text": "变",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							27.904528,
+							-7.005104
+						],
+						[
+							28.264528,
+							-7.365104
+						]
+					]
+				},
+				{
+					"text": "配",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							27.904528,
+							-6.645104
+						],
+						[
+							28.264528,
+							-7.005104
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							27.904528,
+							-6.285104
+						],
+						[
+							28.264528,
+							-6.645104
+						]
+					]
+				},
+				{
+					"text": "2",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							27.994528,
+							-5.925104
+						],
+						[
+							28.264528,
+							-6.285104
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							27.904528,
+							-5.565104
+						],
+						[
+							28.264528,
+							-5.925104
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							27.904528,
+							-5.205104
+						],
+						[
+							28.264528,
+							-5.565104
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210024744,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549579,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549597,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					29.9,
+					-6.399999
+				]
+			},
+			"mark": [
+				{
+					"text": "8",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							30.194527,
+							-6.825104
+						],
+						[
+							30.464527,
+							-7.185104
+						]
+					]
+				},
+				{
+					"text": "低",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							30.104527,
+							-6.465104
+						],
+						[
+							30.464527,
+							-6.825104
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							30.104527,
+							-6.105104
+						],
+						[
+							30.464527,
+							-6.465104
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							30.104527,
+							-5.745104
+						],
+						[
+							30.464527,
+							-6.105104
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210025133,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 1,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549595,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549609,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					20.099998,
+					-6.4
+				]
+			},
+			"mark": [
+				{
+					"text": "9",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							20.394526,
+							-7.365105
+						],
+						[
+							20.664526,
+							-7.725105
+						]
+					]
+				},
+				{
+					"text": "变",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							20.304525,
+							-7.005105
+						],
+						[
+							20.664526,
+							-7.365105
+						]
+					]
+				},
+				{
+					"text": "配",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							20.304525,
+							-6.645105
+						],
+						[
+							20.664526,
+							-7.005105
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							20.304525,
+							-6.285105
+						],
+						[
+							20.664526,
+							-6.645105
+						]
+					]
+				},
+				{
+					"text": "1",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							20.394526,
+							-5.925105
+						],
+						[
+							20.664526,
+							-6.285105
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							20.304525,
+							-5.565104
+						],
+						[
+							20.664526,
+							-5.925105
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							20.304525,
+							-5.205105
+						],
+						[
+							20.664526,
+							-5.565104
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210025134,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549565,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549583,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					32.099998,
+					-6.399999
+				]
+			},
+			"mark": [
+				{
+					"text": "24",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							32.304527,
+							-7.365104
+						],
+						[
+							32.664528,
+							-7.725104
+						]
+					]
+				},
+				{
+					"text": "变",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							32.304527,
+							-7.005104
+						],
+						[
+							32.664528,
+							-7.365104
+						]
+					]
+				},
+				{
+					"text": "配",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							32.304527,
+							-6.645104
+						],
+						[
+							32.664528,
+							-7.005104
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							32.304527,
+							-6.285104
+						],
+						[
+							32.664528,
+							-6.645104
+						]
+					]
+				},
+				{
+					"text": "2",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							32.394527,
+							-5.925104
+						],
+						[
+							32.664528,
+							-6.285104
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							32.304527,
+							-5.565104
+						],
+						[
+							32.664528,
+							-5.925104
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							32.304527,
+							-5.205104
+						],
+						[
+							32.664528,
+							-5.565104
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210025920,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549593,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549604,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					28.799999,
+					-6.399999
+				]
+			},
+			"mark": [
+				{
+					"text": "3",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							29.094526,
+							-7.365104
+						],
+						[
+							29.364527,
+							-7.725104
+						]
+					]
+				},
+				{
+					"text": "变",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							29.004526,
+							-7.005104
+						],
+						[
+							29.364527,
+							-7.365104
+						]
+					]
+				},
+				{
+					"text": "配",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							29.004526,
+							-6.645104
+						],
+						[
+							29.364527,
+							-7.005104
+						]
+					]
+				},
+				{
+					"text": "号",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							29.004526,
+							-6.285104
+						],
+						[
+							29.364527,
+							-6.645104
+						]
+					]
+				},
+				{
+					"text": "2",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							29.094526,
+							-5.925104
+						],
+						[
+							29.364527,
+							-6.285104
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							29.004526,
+							-5.565104
+						],
+						[
+							29.364527,
+							-5.925104
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							29.004526,
+							-5.205104
+						],
+						[
+							29.364527,
+							-5.565104
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210025921,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549596,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549618,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					33.200001,
+					-6.4
+				]
+			},
+			"mark": [
+				{
+					"text": "7",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							33.49453,
+							-6.825105
+						],
+						[
+							33.76453,
+							-7.185105
+						]
+					]
+				},
+				{
+					"text": "低",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							33.40453,
+							-6.465105
+						],
+						[
+							33.76453,
+							-6.825105
+						]
+					]
+				},
+				{
+					"text": "芙",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							33.40453,
+							-6.105105
+						],
+						[
+							33.76453,
+							-6.465105
+						]
+					]
+				},
+				{
+					"text": "语",
+					"angle": 0,
+					"textheight": 0.36,
+					"coordinates": [
+						[
+							33.40453,
+							-5.745105
+						],
+						[
+							33.76453,
+							-6.105105
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 787718,
+				"BID": 105150,
+				"ID": 210026992,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2012,
+				"SYMBOL_STATE": 1,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549592,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549601,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					20.099998,
+					-8.200001
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 290010431,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2886407,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549583,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					21.199999,
+					-8.200001
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 290031957,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2886408,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549580,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					31,
+					-8.2
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 290034681,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2886414,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549607,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					23.4,
+					-8.200001
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 290044122,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2886410,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549576,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					27.700001,
+					-8.2
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 290044123,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2886415,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549597,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					32.099998,
+					-8.2
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 290044510,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2886416,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549604,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					22.299999,
+					-8.200001
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 290052351,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549578,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					24.5,
+					-8.200001
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 290052352,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2886411,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549574,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					18.999998,
+					-8.2
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 290057876,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2886409,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549586,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					33.200001,
+					-8.200001
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 290069436,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549601,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					28.799999,
+					-8.2
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 290069437,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 9,
+				"REDGE0_ID": 2886423,
+				"REDGE1_BID": 105150,
+				"REDGE1_ID": 184549618,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					29.9,
+					-8.2
+				]
+			},
+			"properties": {
+				"NODETYPE": 39060742,
+				"BID": 105150,
+				"ID": 290076604,
+				"LAYER_ID": 69,
+				"SYMBOL_ID": 2081,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 2,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 105150,
+				"REDGE0_ID": 184549609,
+				"LAYER_SID": 0
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					26.626472,
+					5.288001
+				]
+			},
+			"mark": [
+				{
+					"text": "          ",
+					"angle": 0,
+					"textheight": 0.48,
+					"SCOLOR": "0,255,0,0",
+					"coordinates": [
+						[
+							25.426472,
+							5.768001
+						],
+						[
+							27.826473,
+							5.288001
+						]
+					]
+				},
+				{
+					"text": "语芙配电站",
+					"angle": 0,
+					"textheight": 0.48,
+					"SCOLOR": "0,255,0,0",
+					"coordinates": [
+						[
+							25.426472,
+							6.448001
+						],
+						[
+							27.826473,
+							5.864001
+						]
+					]
+				},
+				{
+					"text": "16263",
+					"angle": 0,
+					"textheight": 0.48,
+					"SCOLOR": "0,255,0,0",
+					"coordinates": [
+						[
+							26.026472,
+							7.128001
+						],
+						[
+							27.826473,
+							6.440001
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 5,
+				"BID": 105150,
+				"ID": -105150,
+				"LAYER_ID": 71,
+				"SCOLOR": "0,255,0,0",
+				"LAYER_SID": 0
+			}
+		}
+	]
+}

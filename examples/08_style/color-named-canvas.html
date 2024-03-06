@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>命名色</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        html,body{
+            height: 100%;
+        }
+        body{
+            margin: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="graphWrapper" data-type="graph" style="width:100%; height:calc(100% - 20px); border:solid 1px #CCC;"></div>
+</body>
+<script type="module">
+    import { Graph, Rect, Text, Color, BgUtil } from "../../src/index.js";
+
+    // graph对象
+    let graph = new Graph({
+        "target": "graphWrapper"
+    });
+
+    // 显示辅助网格
+    // BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+
+    // 新建图层
+    let layer = graph.addLayer({ "usePixelCoord": false, "name": "命名色" });
+
+
+    let systemColor = Color.getSystemColor();
+    let colors = Object.keys(systemColor);
+
+    let width = 160, height = 60;
+    let style = { "fillStyle": 1, "color": "none" };
+    let fontStyle = { "fontSize": 14, "fontName": "Yu Gothic UI Semibold", "textAlign": "center", "textBaseline": "middle", "lineWidth": 2, "color": "#FFFFFF", "fillColor": "#000000" };
+    let idx = 0;
+    for (let y = 0; y < 800; y += (height + 5)) {
+        for (let x = 0; x < 1600; x += (width + 5)) {
+            let colorName = colors[idx];
+            let colorHex = systemColor[colorName];
+            layer.getSource().add(new Rect({ x, y, width, height, "style": Object.assign({ "fillColor": colorName }, style) }));
+            layer.getSource().add(new Text({ "x": (x + width / 2), "y": (y + 20), "text": colorName, "style": fontStyle }));
+            layer.getSource().add(new Text({ "x": (x + width / 2), "y": (y + 45), "text": colorHex, "style": fontStyle }));
+            idx++;
+            if (idx >= colors.length) break;
+        }
+        if (idx >= colors.length) break;
+    }
+
+    graph.render();
+</script>
+
+</html>

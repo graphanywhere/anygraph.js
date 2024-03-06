@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>文本</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/data_box.js"></script>
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "AnyGraph文本";
+        var pageDesc = "显示AnyGraph文本类型";
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:750px; height:310px; border:solid 1px #CCC;"></div>
+    <h3>Data</h3>
+    <div id="divData" style="height: 200px;"></div>
+</body>
+<script>
+    let graph;
+</script>
+<script type="module">
+    import { Graph, Circle, Text, Polyline, BgUtil } from "../../src/index.js";
+
+    // graph对象
+    graph = new Graph({
+        "target": "graphWrapper",
+        "enabledGeomEvent": true
+    });
+    // 网格水印层
+    BgUtil.generateGrid(Object.assign({ "interval": 10, "graph":graph }, graph.getSize()));
+    
+    // 新建绘图图层
+    let layer = graph.addLayer();
+
+    // 绘制填充的文字
+    layer.getSource().add(new Text({ "x": 65, "y": 60, "text": "40px中文", style: { "textBaseline": "alphabetic", "fillColor": "red", "fontSize": 40, "fontName": "黑体" } }));
+    layer.getSource().add(new Text({ "x": 260, "y": 60, "text": "30px中文", style: { "textBaseline": "alphabetic", "fillColor": "red", "fontSize": 30, "fontName": "黑体" } }));
+    layer.getSource().add(new Text({ "x": 420, "y": 60, "text": "20px中文", style: { "textBaseline": "alphabetic", "fillColor": "red", "fontSize": 20, "fontName": "黑体" } }));
+    layer.getSource().add(new Text({ "x": 540, "y": 60, "text": "14px绘制基本图形", style: { "textBaseline": "alphabetic", "fillColor": "red", "fontSize": 14, "fontName": "黑体" } }));
+
+    // 绘制描边的文字
+    layer.getSource().add(new Text({ "x": 65, "y": 130, "text": "40px中文", style: { "textBaseline": "alphabetic", "color": "blue", "lineWidth": 1, "fontSize": 40, "fontName": "黑体" } }));
+    layer.getSource().add(new Text({ "x": 260, "y": 130, "text": "30px中文", style: { "textBaseline": "alphabetic", "color": "blue", "lineWidth": 1, "fontSize": 30, "fontName": "黑体" } }));
+    layer.getSource().add(new Text({ "x": 420, "y": 130, "text": "20px中文", style: { "textBaseline": "alphabetic", "color": "blue", "lineWidth": 1, "fontSize": 20, "fontName": "黑体" } }));
+    layer.getSource().add(new Text({ "x": 540, "y": 130, "text": "14px绘制基本图形", style: { "textBaseline": "alphabetic", "color": "blue", "lineWidth": 1, "fontSize": 14, "fontName": "黑体" } }));
+
+    // 绘制带阴影的文字
+    layer.getSource().add(new Text({ "x": 65, "y": 200, "text": "40px中文", style: { "textBaseline": "alphabetic", "fillColor": "#702000", "shadowBlur": 8, "shadowColor": "rgba(0,0,0,0.5)", "fontSize": 40, "fontName": "黑体" } }));
+    layer.getSource().add(new Text({ "x": 260, "y": 200, "text": "30px中文", style: { "textBaseline": "alphabetic", "fillColor": "#702000", "shadowBlur": 8, "shadowColor": "rgba(0,0,0,0.5)", "fontSize": 30, "fontName": "黑体" } }));
+    layer.getSource().add(new Text({ "x": 420, "y": 200, "text": "20px中文", style: { "textBaseline": "alphabetic", "fillColor": "#702000", "shadowBlur": 8, "shadowColor": "rgba(0,0,0,0.5)", "fontSize": 20, "fontName": "黑体" } }));
+    layer.getSource().add(new Text({ "x": 540, "y": 200, "text": "14px绘制基本图形", style: { "textBaseline": "alphabetic", "fillColor": "#702000", "shadowBlur": 8, "shadowColor": "rgba(0,0,0,0.5)", "fontSize": 14, "fontName": "黑体" } }));
+
+    // 绘制文字+边框
+    layer.getSource().add(new Text({ "x": 65, "y": 270, "text": "40px中文", style: { "textBaseline": "alphabetic", "fillColor": "#A20053", "color": "#CCCCCC", "lineWidth": 5, "fontSize": 40, "fontName": "黑体" } }));
+    layer.getSource().add(new Text({ "x": 260, "y": 270, "text": "30px中文", style: { "textBaseline": "alphabetic", "fillColor": "#A20053", "color": "#CCCCCC", "lineWidth": 5, "fontSize": 30, "fontName": "黑体" } }));
+    layer.getSource().add(new Text({ "x": 420, "y": 270, "text": "20px中文", style: { "textBaseline": "alphabetic", "fillColor": "#A20053", "color": "#CCCCCC", "lineWidth": 5, "fontSize": 20, "fontName": "黑体" } }));
+    layer.getSource().add(new Text({ "x": 540, "y": 270, "text": "14px绘制基本图形", style: { "textBaseline": "alphabetic", "fillColor": "#A20053", "color": "#CCCCCC", "lineWidth": 2, "fontSize": 14, "fontName": "黑体" } }));
+
+    // 为geom绑定click事件
+    let geoms = layer.getSource().getData();
+    geoms.forEach( geom => {
+		geom.on("click", activeShape);
+	})
+	
+    graph.render();
+</script>
+
+</html>

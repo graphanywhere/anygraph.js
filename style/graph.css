@@ -1,0 +1,158 @@
+/* 图层控件层样式设置 */
+.layerControl{
+    position:absolute;
+    min-width:120px;
+    max-height:300px;
+    padding: 2px; 
+    right:1px;  
+    bottom:1px;
+    z-index:2001;   /*在地图容器中的层，要设置z-index的值让其显示在地图上层*/
+    background-color:#F2F2F2;
+    border-width: 8px;    /*边缘的宽度*/
+    border-radius: 8px;    /*圆角的大小 */ 
+    border:1px solid #404040;
+}
+
+.layerControl .title {
+    font-weight:bold;
+    font-size:15px;
+    margin:10px;
+    border-bottom: 1px solid #CCC;
+}
+
+.layerControl .list {
+    height:170px;
+    overflow-y: auto;
+}
+
+.layerTree {
+	padding:0;
+	margin:0;
+}
+
+.layerTree li {
+     list-style:none; 
+     margin:5px 10px; 
+}
+
+/* 鼠标位置控件层样式设置 */
+.mouse-position {
+	position: absolute;
+	display:block;
+	bottom: 30px;
+	font-size: 20px;
+	left: 20px;
+	height: 20px;
+	padding: 5px 5px 10px 5px;
+	background-color: #CCCCCC80;
+	z-index: 2000; /*在地图容器中的层，要设置z-index的值让其显示在地图上层*/
+}
+
+.zoom-buttom {
+	position: absolute;
+	display:block;
+	top: 20px;
+	font-size: 20px;
+	left: 20px;
+	width: 30px;
+	height: 40px;
+	z-index: 2000; /*在地图容器中的层，要设置z-index的值让其显示在地图上层*/
+}
+
+.zoom-buttom button {
+	padding: 3px 5px;
+	margin-bottom: 2px;
+}
+
+/* 鼠标位置信息自定义样式设置 */
+.custom-mouse-position {
+	color: Red;
+	font-size: 16px;
+	font-family: "微软雅黑";
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.og-hover {
+    cursor: pointer;
+}
+
+.og-tooltip {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0,0,0,.65);
+    font-size: 14px;
+    line-height: 1.5;
+    list-style: none;
+    position: absolute;
+    display: none;
+    z-index: 110;
+}
+.og-tooltip-placement-top{
+    padding-bottom: 8px;
+    transform: translateX(-50%) translateY(-100%);
+}
+.og-tooltip-placement-bottom{
+    padding-top: 8px;
+    transform: translateX(-50%);
+}
+.og-tooltip-text {
+    min-width: 30px;
+    padding: 6px 8px;
+    color: rgba(0,0,0,.65);
+    text-align: left;
+    text-decoration: none;
+    word-wrap: break-word;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+.og-tooltip-arrow {
+    position: absolute;
+    display: block;
+    width: 13px;
+    height: 13px;
+    overflow: hidden;
+    background: transparent;
+    pointer-events: none;
+}
+.og-tooltip-arrow-placement-top{
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+}
+.og-tooltip-arrow-placement-bottom{
+    left: 50%;
+    transform: translateX(-50%);
+    top: -5px;
+}
+.og-tooltip-arrow:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin: auto;
+    background-color: #fff;
+    content: "";
+    pointer-events: auto;
+}
+.og-tooltip-arrow-placement-top:before {
+     box-shadow: 3px 3px 7px rgba(0, 0, 0, .07);
+     transform: translateY(-6.53px) rotate(45deg);
+ }
+.og-tooltip-arrow-placement-bottom:before {
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, .07);
+    transform: translateY(6.53px) rotate(-45deg);
+}

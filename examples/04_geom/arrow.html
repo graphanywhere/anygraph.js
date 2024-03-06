@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+    <title>箭头</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+
+    <script>
+        var pageTitle = "AnyGraph内置点类型";
+        var pageDesc = "显示AnyGraph内置点类型";
+    </script>
+
+    <script type="module">
+        import Arrow from "../../src/renderer/arrow.js";
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // 从页面中获取画板对象
+            let canvas = document.getElementById('canvas');
+
+            // 从画板中获取“2D渲染上下文”对象
+            let ctx = canvas.getContext('2d');
+            ctx.strokeStyle = "#000000";
+
+            // 绘制箭头
+            let arrow = new Arrow();
+            for (let i = 0; i < 10; i += 1) {
+                arrow.triangleSolid(ctx, { x: 100 * (i + 1), y: 50 * 1, rotation: i * 20 });
+                drawCircle(ctx, 100 * (i + 1), 50 * 1);
+                arrow.triangle(ctx, { x: 100 * (i + 1), y: 50 * 2, rotation: i * 20 });
+                drawCircle(ctx, 100 * (i + 1), 50 * 2);
+                arrow.circleSolid(ctx, { x: 100 * (i + 1), y: 50 * 3, rotation: i * 20 });
+                drawCircle(ctx, 100 * (i + 1), 50 * 3);
+                arrow.circle(ctx, { x: 100 * (i + 1), y: 50 * 4, rotation: i * 20 });
+                drawCircle(ctx, 100 * (i + 1), 50 * 4);
+                arrow.diamondSolid(ctx, { x: 100 * (i + 1), y: 50 * 5, rotation: i * 20 });
+                drawCircle(ctx, 100 * (i + 1), 50 * 5);
+                arrow.diamond(ctx, { x: 100 * (i + 1), y: 50 * 6, rotation: i * 20 });
+                drawCircle(ctx, 100 * (i + 1), 50 * 6);
+                arrow.line(ctx, { x: 100 * (i + 1), y: 50 * 7, rotation: i * 20 });
+                drawCircle(ctx, 100 * (i + 1), 50 * 7);
+                arrow.lineUp(ctx, { x: 100 * (i + 1), y: 50 * 8, rotation: i * 20 });
+                drawCircle(ctx, 100 * (i + 1), 50 * 8);
+                arrow.lineDown(ctx, { x: 100 * (i + 1), y: 50 * 9, rotation: i * 20 });
+                drawCircle(ctx, 100 * (i + 1), 50 * 9);
+            }
+        });
+
+        function drawCircle(ctx, x, y) {
+            ctx.save()
+            ctx.beginPath();
+            ctx.arc(x, y, 2, 0, 2 * Math.PI);
+            ctx.fillStyle = "red";
+            ctx.fill();
+            ctx.restore();
+        }
+    </script>
+</head>
+
+<body>
+    <div style="margin-left:0px;">
+        <canvas id="canvas" width="1200px" height="500px" style="background-color:white; border: 2px #CCCCCC solid"></canvas>
+    </div>
+</body>
+
+</html>

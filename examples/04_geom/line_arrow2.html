@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>绘制基本图形(箭头样式)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/data_box.js"></script>
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "箭头";
+        var pageDesc = "显示AnyGraph内置箭头";
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:900px; height:400px; border:solid 1px #CCC;"></div>
+    <h3>Data</h3>
+    <div id="divData" style="height: 200px;"></div>
+</body>
+<script>
+    let graph;
+</script>
+<script type="module">
+    import { Graph, Polyline, Circle, BgUtil } from "../../src/index.js";
+
+    // graph对象
+    graph = new Graph({
+        "target": "graphWrapper",
+        "mouse": true
+    });
+
+    // 新建图层
+    let layer = graph.addLayer();
+    BgUtil.generateGrid(Object.assign({ "interval": 10, "graph":graph }, graph.getSize()));
+
+    // 左侧：双向箭头
+    layer.getSource().add(new Polyline({ "coords": [[50, 50], [350, 350]], "style": { "lineWidth": 4 }, "startArrowType": 1, "endArrowType": 1 }));
+    layer.getSource().add(new Polyline({ "coords": [[50, 350], [350, 50]], "style": { "lineWidth": 4 }, "startArrowType": 1, "endArrowType": 1 }));
+    layer.getSource().add(new Polyline({ "coords": [[50, 200], [350, 200]], "style": { "lineWidth": 4 }, "startArrowType": 1, "endArrowType": 1 }));
+    layer.getSource().add(new Polyline({ "coords": [[200, 50], [200, 350]], "style": { "lineWidth": 4 }, "startArrowType": 1, "endArrowType": 1 }));
+
+    // 右侧
+    layer.getSource().add(new Polyline({ "coords": [[450, 50], [850, 50]], "style": { "lineWidth": 2 }, "startArrowType": 1 }));
+    layer.getSource().add(new Polyline({ "coords": [[450, 100], [850, 100]], "style": { "lineWidth": 2 }, "endArrowType": 1 }));
+    layer.getSource().add(new Polyline({ "coords": [[450, 150], [850, 150]], "style": { "lineWidth": 2 }, "startArrowType": 2, "endArrowType": 3 }));
+    layer.getSource().add(new Polyline({ "coords": [[450, 200], [850, 200]], "style": { "lineWidth": 2 }, "startArrowType": 3, "endArrowType": 1 }));
+    layer.getSource().add(new Polyline({ "coords": [[450, 250], [850, 250]], "style": { "lineWidth": 2 }, "startArrowType": 1, "endArrowType": 2}));
+    layer.getSource().add(new Polyline({ "coords": [[450, 300], [850, 300]], "style": { "lineWidth": 2 }, "startArrowType": 9, "endArrowType": 9 }));
+    
+    graph.render();
+</script>
+
+</html>

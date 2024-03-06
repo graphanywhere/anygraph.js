@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>图案填充</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+	<link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "图案填充";
+        var pageDesc = "使用图案填充效果填充文字";
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:850px; height:400px; border:solid 1px #CCC;"></div>
+</body>
+<script type="module">
+    import {
+        Graph, Layer, VectorSource, BgUtil, ImageObject, Pattern, Text
+    } from "../../src/index.js";
+
+    // graph对象
+    let graph = new Graph({
+        "target": "graphWrapper"
+    });
+
+    // 网格水印层
+    let bgLayer = BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+
+    // 新建绘图图层
+    let layer = graph.addLayer();
+    let image = new ImageObject("../images/bg_06.jpg", function(){
+        let pattern = new Pattern({ "type": "image", "image": image });
+        layer.getSource().add(new Text({
+            "text": "图形开发",
+            "x": graph.getSize().width / 2,
+            "y": graph.getSize().height / 2,
+            "style": { "lineWidth": 4, "fillStyle": 0, "fillColor": pattern, "fontSize": 200, "fontName": "黑体", "textAlign": "center", "textBaseline": "middle" }
+        }));
+    });
+</script>
+
+</html>

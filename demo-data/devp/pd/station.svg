@@ -1,0 +1,1828 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1402" height="884" viewBox="0 0 1402 884" coordinateExtent="12.606245 -9.794001 40.646702 7.894000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  xmlns:cge="http://iec.ch/TC57/2005/SVG-schema#" preserveAspectRatio="xMidYMid">
+	<defs>
+<style type="text/css">
+<![CDATA[
+.lkv220 {fill:none;stroke:rgb(69,45,210);stroke-width:6.000000}
+.kv220 {fill:rgb(69,45,210);stroke:rgb(69,45,210);stroke-width:2}
+.lkv110 {fill:none;stroke:rgb(204,0,0);stroke-width:6.000000}
+.kv110 {fill:rgb(204,0,0);stroke:rgb(204,0,0);stroke-width:2}
+.lkv10 {fill:none;stroke:rgb(0,128,0);stroke-width:6.000000}
+.kv10 {fill:rgb(0,128,0);stroke:rgb(0,128,0);stroke-width:2}
+.char {fill:rgb(0,0,255);font-family:'SimSun';stroke-width:1}
+.buskv110 {fill:none;stroke:rgb(204,0,0);stroke-width:9.000000}
+.buskv220 {fill:none;stroke:rgb(69,45,210);stroke-width:9.000000}
+.buskv10 {fill:none;stroke:rgb(0,128,0);stroke-width:9.000000}
+.lv380 {fill:none;stroke:rgb(255,0,255);stroke-width:6.000000}
+.v380 {fill:rgb(255,0,255);stroke:rgb(255,0,255);stroke-width:2}
+.busv380 {fill:none;stroke:rgb(255,0,255);stroke-width:9.000000}
+.jxtdl {fill:none;stroke:rgb(255,128,0);stroke-width:6.000000}
+.lkv35 {fill:none;stroke:rgb(255,128,0);stroke-width:6.000000}
+.kv35 {fill:rgb(255,128,0);stroke:rgb(255,128,0);stroke-width:2}
+.buskv35 {fill:none;stroke:rgb(255,128,0);stroke-width:9.000000}
+.lkv500 {fill:none;stroke:rgb(128,64,0);stroke-width:6.000000}
+.kv500 {fill:rgb(128,64,0);stroke:rgb(128,64,0);stroke-width:2}
+.buskv500 {fill:none;stroke:rgb(128,64,0);stroke-width:9.000000}
+.buskv6 {fill:none;stroke:rgb(147,158,0);stroke-width:9.000000}
+.lkv6 {fill:none;stroke:rgb(147,158,0);stroke-width:6.000000}
+.kv6 {fill:rgb(147,158,0);stroke:rgb(147,158,0);stroke-width:2}
+]]>
+</style>
+<!-- 定义端子位置 -->
+<symbol id="terminal" >
+	<circle style="fill:none" stroke="rgb(0,200,255)" stroke-width="0.02" cx="0" cy="0" r="0.08"/>
+</symbol>
+		<symbol id="Compensator_50200" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="19.000000" y1="22.000000" x2="31.000000" y2="22.000000"  />
+			<line fill="none" stroke="4343993" x1="19.000000" y1="28.000000" x2="31.000000" y2="28.000000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="22.000000" x2="25.000000" y2="9.999999"  />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="9.999999" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="28.000000" terminal-index="2" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="SurgeArrester_50180" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="25.000000" y1="28.250000" x2="25.000000" y2="35.000000"  />
+			<rect stroke-width="1" fill="none" stroke="4343993"  x="22.000000" y="16.250000" width="6.000000" height="12.000000" transform="rotate(-0.000000,25.000000,22.250000)"  />
+			<polygon fill="4343993" stroke="4343993"  points="25.000000,22.250000 25.750000,20.000000 24.250000,20.000000 " />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="8.750000" x2="25.000000" y2="22.250000"  />
+			<line fill="none" stroke="4343993" x1="19.000000" y1="35.000000" x2="31.000000" y2="35.000000"  />
+			<line fill="none" stroke="4343993" x1="21.500000" y1="38.000000" x2="28.500000" y2="38.000000"  />
+			<line fill="none" stroke="4343993" x1="22.500000" y1="41.000000" x2="27.500000" y2="41.000000"  />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="8.750000" terminal-index="1" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="Fuse_50160@1" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="25.000000" y1="28.500000" x2="21.000000" y2="16.500000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="12.000000" x2="25.000000" y2="16.500000"  />
+			<rect stroke-width="1" fill="none" stroke="4343993"  x="21.329050" y="17.703199" width="3.500000" height="10.000000" transform="rotate(-18.434974,23.079050,22.703199)"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="28.500000" x2="25.000000" y2="34.500000"  />
+			<line fill="none" stroke="4343993" x1="21.000000" y1="16.500000" x2="29.000000" y2="16.500000"  />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="12.000000" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="34.500000" terminal-index="2" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="Fuse_50160@0" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="25.000000" y1="28.500000" x2="15.000000" y2="18.500000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="12.000000" x2="25.000000" y2="16.500000"  />
+			<line fill="none" stroke="4343993" x1="21.000000" y1="16.500000" x2="29.000000" y2="16.500000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="28.500000" x2="25.000000" y2="34.500000"  />
+			<rect stroke-width="1" fill="none" stroke="4343993"  x="18.634150" y="18.724701" width="3.500000" height="10.000000" transform="rotate(134.591801,20.384150,23.724701)"  />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="12.000000" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="34.500000" terminal-index="2" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="CompositeSwitch_50150@1" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="25.000000" y1="0.000000" x2="25.000000" y2="5.000000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="13.000000" x2="23.000000" y2="5.000000"  />
+			<circle fill="none" cx="25.000000" cy="6.500000" r="1.500000" />
+			<rect stroke-width="1" fill="none" stroke="4343993"  x="23.500000" y="27.500000" width="3.000000" height="7.000000" transform="rotate(-0.000000,25.000000,31.000000)"  />
+			<path fill="none" stroke="4343993" d="M 26.500000 31.000000 L 33.000000 31.000000 L 33.000000 9.000000 L 17.000000 9.000000 L 17.000000 30.500000" />
+			<polygon fill="none" stroke="4343993"  points="16.250000,30.000000 16.250000,33.000000 18.750000,31.500000 " />
+			<line fill="none" stroke="4343993" x1="15.000000" y1="11.000000" x2="15.000000" y2="15.000000"  />
+			<line fill="none" stroke="4343993" x1="15.000000" y1="13.000000" x2="9.999999" y2="13.000000"  />
+			<line fill="none" stroke="4343993" x1="9.999999" y1="9.000000" x2="9.999999" y2="17.000000"  />
+			<line fill="none" stroke="4343993" x1="8.500000" y1="10.500000" x2="8.500000" y2="15.500000"  />
+			<line fill="none" stroke="4343993" x1="7.000000" y1="11.499999" x2="7.000000" y2="14.500000"  />
+			<line fill="none" stroke="4343993" x1="17.000000" y1="32.500000" x2="17.000000" y2="38.500000"  />
+			<line fill="none" stroke="4343993" x1="15.000000" y1="40.500000" x2="9.999999" y2="40.500000"  />
+			<line fill="none" stroke="4343993" x1="9.999999" y1="36.500000" x2="9.999999" y2="44.500000"  />
+			<line fill="none" stroke="4343993" x1="8.500000" y1="38.000000" x2="8.500000" y2="43.000000"  />
+			<line fill="none" stroke="4343993" x1="15.000000" y1="40.500000" x2="19.000000" y2="36.500000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="13.000000" x2="25.000000" y2="45.000000"  />
+			<line fill="none" stroke="4343993" x1="7.000000" y1="39.000000" x2="7.000000" y2="42.000000"  />
+			<line fill="none" stroke="4343993" x1="22.500000" y1="5.000000" x2="27.500000" y2="5.000000"  />
+			<line fill="none" stroke="4343993" x1="19.000000" y1="38.500000" x2="19.000000" y2="42.500000"  />
+			<line fill="none" stroke="4343993" x1="19.000000" y1="40.500000" x2="25.000000" y2="40.500000"  />
+			<circle fill="4343993"  cx="19.000000" cy="6.500000" r="0.500000" />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="0.000000" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="45.000000" terminal-index="2" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="CompositeSwitch_50150@0" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="25.000000" y1="0.000000" x2="25.000000" y2="5.000000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="13.000000" x2="19.000000" y2="6.500000"  />
+			<circle fill="none" cx="25.000000" cy="6.500000" r="1.500000" />
+			<rect stroke-width="1" fill="none" stroke="4343993"  x="23.500000" y="27.500000" width="3.000000" height="7.000000" transform="rotate(-0.000000,25.000000,31.000000)"  />
+			<path fill="none" stroke="4343993" d="M 26.500000 31.000000 L 33.000000 31.000000 L 33.000000 9.000000 L 17.000000 9.000000 L 17.000000 30.500000" />
+			<polygon fill="none" stroke="4343993"  points="16.250000,30.000000 16.250000,33.000000 18.750000,31.500000 " />
+			<line fill="none" stroke="4343993" x1="15.000000" y1="11.000000" x2="15.000000" y2="15.000000"  />
+			<line fill="none" stroke="4343993" x1="15.000000" y1="13.000000" x2="9.999999" y2="13.000000"  />
+			<line fill="none" stroke="4343993" x1="9.999999" y1="9.000000" x2="9.999999" y2="17.000000"  />
+			<line fill="none" stroke="4343993" x1="8.500000" y1="10.500000" x2="8.500000" y2="15.500000"  />
+			<line fill="none" stroke="4343993" x1="7.000000" y1="11.499999" x2="7.000000" y2="14.500000"  />
+			<line fill="none" stroke="4343993" x1="17.000000" y1="32.500000" x2="17.000000" y2="38.500000"  />
+			<line fill="none" stroke="4343993" x1="15.000000" y1="40.500000" x2="9.999999" y2="40.500000"  />
+			<line fill="none" stroke="4343993" x1="9.999999" y1="36.500000" x2="9.999999" y2="44.500000"  />
+			<line fill="none" stroke="4343993" x1="8.500000" y1="38.000000" x2="8.500000" y2="43.000000"  />
+			<line fill="none" stroke="4343993" x1="15.000000" y1="40.500000" x2="19.000000" y2="36.500000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="13.000000" x2="25.000000" y2="45.000000"  />
+			<line fill="none" stroke="4343993" x1="7.000000" y1="39.000000" x2="7.000000" y2="42.000000"  />
+			<line fill="none" stroke="4343993" x1="22.500000" y1="5.000000" x2="27.500000" y2="5.000000"  />
+			<line fill="none" stroke="4343993" x1="19.000000" y1="38.500000" x2="19.000000" y2="42.500000"  />
+			<line fill="none" stroke="4343993" x1="19.000000" y1="40.500000" x2="25.000000" y2="40.500000"  />
+			<circle fill="4343993"  cx="19.000000" cy="6.500000" r="0.500000" />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="0.000000" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="45.000000" terminal-index="2" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="CompositeSwitch_50150@2" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="25.000000" y1="0.000000" x2="25.000000" y2="5.000000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="13.000000" x2="15.000000" y2="13.000000"  />
+			<circle fill="none" cx="25.000000" cy="6.500000" r="1.500000" />
+			<rect stroke-width="1" fill="none" stroke="4343993"  x="23.500000" y="27.500000" width="3.000000" height="7.000000" transform="rotate(-0.000000,25.000000,31.000000)"  />
+			<path fill="none" stroke="4343993" d="M 26.500000 31.000000 L 33.000000 31.000000 L 33.000000 9.000000 L 17.000000 9.000000 L 17.000000 30.500000" />
+			<polygon fill="none" stroke="4343993"  points="16.250000,30.000000 16.250000,33.000000 18.750000,31.500000 " />
+			<line fill="none" stroke="4343993" x1="15.000000" y1="11.000000" x2="15.000000" y2="15.000000"  />
+			<line fill="none" stroke="4343993" x1="15.000000" y1="13.000000" x2="9.999999" y2="13.000000"  />
+			<line fill="none" stroke="4343993" x1="9.999999" y1="9.000000" x2="9.999999" y2="17.000000"  />
+			<line fill="none" stroke="4343993" x1="8.500000" y1="10.500000" x2="8.500000" y2="15.500000"  />
+			<line fill="none" stroke="4343993" x1="7.000000" y1="11.499999" x2="7.000000" y2="14.500000"  />
+			<line fill="none" stroke="4343993" x1="17.000000" y1="32.500000" x2="17.000000" y2="40.500000"  />
+			<line fill="none" stroke="4343993" x1="15.000000" y1="40.500000" x2="9.999999" y2="40.500000"  />
+			<line fill="none" stroke="4343993" x1="9.999999" y1="36.500000" x2="9.999999" y2="44.500000"  />
+			<line fill="none" stroke="4343993" x1="8.500000" y1="38.000000" x2="8.500000" y2="43.000000"  />
+			<line fill="none" stroke="4343993" x1="15.000000" y1="40.500000" x2="25.000000" y2="40.500000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="13.000000" x2="25.000000" y2="45.000000"  />
+			<line fill="none" stroke="4343993" x1="7.000000" y1="39.000000" x2="7.000000" y2="42.000000"  />
+			<line fill="none" stroke="4343993" x1="22.500000" y1="5.000000" x2="27.500000" y2="5.000000"  />
+			<line fill="none" stroke="4343993" x1="19.000000" y1="38.500000" x2="19.000000" y2="42.500000"  />
+			<circle fill="4343993"  cx="19.000000" cy="6.500000" r="0.500000" />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="0.000000" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="45.000000" terminal-index="2" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="Transformer_23290" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<polygon fill="none" stroke="rgb(0,128,0)"  points="25.000000,15.000001 21.250000,21.500000 28.750000,21.500000 " />
+			<circle fill="none" stroke="rgb(0,128,0)" stroke_width ="1" cx="25.000000" cy="19.000000" r="8.000000" />
+			<line fill="none" stroke="rgb(255,0,255)" stroke_width ="1" x1="25.000000" y1="35.000000" x2="25.000000" y2="31.000000"  />
+			<line fill="none" stroke="rgb(255,0,255)" stroke_width ="1" x1="25.000000" y1="31.000000" x2="28.500000" y2="29.000000"  />
+			<line fill="none" stroke="rgb(255,0,255)" stroke_width ="1" x1="25.000000" y1="31.000000" x2="21.500000" y2="29.000000"  />
+			<circle fill="none" stroke="rgb(255,0,255)" stroke_width ="1" cx="25.000000" cy="31.000000" r="8.000000" />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="11.000000" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="39.000000" terminal-index="2" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="31.000000" terminal-index="3" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="Junction_22020" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<circle fill="4343993" cx="25.000000" cy="25.000000" r="25.000000" />
+			<!-- 定义端子位置 -->
+		</symbol>
+		<symbol id="Junction_20810" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="25.000000" y1="24.100000" x2="25.000000" y2="21.250000"  />
+			<polygon fill="4343993" stroke="4343993"  points="23.500000,24.000000 24.997101,26.556250 26.500000,24.000000 " />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="21.250000" terminal-index="1" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="LoadBreakSwitch_20350@1" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="25.000000" y1="20.000000" x2="25.000000" y2="9.999999"  />
+			<line fill="none" stroke="4343993" x1="21.000000" y1="20.000000" x2="29.000000" y2="20.000000"  />
+			<circle fill="none" cx="25.000000" cy="22.000000" r="2.000000" />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="32.000000" x2="25.000000" y2="40.000000"  />
+			<line fill="none" stroke="4343993" x1="22.500000" y1="20.000000" x2="25.000000" y2="32.000000"  />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="9.999999" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="40.000000" terminal-index="2" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="LoadBreakSwitch_20350@0" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="25.000000" y1="20.000000" x2="25.000000" y2="9.999999"  />
+			<line fill="none" stroke="4343993" x1="21.000000" y1="20.000000" x2="29.000000" y2="20.000000"  />
+			<circle fill="none" cx="25.000000" cy="22.000000" r="2.000000" />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="32.000000" x2="25.000000" y2="40.000000"  />
+			<line fill="none" stroke="4343993" x1="17.500000" y1="22.500000" x2="25.000000" y2="32.000000"  />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="9.999999" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="40.000000" terminal-index="2" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="CompositeSwitch_20240@1" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="17.000000" y1="21.999998" x2="17.000002" y2="27.999998"  />
+			<line fill="none" stroke="4343993" x1="17.000000" y1="24.999998" x2="9.000000" y2="25.000000"  />
+			<line fill="none" stroke="4343993" x1="8.999998" y1="19.000002" x2="9.000002" y2="31.000000"  />
+			<line fill="none" stroke="4343993" x1="7.000000" y1="21.000002" x2="7.000002" y2="29.000002"  />
+			<line fill="none" stroke="4343993" x1="5.000002" y1="23.000002" x2="5.000002" y2="27.000002"  />
+			<circle fill="4343993"  cx="19.000000" cy="20.500000" r="0.500000" />
+			<circle fill="none" cx="24.986151" cy="21.250000" r="2.263850" />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="9.000000" x2="25.000000" y2="19.000000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="31.000000" x2="25.000000" y2="39.000000"  />
+			<line fill="none" stroke="4343993" x1="22.000000" y1="18.750000" x2="25.000000" y2="31.000000"  />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="9.000000" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="39.000000" terminal-index="2" type="0" xlink:href="#terminal"/>
+			<use x="19.000000" y="20.500000" terminal-index="3" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="CompositeSwitch_20240@0" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="25.000000" y1="31.000000" x2="25.000000" y2="39.000000"  />
+			<line fill="none" stroke="4343993" x1="17.000000" y1="21.999998" x2="17.000002" y2="27.999998"  />
+			<line fill="none" stroke="4343993" x1="17.000000" y1="24.999998" x2="9.000000" y2="25.000000"  />
+			<line fill="none" stroke="4343993" x1="8.999998" y1="19.000002" x2="9.000002" y2="31.000000"  />
+			<line fill="none" stroke="4343993" x1="7.000000" y1="21.000002" x2="7.000002" y2="29.000002"  />
+			<line fill="none" stroke="4343993" x1="5.000002" y1="23.000002" x2="5.000002" y2="27.000002"  />
+			<line fill="none" stroke="4343993" x1="19.000000" y1="20.500000" x2="25.000000" y2="31.000000"  />
+			<circle fill="4343993"  cx="19.000000" cy="20.500000" r="0.500000" />
+			<circle fill="none" cx="24.986151" cy="21.250000" r="2.263850" />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="9.000000" x2="25.000000" y2="19.000000"  />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="9.000000" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="39.000000" terminal-index="2" type="0" xlink:href="#terminal"/>
+			<use x="19.000000" y="20.500000" terminal-index="3" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="CompositeSwitch_20240@2" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="17.000000" y1="21.999998" x2="17.000002" y2="27.999998"  />
+			<line fill="none" stroke="4343993" x1="17.000000" y1="24.999998" x2="9.000000" y2="25.000000"  />
+			<line fill="none" stroke="4343993" x1="8.999998" y1="19.000002" x2="9.000002" y2="31.000000"  />
+			<line fill="none" stroke="4343993" x1="7.000000" y1="21.000002" x2="7.000002" y2="29.000002"  />
+			<line fill="none" stroke="4343993" x1="5.000002" y1="23.000002" x2="5.000002" y2="27.000002"  />
+			<line fill="none" stroke="4343993" x1="25.000002" y1="30.999996" x2="16.750000" y2="21.749998"  />
+			<circle fill="4343993"  cx="19.000000" cy="20.500000" r="0.500000" />
+			<circle fill="none" cx="24.986151" cy="21.250000" r="2.263850" />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="9.000000" x2="25.000000" y2="19.000000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="31.000000" x2="25.000000" y2="39.000000"  />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="9.000000" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="39.000000" terminal-index="2" type="0" xlink:href="#terminal"/>
+			<use x="19.000000" y="20.500000" terminal-index="3" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="CompositeSwitch_20120@1" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="25.000000" y1="17.500000" x2="25.000000" y2="13.000000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="37.000000" x2="25.000000" y2="32.500000"  />
+			<rect stroke-width="1" fill="4343993" stroke="4343993"  x="22.000000" y="17.500000" width="6.000001" height="15.000001" transform="rotate(-0.000007,25.000000,25.000000)"  />
+			<path fill="none" stroke="4343993" d="M 22.000000 13.000000 L 25.000000 10.000001 L 28.000000 13.000000" />
+			<path fill="none" stroke="4343993" d="M 22.000000 10.000001 L 25.000000 7.000000 L 28.000000 10.000001" />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="7.000000" x2="25.000000" y2="13.000000"  />
+			<path fill="none" stroke="4343993" d="M 28.000000 37.000000 L 24.999998 40.000000 L 22.000000 37.000000" />
+			<path fill="none" stroke="4343993" d="M 28.000000 40.000000 L 24.999998 43.000000 L 22.000000 40.000000" />
+			<line fill="none" stroke="4343993" x1="24.999998" y1="43.000000" x2="25.000000" y2="37.000000"  />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="7.000000" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="43.000000" terminal-index="2" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="CompositeSwitch_20120@0" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="25.000000" y1="17.500000" x2="25.000000" y2="13.000000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="37.000000" x2="25.000000" y2="32.500000"  />
+			<rect stroke-width="1" fill="none" stroke="4343993"  x="22.000000" y="17.500000" width="6.000001" height="15.000001" transform="rotate(-0.000007,25.000000,25.000000)"  />
+			<path fill="none" stroke="4343993" d="M 22.000000 13.000000 L 25.000000 10.000001 L 28.000000 13.000000" />
+			<path fill="none" stroke="4343993" d="M 22.000000 10.000001 L 25.000000 7.000000 L 28.000000 10.000001" />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="7.000000" x2="25.000000" y2="13.000000"  />
+			<path fill="none" stroke="4343993" d="M 28.000000 37.000000 L 24.999998 40.000000 L 22.000000 37.000000" />
+			<path fill="none" stroke="4343993" d="M 28.000000 40.000000 L 24.999998 43.000000 L 22.000000 40.000000" />
+			<line fill="none" stroke="4343993" x1="24.999998" y1="43.000000" x2="25.000000" y2="37.000000"  />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="7.000000" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="43.000000" terminal-index="2" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="CompositeSwitch_20120@2" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<line fill="none" stroke="4343993" x1="25.000000" y1="17.500000" x2="25.000000" y2="13.000000"  />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="37.000000" x2="25.000000" y2="32.500000"  />
+			<rect stroke-width="1" fill="none" stroke="4343993"  x="22.000000" y="17.500000" width="6.000001" height="15.000001" transform="rotate(-0.000007,25.000000,25.000000)"  />
+			<path fill="none" stroke="4343993" d="M 22.000000 10.000001 L 25.000000 13.000000 L 28.000000 10.000001" />
+			<path fill="none" stroke="4343993" d="M 22.000000 7.000000 L 25.000000 10.000001 L 28.000000 7.000000" />
+			<line fill="none" stroke="4343993" x1="25.000000" y1="10.000001" x2="25.000000" y2="13.000000"  />
+			<path fill="none" stroke="4343993" d="M 28.000000 40.000000 L 25.000000 37.000000 L 22.000000 40.000000" />
+			<path fill="none" stroke="4343993" d="M 28.000002 43.000000 L 25.000002 40.000000 L 22.000002 43.000000" />
+			<line fill="none" stroke="4343993" x1="25.000002" y1="40.000000" x2="25.000000" y2="37.000000"  />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="9.999999" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="40.000000" terminal-index="2" type="0" xlink:href="#terminal"/>
+		</symbol>
+		<symbol id="CompositeSwitch_20120@3" viewBox="0.000000 0.000000 50.000000 50.000000">
+			<path fill="none" stroke="4343993" d="M 25.500000 10.500000 L 28.000000 13.000000 L 25.500000 15.500000" />
+			<path fill="none" stroke="4343993" d="M 22.000000 10.000001 L 25.000000 7.000000 L 28.000000 10.000001" />
+			<line fill="none" stroke="4343993" x1="22.000000" y1="13.000000" x2="28.000000" y2="13.000000"  />
+			<path fill="none" stroke="4343993" d="M 25.500000 34.500000 L 28.000000 37.000000 L 25.500000 39.500000" />
+			<line fill="none" stroke="4343993" x1="22.000000" y1="37.000000" x2="28.000000" y2="37.000000"  />
+			<path fill="none" stroke="4343993" d="M 22.000000 40.000000 L 25.000000 43.000000 L 28.000000 40.000000" />
+			<rect stroke-width="1" fill="none" stroke="4343993"  x="22.000000" y="17.500000" width="6.000000" height="15.000001" transform="rotate(-0.000000,25.000000,25.000000)"  />
+			<!-- 定义端子位置 -->
+			<use x="25.000000" y="7.000000" terminal-index="1" type="0" xlink:href="#terminal"/>
+			<use x="25.000000" y="43.000000" terminal-index="2" type="0" xlink:href="#terminal"/>
+		</symbol>
+	</defs>
+<g id="BackGround_Layer">
+<rect x="0" y="0" width="1402" height="884" fill="rgb(0,0,0)" src_x1="12.606245" src_y1="-9.794001" src_x2="40.646702" src_y2="7.894000" title="(null)" />
+</g>
+<g id="CompositeSwitch_Layer">
+		<g id="CS-105150-184549393-5900010f" >
+				<use class="kv10" x="764.675232" y="119.624046" width="99.998367" height="99.998367" transform="rotate(-179.999991,814.674438,169.623230) " xlink:href="#CompositeSwitch_20240@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-184549393-5900010f" ObjectName="友绿配电站5进出线负荷开关" PSRType="30500099" GlobeID="09M01240080014731" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549588-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549554-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-184549395-5900010f" >
+				<use class="kv10" x="839.674072" y="99.622208" width="149.997559" height="149.997559" transform="rotate(-179.999991,914.672852,174.620987) " xlink:href="#CompositeSwitch_50150@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-184549395-5900010f" ObjectName="语芙配电站2进出线负荷开关" PSRType="30500099" GlobeID="09M01240080014734" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549587-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549610-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-184549397-5900010f" >
+				<use class="kv10" x="944.672363" y="99.622208" width="149.997559" height="149.997559" transform="rotate(-179.999991,1019.671143,174.620987) " xlink:href="#CompositeSwitch_50150@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-184549397-5900010f" ObjectName="语芙配电站4进出线负荷开关" PSRType="30500099" GlobeID="09M01240080014735" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549855-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549856-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-184549399-5900010f" >
+				<use class="kv10" x="1049.670532" y="99.622208" width="149.997559" height="149.997559" transform="rotate(-179.999991,1124.669312,174.620987) " xlink:href="#CompositeSwitch_50150@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-184549399-5900010f" ObjectName="语芙配电站6进出线负荷开关" PSRType="30500099" GlobeID="09M01240080017727" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549589-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549613-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-184549401-5900010f" >
+				<use class="kv10" x="1154.668823" y="99.622208" width="149.997559" height="149.997559" transform="rotate(-179.999991,1229.667603,174.620987) " xlink:href="#CompositeSwitch_50150@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-184549401-5900010f" ObjectName="语芙配电站8进出线负荷开关" PSRType="30500099" GlobeID="09M01240080017728" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549863-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549864-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-184549403-5900010f" >
+				<use class="kv10" x="834.674072" y="259.549835" width="149.997559" height="149.997559" transform="rotate(-0.000000,909.672852,334.548615) " xlink:href="#CompositeSwitch_50150@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-184549403-5900010f" ObjectName="语芙配电站AB5负荷开关" PSRType="30500099" GlobeID="09M01240080014729" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549553-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549562-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-184549406-5900010f" >
+				<use class="kv10" x="394.681335" y="259.549835" width="149.997559" height="149.997559" transform="rotate(-0.000000,469.680115,334.548615) " xlink:href="#CompositeSwitch_50150@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-184549406-5900010f" ObjectName="语芙配电站AB4负荷开关" PSRType="30500099" GlobeID="09M01240080014728" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549558-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549611-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-184549408-5900010f" >
+				<use class="kv10" x="519.679260" y="114.626320" width="99.998367" height="99.998367" transform="rotate(-179.999991,569.678467,164.625504) " xlink:href="#CompositeSwitch_20240@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-184549408-5900010f" ObjectName="友绿配电站4进出线负荷开关" PSRType="30500099" GlobeID="09M01240080014730" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549557-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549556-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-184549410-5900010f" >
+				<use class="kv10" x="399.681274" y="94.624481" width="149.997559" height="149.997559" transform="rotate(-179.999991,474.680054,169.623260) " xlink:href="#CompositeSwitch_50150@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-184549410-5900010f" ObjectName="语芙配电站1进出线负荷开关" PSRType="30500099" GlobeID="09M01240080014732" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549552-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549559-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-184549412-5900010f" >
+				<use class="kv10" x="294.682953" y="94.624481" width="149.997559" height="149.997559" transform="rotate(-179.999991,369.681732,169.623260) " xlink:href="#CompositeSwitch_50150@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-184549412-5900010f" ObjectName="语芙配电站3进出线负荷开关" PSRType="30500099" GlobeID="09M01240080014733" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549560-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549563-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-184549414-5900010f" >
+				<use class="kv10" x="189.684631" y="94.624481" width="149.997559" height="149.997559" transform="rotate(-179.999991,264.683411,169.623260) " xlink:href="#CompositeSwitch_50150@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-184549414-5900010f" ObjectName="语芙配电站5进出线负荷开关" PSRType="30500099" GlobeID="09M01240080017725" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549839-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549840-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-184549416-5900010f" >
+				<use class="kv10" x="84.686340" y="94.624481" width="149.997559" height="149.997559" transform="rotate(-179.999991,159.685120,169.623260) " xlink:href="#CompositeSwitch_50150@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-184549416-5900010f" ObjectName="语芙配电站7进出线负荷开关" PSRType="30500099" GlobeID="09M01240080017726" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549847-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549848-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210018539-5c276a00" >
+				<use class="v380" x="379.681488" y="664.377563" width="99.998367" height="99.998367" transform="rotate(-0.000000,429.680664,714.376770) " xlink:href="#CompositeSwitch_20120@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210018539-5c276a00" ObjectName="语芙配电站1号配变5低压电缆线路负荷开关" PSRType="30500099" GlobeID="09M0SJ00210018539" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549566-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549580-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210019886-5c276a00" >
+				<use class="v380" x="489.679779" y="664.377563" width="99.998367" height="99.998367" transform="rotate(-0.000000,539.678955,714.376770) " xlink:href="#CompositeSwitch_20120@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210019886-5c276a00" ObjectName="语芙配电站1号配变17低压电缆线路负荷开关" PSRType="30500099" GlobeID="09M0SJ00210019886" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549568-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549576-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210021884-5c276a00" >
+				<use class="v380" x="594.678040" y="649.384277" width="99.998367" height="99.998367" transform="rotate(-0.000000,644.677246,699.383484) " xlink:href="#CompositeSwitch_20120@0" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210021884-5c276a00" ObjectName="语芙配电站AB2负荷开关分段" PSRType="30500099" GlobeID="09M0SJ00210021884" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549621-5f5b1a4e"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549622-5f5b1a4e"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210021885-5c276a00" >
+				<use class="v380" x="434.680634" y="664.377563" width="99.998367" height="99.998367" transform="rotate(-0.000000,484.679810,714.376770) " xlink:href="#CompositeSwitch_20120@0" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210021885-5c276a00" ObjectName="语芙配电站AB1负荷开关" PSRType="30500099" GlobeID="09M0SJ00210021885" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549567-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549578-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210022514-5c276a00" >
+				<use class="v380" x="269.683289" y="664.377502" width="99.998367" height="99.998367" transform="rotate(-0.000000,319.682465,714.376709) " xlink:href="#CompositeSwitch_20120@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210022514-5c276a00" ObjectName="语芙配电站1号配变16低压电缆线路负荷开关" PSRType="30500099" GlobeID="09M0SJ00210022514" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549585-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549586-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210022550-5c276a00" >
+				<use class="v380" x="419.680939" y="524.440857" width="99.998367" height="99.998367" transform="rotate(-0.000000,469.680115,574.440063) " xlink:href="#CompositeSwitch_20120@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210022550-5c276a00" ObjectName="语芙配电站AB9负荷开关" PSRType="30500099" GlobeID="09M0SJ00210022550" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549632-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549639-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210023160-5c276a00" >
+				<use class="v380" x="544.678894" y="664.377563" width="99.998367" height="99.998367" transform="rotate(-0.000000,594.678101,714.376770) " xlink:href="#CompositeSwitch_20120@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210023160-5c276a00" ObjectName="语芙配电站1号配变24低压电缆线路负荷开关" PSRType="30500099" GlobeID="09M0SJ00210023160" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549569-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549574-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210023161-5c276a00" >
+				<use class="v380" x="859.673645" y="524.440857" width="99.998367" height="99.998367" transform="rotate(-0.000000,909.672852,574.440063) " xlink:href="#CompositeSwitch_20120@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210023161-5c276a00" ObjectName="语芙配电站AB3负荷开关" PSRType="30500099" GlobeID="09M0SJ00210023161" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549608-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549612-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210024743-5c276a00" >
+				<use class="v380" x="869.673584" y="664.377502" width="99.998367" height="99.998367" transform="rotate(-0.000000,919.672791,714.376709) " xlink:href="#CompositeSwitch_20120@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210024743-5c276a00" ObjectName="语芙配电站2号配变9低压电缆线路负荷开关" PSRType="30500099" GlobeID="09M0SJ00210024743" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549594-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549607-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210024744-5c276a00" >
+				<use class="v380" x="704.676270" y="664.377502" width="99.998367" height="99.998367" transform="rotate(-0.000000,754.675476,714.376709) " xlink:href="#CompositeSwitch_20120@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210024744-5c276a00" ObjectName="语芙配电站2号配变16低压电缆线路负荷开关" PSRType="30500099" GlobeID="09M0SJ00210024744" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549579-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549597-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210025133-5c276a00" >
+				<use class="v380" x="814.674438" y="664.377502" width="99.998367" height="99.998367" transform="rotate(-0.000000,864.673645,714.376709) " xlink:href="#CompositeSwitch_20120@0" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210025133-5c276a00" ObjectName="语芙配电站AB8负荷开关" PSRType="30500099" GlobeID="09M0SJ00210025133" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549595-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549609-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210025134-5c276a00" >
+				<use class="v380" x="324.682373" y="664.377563" width="99.998367" height="99.998367" transform="rotate(-0.000000,374.681549,714.376770) " xlink:href="#CompositeSwitch_20120@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210025134-5c276a00" ObjectName="语芙配电站1号配变9低压电缆线路负荷开关" PSRType="30500099" GlobeID="09M0SJ00210025134" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549565-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549583-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210025920-5c276a00" >
+				<use class="v380" x="924.672607" y="664.377502" width="99.998367" height="99.998367" transform="rotate(-0.000000,974.671814,714.376709) " xlink:href="#CompositeSwitch_20120@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210025920-5c276a00" ObjectName="语芙配电站2号配变24低压电缆线路负荷开关" PSRType="30500099" GlobeID="09M0SJ00210025920" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549593-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549604-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210025921-5c276a00" >
+				<use class="v380" x="759.675293" y="664.377502" width="99.998367" height="99.998367" transform="rotate(-0.000000,809.674500,714.376709) " xlink:href="#CompositeSwitch_20120@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210025921-5c276a00" ObjectName="语芙配电站2号配变3低压电缆线路负荷开关" PSRType="30500099" GlobeID="09M0SJ00210025921" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549596-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549618-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+		<g id="CS-105150-210026992-5c276a00" >
+				<use class="v380" x="979.671814" y="664.377563" width="99.998367" height="99.998367" transform="rotate(-0.000000,1029.671021,714.376770) " xlink:href="#CompositeSwitch_20120@0" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CS-105150-210026992-5c276a00" ObjectName="语芙配电站AB7负荷开关" PSRType="30500099" GlobeID="09M0SJ00210026992" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549592-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549601-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="CompositeSwitch_Layer"/>
+				</metadata>
+		</g>
+</g>
+<g id="LoadBreakSwitch_Layer">
+		<g id="LB-105150-184549392-5900010f" >
+				<use class="kv10" x="594.678040" y="264.558502" width="99.998367" height="99.998367" transform="rotate(-0.000000,644.677246,314.557678) " xlink:href="#LoadBreakSwitch_20350@0" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="LB-105150-184549392-5900010f" ObjectName="语芙配电站AB6负荷开关分段" PSRType="30700000" GlobeID="09M00150080022130" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549462-5f605793"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549461-5f605793"/>
+					<cge:Layer_Ref ObjectName="LoadBreakSwitch_Layer"/>
+				</metadata>
+		</g>
+</g>
+<g id="Fuse_Layer">
+		<g id="FS-105150-200021834-5c276a00" >
+				<use class="v380" x="1049.670654" y="619.397827" width="99.998367" height="99.998367" transform="rotate(-0.000000,1099.669800,669.397034) " xlink:href="#Fuse_50160@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="FS-105150-200021834-5c276a00" ObjectName="语芙配电站AC2隔离开关" PSRType="30600000" GlobeID="09M0SJ00200021834" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549591-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549599-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="Fuse_Layer"/>
+				</metadata>
+		</g>
+		<g id="FS-105150-200033264-5c276a00" >
+				<use class="v380" x="179.684662" y="619.397827" width="99.998367" height="99.998367" transform="rotate(-0.000000,229.683838,669.397034) " xlink:href="#Fuse_50160@1" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="FS-105150-200033264-5c276a00" ObjectName="语芙配电站AC1隔离开关" PSRType="30600000" GlobeID="09M0SJ00200033264" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549571-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549572-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="Fuse_Layer"/>
+				</metadata>
+		</g>
+</g>
+<g id="SurgeArrester_Layer">
+		<g id="BLQ-105150-184549492-5f5b19e2" >
+				<use class="v380" x="209.684296" y="619.397827" width="99.998367" height="99.998367" transform="rotate(179.999991,259.683472,669.397034) " xlink:href="#SurgeArrester_50180" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="BLQ-105150-184549492-5f5b19e2" ObjectName="0.4千伏1号电容器避雷器" PSRType="31800001" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549573-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="SurgeArrester_Layer"/>
+				</metadata>
+		</g>
+		<g id="BLQ-105150-184549511-5f5b19e2" >
+				<use class="v380" x="1079.670288" y="619.397827" width="99.998367" height="99.998367" transform="rotate(179.999991,1129.669434,669.397034) " xlink:href="#SurgeArrester_50180" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="BLQ-105150-184549511-5f5b19e2" ObjectName="0.4千伏2号电容器避雷器" PSRType="31800001" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549600-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="SurgeArrester_Layer"/>
+				</metadata>
+		</g>
+</g>
+<g id="Compensator_Layer">
+		<g id="CP-105150-184549491-5f5b19e2" >
+				<use class="v380" x="179.684662" y="684.368530" width="99.998367" height="99.998367" transform="rotate(-0.000000,229.683838,734.367737) " xlink:href="#Compensator_50200" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CP-105150-184549491-5f5b19e2" ObjectName="0.4千伏1号电容器电容器" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549573-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549571-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="Compensator_Layer"/>
+				</metadata>
+		</g>
+		<g id="CP-105150-184549512-5f5b19e2" >
+				<use class="v380" x="1049.670654" y="684.368530" width="99.998367" height="99.998367" transform="rotate(-0.000000,1099.669800,734.367737) " xlink:href="#Compensator_50200" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CP-105150-184549512-5f5b19e2" ObjectName="0.4千伏2号电容器电容器" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549600-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549591-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="Compensator_Layer"/>
+				</metadata>
+		</g>
+</g>
+<g id="PowerTransformer_Layer">
+		<g id="TR-105150-184549404-5900010f" >
+				<use class="kv10" x="834.674072" y="384.493317" width="149.997559" height="149.997559" transform="rotate(-0.000000,909.672852,459.492096) " xlink:href="#Transformer_23290" hclass="kv10" lclass="v380"  />
+				<metadata>
+					<cge:PSR_Ref ObjectID="TR-105150-184549404-5900010f" ObjectName="2号配变" PSRType="30200002" GlobeID="09M00430080023691" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549638-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549642-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="PowerTransformer_Layer"/>
+				</metadata>
+		</g>
+		<g id="TR-105150-184549405-5900010f" >
+				<use class="kv10" x="394.681335" y="384.493317" width="149.997559" height="149.997559" transform="rotate(-0.000000,469.680115,459.492096) " xlink:href="#Transformer_23290" hclass="kv10" lclass="v380"  />
+				<metadata>
+					<cge:PSR_Ref ObjectID="TR-105150-184549405-5900010f" ObjectName="1号配变" PSRType="30200002" GlobeID="09M00430080023692" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549598-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549637-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="PowerTransformer_Layer"/>
+				</metadata>
+		</g>
+</g>
+<g id="Junction_Layer">
+		<g id="EL-105150-184549394-5900010f" >
+				<use class="kv10" x="764.675232" y="34.662498" width="99.998367" height="99.998367" transform="rotate(-179.999991,814.674438,84.661682) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-184549394-5900010f" ObjectName="友绿5进出线进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549554-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-184549396-5900010f" >
+				<use class="kv10" x="864.673645" y="34.662498" width="99.998367" height="99.998367" transform="rotate(-179.999991,914.672852,84.661682) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-184549396-5900010f" ObjectName="语芙2进出线进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549610-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-184549398-5900010f" >
+				<use class="kv10" x="969.671936" y="34.662498" width="99.998367" height="99.998367" transform="rotate(-179.999991,1019.671143,84.661682) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-184549398-5900010f" ObjectName="语芙4进出线进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549856-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-184549400-5900010f" >
+				<use class="kv10" x="1074.670166" y="34.662498" width="99.998367" height="99.998367" transform="rotate(-179.999991,1124.669312,84.661682) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-184549400-5900010f" ObjectName="语芙6进出线进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549613-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-184549402-5900010f" >
+				<use class="kv10" x="1179.668457" y="34.662498" width="99.998367" height="99.998367" transform="rotate(-179.999991,1229.667603,84.661682) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-184549402-5900010f" ObjectName="语芙8进出线进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549864-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-184549407-5900010f" >
+				<use class="kv10" x="519.679260" y="29.664764" width="99.998367" height="99.998367" transform="rotate(-179.999991,569.678467,79.663948) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-184549407-5900010f" ObjectName="友绿4进出线进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549556-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-184549409-5900010f" >
+				<use class="kv10" x="424.680878" y="29.664764" width="99.998367" height="99.998367" transform="rotate(-179.999991,474.680054,79.663948) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-184549409-5900010f" ObjectName="语芙1进出线进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549559-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-184549411-5900010f" >
+				<use class="kv10" x="319.682556" y="29.664764" width="99.998367" height="99.998367" transform="rotate(-179.999991,369.681732,79.663948) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-184549411-5900010f" ObjectName="语芙3进出线进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549563-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-184549413-5900010f" >
+				<use class="kv10" x="214.684235" y="29.664764" width="99.998367" height="99.998367" transform="rotate(-179.999991,264.683411,79.663948) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-184549413-5900010f" ObjectName="语芙5进出线进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549840-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-184549415-5900010f" >
+				<use class="kv10" x="109.685936" y="29.664764" width="99.998367" height="99.998367" transform="rotate(-179.999991,159.685120,79.663948) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-184549415-5900010f" ObjectName="语芙7进出线进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549848-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-290010431-5c276a00" >
+				<use class="v380" x="324.682373" y="754.336975" width="99.998367" height="99.998367" transform="rotate(-0.000000,374.681549,804.336182) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-290010431-5c276a00" ObjectName="语芙1号配变9进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549583-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-290031957-5c276a00" >
+				<use class="v380" x="379.681488" y="754.336975" width="99.998367" height="99.998367" transform="rotate(-0.000000,429.680664,804.336182) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-290031957-5c276a00" ObjectName="语芙1号配变5进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549580-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-290034681-5c276a00" >
+				<use class="v380" x="869.673584" y="754.336853" width="99.998367" height="99.998367" transform="rotate(-0.000000,919.672791,804.336060) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-290034681-5c276a00" ObjectName="语芙2号配变9进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549607-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-290044122-5c276a00" >
+				<use class="v380" x="489.679779" y="754.336975" width="99.998367" height="99.998367" transform="rotate(-0.000000,539.678955,804.336182) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-290044122-5c276a00" ObjectName="语芙1号配变17进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549576-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-290044123-5c276a00" >
+				<use class="v380" x="704.676270" y="754.336853" width="99.998367" height="99.998367" transform="rotate(-0.000000,754.675476,804.336060) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-290044123-5c276a00" ObjectName="语芙2号配变16进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549597-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-290044510-5c276a00" >
+				<use class="v380" x="924.672607" y="754.336853" width="99.998367" height="99.998367" transform="rotate(-0.000000,974.671814,804.336060) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-290044510-5c276a00" ObjectName="语芙2号配变24进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549604-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-290052351-5c276a00" >
+				<use class="v380" x="434.680634" y="754.336975" width="99.998367" height="99.998367" transform="rotate(-0.000000,484.679810,804.336182) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-290052351-5c276a00" ObjectName="语芙低1进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549578-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-290052352-5c276a00" >
+				<use class="v380" x="544.678894" y="754.336975" width="99.998367" height="99.998367" transform="rotate(-0.000000,594.678101,804.336182) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-290052352-5c276a00" ObjectName="语芙1号配变24进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549574-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-290057876-5c276a00" >
+				<use class="v380" x="269.683289" y="754.336853" width="99.998367" height="99.998367" transform="rotate(-0.000000,319.682465,804.336060) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-290057876-5c276a00" ObjectName="语芙1号配变16进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549586-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-290069436-5c276a00" >
+				<use class="v380" x="979.671814" y="754.336975" width="99.998367" height="99.998367" transform="rotate(-0.000000,1029.671021,804.336182) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-290069436-5c276a00" ObjectName="语芙低7进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549601-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-290069437-5c276a00" >
+				<use class="v380" x="759.675293" y="754.336853" width="99.998367" height="99.998367" transform="rotate(-0.000000,809.674500,804.336060) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-290069437-5c276a00" ObjectName="语芙2号配变3进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549618-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+		<g id="EL-105150-290076604-5c276a00" >
+				<use class="v380" x="814.674438" y="754.336853" width="99.998367" height="99.998367" transform="rotate(-0.000000,864.673645,804.336060) " xlink:href="#Junction_20810" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="EL-105150-290076604-5c276a00" ObjectName="语芙低8进出线点" PSRType="32000000" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549609-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="Junction_Layer"/>
+				</metadata>
+		</g>
+</g>
+<g id="ConductingEquipment_Layer">
+		<g id="CE-105150-184549460-5f605793" >
+				<use class="kv10" x="642.177307" y="402.016968" width="4.999918" height="4.999918" transform="rotate(-0.000000,644.677246,404.516937) " xlink:href="#Junction_22020" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CE-105150-184549460-5f605793" ObjectName="10千伏分段" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549462-5f605793"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549473-5f605793"/>
+					<cge:Layer_Ref ObjectName="ConductingEquipment_Layer"/>
+				</metadata>
+		</g>
+		<g id="CE-105150-184549463-5f5b19e2" >
+				<use class="kv10" x="907.172913" y="397.019257" width="4.999918" height="4.999918" transform="rotate(-0.000000,909.672852,399.519226) " xlink:href="#Junction_22020" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CE-105150-184549463-5f5b19e2" ObjectName="2号配变10千伏" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549638-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549562-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="ConductingEquipment_Layer"/>
+				</metadata>
+		</g>
+		<g id="CE-105150-184549464-5f5b19e2" >
+				<use class="kv10" x="467.180145" y="397.019257" width="4.999918" height="4.999918" transform="rotate(-0.000000,469.680115,399.519226) " xlink:href="#Junction_22020" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CE-105150-184549464-5f5b19e2" ObjectName="1号配变10千伏" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549637-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549611-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="ConductingEquipment_Layer"/>
+				</metadata>
+		</g>
+		<g id="CE-105150-184549470-5f5b19e2" >
+				<use class="v380" x="467.180145" y="526.960449" width="4.999918" height="4.999918" transform="rotate(-0.000000,469.680115,529.460388) " xlink:href="#Junction_22020" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CE-105150-184549470-5f5b19e2" ObjectName="1号配变低压" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549598-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549632-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="ConductingEquipment_Layer"/>
+				</metadata>
+		</g>
+		<g id="CE-105150-184549484-5f5b19e2" >
+				<use class="v380" x="907.172913" y="526.960449" width="4.999918" height="4.999918" transform="rotate(-0.000000,909.672852,529.460388) " xlink:href="#Junction_22020" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CE-105150-184549484-5f5b19e2" ObjectName="2号配变低压" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549642-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549608-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="ConductingEquipment_Layer"/>
+				</metadata>
+		</g>
+		<g id="CE-105150-184549489-5f5b19e2" >
+				<use class="v380" x="642.177307" y="781.845032" width="4.999918" height="4.999918" transform="rotate(-0.000000,644.677246,784.344971) " xlink:href="#Junction_22020" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="CE-105150-184549489-5f5b19e2" ObjectName="低压分段" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549630-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549622-5f5b1a4e"/>
+					<cge:Layer_Ref ObjectName="ConductingEquipment_Layer"/>
+				</metadata>
+		</g>
+</g>
+<g id="BusbarSection_Layer">
+		<g id="BS-105150-184549457-5f5b19e2">
+			<path class="lkv10" fill="none" stroke-width="2" d="M 122.528656 254.584793 L 669.565369 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="BS-105150-184549457-5f5b19e2" ObjectName="10千伏一段母线" PSRType="31100000" GlobeID="09M00130080014080" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549847-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549839-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549560-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549552-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549558-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549557-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549461-5f605793"/>
+					<cge:Layer_Ref ObjectName="BusbarSection_Layer"/>
+				</metadata>
+		</g>
+		<g id="BS-105150-184549498-5f5b19e2">
+			<path class="lkv10" fill="none" stroke-width="2" d="M 704.572998 254.584793 L 1274.714355 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="BS-105150-184549498-5f5b19e2" ObjectName="10千伏二段母线" PSRType="31100000" GlobeID="09M00130080014078" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549473-5f605793"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549588-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549553-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549587-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549855-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549589-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549863-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="BusbarSection_Layer"/>
+				</metadata>
+		</g>
+		<g id="BS-105150-184549485-5f5b19e2">
+			<path class="lv380" fill="none" stroke-width="2" d="M 179.684845 619.419678 L 665.279236 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="BS-105150-184549485-5f5b19e2" ObjectName="低压一段母线" PSRType="31100000" GlobeID="09M0SJ00220010597" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549572-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549585-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549565-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549566-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549639-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549567-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549568-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549569-5f5b1a61"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549621-5f5b1a4e"/>
+					<cge:Layer_Ref ObjectName="BusbarSection_Layer"/>
+				</metadata>
+		</g>
+		<g id="BS-105150-184549495-5f5b19e2">
+			<path class="lv380" fill="none" stroke-width="2" d="M 1177.225830 619.419678 L 709.582275 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="BS-105150-184549495-5f5b19e2" ObjectName="低压二段母线" PSRType="31100000" GlobeID="09M0SJ00220003899" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="AL-105150-184549599-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549592-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549593-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549594-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549612-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549595-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549596-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549579-5f5b1a57"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549630-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="BusbarSection_Layer"/>
+				</metadata>
+		</g>
+</g>
+<g id="ConnLine_Layer">
+		<g id="AL-105150-184549461-5f605793" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 644.677246 284.571259 L 644.677246 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549461-5f605793" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="LB-105150-184549392-5900010f"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549457-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549462-5f605793" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 644.677246 344.544098 L 644.677246 404.516937" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549462-5f605793" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="LB-105150-184549392-5900010f"/>
+					<cge:GLink_Ref ObjectID="CE-105150-184549460-5f605793"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549473-5f605793"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549473-5f605793" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 734.675720 254.584793 L 734.675720 404.516937 L 644.677246 404.516937" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549473-5f605793" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CE-105150-184549460-5f605793"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549498-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549462-5f605793"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549552-5f5b1a61" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 474.680054 244.589325 L 474.680054 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549552-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549410-5900010f"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549457-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549553-5f5b1a57" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 909.672852 259.582520 L 909.672852 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549553-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549403-5900010f"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549498-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549554-5f5b1a57" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 814.674438 141.635895 L 814.674438 92.158295" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549554-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549393-5900010f"/>
+					<cge:GLink_Ref ObjectID="EL-105150-184549394-5900010f"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549556-5f5b1a61" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 569.678467 136.638153 L 569.678467 87.160561" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549556-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549408-5900010f"/>
+					<cge:GLink_Ref ObjectID="EL-105150-184549407-5900010f"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549557-5f5b1a61" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 569.678467 196.611008 L 569.678467 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549557-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549408-5900010f"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549457-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549558-5f5b1a61" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 469.680115 259.582520 L 469.680115 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549558-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549406-5900010f"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549457-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549559-5f5b1a61" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 474.680054 87.160561 L 474.680054 109.650398" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549559-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549410-5900010f"/>
+					<cge:GLink_Ref ObjectID="EL-105150-184549409-5900010f"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549560-5f5b1a61" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 369.681732 244.589325 L 369.681732 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549560-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549412-5900010f"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549457-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549562-5f5b1a57" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 909.672852 394.521454 L 909.672852 399.519226" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549562-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549403-5900010f"/>
+					<cge:GLink_Ref ObjectID="CE-105150-184549463-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549638-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549563-5f5b1a61" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 369.681732 87.160561 L 369.681732 109.650398" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549563-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549412-5900010f"/>
+					<cge:GLink_Ref ObjectID="EL-105150-184549411-5900010f"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549565-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 374.681549 678.393066 L 374.681549 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549565-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210025134-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549485-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549566-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 429.680664 678.393066 L 429.680664 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549566-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210018539-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549485-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549567-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 484.679810 678.393066 L 484.679810 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549567-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210021885-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549485-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549568-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 539.678955 678.393066 L 539.678955 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549568-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210019886-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549485-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549569-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 594.678101 678.393066 L 594.678101 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549569-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210023160-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549485-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549571-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 229.683838 704.381287 L 229.683838 688.388489" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549571-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="FS-105150-200033264-5c276a00"/>
+					<cge:GLink_Ref ObjectID="CP-105150-184549491-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549572-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 229.683838 643.408813 L 229.683838 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549572-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="FS-105150-200033264-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549485-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549573-5f5b19e2" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 259.683472 701.882385 L 259.683472 704.381287 L 229.683838 704.381287" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549573-5f5b19e2" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="BLQ-105150-184549492-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="CP-105150-184549491-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549574-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 594.678101 750.360474 L 594.678101 796.839539" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549574-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210023160-5c276a00"/>
+					<cge:GLink_Ref ObjectID="EL-105150-290052352-5c276a00"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549576-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 539.678955 750.360474 L 539.678955 796.839539" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549576-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210019886-5c276a00"/>
+					<cge:GLink_Ref ObjectID="EL-105150-290044122-5c276a00"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549578-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 484.679810 750.360474 L 484.679810 796.839539" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549578-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210021885-5c276a00"/>
+					<cge:GLink_Ref ObjectID="EL-105150-290052351-5c276a00"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549579-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 754.675476 678.393005 L 754.675476 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549579-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210024744-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549495-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549580-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 429.680664 750.360474 L 429.680664 796.839539" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549580-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210018539-5c276a00"/>
+					<cge:GLink_Ref ObjectID="EL-105150-290031957-5c276a00"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549583-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 374.681549 750.360474 L 374.681549 796.839539" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549583-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210025134-5c276a00"/>
+					<cge:GLink_Ref ObjectID="EL-105150-290010431-5c276a00"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549585-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 319.682465 678.393005 L 319.682465 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549585-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210022514-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549485-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549586-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 319.682465 750.360413 L 319.682465 796.839478" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549586-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210022514-5c276a00"/>
+					<cge:GLink_Ref ObjectID="EL-105150-290057876-5c276a00"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549587-5f5b1a57" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 914.672852 249.587051 L 914.672852 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549587-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549395-5900010f"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549498-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549588-5f5b1a57" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 814.674438 201.608749 L 814.674438 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549588-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549393-5900010f"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549498-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549589-5f5b1a57" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 1124.669312 249.587051 L 1124.669312 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549589-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549399-5900010f"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549498-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549591-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 1099.669800 704.381287 L 1099.669800 688.388489" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549591-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="FS-105150-200021834-5c276a00"/>
+					<cge:GLink_Ref ObjectID="CP-105150-184549512-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549592-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 1029.671021 678.393066 L 1029.671021 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549592-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210026992-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549495-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549593-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 974.671814 678.393005 L 974.671814 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549593-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210025920-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549495-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549594-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 919.672791 678.393005 L 919.672791 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549594-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210024743-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549495-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549595-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 864.673645 678.393005 L 864.673645 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549595-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210025133-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549495-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549596-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 809.674500 678.393005 L 809.674500 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549596-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210025921-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549495-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549597-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 754.675476 750.360413 L 754.675476 796.839478" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549597-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210024744-5c276a00"/>
+					<cge:GLink_Ref ObjectID="EL-105150-290044123-5c276a00"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549598-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 469.680115 501.473145 L 469.680115 529.460388" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549598-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="TR-105150-184549405-5900010f"/>
+					<cge:GLink_Ref ObjectID="CE-105150-184549470-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549632-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549599-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 1099.669800 643.408813 L 1099.669800 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549599-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="FS-105150-200021834-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549495-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549600-5f5b19e2" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 1129.669434 701.882385 L 1129.669434 704.381287 L 1099.669800 704.381287" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549600-5f5b19e2" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="BLQ-105150-184549511-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="CP-105150-184549512-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549601-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 1029.671021 750.360474 L 1029.671021 796.839539" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549601-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210026992-5c276a00"/>
+					<cge:GLink_Ref ObjectID="EL-105150-290069436-5c276a00"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549604-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 974.671814 750.360413 L 974.671814 796.839478" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549604-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210025920-5c276a00"/>
+					<cge:GLink_Ref ObjectID="EL-105150-290044510-5c276a00"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549607-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 919.672791 750.360413 L 919.672791 796.839478" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549607-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210024743-5c276a00"/>
+					<cge:GLink_Ref ObjectID="EL-105150-290034681-5c276a00"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549608-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 909.672852 538.456299 L 909.672852 529.460388" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549608-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210023161-5c276a00"/>
+					<cge:GLink_Ref ObjectID="CE-105150-184549484-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549642-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549609-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 864.673645 750.360413 L 864.673645 796.839478" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549609-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210025133-5c276a00"/>
+					<cge:GLink_Ref ObjectID="EL-105150-290076604-5c276a00"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549610-5f5b1a57" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 914.672852 92.158295 L 914.672852 114.648109" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549610-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549395-5900010f"/>
+					<cge:GLink_Ref ObjectID="EL-105150-184549396-5900010f"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549611-5f5b1a61" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 469.680115 394.521454 L 469.680115 399.519226" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549611-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549406-5900010f"/>
+					<cge:GLink_Ref ObjectID="CE-105150-184549464-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549637-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549612-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 909.672852 610.423767 L 909.672852 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549612-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210023161-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549495-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549613-5f5b1a57" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 1124.669312 92.158295 L 1124.669312 114.648109" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549613-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549399-5900010f"/>
+					<cge:GLink_Ref ObjectID="EL-105150-184549400-5900010f"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549618-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 809.674500 750.360413 L 809.674500 796.839478" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549618-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210025921-5c276a00"/>
+					<cge:GLink_Ref ObjectID="EL-105150-290069437-5c276a00"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549621-5f5b1a4e" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 644.677246 663.399780 L 644.677246 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549621-5f5b1a4e" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210021884-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549485-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549622-5f5b1a4e" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 644.677246 735.367126 L 644.677246 784.344971" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549622-5f5b1a4e" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210021884-5c276a00"/>
+					<cge:GLink_Ref ObjectID="CE-105150-184549489-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549630-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549630-5f5b19e2" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 644.677246 784.344971 L 729.675903 784.345093 L 729.675903 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549630-5f5b19e2" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CE-105150-184549489-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549495-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549622-5f5b1a4e"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549632-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 469.680115 538.456299 L 469.680115 529.460388" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549632-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210022550-5c276a00"/>
+					<cge:GLink_Ref ObjectID="CE-105150-184549470-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549598-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549637-5f5b1a61" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 469.680115 417.511078 L 469.680115 399.519226" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549637-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="TR-105150-184549405-5900010f"/>
+					<cge:GLink_Ref ObjectID="CE-105150-184549464-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549611-5f5b1a61"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549638-5f5b1a57" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 909.672852 417.511078 L 909.672852 399.519226" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549638-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="TR-105150-184549404-5900010f"/>
+					<cge:GLink_Ref ObjectID="CE-105150-184549463-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549562-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549639-5f5b1a61" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 469.680115 610.423767 L 469.680115 619.419678" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549639-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-210022550-5c276a00"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549485-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549642-5f5b1a57" >
+			<path class="lv380" fill="none" stroke-width="1" d="M 909.672852 501.473145 L 909.672852 529.460388" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549642-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="TR-105150-184549404-5900010f"/>
+					<cge:GLink_Ref ObjectID="CE-105150-184549484-5f5b19e2"/>
+					<cge:GLink_Ref ObjectID="AL-105150-184549608-5f5b1a57"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549839-5f5b1a61" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 264.683411 244.589325 L 264.683411 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549839-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549414-5900010f"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549457-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549840-5f5b1a61" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 264.683411 87.160561 L 264.683411 109.650398" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549840-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549414-5900010f"/>
+					<cge:GLink_Ref ObjectID="EL-105150-184549413-5900010f"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549847-5f5b1a61" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 159.685120 244.589325 L 159.685120 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549847-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549416-5900010f"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549457-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549848-5f5b1a61" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 159.685120 87.160561 L 159.685120 109.650398" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549848-5f5b1a61" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549416-5900010f"/>
+					<cge:GLink_Ref ObjectID="EL-105150-184549415-5900010f"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549855-5f5b1a57" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 1019.671143 249.587051 L 1019.671143 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549855-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549397-5900010f"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549498-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549856-5f5b1a57" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 1019.671143 92.158295 L 1019.671143 114.648109" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549856-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549397-5900010f"/>
+					<cge:GLink_Ref ObjectID="EL-105150-184549398-5900010f"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549863-5f5b1a57" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 1229.667603 249.587051 L 1229.667603 254.584793" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549863-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549401-5900010f"/>
+					<cge:GLink_Ref ObjectID="BS-105150-184549498-5f5b19e2"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+		<g id="AL-105150-184549864-5f5b1a57" >
+			<path class="lkv10" fill="none" stroke-width="1" d="M 1229.667603 92.158295 L 1229.667603 114.648109" />
+				<metadata>
+					<cge:PSR_Ref ObjectID="AL-105150-184549864-5f5b1a57" ObjectName="(null)" PSRType="" GlobeID="" LineType="Branch" />
+					<cge:GLink_Ref ObjectID="CS-105150-184549401-5900010f"/>
+					<cge:GLink_Ref ObjectID="EL-105150-184549402-5900010f"/>
+					<cge:Layer_Ref ObjectName="ConnLine_Layer"/>
+				</metadata>
+		</g>
+</g>
+<g id="ACLineSegment_Layer">
+</g>
+<g id="Text_Layer">
+		<g id="TXT-105150--184549551-5f5b1a61" >
+			<text style="text-anchor:left" x="166.277939" y="280.073273" transform="translate(166.277939,280.073273) scale(0.781237, 0.781237) translate(-166.277939,-280.073273)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">10千伏一段母线</text>
+		</g>
+		<g id="TXT-105150--184549623-5f5b1a57" >
+			<text style="text-anchor:left" x="1143.466553" y="281.087189" transform="translate(1143.466553,281.087189) scale(0.781237, 0.781237) translate(-1143.466553,-281.087189)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">10千伏二段母线</text>
+		</g>
+		<g id="TXT-105150--184549627-5f5b1a61" >
+			<text style="text-anchor:left" x="223.434143" y="603.790405" transform="translate(223.434143,603.790405) scale(0.781237, 0.781237) translate(-223.434143,-603.790405)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">低压一段母线</text>
+		</g>
+		<g id="TXT-105150--184549617-5f5b1a57" >
+			<text style="text-anchor:left" x="1058.477783" y="604.820862" transform="translate(1058.477783,604.820862) scale(0.781237, 0.781237) translate(-1058.477783,-604.820862)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">低压二段母线</text>
+		</g>
+		<g attach_id="CS-105150-184549393-5900010f" id="TXT-105150--184549393-646dbb36" >
+			<text style="text-anchor:left" x="786.837097" y="219.977646" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">线</text>
+			<text style="text-anchor:left" x="786.837097" y="201.985809" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">出</text>
+			<text style="text-anchor:left" x="786.837097" y="183.993942" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">进</text>
+			<text style="text-anchor:left" x="791.337036" y="166.002075" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">5</text>
+			<text style="text-anchor:left" x="786.837097" y="148.010208" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">绿</text>
+			<text style="text-anchor:left" x="786.837097" y="130.018341" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">友</text>
+		</g>
+		<g attach_id="CS-105150-184549395-5900010f" id="TXT-105150--184549395-646dbb37" >
+			<text style="text-anchor:left" x="871.821045" y="219.351578" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">线</text>
+			<text style="text-anchor:left" x="871.821045" y="201.359711" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">出</text>
+			<text style="text-anchor:left" x="871.821045" y="183.367874" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">进</text>
+			<text style="text-anchor:left" x="876.320923" y="165.376007" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">2</text>
+			<text style="text-anchor:left" x="871.821045" y="147.384140" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="871.821045" y="129.392273" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-184549397-5900010f" id="TXT-105150--184549397-646dbb37" >
+			<text style="text-anchor:left" x="976.819397" y="219.351578" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">线</text>
+			<text style="text-anchor:left" x="976.819397" y="201.359711" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">出</text>
+			<text style="text-anchor:left" x="976.819397" y="183.367874" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">进</text>
+			<text style="text-anchor:left" x="981.319336" y="165.376007" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">4</text>
+			<text style="text-anchor:left" x="976.819397" y="147.384140" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="976.819397" y="129.392273" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-184549399-5900010f" id="TXT-105150--184549399-646dbb37" >
+			<text style="text-anchor:left" x="1081.817627" y="219.351578" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">线</text>
+			<text style="text-anchor:left" x="1081.817627" y="201.359711" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">出</text>
+			<text style="text-anchor:left" x="1081.817627" y="183.367874" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">进</text>
+			<text style="text-anchor:left" x="1086.317627" y="165.376007" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">6</text>
+			<text style="text-anchor:left" x="1081.817627" y="147.384140" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="1081.817627" y="129.392273" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-184549401-5900010f" id="TXT-105150--184549401-646dbb37" >
+			<text style="text-anchor:left" x="1186.815918" y="219.351578" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">线</text>
+			<text style="text-anchor:left" x="1186.815918" y="201.359711" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">出</text>
+			<text style="text-anchor:left" x="1186.815918" y="183.367874" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">进</text>
+			<text style="text-anchor:left" x="1191.315796" y="165.376007" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">8</text>
+			<text style="text-anchor:left" x="1186.815918" y="147.384140" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="1186.815918" y="129.392273" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-184549403-5900010f" id="TXT-105150--184549403-646dbb37" >
+			<text style="text-anchor:left" x="936.752502" y="388.354980" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">伏</text>
+			<text style="text-anchor:left" x="936.752502" y="370.363098" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">千</text>
+			<text style="text-anchor:left" x="936.752502" y="352.371216" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">10</text>
+			<text style="text-anchor:left" x="936.752502" y="334.379395" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">变</text>
+			<text style="text-anchor:left" x="936.752502" y="316.387512" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">配</text>
+			<text style="text-anchor:left" x="936.752502" y="298.395660" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="941.252441" y="280.403809" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">2</text>
+		</g>
+		<g attach_id="CS-105150-184549406-5900010f" id="TXT-105150--184549406-646dbb37" >
+			<text style="text-anchor:left" x="496.759705" y="388.354980" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">伏</text>
+			<text style="text-anchor:left" x="496.759705" y="370.363098" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">千</text>
+			<text style="text-anchor:left" x="496.759705" y="352.371216" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">10</text>
+			<text style="text-anchor:left" x="496.759705" y="334.379395" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">变</text>
+			<text style="text-anchor:left" x="496.759705" y="316.387512" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">配</text>
+			<text style="text-anchor:left" x="496.759705" y="298.395660" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="501.259674" y="280.403809" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">1</text>
+		</g>
+		<g attach_id="CS-105150-184549408-5900010f" id="TXT-105150--184549408-646dbb37" >
+			<text style="text-anchor:left" x="541.841187" y="214.979919" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">线</text>
+			<text style="text-anchor:left" x="541.841187" y="196.988052" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">出</text>
+			<text style="text-anchor:left" x="541.841187" y="178.996201" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">进</text>
+			<text style="text-anchor:left" x="546.341125" y="161.004333" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">4</text>
+			<text style="text-anchor:left" x="541.841187" y="143.012466" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">绿</text>
+			<text style="text-anchor:left" x="541.841187" y="125.020607" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">友</text>
+		</g>
+		<g attach_id="CS-105150-184549410-5900010f" id="TXT-105150--184549410-646dbb37" >
+			<text style="text-anchor:left" x="431.828339" y="214.353867" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">线</text>
+			<text style="text-anchor:left" x="431.828339" y="196.362015" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">出</text>
+			<text style="text-anchor:left" x="431.828339" y="178.370163" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">进</text>
+			<text style="text-anchor:left" x="436.328247" y="160.378296" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">1</text>
+			<text style="text-anchor:left" x="431.828339" y="142.386444" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="431.828339" y="124.394562" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-184549412-5900010f" id="TXT-105150--184549412-646dbb38" >
+			<text style="text-anchor:left" x="326.829895" y="214.353867" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">线</text>
+			<text style="text-anchor:left" x="326.829895" y="196.362015" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">出</text>
+			<text style="text-anchor:left" x="326.829895" y="178.370163" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">进</text>
+			<text style="text-anchor:left" x="331.329865" y="160.378296" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">3</text>
+			<text style="text-anchor:left" x="326.829895" y="142.386444" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="326.829895" y="124.394562" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-184549414-5900010f" id="TXT-105150--184549414-646dbb38" >
+			<text style="text-anchor:left" x="221.831711" y="214.353867" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">线</text>
+			<text style="text-anchor:left" x="221.831711" y="196.362015" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">出</text>
+			<text style="text-anchor:left" x="221.831711" y="178.370163" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">进</text>
+			<text style="text-anchor:left" x="226.331650" y="160.378296" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">5</text>
+			<text style="text-anchor:left" x="221.831711" y="142.386444" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="221.831711" y="124.394562" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-184549416-5900010f" id="TXT-105150--184549416-646dbb38" >
+			<text style="text-anchor:left" x="116.833305" y="214.353867" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">线</text>
+			<text style="text-anchor:left" x="116.833305" y="196.362015" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">出</text>
+			<text style="text-anchor:left" x="116.833305" y="178.370163" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">进</text>
+			<text style="text-anchor:left" x="121.333244" y="160.378296" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">7</text>
+			<text style="text-anchor:left" x="116.833305" y="142.386444" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="116.833305" y="124.394562" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-210018539-5c276a00" id="TXT-105150--210018539-646dbb38" >
+			<text style="text-anchor:left" x="444.406830" y="777.003662" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">5</text>
+			<text style="text-anchor:left" x="439.906860" y="759.011841" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">变</text>
+			<text style="text-anchor:left" x="439.906860" y="741.019897" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">配</text>
+			<text style="text-anchor:left" x="439.906860" y="723.028076" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="444.406830" y="705.036255" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">1</text>
+			<text style="text-anchor:left" x="439.906860" y="687.044373" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="439.906860" y="669.052551" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-210019886-5c276a00" id="TXT-105150--210019886-646dbb38" >
+			<text style="text-anchor:left" x="549.905151" y="777.003662" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">17</text>
+			<text style="text-anchor:left" x="549.905151" y="759.011841" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">变</text>
+			<text style="text-anchor:left" x="549.905151" y="741.019897" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">配</text>
+			<text style="text-anchor:left" x="549.905151" y="723.028076" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="554.405029" y="705.036255" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">1</text>
+			<text style="text-anchor:left" x="549.905151" y="687.044373" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="549.905151" y="669.052551" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-210021884-5c276a00" id="TXT-105150--210021884-646dbb38" >
+			<text style="text-anchor:left" x="653.453003" y="731.180725" transform="translate(653.453003,731.180725) scale(0.937485, 0.937485) translate(-653.453003,-731.180725)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">段</text>
+			<text style="text-anchor:left" x="653.453003" y="716.187500" transform="translate(653.453003,716.187500) scale(0.937485, 0.937485) translate(-653.453003,-716.187500)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">分</text>
+			<text style="text-anchor:left" x="653.453003" y="701.194275" transform="translate(653.453003,701.194275) scale(0.937485, 0.937485) translate(-653.453003,-701.194275)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">压</text>
+			<text style="text-anchor:left" x="653.453003" y="686.200989" transform="translate(653.453003,686.200989) scale(0.937485, 0.937485) translate(-653.453003,-686.200989)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">低</text>
+		</g>
+		<g attach_id="CS-105150-210021885-5c276a00" id="TXT-105150--210021885-646dbb38" >
+			<text style="text-anchor:left" x="499.405914" y="750.015869" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">1</text>
+			<text style="text-anchor:left" x="494.905975" y="732.024048" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">低</text>
+			<text style="text-anchor:left" x="494.905975" y="714.032227" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="494.905975" y="696.040283" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-210022514-5c276a00" id="TXT-105150--210022514-646dbb38" >
+			<text style="text-anchor:left" x="329.908600" y="777.003601" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">16</text>
+			<text style="text-anchor:left" x="329.908600" y="759.011719" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">变</text>
+			<text style="text-anchor:left" x="329.908600" y="741.019897" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">配</text>
+			<text style="text-anchor:left" x="329.908600" y="723.028076" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="334.408569" y="705.036194" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">1</text>
+			<text style="text-anchor:left" x="329.908600" y="687.044312" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="329.908600" y="669.052490" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-210022550-5c276a00" id="TXT-105150--210022550-646dbb38" >
+			<text style="text-anchor:left" x="481.101318" y="616.320435" transform="translate(481.101318,616.320435) scale(0.937485, 0.937485) translate(-481.101318,-616.320435)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">压</text>
+			<text style="text-anchor:left" x="481.101318" y="601.327209" transform="translate(481.101318,601.327209) scale(0.937485, 0.937485) translate(-481.101318,-601.327209)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">低</text>
+			<text style="text-anchor:left" x="481.101318" y="586.333984" transform="translate(481.101318,586.333984) scale(0.937485, 0.937485) translate(-481.101318,-586.333984)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">变</text>
+			<text style="text-anchor:left" x="481.101318" y="571.340820" transform="translate(481.101318,571.340820) scale(0.937485, 0.937485) translate(-481.101318,-571.340820)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">配</text>
+			<text style="text-anchor:left" x="481.101318" y="556.347595" transform="translate(481.101318,556.347595) scale(0.937485, 0.937485) translate(-481.101318,-556.347595)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="484.851288" y="541.354370" transform="translate(484.851288,541.354370) scale(0.937485, 0.937485) translate(-484.851288,-541.354370)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">1</text>
+		</g>
+		<g attach_id="CS-105150-210023160-5c276a00" id="TXT-105150--210023160-646dbb39" >
+			<text style="text-anchor:left" x="604.904236" y="777.003662" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">24</text>
+			<text style="text-anchor:left" x="604.904236" y="759.011841" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">变</text>
+			<text style="text-anchor:left" x="604.904236" y="741.019897" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">配</text>
+			<text style="text-anchor:left" x="604.904236" y="723.028076" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="609.404175" y="705.036255" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">1</text>
+			<text style="text-anchor:left" x="604.904236" y="687.044373" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="604.904236" y="669.052551" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-210023161-5c276a00" id="TXT-105150--210023161-646dbb39" >
+			<text style="text-anchor:left" x="921.094055" y="616.320435" transform="translate(921.094055,616.320435) scale(0.937485, 0.937485) translate(-921.094055,-616.320435)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">压</text>
+			<text style="text-anchor:left" x="921.094055" y="601.327209" transform="translate(921.094055,601.327209) scale(0.937485, 0.937485) translate(-921.094055,-601.327209)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">低</text>
+			<text style="text-anchor:left" x="921.094055" y="586.333984" transform="translate(921.094055,586.333984) scale(0.937485, 0.937485) translate(-921.094055,-586.333984)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">变</text>
+			<text style="text-anchor:left" x="921.094055" y="571.340820" transform="translate(921.094055,571.340820) scale(0.937485, 0.937485) translate(-921.094055,-571.340820)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">配</text>
+			<text style="text-anchor:left" x="921.094055" y="556.347595" transform="translate(921.094055,556.347595) scale(0.937485, 0.937485) translate(-921.094055,-556.347595)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="924.844116" y="541.354370" transform="translate(924.844116,541.354370) scale(0.937485, 0.937485) translate(-924.844116,-541.354370)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">2</text>
+		</g>
+		<g attach_id="CS-105150-210024743-5c276a00" id="TXT-105150--210024743-646dbb39" >
+			<text style="text-anchor:left" x="934.398865" y="777.003601" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">9</text>
+			<text style="text-anchor:left" x="929.898926" y="759.011719" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">变</text>
+			<text style="text-anchor:left" x="929.898926" y="741.019897" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">配</text>
+			<text style="text-anchor:left" x="929.898926" y="723.028076" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="934.398865" y="705.036194" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">2</text>
+			<text style="text-anchor:left" x="929.898926" y="687.044312" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="929.898926" y="669.052490" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-210024744-5c276a00" id="TXT-105150--210024744-646dbb39" >
+			<text style="text-anchor:left" x="764.901611" y="777.003601" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">16</text>
+			<text style="text-anchor:left" x="764.901611" y="759.011719" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">变</text>
+			<text style="text-anchor:left" x="764.901611" y="741.019897" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">配</text>
+			<text style="text-anchor:left" x="764.901611" y="723.028076" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="769.401611" y="705.036194" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">2</text>
+			<text style="text-anchor:left" x="764.901611" y="687.044312" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="764.901611" y="669.052490" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-210025133-5c276a00" id="TXT-105150--210025133-646dbb39" >
+			<text style="text-anchor:left" x="879.399780" y="750.015869" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">8</text>
+			<text style="text-anchor:left" x="874.899780" y="732.023987" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">低</text>
+			<text style="text-anchor:left" x="874.899780" y="714.032166" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="874.899780" y="696.040283" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-210025134-5c276a00" id="TXT-105150--210025134-646dbb39" >
+			<text style="text-anchor:left" x="389.407684" y="777.003662" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">9</text>
+			<text style="text-anchor:left" x="384.907745" y="759.011841" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">变</text>
+			<text style="text-anchor:left" x="384.907745" y="741.019897" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">配</text>
+			<text style="text-anchor:left" x="384.907745" y="723.028076" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="389.407684" y="705.036255" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">1</text>
+			<text style="text-anchor:left" x="384.907745" y="687.044373" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="384.907745" y="669.052551" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-210025920-5c276a00" id="TXT-105150--210025920-646dbb39" >
+			<text style="text-anchor:left" x="984.898071" y="777.003601" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">24</text>
+			<text style="text-anchor:left" x="984.898071" y="759.011719" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">变</text>
+			<text style="text-anchor:left" x="984.898071" y="741.019897" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">配</text>
+			<text style="text-anchor:left" x="984.898071" y="723.028076" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="989.398010" y="705.036194" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">2</text>
+			<text style="text-anchor:left" x="984.898071" y="687.044312" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="984.898071" y="669.052490" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-210025921-5c276a00" id="TXT-105150--210025921-646dbb39" >
+			<text style="text-anchor:left" x="824.400635" y="777.003601" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">3</text>
+			<text style="text-anchor:left" x="819.900696" y="759.011719" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">变</text>
+			<text style="text-anchor:left" x="819.900696" y="741.019897" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">配</text>
+			<text style="text-anchor:left" x="819.900696" y="723.028076" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="824.400635" y="705.036194" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">2</text>
+			<text style="text-anchor:left" x="819.900696" y="687.044312" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="819.900696" y="669.052490" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="CS-105150-210026992-5c276a00" id="TXT-105150--210026992-646dbb39" >
+			<text style="text-anchor:left" x="1044.397217" y="750.015869" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">7</text>
+			<text style="text-anchor:left" x="1039.897339" y="732.024048" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">低</text>
+			<text style="text-anchor:left" x="1039.897339" y="714.032227" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">芙</text>
+			<text style="text-anchor:left" x="1039.897339" y="696.040283" font-size="17.999708" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">语</text>
+		</g>
+		<g attach_id="LB-105150-184549392-5900010f" id="TXT-105150--184549392-646dbb36" >
+			<text style="text-anchor:left" x="654.113892" y="362.889740" transform="translate(654.113892,362.889740) scale(0.937485, 0.937485) translate(-654.113892,-362.889740)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">段</text>
+			<text style="text-anchor:left" x="654.113892" y="347.896545" transform="translate(654.113892,347.896545) scale(0.937485, 0.937485) translate(-654.113892,-347.896545)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">分</text>
+			<text style="text-anchor:left" x="654.113892" y="332.903290" transform="translate(654.113892,332.903290) scale(0.937485, 0.937485) translate(-654.113892,-332.903290)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">伏</text>
+			<text style="text-anchor:left" x="654.113892" y="317.910095" transform="translate(654.113892,317.910095) scale(0.937485, 0.937485) translate(-654.113892,-317.910095)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">千</text>
+			<text style="text-anchor:left" x="654.113892" y="302.916870" transform="translate(654.113892,302.916870) scale(0.937485, 0.937485) translate(-654.113892,-302.916870)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">10</text>
+		</g>
+		<g attach_id="FS-105150-200021834-5c276a00" id="TXT-105150--200021834-646dbd29" >
+			<text style="text-anchor:left" x="1144.024292" y="759.969849" transform="translate(1144.024292,759.969849) scale(0.937485, 0.937485) translate(-1144.024292,-759.969849)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">器</text>
+			<text style="text-anchor:left" x="1144.024292" y="744.976562" transform="translate(1144.024292,744.976562) scale(0.937485, 0.937485) translate(-1144.024292,-744.976562)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">容</text>
+			<text style="text-anchor:left" x="1144.024292" y="729.983398" transform="translate(1144.024292,729.983398) scale(0.937485, 0.937485) translate(-1144.024292,-729.983398)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">电</text>
+			<text style="text-anchor:left" x="1144.024292" y="714.990173" transform="translate(1144.024292,714.990173) scale(0.937485, 0.937485) translate(-1144.024292,-714.990173)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="1147.774170" y="699.996948" transform="translate(1147.774170,699.996948) scale(0.937485, 0.937485) translate(-1147.774170,-699.996948)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">2</text>
+			<text style="text-anchor:left" x="1144.024292" y="685.003784" transform="translate(1144.024292,685.003784) scale(0.937485, 0.937485) translate(-1144.024292,-685.003784)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">伏</text>
+			<text style="text-anchor:left" x="1144.024292" y="670.010498" transform="translate(1144.024292,670.010498) scale(0.937485, 0.937485) translate(-1144.024292,-670.010498)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">千</text>
+			<text style="text-anchor:left" x="1140.274292" y="655.017334" transform="translate(1140.274292,655.017334) scale(0.937485, 0.937485) translate(-1140.274292,-655.017334)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">0.4</text>
+		</g>
+		<g attach_id="FS-105150-200033264-5c276a00" id="TXT-105150--200033264-646dbd29" >
+			<text style="text-anchor:left" x="274.038147" y="759.969849" transform="translate(274.038147,759.969849) scale(0.937485, 0.937485) translate(-274.038147,-759.969849)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">器</text>
+			<text style="text-anchor:left" x="274.038147" y="744.976562" transform="translate(274.038147,744.976562) scale(0.937485, 0.937485) translate(-274.038147,-744.976562)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">容</text>
+			<text style="text-anchor:left" x="274.038147" y="729.983398" transform="translate(274.038147,729.983398) scale(0.937485, 0.937485) translate(-274.038147,-729.983398)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">电</text>
+			<text style="text-anchor:left" x="274.038147" y="714.990173" transform="translate(274.038147,714.990173) scale(0.937485, 0.937485) translate(-274.038147,-714.990173)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">号</text>
+			<text style="text-anchor:left" x="277.788025" y="699.996948" transform="translate(277.788025,699.996948) scale(0.937485, 0.937485) translate(-277.788025,-699.996948)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">1</text>
+			<text style="text-anchor:left" x="274.038147" y="685.003784" transform="translate(274.038147,685.003784) scale(0.937485, 0.937485) translate(-274.038147,-685.003784)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">伏</text>
+			<text style="text-anchor:left" x="274.038147" y="670.010498" transform="translate(274.038147,670.010498) scale(0.937485, 0.937485) translate(-274.038147,-670.010498)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">千</text>
+			<text style="text-anchor:left" x="270.288147" y="655.017334" transform="translate(270.288147,655.017334) scale(0.937485, 0.937485) translate(-270.288147,-655.017334)" font-size="16.000000" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">0.4</text>
+		</g>
+		<g attach_id="TR-105150-184549404-5900010f" id="TXT-105150--184549404-5900010f" >
+			<text style="text-anchor:left" x="801.428772" y="476.966980" font-size="23.999609" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">1000kVA</text>
+			<text style="text-anchor:left" x="801.428772" y="447.980072" font-size="23.999609" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">2号配变</text>
+		</g>
+		<g attach_id="TR-105150-184549405-5900010f" id="TXT-105150--184549405-5900010f" >
+			<text style="text-anchor:left" x="361.436005" y="476.966980" font-size="23.999609" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">1000kVA</text>
+			<text style="text-anchor:left" x="361.436005" y="447.980103" font-size="23.999609" font-family="Simsun" stroke="rgb(255,255,255)" fill="rgb(255,255,255)">1号配变</text>
+		</g>
+</g>
+</svg>

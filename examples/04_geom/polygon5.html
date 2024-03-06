@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>绘制基本图形(多边形+矩阵变换)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+
+    <script>
+        var pageTitle = "AnyGraph 多边形";
+        var pageDesc = "显示镜像的多边形";
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:800px; height:400px; border:solid 1px #CCC;"></div>
+    <h3>Data</h3>
+    <div id="divData" style="height: 200px;"></div>
+</body>
+<script>
+    let graph;
+</script>
+<script type="module">
+    import { Graph, Transform, BgUtil, ClassUtil } from "../../src/index.js";
+
+    // graph对象
+    graph = new Graph({
+        "target": "graphWrapper",
+        "enabledGeomEvent": true
+    });
+
+    // 网格水印层
+    BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+
+    // 新建绘图图层
+    let layer = graph.addLayer();
+    let data = [{ "type": "Polygon", "coords": [[156, 157], [43, 270], [43, 157]], "style": { "fillStyle": 1, "fillColor": "#caff67" } },
+	    { "type": "Polygon", "coords": [[121, 194], [201, 114], [281, 194]], "style": { "fillStyle": 1, "fillColor": "#67becf" } },
+	    { "type": "Polygon", "coords": [[285, 114], [229, 58], [229, 1], [285, 58]], "style": { "fillStyle": 1, "fillColor": "#ef3d61" } },
+	    { "type": "Polygon", "coords": [[41, 108], [41, 188], [1, 148]], "style": { "fillStyle": 1, "fillColor": "#f9f51a" } },
+	    { "type": "Polygon", "coords": [[242, 73], [282, 113], [242, 153], [202, 113]], "style": { "fillStyle": 1, "fillColor": "#a54c09" } },
+	    { "type": "Polygon", "coords": [[327, 99], [287, 139], [287, 59]], "style": { "fillStyle": 1, "fillColor": "#fa8ccc" } },
+	    { "type": "Polygon", "coords": [[201, 196], [281, 196], [281, 276]], "style": { "fillStyle": 1, "fillColor": "#f6ca29" } }];
+    let trans1 = Transform.create();
+    Transform.translate(trans1, 20, 60);
+    for (let i = 0, ii = data.length; i < ii; i++) {
+        let geom = data[i];
+        geom.coords = Transform.applys(trans1, geom.coords);
+    }
+
+    // 增加水平镜像数据
+    let trans = Transform.create();
+    Transform.scale(trans, -1, 1);
+    Transform.translate(trans, -750, 0);
+    for (let i = 0, ii = data.length; i < ii; i++) {
+        let geom = ClassUtil.clone(data[i]);
+        geom.coords = Transform.applys(trans, geom.coords);
+        data.push(geom);
+    }
+
+    // 装入数据至图层中
+    layer.getSource().loadData(data);
+    
+    // 为geom绑定click事件
+    let geoms = layer.getSource().getData();
+    geoms.forEach( geom => {
+		geom.on("click", activeShape);
+	})
+    graph.render();
+</script>
+
+</html>

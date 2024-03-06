@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <title>渐变(色相)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+	<link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "颜色渐变";
+        var pageDesc = "通过线性渐变产生色相的功能";
+    </script>
+</head>
+
+<body>
+    <div id="graphWrapper" data-type="graph" data-type="graph" style="width:800px; height:500px; border:solid 1px #CCC;"></div>
+</body>
+
+<script type="module">
+    import {
+        Graph, Layer, VectorSource, BgUtil, Color, MathUtil,
+        GGeometryType, Rect, Point, Circle, Gradient, Text, Polyline, Polygon
+    } from "../../src/index.js";
+
+    // graph对象
+    let graph = new Graph({
+        "target": "graphWrapper"
+    });
+
+    // 网格水印层
+    let bgLayer = BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+
+    // 新建绘图图层
+    let layer = graph.addLayer();
+
+    // pageload
+    $(document).ready(function () {
+        let [x, y, width, height] = [50, 80, 700, 100];
+        
+        // 按60deg生成色带(6份)
+        let colorBand = ["#FF0000", "#FFFF00", "#00FF00", "#00FFFF", "#0000FF", "#FF00FF", "#FF0000"];
+        let gradient = new Gradient({
+            "type": "linear",
+            "coords": { "x1": x, "y1": y, "x2": x + width, "y2": y },
+            "colorStops": [
+                { "offset": "0", "color": colorBand[0] },
+                { "offset": "0.166", "color": colorBand[1] },
+                { "offset": "0.333", "color": colorBand[2] },
+                { "offset": "0.5", "color": colorBand[3] },
+                { "offset": "0.667", "color": colorBand[4] },
+                { "offset": "0.833", "color": colorBand[5] },
+                { "offset": "1", "color": colorBand[0] },
+            ]
+        });
+
+        layer.getSource().add(new Rect({
+            x, y, width, height, "style": { "fillColor": gradient, "fillStyle": 1, "color": "none" }
+        }));
+
+        for (let i = 0; i < 7; i++) {
+            layer.getSource().add(new Text({
+                "x": x + width / 6 * i,
+                "y": y + height + 40,
+                "text": 60 * i, "style": { "fillStyle": 1, "fillColor": "#000000", "fontSize": 36, "fontName": "黑体", "textAlign": "center", "textBaseline": "middle" }
+            }));
+        }
+
+        // 按30deg生成色带(12份) 
+        gradient = new Gradient({
+            "type": "linear",
+            "coords": { "x1": x, "y1": y, "x2": x + width, "y2": y },
+            "colorStops": []
+        });
+
+        y += 200;
+        let blockNum = 12;
+        for (let i = 0; i <= blockNum; i++) {
+            // 根据hsl规则计算每份的颜色
+            let color = "HSL(" + i * 360/blockNum + ", 100%, 50%)";
+            gradient.colorStops.push({ "offset": 1/blockNum * i, "color" : color });
+            
+            layer.getSource().add(new Text({
+                "x": x + width / blockNum * i,
+                "y": y + height + 40,
+                "text": 30 * i, "style": { "fillStyle": 1, "fillColor": "#000000", "fontSize": 22, "fontName": "黑体", "textAlign": "center", "textBaseline": "middle" }
+            }));
+        }
+        layer.getSource().add(new Rect({
+            x, y, width, height, "style": { "fillColor": gradient, "fillStyle": 1, "color": "none" }
+        }));
+    });
+</script>
+</html>

@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>在线调色板</title>
+    <meta charset="UTF-8">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <!-- 加载代码块 -->
+    <script src="../js/colorset.js"></script>
+    <style>
+        table.gridtable {
+            font-family: verdana, arial, sans-serif;
+            font-size: 14px;
+            color: #333333;
+            border-width: 2px;
+            border-color: #666666;
+            border-collapse: collapse;
+        }
+
+        table.gridtable th {
+            border-width: 1px;
+            font-size: 16px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+
+        table.gridtable td {
+            border-width: 1px;
+            padding: 5px;
+            border-style: solid;
+            border-color: #666666;
+        }
+    </style>
+</head>
+
+<body style="margin:10px; font-size: 16px;">
+	<div style="width:100%;">
+        <h1>在线调色板</h1>
+    </div>
+    <div style="width:100%; margin-top:30px;">
+        <div style="margin-left:10px; width:306px; float:left" align="center">
+            <img src="../css/images/img_colormap.gif" usemap="#colormap" alt="colormap">
+            <map id="colormap" name="colormap"></map>
+            <h3>点选或输入颜色值</h3>
+            <div>
+                <input type="text" id="entercolor" placeholder="Color value" style="width:200px; font-size:20px;" value="red" />
+                <button id="btnConfirm" class="btn btn-default" type="button" style="font-size:18px;">确定</button>
+            </div>
+            <div>
+                <h3>选择一个颜色</h3>
+                <input type="color" id="colorPicker" value="#ff0000" style="width:85%;" />
+            </div>
+        </div>
+        <div style="margin-left:10px; width:506px; float:left; border: solid 1px #CCC; min-height: 300px;">
+            <div id="lumtopcontainer">
+                <table class="gridtable" style="width:100%">
+                    <tbody id="tableColor1"></tbody>
+                </table>
+            </div>
+        </div>
+        <div style="margin-left:10px; width:506px; float:left; border: solid 1px #CCC; min-height: 300px;">
+            <div id="lumtopcontainer">
+                <table class="gridtable" style="width:100%">
+                    <tbody id="tableColor2"></tbody>
+                </table>
+            </div>
+        </div>
+        <div style="margin-left:10px; width:506px; float:left; border: solid 1px #CCC; min-height: 300px;">
+            <div id="lumtopcontainer">
+                <table class="gridtable" style="width:100%">
+                    <tbody id="tableColor3"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module">
+    import { Color } from "../../src/index.js";
+
+    function generateHslTable(color) {
+        $("#tableColor").html("")
+        let strHtml = [];
+        let colorHSL = color.toHSL();
+
+        // 亮度
+        strHtml.push("<tr><th style='width:100px'>亮度</th><th>HEX</th><th style='width:120px'>RGB</th><th style='width:180px'>HSL</th>");
+        let colorSet = Color.band(color, 20);
+        for (let i = 0; i < colorSet.length; i++) {
+            let hex = colorSet[i];
+            let sColor = Color.fromString(hex);
+            let hsl = sColor.toHSL();
+            strHtml.push("<tr><td bgcolor='" + sColor.toHex() + "'>&nbsp;</td><td>" + hex + "</td><td align='center'>" + sColor + "</td><td>hsl(" + hsl.H + "," + hsl.S + "%," + hsl.L + "%)</td>");
+        }
+        $("#tableColor1").html(strHtml.join());
+        
+        // 色相
+        strHtml = [];
+        strHtml.push("<tr><th style='width:100px'>色相</th><th>HEX</th><th style='width:120px'>RGB</th><th style='width:180px'>HSL</th>");
+        for (let i = 0; i < 360; i+=15) {
+			let rcolor = "hsl(" + i + "," + colorHSL.S + "%," + colorHSL.L + "%)";
+            let sColor = Color.fromString(rcolor);
+            let hex = sColor.toHex();
+            let hsl = sColor.toHSL();
+            strHtml.push("<tr><td bgcolor='" + hex + "'>&nbsp;</td><td>" + hex + "</td><td align='center'>" + sColor + "</td><td>hsl(" + hsl.H + "," + hsl.S + "%," + hsl.L + "%)</td>");
+        }
+        $("#tableColor3").html(strHtml.join());
+
+        // 饱和度
+        strHtml = [];
+        strHtml.push("<tr><th style='width:100px'>饱和度</th><th>HEX</th><th style='width:120px'>RGB</th><th style='width:180px'>HSL</th>");
+        for (let i = 0; i < 100; i+=5) {
+			let rcolor = "hsl(" + colorHSL.S + "," + i + "%," + colorHSL.L + "%)";
+            let sColor = Color.fromString(rcolor);
+            let hex = sColor.toHex();
+            let hsl = sColor.toHSL();
+            strHtml.push("<tr><td bgcolor='" + hex + "'>&nbsp;</td><td>" + hex + "</td><td align='center'>" + sColor + "</td><td>hsl(" + hsl.H + "," + hsl.S + "%," + hsl.L + "%)</td>");
+        }
+        $("#tableColor2").html(strHtml.join());
+    }
+    
+    function clickColor(hex) {
+        $("#entercolor").val(hex)
+        generateHslTable(Color.fromString(hex));
+    }
+
+    // page loaded ready
+    $(document).ready(function () {
+        // 颜色选择器绑定单击事件
+        if (colorMap) {
+            let strHtml = []
+            for (let i = 0; i < colorMap.length; i++) {
+                strHtml.push('<area style="cursor:pointer" shape="poly" coords="' + colorMap[i].coords + '" alt="' + colorMap[i].color + '">');
+            }
+            $("#colormap").html(strHtml.join(""));
+            $("#colormap").find("area").on("click", function () {
+                let color = $(this).attr("alt");
+                clickColor(color);
+            })
+        }
+        
+        $("#btnConfirm").on("click", function(){
+			clickColor($("#entercolor").val());
+		})
+		
+		$("#colorPicker").on("change", function(){
+			 clickColor($(this).val());
+		})
+		
+        clickColor("red");
+    });
+</script>
+
+</html>

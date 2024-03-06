@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>缩放和平移缓动动画示例</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../style/graph.css">
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+	<link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "显示指定位置";
+        var pageDesc = "采用动画效果显示指定坐标位置的图形";
+    </script>
+
+    <script type="module">
+        import { Graph, Layer, VectorSource, BgUtil, ZoomControl, MousePositionControl } from "../../src/index.js";
+
+        $(document).ready(function () {
+            // graph对象
+            let graph = new Graph({
+                "target": "graphWrapper",
+                "layers": [
+                    new Layer({
+						"useTransform": false,
+                        "source": new VectorSource({
+                            "fileUrl": "../../demo-data/geom.json"
+                        })
+                    })
+                ]
+            });
+
+            // 显示辅助网格
+            BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+            graph.addControl(new MousePositionControl());
+            graph.addControl(new ZoomControl());
+
+            $("#btnHighLight").on("click", function () {
+                graph.animailMove([280, 200], 0.25)
+            })
+        });
+    </script>
+</head>
+
+<body style="margin:0px;" oncontextmenu="return false;">
+    <div id="wrap" style="position:relative;">
+        <div id="graphWrapper" data-type="graph" style="width:100%; height:400px; border:solid 1px #CCC;"></div>
+        <button type="button" style="position: absolute; right:40px; top:40px;" class="btn btn-success" id="btnHighLight">居中显示</button>
+    </div>
+</body>
+
+</html>

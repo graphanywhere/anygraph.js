@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>绘制基本图形(多边形)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/data_box.js"></script>
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "AnyGraph 多边形";
+        var pageDesc = "显示AnyGraph多边形";
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:800px; height:400px; border:solid 1px #CCC;"></div>
+    <h3>Data</h3>
+    <div id="divData" style="height: 200px;"></div>
+</body>
+<script>
+    let graph;
+</script>
+<script type="module">
+    import { Graph, BgUtil } from "../../src/index.js";
+
+    // graph对象
+    graph = new Graph({
+        "target": "graphWrapper",
+        "enabledGeomEvent": true
+    });
+
+    // 网格水印层
+    BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+
+    let data = [
+        { "type": "Polygon", "coords": [[[380, 220], [267, 333], [267, 220]]], "style": { "fillStyle": 1, "fillColor": "#caff67" }, "uid": "G000003T" },
+        { "type": "Polygon", "coords": [[[345, 257], [425, 177], [505, 257]]], "style": { "fillStyle": 1, "fillColor": "#67becf" }, "uid": "G000003U" },
+        { "type": "Polygon", "coords": [[[509, 177], [453, 121], [453, 64], [509, 121]]], "style": { "fillStyle": 1, "fillColor": "#ef3d61" }, "uid": "G000003V" },
+        { "type": "Polygon", "coords": [[[265, 171], [265, 251], [225, 211]]], "style": { "fillStyle": 1, "fillColor": "#f9f51a" }, "uid": "G0000040" },
+        { "type": "Polygon", "coords": [[[466, 136], [506, 176], [466, 216], [426, 176]]], "style": { "fillStyle": 1, "fillColor": "#a54c09" }, "uid": "G0000041" },
+        { "type": "Polygon", "coords": [[[551, 162], [511, 202], [511, 122]]], "style": { "fillStyle": 1, "fillColor": "#fa8ccc" }, "uid": "G0000042" },
+        { "type": "Polygon", "coords": [[[425, 259], [505, 259], [505, 339]]], "style": { "fillStyle": 1, "fillColor": "#f6ca29" }, "uid": "G0000043" }
+    ]
+
+    // 新建绘图图层
+    let layer = graph.addLayer();
+    layer.getSource().loadData(data);
+
+    // 为geom绑定click事件
+    let geoms = layer.getSource().getData();
+    geoms.forEach(geom => {
+        geom.on("click", activeShape);
+    })
+    graph.render();
+</script>
+
+</html>

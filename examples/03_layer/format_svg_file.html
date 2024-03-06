@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>SVG</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <script src="../../adam.lib/basic/cb.util.js"></script>
+    <!-- 加载代码块 -->
+	<link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "加载SVG文件数据";
+        var pageDesc = "加载SVG文件数据";
+    </script>
+
+    <script type="module">
+        import { Graph, VectorSource, Layer, SvgSymbol, SvgFormat, BgUtil, Geometry, XmlUtil } from "../../src/index.js";
+
+        // graph对象
+        let graph;
+
+        // page loaded ready
+        $(document).ready(function () {
+            graph = new Graph({
+                "target": "graphWrapper"
+            });
+            let size = graph.getSize();
+            let viewBox;
+
+            // 显示辅助网格
+            BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, size));
+
+            // 建立SVG渲染数据图层
+            let layer = new Layer({
+                "source": new VectorSource({
+                    "fileUrl": "../../demo-data/abc.svg",
+                    "callback": loadDocument,
+                    "dataType": "xml",
+                    "format": new SvgFormat({
+                        "canvasWidth": size.width,
+                        "canvasHeight": size.height,
+                        "symbol": new SvgSymbol(),
+                        "ready": function (result) {
+                            viewBox = result.document.viewBox;
+                        }
+                    })
+                }),
+                useTransform:true,
+                "style": { "minFontSize": 0, "allowStyleScale": true }
+            });
+            graph.addLayer(layer);
+
+            // 加载文档
+            function loadDocument(document) {
+                if (document != null) {
+                    // 加入到数据源中
+                    layer.getSource().clearData();
+                    let listData = layer.getSource().getFormat().readFeatures(document);
+                    layer.getSource().add(listData);
+
+                    // 建立空间索引
+                    layer.getSource().buildIndex();
+                }
+                if (viewBox != null && viewBox.length > 0) {
+                    if (viewBox.length === 4) {
+                        graph.showExtent(viewBox);
+                    }
+                } else {
+                    graph.render();
+                }
+            }
+
+            // 打开文件
+            $("#btnOpenFile").on("click", function () {
+                let options = {
+                    "accept": ".svg",
+                    "path": "svg"
+                }
+                Util.openFile(options, function (fileList) {
+                    if (fileList.length > 0) {
+                        let fileContent = fileList[0];
+                        loadDocument(XmlUtil.loadXML(fileContent))
+                    }
+                }, function (err) {
+                    console.info(err);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body oncontextmenu="return false;">
+    <div id="wrap" style="position: relative;">
+        <div id="graphWrapper" data-type="graph" style="width:100%; height:450px; border:solid 1px #CCC;"></div>
+        <button type="button" style="position: absolute; right:40px; top:40px;" class="btn btn-success"id="btnOpenFile">打开文件</button>
+    </div>
+</body>
+
+</html>

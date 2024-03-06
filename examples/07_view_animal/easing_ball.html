@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>单个移动的小球</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+	<link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "缓动-移动的小球";
+        var pageDesc = "使用缓动效果，实现小球的移动";
+    </script>
+
+    <script type="module">
+        import { Graph, Circle, BgUtil, Animation, Easing } from "../../src/index.js";
+
+        // 初始化graph对象
+        let graph = new Graph({
+            "target": "graphWrapper"
+        });
+
+        // 显示辅助网格
+        let bgLayer = BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+        bgLayer.getSource().add(new Text({
+            "text": "缓动 Demo",
+            "x": graph.getSize().width / 2,
+            "y": graph.getSize().height / 2,
+            "vectorSize": false,
+            "style": { "lineWidth": 4, "fillStyle": 0, "fillColor": "#D0D0D0", "fontSize": 30, "fontName": "黑体", "textAlign": "center", "textBaseline": "middle" }
+        }));
+
+        // 增加数据层
+        let layer = graph.addLayer({ "name": "数据层" });
+        let ball = layer.getSource().add(
+            new Circle({
+                "x": 50,
+                "y": 100,
+                "radius": 20,
+                "style": { "color": "none", "fillStyle": 1, "fillColor": "#FF0000" }
+            })
+        )
+
+        // 动画相关变量
+        let minX = 50, maxX = 800;
+        let totalTimes = 60;
+        let times = 0;
+        let rafId = -1;
+
+        // 帧
+        function frame() {
+            // 计算小球移动的距离
+            let dx = (maxX - minX) * Easing.easeIn(times / totalTimes);
+            ball.moveTo(minX + dx, 100);
+            // 图形渲染
+            graph.render();
+            // 动画停止条件
+            if (times < totalTimes) {
+                times++;
+            } else {
+                times = 0;
+                Animation.stop(rafId);
+            }
+        }
+        $("#btnStart").on("click", function () {
+            times = 0;
+            rafId = Animation.start(frame);
+        });
+        $("#btnStop").on("click", function () {
+            Animation.stop(rafId);
+        })
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:850px; height:200px; border:solid 1px #CCC;"></div>
+    <div style="margin:20px">
+        <button class="btn btn-success" id="btnStart">开始</button>
+        <button class="btn btn-success" id="btnStop">停止</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>文本旋转</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/data_box.js"></script>
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "文本旋转";
+        var pageDesc = "通过文本旋转实现文本垂直排列";
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:220px; height:720px; border:solid 1px #CCC;"></div>
+    <h3>Data</h3>
+    <div id="divData" style="height:120px;"></div>
+</body>
+
+<script>
+    let graph;
+</script>
+<script type="module">
+    import { Graph, Circle, Text, Rect, BgUtil } from "../../src/index.js";
+
+    // graph对象
+    graph = new Graph({
+        "target": "graphWrapper"
+    });
+
+    // 网格水印层
+    BgUtil.generateGrid(Object.assign({ "interval": 10, "graph":graph }, graph.getSize()));
+    
+    // 新建绘图图层
+    let layer = graph.addLayer();
+
+    // 绘制填充的文字
+    let text = "使用ctx.rotate()旋转画布, 实现文字垂直排列";
+    layer.getSource().add(new Text({ "x": 50, "y": 50, "rotation":90, "text": text, "style": { "textBaseline": "alphabetic", "fillColor": "#000000", "fontSize": 30, "fontName": "黑体" } }));
+    layer.getSource().add(new Text({ "x": 150, "y": 680, "rotation":-90, "text": text, "style": { "textBaseline": "alphabetic", "fillColor": "#000000", "fontSize": 30, "fontName": "黑体" } }));
+
+    graph.render();
+</script>
+
+</html>

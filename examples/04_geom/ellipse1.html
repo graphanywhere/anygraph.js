@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>椭圆</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/data_box.js"></script>
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "AnyGraph椭圆类型";
+        var pageDesc = "显示AnyGraph椭圆类型";
+    </script>
+</head>
+
+<body>
+    <div id="graphWrapper" data-type="graph" style="width:660px; height:300px; border:solid 1px #CCC;"></div>
+    <h3>Data</h3>
+    <div id="divData" style="height: 100px;"></div>
+</body>
+<script>
+    let graph;
+</script>
+<script type="module">
+    import { Graph, Ellipse, Text, Polyline, BgUtil } from "../../src/index.js";
+
+    // graph对象
+    graph = new Graph({
+        "target": "graphWrapper",
+        "enabledGeomEvent": true
+    });
+
+    // 新建图层
+    let layer = graph.addLayer();
+    BgUtil.generateGrid(Object.assign({ "interval": 10, "graph":graph }, graph.getSize()));
+
+    // 绘制椭圆
+    layer.getSource().add(new Ellipse({ "x": 150, "y": 150, "radiusX": 100, "radiusY": 120, "style": { "lineWidth": 8, "color": "green" } }));
+    layer.getSource().add(new Ellipse({ "x": 450, "y": 150, "radiusX": 160, "radiusY": 100, "style": { "color": "none", "fillStyle":1, "fillColor":"gold" } }));
+
+    // render
+    graph.render();
+    
+    // 为geom绑定click事件
+    let geoms = layer.getSource().getData();
+    geoms.forEach( geom => {
+		geom.on("click", activeShape);
+	})
+</script>
+
+</html>

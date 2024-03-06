@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>命名色+色带</title>
+    <meta charset="UTF-8">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <style>
+        table.gridtable {
+            font-family: verdana, arial, sans-serif;
+            font-size: 16px;
+            color: #333333;
+            border-width: 2px;
+            border-color: #666666;
+            border-collapse: collapse;
+        }
+
+        table.gridtable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+
+        table.gridtable td {
+            border-width: 1px;
+            padding: 7px;
+            border-style: solid;
+            border-color: #666666;
+        }
+    </style>
+</head>
+
+<body style="margin:10px; font-size: 16px;">
+
+    <div style="margin:0 auto;width:1410px;" align="center">
+        <h1>色带</h1>
+        <div style="margin:auto;width:450px; float:left">
+			<p align="left"><span style="font-size: 24px; font-weight: bold; color:blue;">命名色</span>鼠标单击颜色，可创建该颜色的色带</p>
+            <table id="table16" class="gridtable" style="width:100%"></table>
+        </div>
+        <div style="margin-left:20px; width:806px; float:left; border: solid 1px #CCC; min-height: 300px;">
+            <div id="lumtopcontainer">
+                <table class="gridtable" style="width:100%">
+                    <tbody id="tableColor">
+                        <tr>
+                            <th style="width:80px">序号</th>
+                            <th style="width:200px">颜色</th>
+                            <th>Hex</th>
+                            <th>RGB</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let colorUtil;
+
+    function clickColor(hex, seltop, selleft, html) {
+        if (hex == 0) {
+            if (html == 5) {
+                hex = $("#html5colorpicker").val();
+            } else {
+                hex = $("#entercolor").val();
+            }
+        }
+        generateHslTable(colorUtil.fromString(hex));
+    }
+
+    function generateHslTable(color) {
+        $("#tableColor").html("")
+        let strHtml = [];
+        strHtml.push("<tr><th style='width:80px'>序号</th><th>颜色</th><th style='width:100px'>Hex</th><th style='width:180px'>RGB</th></tr>");
+
+        let colorSet = colorUtil.band(color, 20);
+        for (let i = 0; i < colorSet.length; i++) {
+            let hex = colorSet[i];
+            strHtml.push("<tr>");
+            strHtml.push("<td align='center'>" + (i + 1) + "</td>");
+            strHtml.push("<td style='background-color:" + hex + "'>&nbsp;</td>");
+            strHtml.push("<td>" + hex + "</td>");
+            strHtml.push("<td>" + colorUtil.fromString(hex) + "</td>");
+            strHtml.push("</tr>");
+        }
+        $("#tableColor").html(strHtml.join());
+    }
+
+</script>
+<script type="module">
+    import { Color } from "../../src/index.js";
+    colorUtil = Color;
+
+    // page loaded ready
+    $(document).ready(function () {
+        let nameColors = Color.getSystemColor();
+        let colors = Object.keys(nameColors).slice(2);
+        let strHtml = [];
+        for (let i = 0; i < colors.length; i += 7) {
+            strHtml.push("<tr>");
+            strHtml.push("<td align='center' style='background-color:" + colors[i] + "'>&nbsp;</td>");
+            strHtml.push("<td align='center' style='background-color:" + colors[i + 1] + "'>&nbsp;</td>");
+            strHtml.push("<td align='center' style='background-color:" + colors[i + 2] + "'>&nbsp;</td>");
+            strHtml.push("<td align='center' style='background-color:" + colors[i + 3] + "'>&nbsp;</td>");
+            strHtml.push("<td align='center' style='background-color:" + colors[i + 4] + "'>&nbsp;</td>");
+            strHtml.push("<td align='center' style='background-color:" + colors[i + 5] + "'>&nbsp;</td>");
+            strHtml.push("<td align='center' style='background-color:" + colors[i + 6] + "'>&nbsp;</td>");
+            strHtml.push("</tr>");
+        }
+        $("#table16").html(strHtml.join(""));
+        
+        // 初始界面
+        generateHslTable("deeppink");
+        
+        // bind td event
+        $("#table16").find("td").on("click", function(){
+			let bgColor = $(this).css("backgroundColor");
+			generateHslTable(bgColor);
+		});
+    });
+</script>
+
+</html>

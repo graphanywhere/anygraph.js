@@ -1,0 +1,4028 @@
+{
+	"gwi": 21,
+	"title": "前25电缆线路ZD_站线户(变)图[No33]",
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25580,
+					-13492
+				]
+			},
+			"mark": [
+				{
+					"text": "前湾站",
+					"angle": 0,
+					"textheight": 14,
+					"coordinates": [
+						[
+							-25600.748047,
+							-13492
+						],
+						[
+							-25558.748047,
+							-13506
+						]
+					]
+				},
+				{
+					"text": "35kV",
+					"angle": 0,
+					"textheight": 14,
+					"coordinates": [
+						[
+							-25593.748047,
+							-13478
+						],
+						[
+							-25558.748047,
+							-13492
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 12583430,
+				"BID": 10000022,
+				"ID": 100,
+				"LAYER_ID": 20,
+				"SYMBOL_ID": 1007,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 100,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 102,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					108520
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25580,
+					-13544
+				]
+			},
+			"mark": [
+				{
+					"text": "友绿配电站",
+					"angle": 0,
+					"textheight": 5.280313,
+					"coordinates": [
+						[
+							-25593.201172,
+							-13544.264648
+						],
+						[
+							-25566.798828,
+							-13549.544922
+						]
+					]
+				},
+				{
+					"text": "81210",
+					"angle": 0,
+					"textheight": 5.280313,
+					"coordinates": [
+						[
+							-25586.601562,
+							-13538.884766
+						],
+						[
+							-25566.798828,
+							-13543.736328
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 29361158,
+				"BID": 10000022,
+				"ID": 101,
+				"LAYER_ID": 14,
+				"SYMBOL_ID": 1010,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 50,
+				"REDGE_NUM": 4,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 102,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 104,
+				"REDGE2_BID": 10000022,
+				"REDGE2_ID": 106,
+				"REDGE3_BID": 10000022,
+				"REDGE3_ID": 124,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105644
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25580,
+							-13507
+						],
+						[
+							-25580,
+							-13534
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "计量点:5846 ",
+					"angle": 0,
+					"textheight": 5,
+					"coordinates": [
+						[
+							-25577.5,
+							-13522
+						],
+						[
+							-25542.5,
+							-13527
+						]
+					]
+				},
+				{
+					"text": "表号:1239065 ",
+					"angle": 0,
+					"textheight": 5,
+					"coordinates": [
+						[
+							-25577.5,
+							-13516.900391
+						],
+						[
+							-25542.5,
+							-13521.5
+						]
+					]
+				},
+				{
+					"text": "前25电缆线路ZD",
+					"angle": 0,
+					"textheight": 5,
+					"coordinates": [
+						[
+							-25577.5,
+							-13511.799805
+						],
+						[
+							-25542.5,
+							-13516
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 102,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 100,
+				"HEADRNODE_LID": 106,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 101,
+				"TAILRNODE_LID": 6,
+				"LENGTH": 27,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130055336
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25560,
+					-13596
+				]
+			},
+			"mark": [
+				{
+					"text": "315kVA",
+					"angle": 0,
+					"textheight": 4.950341,
+					"coordinates": [
+						[
+							-25567.425781,
+							-13598.969727
+						],
+						[
+							-25552.574219,
+							-13603.919922
+						]
+					]
+				},
+				{
+					"text": "地头蛇",
+					"angle": 0,
+					"textheight": 4.950341,
+					"coordinates": [
+						[
+							-25567.425781,
+							-13593.919922
+						],
+						[
+							-25552.574219,
+							-13598.474609
+						]
+					]
+				},
+				{
+					"text": "53058",
+					"angle": 0,
+					"textheight": 4.950341,
+					"coordinates": [
+						[
+							-25566.1875,
+							-13588.869141
+						],
+						[
+							-25552.574219,
+							-13593.029297
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 46138374,
+				"BID": 10000022,
+				"ID": 103,
+				"LAYER_ID": 16,
+				"SYMBOL_ID": 1011,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 50,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 104,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					2388
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25580,
+							-13554
+						],
+						[
+							-25580,
+							-13580
+						],
+						[
+							-25564,
+							-13580
+						],
+						[
+							-25564,
+							-13587
+						],
+						[
+							-25564.800781,
+							-13587
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "友绿6进出线",
+					"angle": -1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25577.599609,
+							-13561.5
+						],
+						[
+							-25579.599609,
+							-13572.5
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 104,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 101,
+				"HEADRNODE_LID": 26,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 103,
+				"TAILRNODE_LID": 4,
+				"LENGTH": 49.8,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130032755
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25660,
+					-13596
+				]
+			},
+			"mark": [
+				{
+					"text": "2x1000kVA",
+					"angle": 0,
+					"textheight": 5.279845,
+					"coordinates": [
+						[
+							-25671.878906,
+							-13599.166992
+						],
+						[
+							-25646.800781,
+							-13604.447266
+						]
+					]
+				},
+				{
+					"text": "语芙配电站",
+					"angle": 0,
+					"textheight": 5.279845,
+					"coordinates": [
+						[
+							-25673.199219,
+							-13593.788086
+						],
+						[
+							-25646.800781,
+							-13598.639648
+						]
+					]
+				},
+				{
+					"text": "16263",
+					"angle": 0,
+					"textheight": 5.279845,
+					"coordinates": [
+						[
+							-25666.599609,
+							-13588.407227
+						],
+						[
+							-25646.800781,
+							-13592.832031
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 29361158,
+				"BID": 10000022,
+				"ID": 105,
+				"LAYER_ID": 14,
+				"SYMBOL_ID": 1010,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 50,
+				"REDGE_NUM": 5,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 106,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 108,
+				"REDGE2_BID": 10000022,
+				"REDGE2_ID": 112,
+				"REDGE3_BID": 10000022,
+				"REDGE3_ID": 116,
+				"REDGE4_BID": 10000022,
+				"REDGE4_ID": 120,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105150
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25660,
+							-13586
+						],
+						[
+							-25660,
+							-13576
+						],
+						[
+							-25584,
+							-13576
+						],
+						[
+							-25584,
+							-13554
+						],
+						[
+							-25583,
+							-13554
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "友绿4进出线",
+					"angle": 0,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25627.5,
+							-13573.599609
+						],
+						[
+							-25616.5,
+							-13575.599609
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 106,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 105,
+				"HEADRNODE_LID": 6,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 101,
+				"TAILRNODE_LID": 27,
+				"LENGTH": 109,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130081537
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25680,
+					-13646
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25706.349609,
+							-13649.411133
+						],
+						[
+							-25686.398438,
+							-13653.611328
+						]
+					]
+				},
+				{
+					"text": "语芙1号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25713.699219,
+							-13645.111328
+						],
+						[
+							-25686.398438,
+							-13648.991211
+						]
+					]
+				},
+				{
+					"text": "60857",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25705.298828,
+							-13640.811523
+						],
+						[
+							-25686.398438,
+							-13644.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 107,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 108,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 110,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105221
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25660,
+							-13606
+						],
+						[
+							-25660,
+							-13636
+						],
+						[
+							-25680,
+							-13636
+						],
+						[
+							-25680,
+							-13641
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "语芙1进出线",
+					"angle": -1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25657.599609,
+							-13615.5
+						],
+						[
+							-25659.599609,
+							-13626.5
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 108,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 105,
+				"HEADRNODE_LID": 26,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 107,
+				"TAILRNODE_LID": 6,
+				"LENGTH": 55,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080240
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25680,
+					-13696
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25686.349609,
+							-13715.411133
+						],
+						[
+							-25666.398438,
+							-13719.611328
+						]
+					]
+				},
+				{
+					"text": "语芙2号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25693.699219,
+							-13711.111328
+						],
+						[
+							-25666.398438,
+							-13714.991211
+						]
+					]
+				},
+				{
+					"text": "66313",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25685.298828,
+							-13706.811523
+						],
+						[
+							-25666.398438,
+							-13710.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 109,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 110,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105220
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25680,
+							-13651
+						],
+						[
+							-25680,
+							-13691
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "语芙1号1进出线",
+					"angle": -1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25677.599609,
+							-13664
+						],
+						[
+							-25679.599609,
+							-13678
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 110,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 107,
+				"HEADRNODE_LID": 26,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 109,
+				"TAILRNODE_LID": 6,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080251
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25720,
+					-13646
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25726.349609,
+							-13627.411133
+						],
+						[
+							-25706.398438,
+							-13631.611328
+						]
+					]
+				},
+				{
+					"text": "语芙5号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25733.699219,
+							-13623.111328
+						],
+						[
+							-25706.398438,
+							-13626.991211
+						]
+					]
+				},
+				{
+					"text": "31818",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25725.298828,
+							-13618.811523
+						],
+						[
+							-25706.398438,
+							-13622.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 111,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 112,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 114,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105215
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25720,
+							-13641
+						],
+						[
+							-25720,
+							-13632
+						],
+						[
+							-25664,
+							-13632
+						],
+						[
+							-25664,
+							-13606
+						],
+						[
+							-25663,
+							-13606
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "语芙3进出线",
+					"angle": 0,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25697.5,
+							-13629.599609
+						],
+						[
+							-25686.5,
+							-13631.599609
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 112,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 111,
+				"HEADRNODE_LID": 6,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 105,
+				"TAILRNODE_LID": 27,
+				"LENGTH": 92,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080242
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25720,
+					-13696
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25726.349609,
+							-13715.40918
+						],
+						[
+							-25706.398438,
+							-13719.609375
+						]
+					]
+				},
+				{
+					"text": "语芙6号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25733.699219,
+							-13711.109375
+						],
+						[
+							-25706.398438,
+							-13714.989258
+						]
+					]
+				},
+				{
+					"text": "96328",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25725.298828,
+							-13706.80957
+						],
+						[
+							-25706.398438,
+							-13710.369141
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 113,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 114,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105216
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25720,
+							-13651
+						],
+						[
+							-25720,
+							-13691
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "语芙5号1进出线",
+					"angle": -1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25717.599609,
+							-13664
+						],
+						[
+							-25719.599609,
+							-13678
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 114,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 111,
+				"HEADRNODE_LID": 26,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 113,
+				"TAILRNODE_LID": 6,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080259
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25640,
+					-13646
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25645.347656,
+							-13627.411133
+						],
+						[
+							-25625.396484,
+							-13631.611328
+						]
+					]
+				},
+				{
+					"text": "语芙8号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25652.697266,
+							-13623.111328
+						],
+						[
+							-25625.396484,
+							-13626.991211
+						]
+					]
+				},
+				{
+					"text": "93767",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25644.296875,
+							-13618.811523
+						],
+						[
+							-25625.396484,
+							-13622.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 115,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 116,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 118,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105222
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25657,
+							-13606
+						],
+						[
+							-25656,
+							-13606
+						],
+						[
+							-25656,
+							-13632
+						],
+						[
+							-25644,
+							-13632
+						],
+						[
+							-25644,
+							-13641
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "语芙5进出线",
+					"angle": -1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25653.599609,
+							-13613.5
+						],
+						[
+							-25655.599609,
+							-13624.5
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 116,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 105,
+				"HEADRNODE_LID": 25,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 115,
+				"TAILRNODE_LID": 2,
+				"LENGTH": 48,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080244
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25640,
+					-13696
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25646.347656,
+							-13715.411133
+						],
+						[
+							-25626.396484,
+							-13719.611328
+						]
+					]
+				},
+				{
+					"text": "语芙9号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25653.697266,
+							-13711.111328
+						],
+						[
+							-25626.396484,
+							-13714.991211
+						]
+					]
+				},
+				{
+					"text": "94283",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25645.296875,
+							-13706.811523
+						],
+						[
+							-25626.396484,
+							-13710.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 117,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 118,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105223
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25640,
+							-13651
+						],
+						[
+							-25640,
+							-13691
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "语芙8号1进出线",
+					"angle": -1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25637.599609,
+							-13664
+						],
+						[
+							-25639.599609,
+							-13678
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 118,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 115,
+				"HEADRNODE_LID": 26,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 117,
+				"TAILRNODE_LID": 6,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130055256
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25600,
+					-13646
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25582.345703,
+							-13649.411133
+						],
+						[
+							-25561.347656,
+							-13653.611328
+						]
+					]
+				},
+				{
+					"text": "语芙12号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25590.746094,
+							-13645.111328
+						],
+						[
+							-25561.347656,
+							-13648.991211
+						]
+					]
+				},
+				{
+					"text": "26955",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25581.296875,
+							-13640.811523
+						],
+						[
+							-25561.347656,
+							-13644.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 119,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 120,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 122,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105226
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25645,
+							-13596
+						],
+						[
+							-25600,
+							-13596
+						],
+						[
+							-25600,
+							-13641
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "语芙7进出线",
+					"angle": 0,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25628,
+							-13593.599609
+						],
+						[
+							-25617,
+							-13595.599609
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 120,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 105,
+				"HEADRNODE_LID": 16,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 119,
+				"TAILRNODE_LID": 6,
+				"LENGTH": 90,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080246
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25600,
+					-13696
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25606.345703,
+							-13715.411133
+						],
+						[
+							-25585.347656,
+							-13719.611328
+						]
+					]
+				},
+				{
+					"text": "语芙13号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25614.746094,
+							-13711.111328
+						],
+						[
+							-25585.347656,
+							-13714.991211
+						]
+					]
+				},
+				{
+					"text": "77922",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25605.296875,
+							-13706.811523
+						],
+						[
+							-25585.347656,
+							-13710.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 121,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 122,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105227
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25600,
+							-13651
+						],
+						[
+							-25600,
+							-13691
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "语芙12号1进出线",
+					"angle": -1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25597.599609,
+							-13663.5
+						],
+						[
+							-25599.599609,
+							-13678.5
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 122,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 119,
+				"HEADRNODE_LID": 26,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 121,
+				"TAILRNODE_LID": 6,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080253
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25480,
+					-13596
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷2号配电站",
+					"angle": 0,
+					"textheight": 4.061613,
+					"coordinates": [
+						[
+							-25493.201172,
+							-13596.203125
+						],
+						[
+							-25466.798828,
+							-13600.264648
+						]
+					]
+				},
+				{
+					"text": "40025",
+					"angle": 0,
+					"textheight": 4.061613,
+					"coordinates": [
+						[
+							-25485.078125,
+							-13592.041992
+						],
+						[
+							-25466.798828,
+							-13595.796875
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 29361158,
+				"BID": 10000022,
+				"ID": 123,
+				"LAYER_ID": 14,
+				"SYMBOL_ID": 1010,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 50,
+				"REDGE_NUM": 4,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 124,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 126,
+				"REDGE2_BID": 10000022,
+				"REDGE2_ID": 134,
+				"REDGE3_BID": 10000022,
+				"REDGE3_ID": 148,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105626
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25577,
+							-13554
+						],
+						[
+							-25576,
+							-13554
+						],
+						[
+							-25576,
+							-13576
+						],
+						[
+							-25484,
+							-13576
+						],
+						[
+							-25484,
+							-13586
+						],
+						[
+							-25483,
+							-13586
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "友绿2进出线",
+					"angle": 0,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25535.5,
+							-13573.599609
+						],
+						[
+							-25524.5,
+							-13575.599609
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 124,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 101,
+				"HEADRNODE_LID": 25,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 123,
+				"TAILRNODE_LID": 5,
+				"LENGTH": 126,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130081535
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25520,
+					-13646
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25530.347656,
+							-13627.411133
+						],
+						[
+							-25509.349609,
+							-13631.611328
+						]
+					]
+				},
+				{
+					"text": "优衷18号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25538.748047,
+							-13623.111328
+						],
+						[
+							-25509.349609,
+							-13626.991211
+						]
+					]
+				},
+				{
+					"text": "C4959",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25529.298828,
+							-13618.811523
+						],
+						[
+							-25509.349609,
+							-13622.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 125,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 126,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 128,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105610
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25520,
+							-13641
+						],
+						[
+							-25520,
+							-13632
+						],
+						[
+							-25484,
+							-13632
+						],
+						[
+							-25484,
+							-13606
+						],
+						[
+							-25483,
+							-13606
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷2号5进出线",
+					"angle": 0,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25509,
+							-13629.599609
+						],
+						[
+							-25495,
+							-13631.599609
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 126,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 125,
+				"HEADRNODE_LID": 6,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 123,
+				"TAILRNODE_LID": 27,
+				"LENGTH": 72,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080801
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25520,
+					-13696
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25550.349609,
+							-13699.411133
+						],
+						[
+							-25529.351562,
+							-13703.611328
+						]
+					]
+				},
+				{
+					"text": "优衷19号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25558.75,
+							-13695.111328
+						],
+						[
+							-25529.351562,
+							-13698.991211
+						]
+					]
+				},
+				{
+					"text": "N4184",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25549.300781,
+							-13690.811523
+						],
+						[
+							-25529.351562,
+							-13694.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 127,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 128,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 130,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105611
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25520,
+							-13691
+						],
+						[
+							-25520,
+							-13651
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷18号1进出线",
+					"angle": 1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25522.400391,
+							-13678.5
+						],
+						[
+							-25520.400391,
+							-13663.5
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 128,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 127,
+				"HEADRNODE_LID": 6,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 125,
+				"TAILRNODE_LID": 26,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080791
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25520,
+					-13746
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25550.347656,
+							-13749.411133
+						],
+						[
+							-25529.349609,
+							-13753.611328
+						]
+					]
+				},
+				{
+					"text": "优衷20号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25558.748047,
+							-13745.111328
+						],
+						[
+							-25529.349609,
+							-13748.991211
+						]
+					]
+				},
+				{
+					"text": "X1075",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25549.298828,
+							-13740.811523
+						],
+						[
+							-25529.349609,
+							-13744.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 129,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 130,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 132,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105612
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25520,
+							-13741
+						],
+						[
+							-25520,
+							-13701
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷19号1进出线",
+					"angle": 1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25522.400391,
+							-13728.5
+						],
+						[
+							-25520.400391,
+							-13713.5
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 130,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 129,
+				"HEADRNODE_LID": 6,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 127,
+				"TAILRNODE_LID": 26,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080792
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25520,
+					-13796
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25526.347656,
+							-13815.411133
+						],
+						[
+							-25505.349609,
+							-13819.611328
+						]
+					]
+				},
+				{
+					"text": "优衷21号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25534.748047,
+							-13811.111328
+						],
+						[
+							-25505.349609,
+							-13814.991211
+						]
+					]
+				},
+				{
+					"text": "T2933",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25525.298828,
+							-13806.811523
+						],
+						[
+							-25505.349609,
+							-13810.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 131,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 132,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105613
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25520,
+							-13791
+						],
+						[
+							-25520,
+							-13751
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷20号1进出线",
+					"angle": 1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25522.400391,
+							-13778.5
+						],
+						[
+							-25520.400391,
+							-13763.5
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 132,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 131,
+				"HEADRNODE_LID": 6,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 129,
+				"TAILRNODE_LID": 26,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080794
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25440,
+					-13646
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25466.349609,
+							-13649.411133
+						],
+						[
+							-25446.398438,
+							-13653.611328
+						]
+					]
+				},
+				{
+					"text": "优衷6号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25473.699219,
+							-13645.111328
+						],
+						[
+							-25446.398438,
+							-13648.991211
+						]
+					]
+				},
+				{
+					"text": "H365",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25464.25,
+							-13640.811523
+						],
+						[
+							-25446.398438,
+							-13644.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 133,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 134,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 136,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105618
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25444,
+							-13641
+						],
+						[
+							-25444,
+							-13632
+						],
+						[
+							-25476,
+							-13632
+						],
+						[
+							-25476,
+							-13606
+						],
+						[
+							-25477,
+							-13606
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷2号1进出线",
+					"angle": 0,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25467,
+							-13630
+						],
+						[
+							-25453,
+							-13632
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 134,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 133,
+				"HEADRNODE_LID": 2,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 123,
+				"TAILRNODE_LID": 25,
+				"LENGTH": 68,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080797
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25440,
+					-13696
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25466.347656,
+							-13699.411133
+						],
+						[
+							-25446.396484,
+							-13703.611328
+						]
+					]
+				},
+				{
+					"text": "优衷7号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25473.697266,
+							-13695.111328
+						],
+						[
+							-25446.396484,
+							-13698.991211
+						]
+					]
+				},
+				{
+					"text": "G318",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25464.248047,
+							-13690.811523
+						],
+						[
+							-25446.396484,
+							-13694.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 135,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 136,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 138,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105622
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25440,
+							-13651
+						],
+						[
+							-25440,
+							-13691
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷6号1进出线",
+					"angle": -1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25437.599609,
+							-13664
+						],
+						[
+							-25439.599609,
+							-13678
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 136,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 133,
+				"HEADRNODE_LID": 26,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 135,
+				"TAILRNODE_LID": 6,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080805
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25440,
+					-13746
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25466.347656,
+							-13749.40918
+						],
+						[
+							-25446.396484,
+							-13753.609375
+						]
+					]
+				},
+				{
+					"text": "优衷8号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25473.697266,
+							-13745.109375
+						],
+						[
+							-25446.396484,
+							-13748.989258
+						]
+					]
+				},
+				{
+					"text": "U475",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25464.248047,
+							-13740.80957
+						],
+						[
+							-25446.396484,
+							-13744.369141
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 137,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 138,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 140,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105623
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25440,
+							-13701
+						],
+						[
+							-25440,
+							-13741
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷7号1进出线",
+					"angle": -1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25437.599609,
+							-13714
+						],
+						[
+							-25439.599609,
+							-13728
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 138,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 135,
+				"HEADRNODE_LID": 26,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 137,
+				"TAILRNODE_LID": 6,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080806
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25440,
+					-13796
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25466.349609,
+							-13799.411133
+						],
+						[
+							-25446.398438,
+							-13803.611328
+						]
+					]
+				},
+				{
+					"text": "优衷9号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25473.699219,
+							-13795.111328
+						],
+						[
+							-25446.398438,
+							-13798.991211
+						]
+					]
+				},
+				{
+					"text": "T154",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25464.25,
+							-13790.811523
+						],
+						[
+							-25446.398438,
+							-13794.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 139,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 140,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 142,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105624
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25440,
+							-13751
+						],
+						[
+							-25440,
+							-13791
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷8号1进出线",
+					"angle": -1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25437.599609,
+							-13764
+						],
+						[
+							-25439.599609,
+							-13778
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 140,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 137,
+				"HEADRNODE_LID": 26,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 139,
+				"TAILRNODE_LID": 6,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080807
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25440,
+					-13846
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25422.349609,
+							-13849.411133
+						],
+						[
+							-25401.351562,
+							-13853.611328
+						]
+					]
+				},
+				{
+					"text": "优衷10号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25430.75,
+							-13845.111328
+						],
+						[
+							-25401.351562,
+							-13848.991211
+						]
+					]
+				},
+				{
+					"text": "O106",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25420.25,
+							-13840.811523
+						],
+						[
+							-25401.351562,
+							-13844.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 141,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 142,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 144,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105619
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25440,
+							-13841
+						],
+						[
+							-25440,
+							-13801
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷9号1进出线",
+					"angle": 1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25442.400391,
+							-13828
+						],
+						[
+							-25440.400391,
+							-13814
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 142,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 141,
+				"HEADRNODE_LID": 6,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 139,
+				"TAILRNODE_LID": 26,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080808
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25440,
+					-13896
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25470.345703,
+							-13899.40918
+						],
+						[
+							-25449.347656,
+							-13903.609375
+						]
+					]
+				},
+				{
+					"text": "优衷11号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25478.746094,
+							-13895.109375
+						],
+						[
+							-25449.347656,
+							-13898.989258
+						]
+					]
+				},
+				{
+					"text": "M786",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25468.246094,
+							-13890.80957
+						],
+						[
+							-25449.347656,
+							-13894.369141
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 143,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 144,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 146,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105620
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25440,
+							-13851
+						],
+						[
+							-25440,
+							-13891
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷10号1进出线",
+					"angle": -1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25437.599609,
+							-13863.5
+						],
+						[
+							-25439.599609,
+							-13878.5
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 144,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 141,
+				"HEADRNODE_LID": 26,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 143,
+				"TAILRNODE_LID": 6,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080785
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25440,
+					-13946
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25446.345703,
+							-13965.411133
+						],
+						[
+							-25425.347656,
+							-13969.611328
+						]
+					]
+				},
+				{
+					"text": "优衷12号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25454.746094,
+							-13961.111328
+						],
+						[
+							-25425.347656,
+							-13964.991211
+						]
+					]
+				},
+				{
+					"text": "A989",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25444.246094,
+							-13956.811523
+						],
+						[
+							-25425.347656,
+							-13960.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 145,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 146,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105621
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25440,
+							-13901
+						],
+						[
+							-25440,
+							-13941
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷11号1进出线",
+					"angle": -1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25437.599609,
+							-13913.5
+						],
+						[
+							-25439.599609,
+							-13928.5
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 146,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 143,
+				"HEADRNODE_LID": 26,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 145,
+				"TAILRNODE_LID": 6,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080786
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25480,
+					-13646
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25467.347656,
+							-13625.411133
+						],
+						[
+							-25446.349609,
+							-13629.611328
+						]
+					]
+				},
+				{
+					"text": "优衷13号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25475.748047,
+							-13621.111328
+						],
+						[
+							-25446.349609,
+							-13624.991211
+						]
+					]
+				},
+				{
+					"text": "n135",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25465.248047,
+							-13616.811523
+						],
+						[
+							-25446.349609,
+							-13620.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 147,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 148,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 150,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105625
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25480,
+							-13641
+						],
+						[
+							-25480,
+							-13606
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷2号3进出线",
+					"angle": 1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25482.400391,
+							-13630.5
+						],
+						[
+							-25480.400391,
+							-13616.5
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 148,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 147,
+				"HEADRNODE_LID": 6,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 123,
+				"TAILRNODE_LID": 26,
+				"LENGTH": 35,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080799
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25480,
+					-13696
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25467.345703,
+							-13682.411133
+						],
+						[
+							-25446.347656,
+							-13686.611328
+						]
+					]
+				},
+				{
+					"text": "优衷14号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25475.746094,
+							-13678.111328
+						],
+						[
+							-25446.347656,
+							-13681.991211
+						]
+					]
+				},
+				{
+					"text": "z473",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25465.246094,
+							-13673.811523
+						],
+						[
+							-25446.347656,
+							-13677.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 149,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 150,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 152,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105616
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25480,
+							-13691
+						],
+						[
+							-25480,
+							-13651
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷13号1进出线",
+					"angle": 1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25482.400391,
+							-13678.5
+						],
+						[
+							-25480.400391,
+							-13663.5
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 150,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 149,
+				"HEADRNODE_LID": 6,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 147,
+				"TAILRNODE_LID": 26,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080787
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25480,
+					-13746
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25467.347656,
+							-13732.40918
+						],
+						[
+							-25446.349609,
+							-13736.609375
+						]
+					]
+				},
+				{
+					"text": "优衷15号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25475.748047,
+							-13728.109375
+						],
+						[
+							-25446.349609,
+							-13731.989258
+						]
+					]
+				},
+				{
+					"text": "f785",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25465.248047,
+							-13723.80957
+						],
+						[
+							-25446.349609,
+							-13727.369141
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 151,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 152,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 154,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105614
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25480,
+							-13701
+						],
+						[
+							-25480,
+							-13741
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷14号1进出线",
+					"angle": -1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25477.599609,
+							-13713.5
+						],
+						[
+							-25479.599609,
+							-13728.5
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 152,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 149,
+				"HEADRNODE_LID": 26,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 151,
+				"TAILRNODE_LID": 6,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080788
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25480,
+					-13796
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25467.345703,
+							-13782.411133
+						],
+						[
+							-25446.347656,
+							-13786.611328
+						]
+					]
+				},
+				{
+					"text": "优衷16号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25475.746094,
+							-13778.111328
+						],
+						[
+							-25446.347656,
+							-13781.991211
+						]
+					]
+				},
+				{
+					"text": "k823",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25465.246094,
+							-13773.811523
+						],
+						[
+							-25446.347656,
+							-13777.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 153,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 2,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 154,
+				"REDGE1_BID": 10000022,
+				"REDGE1_ID": 156,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105615
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25480,
+							-13791
+						],
+						[
+							-25480,
+							-13751
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷15号1进出线",
+					"angle": 1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25482.400391,
+							-13778.5
+						],
+						[
+							-25480.400391,
+							-13763.5
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 154,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 153,
+				"HEADRNODE_LID": 6,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 151,
+				"TAILRNODE_LID": 26,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080789
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25480,
+					-13846
+				]
+			},
+			"mark": [
+				{
+					"text": "500kVA",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25486.347656,
+							-13865.411133
+						],
+						[
+							-25465.349609,
+							-13869.611328
+						]
+					]
+				},
+				{
+					"text": "优衷17号箱变站",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25494.748047,
+							-13861.111328
+						],
+						[
+							-25465.349609,
+							-13864.991211
+						]
+					]
+				},
+				{
+					"text": "L8003",
+					"angle": 0,
+					"textheight": 4.2,
+					"coordinates": [
+						[
+							-25485.298828,
+							-13856.811523
+						],
+						[
+							-25465.349609,
+							-13860.371094
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 62915590,
+				"BID": 10000022,
+				"ID": 155,
+				"LAYER_ID": 18,
+				"SYMBOL_ID": 1025,
+				"SYMBOL_STATE": 0,
+				"SYMBOL_ANGLE": 0,
+				"SYMBOL_SCALE": 20,
+				"REDGE_NUM": 1,
+				"REDGE0_BID": 10000022,
+				"REDGE0_ID": 156,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					3,
+					105617
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "MultiLineString",
+				"coordinates": [
+					[
+						[
+							-25480,
+							-13841
+						],
+						[
+							-25480,
+							-13801
+						]
+					]
+				]
+			},
+			"mark": [
+				{
+					"text": "优衷16号1进出线",
+					"angle": 1.570796,
+					"textheight": 2,
+					"coordinates": [
+						[
+							-25482.400391,
+							-13828.5
+						],
+						[
+							-25480.400391,
+							-13813.5
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 2629639,
+				"BID": 10000022,
+				"ID": 156,
+				"LAYER_ID": 72,
+				"HEADRNODE_BID": 10000022,
+				"HEADRNODE_ID": 155,
+				"HEADRNODE_LID": 6,
+				"TAILRNODE_BID": 10000022,
+				"TAILRNODE_ID": 153,
+				"TAILRNODE_LID": 26,
+				"LENGTH": 40,
+				"LAYER_SID": 0
+			},
+			"sourcenode": [
+				[
+					32,
+					1130080790
+				]
+			]
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-25560.546875,
+					-13634.391602
+				]
+			},
+			"mark": [
+				{
+					"text": "计量点:11187242056",
+					"angle": 0,
+					"textheight": 4,
+					"coordinates": [
+						[
+							-25578.546875,
+							-13630.391602
+						],
+						[
+							-25542.546875,
+							-13634.391602
+						]
+					]
+				},
+				{
+					"text": "表号:130000035428",
+					"angle": 0,
+					"textheight": 4,
+					"coordinates": [
+						[
+							-25578.546875,
+							-13626.391602
+						],
+						[
+							-25542.546875,
+							-13630.391602
+						]
+					]
+				},
+				{
+					"text": "户号:6560479159",
+					"angle": 0,
+					"textheight": 4,
+					"coordinates": [
+						[
+							-25578.546875,
+							-13622.391602
+						],
+						[
+							-25542.546875,
+							-13626.391602
+						]
+					]
+				},
+				{
+					"text": "315kVA",
+					"angle": 0,
+					"textheight": 4,
+					"coordinates": [
+						[
+							-25578.546875,
+							-13618.391602
+						],
+						[
+							-25542.546875,
+							-13622.391602
+						]
+					]
+				},
+				{
+					"text": "地头蛇",
+					"angle": 0,
+					"textheight": 4,
+					"coordinates": [
+						[
+							-25578.546875,
+							-13614.391602
+						],
+						[
+							-25542.546875,
+							-13618.391602
+						]
+					]
+				},
+				{
+					"text": "53058",
+					"angle": 0,
+					"textheight": 4,
+					"coordinates": [
+						[
+							-25578.546875,
+							-13610.391602
+						],
+						[
+							-25542.546875,
+							-13614.391602
+						]
+					]
+				}
+			],
+			"properties": {
+				"NODETYPE": 5,
+				"BID": 10000022,
+				"ID": 1000000103,
+				"LAYER_ID": 16,
+				"LAYER_SID": 0
+			}
+		}
+	]
+}

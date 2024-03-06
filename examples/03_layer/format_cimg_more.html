@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>CIM/G示例</title>
+    <!-- frame所需脚本和样式 -->
+    <link type="text/css" rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+
+    <!-- REPLACE_CSS 引用css常用库文件/../../adam.lib/css/cu.common.css -->
+    <link type="text/css" rel="stylesheet" href="../../adam.lib/css/cu.widget.css" />
+
+    <!-- REPLACE_JS 引用basic文件/../../adam.lib/js/basic.js -->
+    <script src="../../adam.lib/basic/cb.common.js"></script>
+    <script src="../../adam.lib/basic/cb.util.js"></script>
+    <script src="../../adam.lib/basic/cb.adt.js"></script>
+    <script src="../../adam.lib/basic/cb.ajax.js"></script>
+
+    <!-- REPLACE_JS 引用ui文件/../../adam.lib/js/ui.js -->
+    <script src="../../adam.lib/ui/cu.toolbar.js"></script>
+    <script src="../../adam.lib/ui/cu.notify.js"></script>
+
+    <script type="module">
+        import { Geometry, Color, UrlUtil, Ladder } from "../../src/index.js";
+
+        let graph;
+        let source;
+        let symbolManager;
+        let filePath = "../../demo-data/devp/";
+
+        const CIMG_DEFAULT_DATA_FILE_NAME = filePath + "/mix0/cimg.json";
+
+        $(document).ready(function () {
+            // 创建工具栏
+            createToolbar()
+            let prog = Ladder.loadCimgFile({
+                "fileUrl": CIMG_DEFAULT_DATA_FILE_NAME,
+                "container": "graphWrapper",
+                "allowStyleScale": false,
+                "mouse": true
+            });
+
+            graph = prog.graph;
+            source = prog.source;
+            symbolManager = prog.symbol;
+
+            $("#btnSearch").click(function () {
+                let txt = $("#txtSearch").val();
+                doSearch(txt);
+                return false;
+            })
+        });
+
+        function loadGraph(fileName) {
+            source.clearData();
+            source.loadFile(fileName, function (file) {
+                doDraw(true, file);
+            });
+        }
+
+        // 显示CIM/G简化后的数据
+        function doDraw(cancelHighLight = false, file) {
+            $("#divMessage").html("");
+            $("#divMessage").hide();
+            $("#divSearch").hide();
+            if (file != null && file.backgroundColor != null) {
+                graph.setBgColor(Color.fromString("rgb("+file.backgroundColor+")").toString());
+            } else {
+                graph.setBgColor(null);
+            }
+            graph.setView(null);
+        }
+
+        function createToolbar() {
+
+            let imgPath = UrlUtil.getContextPath() + "/adam.lib/images/icon_scene_automap.png";
+            //可收起的垂直标题
+            let data = {
+                orient: "vertical",
+                skin: "GREEN_BLUE_TOOLBAR",//设置皮肤
+                title: {
+                    text: "CIM/G图形浏览",   //标题
+                    draggable: true,         //是否可伸缩
+                    buttons: ["fold"]        //按钮样式
+                },
+                groups: [{
+                    justifyContent: "left",
+                    styleType: "small",
+                    buttons: [
+                    { text: "站线户变图-架空", imgPath },
+                        { text: "站线户变图-架空联络", imgPath },
+                        { text: "站线户变图-电缆", imgPath },
+                        { text: "站线户变图-展开站房", imgPath },
+                        { text: "站线户变图-环网图", imgPath },
+                        { text: "变电站", imgPath },
+                        { text: "配电站", imgPath }
+                    ]
+                }, {
+                    justifyContent: "left",
+                    styleType: "small",
+                    buttons: [
+                        { text: "显示所有符号", imgPath },
+                        { text: "打开G文件", imgPath }
+                    ]
+                }]
+            };
+
+            let toolbar = new CUToolbar("#toolbarArea", data, function (button) {
+                if (button.text == "显示所有符号") {
+                    source.clearData();
+                    source.add(symbolManager.getSymbolRenderList(30));
+                    source.buildIndex();
+                    doDraw(true);
+
+                } else if (button.text == "站线户变图-架空") {
+                    loadGraph(filePath + "/mix0/cimg.json");
+                } else if (button.text == "站线户变图-架空联络") {
+                    loadGraph(filePath + "/mix2/cimg.json");
+                } else if (button.text == "站线户变图-电缆") {
+                    loadGraph(filePath + "/cable0/cimg.json");
+                } else if (button.text == "站线户变图-展开站房") {
+                    loadGraph(filePath + "/cable1/cimg.json");
+                } else if (button.text == "站线户变图-环网图") {
+                    loadGraph(filePath + "/cable2/cimg.json");
+                } else if (button.text == "变电站") {
+                    loadGraph(filePath + "/bd/cimg.json");
+                } else if (button.text == "配电站") {
+                    loadGraph(filePath + "/pd/cimg.json");
+                } else if (button.text == "打开G文件") {
+                    let options = {
+                        "accept": ".g",
+                        "path": "cimg",
+                        "serviceUrl": UrlUtil.getContextPath() + "/servlet/uploadCimg"
+                    }
+                    Util.uploadFile(options, function (fileList) {
+                        // console.info(fileList);
+                        if (fileList.length > 0) {
+                            source.clearData();
+                            let file = fileList[0];
+                            if (file.alignCenter == null) {
+                                // 显示G文件
+                                let format = new CimgFormat({
+                                    "symbol": symbolManager
+                                });
+                                source.add(format.readFeatures(file));
+                                // 建立空间索引
+                                source.buildIndex();
+                            } else {
+                                // 显示G符号
+                                let sm = new CimgSymbol();
+                                sm.loadData([file]);
+                                source.add(sm.getSymbolRenderList(10));
+                                source.buildIndex();
+                                doDraw(true);
+                            }
+                            doDraw(true, file);
+                        }
+                    }, function (err) {
+                        console.info(err);
+                    });
+                }
+            });
+        }
+    </script>
+</head>
+
+<body oncontextmenu="return false;">
+    <div>
+        <div style="margin-top:0px; padding-left:0px; ">
+            <div id="wrap">
+                <div id="graphWrapper" data-type="graph" style="position:absolute; width:100%; height:100%; border:solid 2px #CCCCCC;">
+                </div>
+                <div id="toolbarArea" style="position:absolute; top:120px; left:60px;">
+                </div>
+                <div id="divMessage"
+                    style="display:none; position:absolute; bottom:10px; left:10px; height:25px; width:500px; font-size: 16px; color:#FF0000; border: solid 1px #ccc; background:#FFFFFF">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

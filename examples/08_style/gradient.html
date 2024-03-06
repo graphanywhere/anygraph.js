@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>渐变</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+	<link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "颜色渐变";
+        var pageDesc = "通过线性渐变产生色相的功能";
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:850px; height:500px; border:solid 1px #CCC;"></div>
+    <div style="margin:10px; text-align: left;">
+        <div class="checkbox" style="font-size: 16px;">
+            <label style="margin-right:20px"><input id="chkRect" type="radio" name="names">矩形</label>
+            <label style="margin-right:20px"><input id="chkCircle" type="radio" name="names">圆形</label>
+        </div>
+    </div>
+</body>
+<script type="module">
+    import {
+        Graph, BgUtil, Color, MathUtil, GGeometryType, Rect, Circle, Gradient, Text
+    } from "../../src/index.js";
+
+    let colorSet = ["red", "orange", "gold", "green", "black", "blue"];
+
+    // graph对象
+    let graph = new Graph({
+        "target": "graphWrapper"
+    });
+
+    // 网格水印层
+    let bgLayer = BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+    bgLayer.getSource().add(new Text({
+        "text": "渐变样式 Demo",
+        "x": graph.getSize().width / 2,
+        "y": graph.getSize().height / 2,
+        "vectorSize": false,
+        "style": { "lineWidth": 4, "fillStyle": 0, "fillColor": "#D0D0D0", "fontSize": 30, "fontName": "黑体", "textAlign": "center", "textBaseline": "middle" }
+    }));
+
+    // 新建绘图图层
+    let layer = graph.addLayer();
+
+    // pageload
+    $(document).ready(function () {
+        $("#chkRect").on("change", function () {
+            layer.getSource().clearTypeData(GGeometryType.RECT);
+            layer.getSource().clearTypeData(GGeometryType.CIRCLE);
+            let width = 180;
+            let height = 120;
+
+            for (let x = 40; x < 800; x += width + 20) {
+                for (let y = 40; y < 400; y += height + 20) {
+                    let color = colorSet[MathUtil.getRandomNum(0, colorSet.length - 1)];
+                    let colorBand = Color.band(color, 10);
+
+                    // 渐变对象
+                    let gradient = new Gradient({
+                        "type": "linear",
+                        "coords": { "x1": x, "y1": y, "x2": x + width, "y2": y },
+                        "colorStops": [{
+                            "offset": "0.1",
+                            "color": colorBand[2]
+                        }, {
+                            "offset": "0.95",
+                            "color": colorBand[6]
+                        }]
+                    });
+
+                    layer.getSource().add(new Rect({
+                        x, y, width, height, "style": { "fillColor": gradient, "fillStyle": 1, "color": "none" }
+                    }));
+                }
+            }
+            graph.render();
+        });
+
+        $("#chkCircle").on("change", function () {
+            layer.getSource().clearTypeData(GGeometryType.RECT);
+            layer.getSource().clearTypeData(GGeometryType.CIRCLE);
+
+            let radius = 60;
+            for (let x = 100; x < 800; x += radius * 2.5) {
+                for (let y = 100; y < 500; y += radius * 2.5) {
+                    let color = colorSet[MathUtil.getRandomNum(0, colorSet.length - 1)];
+                    let colorBand = Color.band(color, 10);
+
+                    // 渐变对象
+                    let gradient = new Gradient({
+                        "type": "radial",
+                        "coords": { "x1": x + radius / 2, "y1": y + radius / 2, "r1": 0, "x2": x, "y2": y, "r2": radius },
+                        "colorStops": [{
+                            "offset": "0.1",
+                            "color": colorBand[2],
+                        }, {
+                            "offset": "0.95",
+                            "color": colorBand[7]
+                        }]
+                    });
+                    // 圆
+                    layer.getSource().add(new Circle({
+                        x, y, radius,
+                        "style": { "fillColor": gradient, "fillStyle": 1, "color": "none" }
+                    }));
+                }
+            }
+            graph.render();
+        });
+        
+        $("#chkCircle").click();
+    })
+
+</script>
+
+</html>

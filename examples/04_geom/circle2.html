@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>(圆)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/data_box.js"></script>
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "AnyGraph圆类型";
+        var pageDesc = "显示AnyGraph圆类型";
+    </script>
+</head>
+
+<body>
+    <div id="graphWrapper" data-type="graph" style="width:600px; height:300px; border:solid 1px #CCC;"></div>
+    <h3>Data</h3>
+    <div id="divData" style="height: 200px;"></div>
+</body>
+<script>
+    let graph;
+</script>
+<script type="module">
+    import { Graph, Circle, Text, Polyline, BgUtil } from "../../src/index.js";
+
+    // graph对象
+    graph = new Graph({
+        "target": "graphWrapper",
+        "mouse": true
+    });
+
+    // 新建图层
+    let layer = graph.addLayer();
+    BgUtil.generateGrid(Object.assign({ "interval": 10, "graph":graph }, graph.getSize()));
+
+    // 绘制圆
+    layer.getSource().add(new Circle({ "x": 150, "y": 150, "radius": 100, "endAngle": 180, "style": { "lineWidth": 8, "color": "green" } }));
+    layer.getSource().add(new Circle({ "x": 400, "y": 150, "radius": 100, "endAngle": 135, "anticlockwise": true, "style": { "lineWidth": 8, "color": "blue" } }));
+    layer.getSource().add(new Circle({ "x": 400, "y": 150, "radius": 100, "endAngle": 135, "anticlockwise": false, "style": { "lineWidth": 8, "color": "red" } }));
+
+    // 绘制辅助信息
+    // 绘制辅助信息（左圆）
+    layer.getSource().add(new Polyline({ "coords": [[150, 150], [150, 250]], "style": { "lineWidth": 2, "color": "#990000", "dash": [6, 6] } }));
+    layer.getSource().add(new Circle({ "x": 150, "y": 150, "radius": 4, "style": { "fillStyle": 1, "fillColor": "red", "color": "none" } }));
+    layer.getSource().add(new Text({ "x": 160, "y": 150, "text": "圆心(150,150)", "style": { "fillColor": "red", "textBaseline": "top", "fontSize": 14, "fontName": "宋体" } }));
+    layer.getSource().add(new Text({ "x": 160, "y": 200, "text": "半径:100", "style": { "fillColor": "red", "textBaseline": "top", "fontSize": 14, "fontName": "宋体" } }));
+
+    // 绘制辅助信息（右圆）
+    // 起点
+    layer.getSource().add(new Circle({ "x": 400, "y": 150, "radius": 6, "style": { "fillStyle": 1, "fillColor": "#A2A2A2", "color": "none" } }));
+    layer.getSource().add(new Polyline({ "coords": [[400, 150], [500, 150]], "style": { "lineWidth": 2, "color": "#A2A2A2", "dash": [6, 6] } }));
+    layer.getSource().add(new Polyline({ "coords": [[400, 150], [329.3, 220.7]], "style": { "lineWidth": 2, "color": "#A2A2A2", "dash": [6, 6] } }));
+
+    // 内角    
+    layer.getSource().add(new Circle({ "x": 400, "y": 150, "radius": 25, "endAngle": 135, "style": { "color": "#737373", "lineWidth": 2, "dash": [6, 6] } }));
+    layer.getSource().add(new Circle({ "x": 425, "y": 150, "radius": 4, "style": { "fillStyle": 1, "fillColor": "#A2A2A2", "color": "none" } }));
+    layer.getSource().add(new Text({ "x": 405, "y": 190, "text": "顺时针135°", "style": { "fillColor": "#A2A2A2", "textBaseline": "alphabetic", "fontSize": 14, "fontName": "宋体" } }));
+
+    // 外角
+    layer.getSource().add(new Circle({ "x": 400, "y": 150, "radius": 45, "endAngle": 135, "anticlockwise": true, "style": { "color": "#737373", "lineWidth": 2, "dash": [6, 6] } }));
+    layer.getSource().add(new Circle({ "x": 445, "y": 150, "radius": 4, "style": { "fillStyle": 1, "fillColor": "#A2A2A2", "color": "none" } }));
+    layer.getSource().add(new Text({ "x": 370, "y": 100, "text": "逆时针135°", "style": { "fillColor": "#A2A2A2", "textBaseline": "alphabetic", "fontSize": 14, "fontName": "宋体" } }));
+
+    graph.render();
+</script>
+
+</html>

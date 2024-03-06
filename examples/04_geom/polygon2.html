@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>绘制基本图形(多边形)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/data_box.js"></script>
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "AnyGraph 多边形";
+        var pageDesc = "显示带洞的多边形";
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:600px; height:400px; border:solid 1px #CCC;"></div>
+    <h3>Data</h3>
+    <div id="divData" style="height: 80px;"></div>
+</body>
+<script>
+    let graph;
+</script>
+<script type="module">
+    import { Graph, Coordinate, Polygon, rect2LineRing, circle2LineRing, BgUtil } from "../../src/index.js";
+
+    // graph对象
+    graph = new Graph({
+        "target": "graphWrapper"
+    });
+
+    // 网格水印层 
+    BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+
+    // 增加数据层
+    let layer = graph.addLayer({"name":"数据层"});
+        
+    // 多边形坐标
+    let coord1 = circle2LineRing([300, 200], 180, 6);
+    let coord2 = Coordinate.reverse(circle2LineRing([300, 200], 120, 6));
+
+    // 增加多边形
+    layer.getSource().add(new Polygon({ "coords": [coord1, coord2], "style":{"fillStyle":1, "fillColor": "blue", "color":"none"} }));
+
+    // 图形渲染
+    graph.render();
+</script>
+
+</html>

@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>呼吸灯</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="图形系统开发实战:进阶篇 示例">
+    <meta name="author" content="hjq">
+    <meta name="keywords" content="canvas,anygraph,javascript">
+    <!-- frame所需脚本和样式 -->
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
+    <script src="../../script/lib/jquery-1.11.2.min.js"></script>
+    <script src="../../script/codemirror/codemirror_merge.js"></script>
+    <!-- 加载代码块 -->
+	<link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/helper.js"></script>
+    <script>
+        var pageTitle = "呼吸灯";
+        var pageDesc = "使用 Easing类 和 Animation类 实现呼吸灯的效果";
+    </script>
+
+    <script type="module">
+        import { Graph, VectorSource, Layer, Text, Circle, BgUtil, Color, Animation, MathUtil, Easing, Gradient } from "../../src/index.js";
+
+        // 初始化graph对象
+        let graph = new Graph({
+            "target": "graphWrapper"
+        });
+
+        // 矩形
+        let defs = [
+            { "x": 50, "y": 50, "radius": 10, "name":"easeIn", "easing": Easing.easeIn },
+            { "x": 50, "y": 100, "radius": 10, "name":"easeOut", "easing": Easing.easeOut },
+            { "x": 50, "y": 150, "radius": 10, "name":"inAndOut", "easing": Easing.inAndOut },
+            { "x": 50, "y": 200, "radius": 10, "name":"linear", "easing": Easing.linear },
+            { "x": 50, "y": 250, "radius": 10, "name":"upAndDown", "easing": Easing.upAndDown },
+            { "x": 50, "y": 300, "radius": 10, "name":"easeInSine", "easing": Easing.easeInSine },
+            { "x": 50, "y": 350, "radius": 10, "name":"easeOutSine", "easing": Easing.easeOutSine },
+            { "x": 50, "y": 400, "radius": 10, "name":"easeInOutQuint", "easing": Easing.easeInOutQuint }
+        ];
+
+        // 显示辅助网格
+        BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
+
+        // 增加数据层
+        let layer = graph.addLayer({ "name": "数据层" });
+        let colorSet = ["#FF0000", "#FFAA00", "#FFFF00", "#00FF00", "#00FFFF", "#0000FF", "#000000"];
+        let balls = [];
+
+        for (let i = 0; i < defs.length; i++) {
+            let color = colorSet[i % colorSet.length];
+
+            // 第一列
+            balls.push({
+                "easing": defs[i].easing,
+                "type": 1,
+                "color": color,
+                "circle": layer.getSource().add(new Circle({
+                    "x": defs[i].x + 300,
+                    "y": defs[i].y,
+                    "radius": defs[i].radius,
+                    "style": { "color": "none", "fillStyle": 1, "fillColor": color }
+                }))
+            });
+
+            // 第二列
+            balls.push({
+                "easing": defs[i].easing,
+                "type": 2,
+                "color": color,
+                "circle": layer.getSource().add(new Circle({
+                    "x": defs[i].x + 450,
+                    "y": defs[i].y,
+                    "radius": defs[i].radius,
+                    "style": { "color": "none", "fillStyle": 1, "fillColor": color }
+                }))
+            });
+
+            // 第三列
+            balls.push({
+                "easing": defs[i].easing,
+                "type": 3,
+                "color": color,
+                "circle": layer.getSource().add(new Circle({
+                    "x": defs[i].x + 600,
+                    "y": defs[i].y,
+                    "radius": defs[i].radius,
+                    "style": { "color": "none", "fillStyle": 1, "fillColor": color }
+                }))
+            });
+
+            layer.getSource().add(new Text({
+                "text": defs[i].name,
+                "x": defs[i].x,
+                "y": defs[i].y,
+                "style": { "fontSize": 24, "fillColor": "blue", "fontName": "Verdana", "textBaseline": "middle" }
+            }))
+        }
+
+        let times = 0;
+        let total = 30;
+        let size = 5;
+        function frame() {
+            for (let i = 0, len = balls.length; i < len; i++) {
+                let colorBand = Color.band(balls[i].color, total).slice(10, total - 5);
+                let easValue = balls[i].easing((times % total) / total);
+                if (balls[i].type == 1) {
+                    let radius = size * easValue + 10;
+                    balls[i].circle.prop("radius", radius);
+                } else if (balls[i].type == 2) {
+                    balls[i].circle.setStyle({ "fillColor": colorBand[Math.floor(easValue * colorBand.length)] });
+                } else {
+                    let radius = size * easValue + 10;
+                    balls[i].circle.prop("radius", radius);
+                    balls[i].circle.setStyle({ "fillColor": colorBand[Math.floor(easValue * colorBand.length)] });
+                }
+            }
+
+            // 图形渲染
+            graph.render();
+            times++;
+        }
+
+        let rafid = 0;
+        $("#btnStart").on("click", function () {
+            times = 0;
+            rafid = Animation.start(frame, 10*1000);
+        })
+        $("#btnStop").on("click", function () {
+            Animation.stop(rafid);
+        })
+    </script>
+</head>
+
+<body style="margin:10px;">
+    <div id="graphWrapper" data-type="graph" style="width:800px; height:450px; border:solid 1px #CCC;"></div>
+    <div style="margin:20px">
+        <button class="btn btn-success" id="btnStart">开始</button>
+        <button class="btn btn-success" id="btnStop">停止</button>
+    </div>
+</body>
+
+</html>
