@@ -60,8 +60,8 @@
         BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
 
         // 数据层
-        let currentLayer = graph.addLayer({ "name": "数据层" });
-        currentLayer.getSource().loadData(data);
+        let layer = graph.addLayer({ "name": "数据层" });
+        layer.getSource().loadData(data);
 
 		// 打开文件
         $("#btnOpenFile").on("click", function () {
@@ -72,14 +72,14 @@
             Util.openFile(options, function (files) {
                 let geomDatas = JSON.parse(files[0]);
                 if (geomDatas.length > 0 && geomDatas[0].name == null) {
-                    currentLayer.getSource().clearData();
-                    currentLayer.getSource().loadData(geomDatas);
+                    layer.getSource().clearData();
+                    layer.getSource().loadData(geomDatas);
                 } else {
                     graph.removeLayers();
                     BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
                     for (let i = 0; i < geomDatas.length; i++) {
-                        currentLayer = graph.addLayer({ "name": geomDatas[i].name });
-                        currentLayer.getSource().loadData(geomDatas[i].data);
+                        layer = graph.addLayer({ "name": geomDatas[i].name });
+                        layer.getSource().loadData(geomDatas[i].data);
                     }
                 }
             });

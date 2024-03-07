@@ -8,14 +8,17 @@
 
 ## 2 安装 AnyGraph
 
-### 使用包管理器
-
-npm install anygraph
-
 ### Github 下载
 
-https://github.com/hujq88/anygraph
+https://gitee.com/graphanywhere/anygraph
 
+或
+
+https://github.com/graphanywhere/anygraph
+
+### 使用包管理器
+
+(即将支持) npm install anygraph
 
 ## 3 开发说明
 

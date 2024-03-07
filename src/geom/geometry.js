@@ -15,6 +15,7 @@ import { PointStyle, LineStyle, SurfaceStyle, SymbolStyle, TextStyle, ImageStyle
 
 /**
  * 几何类型名称
+ * @enum {string}
  */
 export const GGeometryType = {
     POINT: "Point",
@@ -35,6 +36,7 @@ export const GGeometryType = {
 
 /**
  * 几何名称
+ * @enum {int}
  */
 export const GGShapeType = {
     POINT: 1,
@@ -48,6 +50,7 @@ export const GGShapeType = {
 
 /**
  * GeoJSON对象类型
+ * @enum {string}
  */
 export const GGGeoJsonType = {
     POINT: "Point",
@@ -73,22 +76,26 @@ class Geometry extends EventTarget {
     constructor(options = {}, attrNames) {
         super();
         /**
-         * GGeometryType
+         * Geom类型
+         * @type {GGeometryType}
          */
         this.type;
 
         /**
          * 对象ID
+         * @type {String}
          */
         this.uid;
 
         /**
-         * GGShapeType
+         * 几何类型
+         * @type {GGShapeType}
          */
         this.shapeType;
 
         /**
          * 坐标
+         * @type {Array}
          */
         this.coords = [];
         this.pixel = [];
@@ -102,32 +109,39 @@ class Geometry extends EventTarget {
 
         /**
          * 样式
+         * @type {Object}
          */
         this.style = {};
         this._styleScale = 1;
 
         /**
          * 附加样式
+         * @type {Object}
          */
         this.addStyle = null;
 
         /**
          * 属性
+         * @type {Object}
          */
         this.properties = null;
 
         /**
          * 边框对象（在getBorder()时构造该对象)
+         * @type {GeomBorder}
          */
         this.ctrlBorder;
 
         /**
          * 控制外框属性，缺省控制外框包含了9个点，对于某些几何对象可能不需要这么多控制点，可通过该属性控制
+         * @type {Object}
          */
         this.ctrlBorderProp = Object.assign({}, defaultCtrlBorderProp);
 
         /**
          * 是否激活状态
+         * @type {boolean}
+         * @private
          */
         this._focus = false;
 
