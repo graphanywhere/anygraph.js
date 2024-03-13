@@ -10,11 +10,11 @@
 
 ### Github 下载
 
-https://gitee.com/graphanywhere/anygraph
+https://gitee.com/graphanywhere/anygraph.js
 
 或
 
-https://github.com/graphanywhere/anygraph
+https://github.com/graphanywhere/anygraph.js
 
 ### 使用包管理器
 
@@ -89,7 +89,7 @@ AnyGraph 采用es 模块进行开发，可通过以下方式在浏览器中运�
         import { Graph, VectorSource, Layer, SvgFormat } from "../../src/index.js";
 
         // 数据源
-        let fileUrl = "../../demo-data/tiger.svg";
+        let fileUrl = "../../demo-data/svg/tiger.svg";
 
         // graph对象
         let graph = new Graph({
