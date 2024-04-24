@@ -1,11 +1,11 @@
-import { default as GraphControl } from "./control.js";
-import { default as EventType } from "../basetype/event.type.js";
+import Control from "./control.js";
+import EventType from "../basetype/event.type.js";
 import DomUtil from "../util/dom.js";
 
 /**
  * 图层控制控件
  */
-class LayerControl extends GraphControl {
+class LayerControl extends Control {
     constructor(options = {}) {
         super(options);
         this.containerId = "div_LayerControl";
@@ -36,7 +36,8 @@ class LayerControl extends GraphControl {
             //获取每个图层的名称、是否可见属性
             let layer = layers[i];
             let layerName = layer.getName();
-            let visible = layer.getVisible();
+            let visible = layer.isVisible();
+            if(layerName == "浮动层") continue;
 
             //新增li元素，用来承载图层项
             let elementLi = document.createElement('li');

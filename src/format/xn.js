@@ -17,7 +17,7 @@ class XNGeoJsonData extends FeatureFormat {
      * @param {*} file 
      * @param {Projection} proj  坐标投影
      */
-    readFeatures(data, proj) {
+    readData(data, proj) {
         let that = this;
         let listData = [];
         for (let i = 0, ii = data.features.length; i < ii; i++) {

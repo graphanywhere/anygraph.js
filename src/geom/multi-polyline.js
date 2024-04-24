@@ -74,10 +74,10 @@ class MultiPolyline extends Geometry {
     }
 
     /**
-  * 返回对象边界
-  * @param {Boolean} useCoord 为true时返回坐标Bound，为false时返回屏幕像素Bound
-  * @returns {Extent} extent
-  */
+     * 返回对象边界
+     * @param {Boolean} useCoord 为true时返回坐标Bound，为false时返回屏幕像素Bound
+     * @returns {Extent} extent
+     */
     getBBoxInsideSymbol(useCoord = true) {
         let coords = useCoord === false ? this.getPixel() : this.getCoord();
         let extent = Extent.createEmpty();

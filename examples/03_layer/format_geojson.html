@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh_CN">
+
 <head>
     <title>geoJson文件预览</title>
     <meta charset="UTF-8">
@@ -8,7 +9,7 @@
     <meta name="author" content="hjq">
     <meta name="keywords" content="canvas,anygraph,javascript">
     <!-- frame所需脚本和样式 -->
-    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../script/bootstrap-3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../script/codemirror/codemirror.css">
     <script src="../../script/lib/jquery-1.11.2.min.js"></script>
     <script src="../../script/codemirror/codemirror_merge.js"></script>
@@ -23,7 +24,7 @@
 
     <script type="module">
         import { Graph, Layer, VectorSource, Geometry, GeoJSONFormat, WebMercator, Color, BgUtil, LayerControl, MousePositionControl, ZoomControl } from "../../src/index.js";
-        
+
         let graph;
         let overLayer;
 
@@ -33,44 +34,44 @@
                 "target": "graphWrapper",
                 "layers": [
                     new Layer({
-                        source: new VectorSource({ 
-                            "fileUrl": "../../demo-data/geojson/sz.json", 
+                        source: new VectorSource({
+                            "fileUrl": "../../demo-data/geojson/sz.json",
                             "projection": new WebMercator(),
-                            "format" : new GeoJSONFormat({
-                                "style": { "color": "#515151", "fillColor": "#CCCCCC", "fillStyle":1 },
-                                "fillColorSet" : Color.band("#0066FF", 20).slice(2, 16)
-							})
+                            "format": new GeoJSONFormat({
+                                "style": { "color": "#515151", "fillColor": "#CCCCCC", "fillStyle": 1 },
+                                "fillColorSet": Color.band("#0066FF", 20).slice(2, 16)
+                            })
                         }),
                         zIndex: 10010,
                         name: "数据层",
                         visible: true
                     })
                 ],
-                "originAtLeftTop" : false,
+                "originAtLeftTop": false,
                 "fullView": true
             });
-            
+
             // 显示辅助网格
             BgUtil.generateGrid(Object.assign({ "interval": 10, "graph": graph }, graph.getSize()));
             graph.addControl(new MousePositionControl());
             graph.addControl(new ZoomControl());
 
             // 浮动层
-            overLayer = graph.addOverLayer();
-            
+            overLayer = graph.getOverLayer();
+
             // 绑定鼠标事件 
             graph.getRenderObject().on('mousemove', function (args) {
                 let pixel = [args.offsetX, args.offsetY];
                 overLayer.getSource().clearData();
                 let datas = graph.getLayer(10010).getSource().getExtentData(graph.getExtent());
-                if(datas == null || datas.length == 0) return;
+                if (datas == null || datas.length == 0) return;
                 let collision = false;
                 let hotPoly = null;
-                for(let i=0; i<datas.length; i++) {
+                for (let i = 0; i < datas.length; i++) {
                     let obj = datas[i];
-                    if(obj instanceof Geometry && obj.contain(pixel, false)) {
-						let clone = obj.clone();
-						clone.setStyle({"fillColor":"gold"});
+                    if (obj instanceof Geometry && obj.contain(pixel, false)) {
+                        let clone = obj.clone();
+                        clone.setStyle({ "fillColor": "gold" });
                         overLayer.getSource().add(clone);
                     }
                 }
@@ -79,9 +80,11 @@
         });
     </script>
 </head>
+
 <body>
     <div id="wrap">
         <div id="graphWrapper" data-type="graph" style="width:100%; height:450px; border:solid 1px #CCCCCC;"></div>
     </div>
 </body>
+
 </html>

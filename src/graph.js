@@ -31,7 +31,7 @@ import Animation from "./util/animal.js";
 class Graph extends EventTarget {
     /**
      * 构造函数
-     * @param {Object} options {target, mouse, layers, view, originAtLeftTop, bgColor, useMatrix}  
+     * @param {Object} options {target, mouse, eventable, layers, view, originAtLeftTop, useTransform, bgColor, useMatrix}  
      */
     constructor(options = {}) {
         super();
@@ -59,7 +59,7 @@ class Graph extends EventTarget {
          * 是否显示全图
          * @private
          */
-        this.showFullView_ = this.defaultFullView_; 
+        this.showFullView_ = this.defaultFullView_;
 
         /**
          * 视图对象
@@ -84,6 +84,12 @@ class Graph extends EventTarget {
          * @private
          */
         this.originAtLeftTop = options.originAtLeftTop === true || options.originAtLeftTop == null;     // true:左下， false:左上（同屏幕坐标）
+
+        /**
+         * 是否使用矩阵变换坐标
+         * @private
+         */
+        this.useTransform_ = (options.useTransform == undefined || options.useTransform == null ? false : options.useTransform);
 
         /**
          * 坐标 转换为 像素
@@ -119,7 +125,7 @@ class Graph extends EventTarget {
          * target大小发生变化时的处理
          */
         //this.resizeObserver_ = new ResizeObserver(() => this._renderGraph());   // 页面初始化时会自动执行一次，导致重复渲染，因此暂时屏蔽 2024/1/12
-        
+
         /**
          * Render对象，即包含画板和鼠标事件的对象，图形渲染载体
          */
@@ -129,6 +135,7 @@ class Graph extends EventTarget {
         if (typeof (target) == "string") {
             render = new RenderObject(document.getElementById(options.target), {
                 "mouse": options.mouse,
+                "eventable": options.eventable,
                 "mapZoom": function (args) {
                     let anchor = that.getCoordinateFromPixel([args.x, args.y]);
                     let scale = (args.scale == null ? (args.op > 0 ? 0.8 : 1.25) : args.scale);
@@ -295,17 +302,23 @@ class Graph extends EventTarget {
      * 增加浮动层
      * 浮动层通常在数据层的上层，用于突出显示或绘制橡皮线
      */
-    addOverLayer(options = {}) {
-        let overLayer = new Layer({
-            "source": new VectorSource(),
-            "zIndex": options.overlayId > 0 ? options.overlayId : getLayerId() * 2,
-            "type": "aux",
-            "name": options.name ? options.name : "浮动层",
-            "style": options.style ? options.style : { "color": "blue", "fillColor": "#FF8080" },
-            "visible": true
-        });
-
-        return this.addLayer(overLayer);
+    getOverLayer(options = {}) {
+        if (this.overlayId == null) {
+            this.overlayId = getLayerId() * 2;
+        }
+        let overLayer = this.getLayer(this.overlayId);
+        if (overLayer == null) {
+            overLayer = new Layer({
+                "source": new VectorSource(),
+                "zIndex": this.overlayId,
+                "type": "aux",
+                "name": options.name ? options.name : "浮动层",
+                "style": options.style ? options.style : { "color": "blue", "fillColor": "#FF8080" },
+                "visible": true
+            });
+            this.addLayer(overLayer);
+        }
+        return overLayer;
     }
 
     /**
@@ -380,6 +393,22 @@ class Graph extends EventTarget {
     }
 
     /**
+     * 是否使用矩阵变换实现图形缩放交互操作
+     * @returns Boolean
+     */
+    isUseTransform() {
+        return this.useTransform_;
+    }
+
+    /**
+     * 设置是否使用矩阵变换实现图形缩放交互操作
+     * @param {*} bool 
+     */
+    setUseTransform(bool) {
+        this.useTransform_ = (bool === true);
+    }
+
+    /**
      * 返回当前视图
      */
     getView() {
@@ -438,49 +467,63 @@ class Graph extends EventTarget {
         let selectedGeomList = [];
         let extent = this.getExtent();
         let layers = this.getLayers();
-        let point = (coord.length == 2 && !Array.isArray(coord[0]));
 
-        for (let i = 0; i < layers.length; i++) {
-            let layer = layers[i];
-            // 仅判断可见图层中的对象
-            if (layer.getVisible() && layer.visibleAtResolution() && layer.visibleAtDistinct() && !layer.isAuxLayer()) {
-                let geomList = layer.getSource().getExtentData(extent);
+        // 当坐标为空时为查询所有
+        if (coord == null) {
+            for (let i = 0; i < layers.length; i++) {
+                let layer = layers[i];
+                // 仅判断可见图层中的对象
+                if (layer.isVisible() && layer.visibleAtResolution() && layer.visibleAtDistinct() && !layer.isAuxLayer()) {
+                    selectedGeomList = selectedGeomList.concat(layer.getSource().getData());
+                }
+            }
+        }
+        // 根据点坐标或矩形坐标进行查询
+        else {
+            let point = (coord.length == 2 && !Array.isArray(coord[0]));
 
-                // 逐个对象判断是否相交
-                if (geomList != null && geomList.length > 0) {
+            for (let i = 0; i < layers.length; i++) {
+                let layer = layers[i];
+                // 仅判断可见图层中的对象
+                if (layer.isVisible() && layer.visibleAtResolution() && layer.visibleAtDistinct() && !layer.isAuxLayer()) {
+                    let geomList = layer.getSource().getExtentData(extent);
 
-                    let minX = Math.min(coord[0][0], coord[1][0]);
-                    let minY = Math.min(coord[0][1], coord[1][1]);
-                    let maxX = Math.max(coord[0][0], coord[1][0]);
-                    let maxY = Math.max(coord[0][1], coord[1][1]);
-                    let coordExtent = [minX, minY, maxX, maxY];
+                    // 逐个对象判断是否相交
+                    if (geomList != null && geomList.length > 0) {
 
-                    for (let j = 0, len = geomList.length; j < len; j++) {
+                        let minX = Math.min(coord[0][0], coord[1][0]);
+                        let minY = Math.min(coord[0][1], coord[1][1]);
+                        let maxX = Math.max(coord[0][0], coord[1][0]);
+                        let maxY = Math.max(coord[0][1], coord[1][1]);
+                        let coordExtent = [minX, minY, maxX, maxY];
 
-                        // 根据点坐标进行查询
-                        if (point) {
-                            if (geomList[j].contain(coord, true)) {
-                                selectedGeomList.push(geomList[j]);
+                        for (let j = 0, len = geomList.length; j < len; j++) {
+                            if (geomList[j].isVisible() == false) continue;
+                            // 根据点坐标进行查询
+                            if (point) {
+                                if (geomList[j].contain(coord, true)) {
+                                    selectedGeomList.push(geomList[j]);
+                                }
                             }
-                        }
-                        // 判断coord与bbox是否相交
-                        else {
-                            let bbox = geomList[j].getBBox();
-                            if (Extent.intersects(coordExtent, bbox)) {
-                                selectedGeomList.push(geomList[j]);
+                            // 判断coord与bbox是否相交
+                            else {
+                                let bbox = geomList[j].getBBox();
+                                if (Extent.intersects(coordExtent, bbox)) {
+                                    selectedGeomList.push(geomList[j]);
+                                }
                             }
                         }
                     }
                 }
             }
-        }
 
-        // 按对象类别，与中心点距离等因素对相交的对象进行排序
-        selectedGeomList.sort(function (a, b) {
-            let extentA = a.getBBox(false);
-            let extentB = b.getBBox(false);
-            return Extent.getArea(extentA) - Extent.getArea(extentB);
-        })
+            // 按对象类别，与中心点距离等因素对相交的对象进行排序
+            selectedGeomList.sort(function (a, b) {
+                let extentA = a.getBBox(false);
+                let extentB = b.getBBox(false);
+                return Extent.getArea(extentA) - Extent.getArea(extentB);
+            });
+        }
 
         return selectedGeomList;
     }
@@ -594,8 +637,20 @@ class Graph extends EventTarget {
             if (geomList && geomList.length > 0) {
                 for (let j = 0, len = geomList.length; j < len; j++) {
                     if (geomList[j].getUid() === uid) {
-                        geomList.splice(j, 1);
-                        break;
+                        let removefirst = geomList[j].getAutoRemoveList();
+                        if (removefirst.length > 0) {
+                            removefirst.push(geomList[j]);
+                            for (let k = 0; k < removefirst.length; k++) {
+                                this.removeGeom(removefirst[k]);
+                            }
+                            return;
+                        } else {
+                            if (!geomList[j].removeCB()) {
+                                return;
+                            }
+                            geomList.splice(j, 1);
+                            break;
+                        }
                     }
                 }
             }
@@ -618,6 +673,7 @@ class Graph extends EventTarget {
             "dynamicProjection": this.dynamicProjection_,
             "useMatrix": this.useMatrix_,
             "originAtLeftTop": this.originAtLeftTop,
+            "useTransform": this.useTransform_,
             "viewGeomList": this.viewGeomList
         }, this.getView().getState())
         return frameState;
@@ -657,8 +713,21 @@ class Graph extends EventTarget {
         this.render();
     }
 
+    /**
+     * 显示全图
+     */
     showFullView() {
         this.showFullView_ = true;
+        this.setView();
+    }
+
+    /**
+     * 居中显示指定位置
+     */
+    showCenterView(coord) {
+        let view = this.getView();
+        view.setCenter(coord == null ? Extent.getCenter(this.getFullExtent()) : coord);
+        this.render();
     }
 
     /**
@@ -711,7 +780,7 @@ class Graph extends EventTarget {
         let start = Date.now();
         let that = this;
         // 缺省锚点为中心点
-        if(anchor == null) {
+        if (anchor == null) {
             anchor = Extent.getCenter(this.getExtent());
         }
         // 开始动画
@@ -728,11 +797,11 @@ class Graph extends EventTarget {
 
     /**
      * 具有动画效果的图形移动
-     * @param {Coord} center 中心点坐标
+     * @param {Coord} coord 中心点坐标
      * @param {Number} resolution 新的分辨率，如果为空则不改变分辨率 
      * @param {int} duration 延时时间
      */
-    animailMove(center, resolution, duration = 500) {
+    animailMove(coord, resolution, duration = 500) {
         let start = Date.now();
         let that = this;
         let originalCenter = this.getView().getCenter();
@@ -742,8 +811,8 @@ class Graph extends EventTarget {
         Animation.start(function () {
             let drawTime = Date.now() - 1;
             let delta = Easing.easeOut((drawTime - start) / duration);
-            let centerX = originalCenter[0] + delta * (center[0] - originalCenter[0]);
-            let centerY = originalCenter[1] + delta * (center[1] - originalCenter[1]);
+            let centerX = originalCenter[0] + delta * (coord[0] - originalCenter[0]);
+            let centerY = originalCenter[1] + delta * (coord[1] - originalCenter[1]);
             that.getView().setCenter([centerX, centerY]);
             if (resolution != null && resolution > 0) {
                 let res = originalRes + delta * (resolution - originalRes);

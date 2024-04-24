@@ -9,4 +9,4 @@ export {default as BgUtil} from "./background.js";
 export {default as Easing} from "./easing.js";
 export {default as Animation} from "./animal.js";
 export {default as Tween, TweenEasing } from "./tween.js";
-
+export {default as Cursor} from "./cursor.js";

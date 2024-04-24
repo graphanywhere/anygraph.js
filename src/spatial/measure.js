@@ -66,7 +66,7 @@ class Measure {
         // 计算线段两端点的差值
         const dx = p2[0] - p1[0];
         const dy = p2[1] - p1[1];
-    
+
         // 如果dx和dy都不等于0, p1p2是一个线段，否则p1p2为同一个点
         if (dx !== 0 || dy !== 0) {
             // 计算p到线段p1p2的投影点 在线段上的相对位置t
@@ -81,7 +81,7 @@ class Measure {
                 p1[1] += dy * t;
             }
         }
-    
+
         // 计算并返回两点之间的距离
         return this.dist(p, p1);
     }
@@ -259,6 +259,10 @@ class Measure {
 
             d += t;
         }
+        if (i == vtxp.length) {
+            //console.log("len=" + vtxp.length + " d =" + d + " t=" + t);
+            i = vtxp.length - 1;
+        }
         ratio = (dist - d) / t;
         retval.out = [vtxp[i - 1][0] + ratio * x, vtxp[i - 1][1] + ratio * y];
         retval.angle = this.calcAngle(vtxp[i], vtxp[i - 1]);
@@ -266,6 +270,358 @@ class Measure {
         return retval;
     }
 
+    static unit_circle = [
+        { a: 0.0000000000, c: 1.0000000000, s: 0.0000000000 },	//  0/18*PI
+        { a: 0.1745329252, c: 0.9848077530, s: 0.1736481777 },	//  1/18*PI
+        { a: 0.3490658504, c: 0.9396926208, s: 0.3420201433 },	//  2/18*PI
+        { a: 0.5235987756, c: 0.8660254038, s: 0.5000000000 },	//  3/18*PI
+        { a: 0.6981317008, c: 0.7660444431, s: 0.6427876097 },	//  4/18*PI
+        { a: 0.8726646260, c: 0.6427876097, s: 0.7660444431 },	//  5/18*PI
+        { a: 1.0471975512, c: 0.5000000000, s: 0.8660254038 },	//  6/18*PI
+        { a: 1.2217304764, c: 0.3420201433, s: 0.9396926208 },	//  7/18*PI
+        { a: 1.3962634016, c: 0.1736481777, s: 0.9848077530 },	//  8/18*PI
+        { a: 1.5707963268, c: 0.0000000000, s: 1.0000000000 },	//  9/18*PI
+        { a: 1.7453292520, c: -0.1736481777, s: 0.9848077530 },	// 10/18*PI
+        { a: 1.9198621772, c: -0.3420201433, s: 0.9396926208 },	// 11/18*PI
+        { a: 2.0943951024, c: -0.5000000000, s: 0.8660254038 },	// 12/18*PI
+        { a: 2.2689280276, c: -0.6427876097, s: 0.7660444431 },	// 13/18*PI
+        { a: 2.4434609528, c: -0.7660444431, s: 0.6427876097 },	// 14/18*PI
+        { a: 2.6179938780, c: -0.8660254038, s: 0.5000000000 },	// 15/18*PI
+        { a: 2.7925268032, c: -0.9396926208, s: 0.3420201433 },	// 16/18*PI
+        { a: 2.9670597284, c: -0.9848077530, s: 0.1736481777 },	// 17/18*PI
+        { a: 3.1415926536, c: -1.0000000000, s: 0.0000000000 },	// 18/18*PI
+        { a: 3.3161255788, c: -0.9848077530, s: -0.1736481777 },	// 19/18*PI
+        { a: 3.4906585040, c: -0.9396926208, s: -0.3420201433 },	// 20/18*PI
+        { a: 3.6651914292, c: -0.8660254038, s: -0.5000000000 },	// 21/18*PI
+        { a: 3.8397243544, c: -0.7660444431, s: -0.6427876097 },	// 22/18*PI
+        { a: 4.0142572796, c: -0.6427876097, s: -0.7660444431 },	// 23/18*PI
+        { a: 4.1887902048, c: -0.5000000000, s: -0.8660254038 },	// 24/18*PI
+        { a: 4.3633231300, c: -0.3420201433, s: -0.9396926208 },	// 25/18*PI
+        { a: 4.5378560552, c: -0.1736481777, s: -0.9848077530 },	// 26/18*PI
+        { a: 4.7123889804, c: 0.0000000000, s: -1.0000000000 },	// 27/18*PI
+        { a: 4.8869219056, c: 0.1736481777, s: -0.9848077530 },	// 28/18*PI
+        { a: 5.0614548308, c: 0.5000000000, s: -0.8660254038 },	// 30/18*PI
+        { a: 5.4105206812, c: 0.7660444431, s: -0.6427876097 },	// 32/18*PI
+        { a: 5.7595865316, c: 0.8660254038, s: -0.5000000000 },	// 33/18*PI
+        { a: 5.9341194568, c: 0.9396926208, s: -0.3420201433 },	// 34/18*PI
+        { a: 6.1086523820, c: 0.9848077530, s: -0.1736481777 }	// 35/18*PI
+    ];
+
+    /**
+      * 生成圆的坐标
+     */
+    static genCircleVtx(cx, cy, radius, ccw = true) {
+        let i, j;
+        let circle = [];
+        let len = this.unit_circle.length;
+
+        if (ccw) {
+            for (i = 0; i < len; i++) {
+                circle.push([cx + radius * this.unit_circle[i].c, cy + radius * this.unit_circle[i].s]);
+            }
+        } else {
+            for (i = 0, j = len - 1; i < len; i++, j--) {
+                circle.push([cx + radius * this.unit_circle[j].c, cy + radius * this.unit_circle[j].s]);
+            }
+        }
+        return circle;
+    }
+
+    static GK_2PI = 2 * Math.PI;
+
+    /*
+    /* 生成从ab至ae的弧段坐标
+    */
+    static genArcVtx(x, y, radius, ab, ae, ccw = true) {
+        let arc = [];
+        let data = [];
+        let b, e, i, n;
+
+        let len = this.unit_circle.length;
+        // 根据unit_circle生成一个[0,GK_4PI]区间的大数组以简化算法
+        data = this.unit_circle.slice();
+        for (i = 0; i < len; i++) {
+            let tmp = { a: data[i].a, c: data[i].c, s: data[i].s };
+            data.push(tmp);
+        }
+        n = data.length;
+        for (i = len; i < n; i++) {
+            data[i].a += this.GK_2PI;
+        }
+        data.push({ a: data[0].a, c: data[0].c, s: data[0].s });
+        data[n].a = 2 * this.GK_2PI;
+        n++;
+
+        // 角度标准化在[0,GK_2PI)区间内
+        while (ab < 0.0) ab += this.GK_2PI;
+        while (ab >= this.GK_2PI) ab -= this.GK_2PI;
+        while (ae < 0.0) ae += this.GK_2PI;
+        while (ae >= this.GK_2PI) ae -= this.GK_2PI;
+
+        if (!ccw) {
+            let tmp = ab, ab = ae, ae = tmp;	// 逆时针，交换ab和ae
+        }
+        if (ae <= ab) ae += this.GK_2PI;			// 确保ab < ae
+
+        // 在data中找ab，如找不到则插入，令其下标为b
+        for (b = 0; b < len; b++) {
+            if (ab <= data[b].a)
+                break;
+        }
+
+        // 在data中找ae，如找不到则插入，令其下标为e
+        for (e = b + 1; e < n; e++) {
+            if (ae <= data[e].a)
+                break;
+        }
+
+        // 生成坐标数据
+        if (ccw) {
+            /*if ( ab != data[b].a ) {
+                arc.push( [x + radius * Math.cos( ab ), y + Math.sin( ab )] );
+            }*/
+            for (i = b; i <= e; i++) {
+                arc.push([x + radius * data[i].c, y + radius * data[i].s]);
+            }
+            /*if ( ae != data[e].a ) {
+                arc.push( [x + radius * Math.cos( ae ), y + Math.sin( ae )] );
+            }*/
+        } else {
+            /*if ( ae != data[e].a ) {
+                arc.push( [x + radius * Math.cos( ae ), y + Math.sin( ae )] );
+            }*/
+            for (i = e; i >= b; i--) {
+                arc.push([x + radius * data[i].c, y + radius * data[i].s]);
+            }
+            /*if ( ab != data[b].a ) {
+                arc.push( [x + radius * Math.cos( ab ), y + Math.sin( ab) ] );
+            }*/
+        }
+        return arc;
+    }
+
+    // 求两线段的交点
+    //
+    // 线段AB的参数方程：x = xa + (xb - xa) * t, y = ya + (yb - ya) * t
+    // 线段CD的参数方程：x = xc + (xd - xc) * u, y = yc + (yd - yc) * u
+    // 消去变量x,y,u，可解出：
+    //	( yd - yc ) * ( xc - xa ) - ( xd - xc ) * ( yc - ya )
+    // t = -------------------------------------------------------
+    //	( yd - yc ) * ( xb - xa ) - ( xd - xc ) * ( yb - ya )
+    // 如果ext=null，则只能路段相交，去掉与延长线相交的情况
+    // 如果ext=ABCD，则可延长线相交
+    static solveCrossPointSegment(A, B, C, D, ext = null) {
+        let retval = { out: null, tab: null, tcd: null, cross: false };
+        let ba0 = B[0] - A[0];
+        let ba1 = B[1] - A[1];
+        let dc0 = D[0] - C[0];
+        let dc1 = D[1] - C[1];
+        let ca0 = C[0] - A[0];
+        let ca1 = C[1] - A[1];
+        let d, t, u;
+        let checkA, checkB, checkC, checkD;
+
+        checkA = checkB = checkC = checkD = true;
+        if (ext != null) {
+            for (let i = 0; i < ext.length; i++) {
+                switch (ext[i]) {
+                    case 'A': checkA = false; break;
+                    case 'B': checkB = false; break;
+                    case 'C': checkC = false; break;
+                    case 'D': checkD = false; break;
+                }
+            }
+        }
+
+        d = dc1 * ba0 - dc0 * ba1;
+        if (Math.abs(d) < 0.00001) {
+            //if ( tab ) *tab = GK_INFINITY;
+            //if ( tcd ) *tcd = GK_INFINITY;
+            //return false;	// 两线段平行
+            return retval;
+        }
+        t = (dc1 * ca0 - dc0 * ca1) / d;
+        u = (ba1 * ca0 - ba0 * ca1) / d;
+        retval.tab = t;
+        retval.tcd = u;
+        retval.out = [A[0] + ba0 * t, A[1] + ba1 * t];
+        retval.cross = true;
+        if (checkA && t < 0)
+            retval.cross = false;	// 交点超出A端
+        if (checkB && t > 1)
+            retval.cross = false;	// 交点超出B端
+        if (checkC && u < 0)
+            retval.cross = false;	// 交点超出C端
+        if (checkD && u > 1)
+            retval.cross = false;	// 交点超出D端
+        return retval;
+    }
+
+    /** 
+     * 求线段与polyline的交点
+     */
+    static solveCrossPoint(A, B, polyline) {
+        for (let i = 0; i < polyline.length - 1; i++) {
+            let retval = this.solveCrossPointSegment(A, B, polyline[i], polyline[i + 1]);
+            if (retval.cross) {
+                return retval.out;
+            }
+        }
+        return null;
+    }
+    /**
+     * 求线段与polyline的交点,并返回相交折线段的中间点
+     */
+    static solveCrossPointMidSegment(A, B, polyline) {
+        for (let i = 0; i < polyline.length - 1; i++) {
+            let retval = this.solveCrossPointSegment(A, B, polyline[i], polyline[i + 1]);
+            if (retval.cross) {
+                if (this.dist(retval.out, polyline[i]) < 0.0001)
+                    return retval.out;
+                if (this.dist(retval.out, polyline[i + 1]) < 0.0001)
+                    return retval.out;
+                let out = [];
+                out.push((polyline[i][0] + polyline[i + 1][0]) * 0.5, (polyline[i][1] + polyline[i + 1][1]) * 0.5);
+                return out;
+            }
+        }
+        return null;
+    }
+
+    static GK_LENGTH_2D(dx, dy) {
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    static GK_TOO_SMALL(d) {
+        if (Math.abs(d) < 0.000001)
+            return true;
+        else
+            return false;
+    }
+
+    static GK_DOT_PRODUCT_2D(x1, y1, x2, y2) {
+        return ((x1) * (x2) + (y1) * (y2));
+    }
+
+    static GK_RIGHT_OF_LINE(x1, y1, x2, y2, x, y) {
+        return (((x2) - (x1)) * ((y) - (y1)) < ((y2) - (y1)) * ((x) - (x1)));
+    }
+
+    /**
+     * 求线段AB与BC所构成的角度，返回值在区间[0,GK_PI]内
+     * @param {*} A 
+     * @param {*} B 
+     * @param {*} C 
+     * @returns 角度
+     */
+    static calculateAngle(A, B, C) {
+        let xa = A[0] - B[0];
+        let ya = A[1] - B[1];
+        let xc = C[0] - B[0];
+        let yc = C[1] - B[1];
+        let da = this.GK_LENGTH_2D(xa, ya);
+        let dc = this.GK_LENGTH_2D(xc, yc);
+        let ca;
+
+        if (this.GK_TOO_SMALL(da) || this.GK_TOO_SMALL(dc)) return 0.0;	// 线段AB或CB长度为0
+
+        ca = this.GK_DOT_PRODUCT_2D(xa, ya, xc, yc) / (da * dc);
+
+        // 尽管ca的理论绝对值不会大于1，但为防止因计算误差而导致超界，并尽量避免调用三角函数，特进行如下判断
+        if (ca >= 1.0) return 0.0;
+        if (ca <= -1.0) return Math.PI;
+
+        return acos(ca);
+    }
+
+    /**
+     * 求距离给定边为base+offset和base-offset的两个对称点，其中out1位于前进方向左侧，out2位于右侧
+     * @param {*} v1 
+     * @param {*} v2 
+     * @param {*} v3 
+     * @param {*} offset 偏移距离
+     * @param {*} detail "Head"/"Coor"/"Tail"
+     * 当detail="Head"时，对称点位于v1处且与v2方向垂直（此时参数v3无意义）
+     * 当detail="Coor"时，对称点位于v2处、v1v2和v2v3的角平分线上
+     * 当detail="Tail"时，对称点位于v1处且与-v2方向垂直（此时参数v3无意义）
+     * @param {*} base 
+     * @returns 对称点坐标
+     */
+    static solveOffsetPoint(v1, v2, v3, offset, detail, base = 0) {
+        let x, y, d, x1, y1, d1, x3, y3, d3;
+        let retval = {};
+        retval.out1 = null;
+        retval.out2 = null;
+
+        switch (detail) {
+            case "Head":
+            case "Tail":
+                x = v2[0] - v1[0];
+                y = v2[1] - v1[1];
+                d = this.GK_LENGTH_2D(x, y);
+                if (this.GK_TOO_SMALL(d)) {
+                    retval.out1 = v1;
+                    retval.out2 = v1;
+                    return;
+                }
+                x /= d;
+                y /= d;
+                // 此时x,y为v1v2方向的单位矢量，乘相应偏移量后分别逆时针和顺时针旋转90度即可
+                if (detail == "Head") {
+                    retval.out1 = [v1[0] - y * (base + offset), v1[1] + x * (base + offset)];
+                    retval.out2 = [v1[0] - y * (base - offset), v1[1] + x * (base - offset)];
+                } else {
+                    retval.out1 = [v1[0] + y * (base + offset), v1[1] - x * (base + offset)];
+                    retval.out2 = [v1[0] + y * (base - offset), v1[1] - x * (base - offset)];
+                }
+                break;
+            case "Coor":
+                x1 = v1[0] - v2[0];
+                y1 = v1[1] - v2[1];
+                d1 = this.GK_LENGTH_2D(x1, y1);
+                x3 = v3[0] - v2[0];
+                y3 = v3[1] - v2[1];
+                d3 = this.GK_LENGTH_2D(x3, y3);
+                if (this.GK_TOO_SMALL(d1) || this.GK_TOO_SMALL(d3)) {
+                    retval.out1 = v2;
+                    retval.out2 = v2;
+                    return;
+                }
+                x1 /= d1;
+                y1 /= d1;
+                x3 /= d3;
+                y3 /= d3;
+
+                // 此时x1,y1为v2沿v1方向的单位矢量，x3,y3为v2沿v3方向的单位矢量，两者的矢量和即为角平分线
+                x = x1 + x3;
+                y = y1 + y3;
+                d = this.GK_LENGTH_2D(x, y);
+                if (this.GK_TOO_SMALL(d)) {
+                    // 两单位矢量相互抵消（即v1,v2,v3共线），此时利用x3,y3设置长度后逆时针旋转90度即可
+                    retval.out1 = [v2[0] - y3 * (base + offset), v2[1] + x3 * (base + offset)];
+                    retval.out2 = [v2[0] - y3 * (base - offset), v2[1] + x3 * (base - offset)];
+                } else {
+                    x /= d;
+                    y /= d;
+                    d = this.calculateAngle(v1, v2, v3);	// 夹角
+                    if (this.GK_TOO_SMALL(d)) {
+                        d = 1.0;			// 夹角过小时距离将很大，现实中没有意义
+                    } else {
+                        d = 1.0 / sin(d / 2);	// 距离
+                    }
+                    // 此时x,y为角平分线上的单位矢量，但尚需判别左右侧
+                    if (this.GK_RIGHT_OF_LINE(0.0, 0.0, x1, y1, x, y)) {
+                        retval.out1 = [v2[0] + x * (base + offset) * d, v2[1] + y * (base + offset) * d];
+                        retval.out1 = [v2[0] + x * (base - offset) * d, v2[1] + y * (base - offset) * d];
+                    } else {
+                        retval.out1 = [v2[0] - x * (base + offset) * d, v2[1] - y * (base + offset) * d];
+                        retval.out2 = [v2[0] - x * (base - offset) * d, v2[1] - y * (base - offset) * d];
+                    }
+                }
+                break;
+        }
+        return retval;
+    }
 }
 
 export default Measure;

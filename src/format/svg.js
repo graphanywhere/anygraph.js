@@ -16,7 +16,7 @@ class SvgFormat extends FeatureFormat {
      * @param {Document} xmldoc 
      * @returns featureList
      */
-    readFeatures(xmldoc) {
+    readData(xmldoc) {
         if (xmldoc == null) {
             throw new Error("SVG文档错误");
         }

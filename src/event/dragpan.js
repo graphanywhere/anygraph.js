@@ -27,7 +27,7 @@ class DragPan extends Draggable {
     }
 
     onMouseMove(e, isDrag) {
-        if(isDrag === true) {
+        if (isDrag === true) {
             let dist;
             if (this.lastPoint) {
                 let p1 = this.lastPoint; //this.graph.getCoordinateFromPixel(this.lastPoint, true);

@@ -20,9 +20,14 @@ class RenderObject extends EventTarget {
         }
 
         /**
-         * 是否可用
+         * 是否可用滚轮缩放和中键漫游
          */
         this.isWorkable_ = (options.mouse == null ? true : options.mouse == true);
+
+        /**
+         * 是否允许触发事件
+         */
+        this.isEventable_ = (options.eventable == null ? true : options.eventable == true);
 
         // 创建画布对象
         this._createCanvas(container);
@@ -49,9 +54,13 @@ class RenderObject extends EventTarget {
         this.pointerName_ = "default";
     }
 
-    enabledMouse(enabled) {
+    mouseEnabled(enabled) {
         this.isWorkable_ = (enabled === true);
         this.graphMouseOp.enabled(this.isWorkable_);
+    }
+
+    getMouseEnabled() {
+        return this.isWorkable_ === true;
     }
 
     /**
@@ -72,9 +81,9 @@ class RenderObject extends EventTarget {
             // wrap
             this.wrapObj_ = DomUtil.create("div", "", body);
             this.wrapObj_.id = wrapId;
-            this.wrapObj_.tabIndex = -1;
+            this.wrapObj_.tabIndex = 0;
             this.wrapObj_.style.outline = "blue solid 0px";
-
+            
             // canvas
             this.canvas_ = DomUtil.create("canvas", "", this.wrapObj_);
             this.canvas_.oncontextmenu = function () { return false };
@@ -103,8 +112,8 @@ class RenderObject extends EventTarget {
         let canvasHeight = (this.containerObj_.offsetHeight > 0 ? this.containerObj_.offsetHeight : parseInt(DomUtil.getStyle(this.containerObj_, "height"))) - this.borderTopWidth - this.borderBottomWidth;    // 像素高
         this.canvas_.width = canvasWidth > 20 ? canvasWidth : 20;
         this.canvas_.height = canvasHeight > 20 ? canvasHeight : 20;
-        this.wrapObj_.style.height = canvasHeight + "px";
-        this.wrapObj_.parentElement.style.height = canvasHeight + "px";
+        this.wrapObj_.style.height = "100%"; //canvasHeight + "px";
+        this.wrapObj_.parentElement.style.height = "100%"; //canvasHeight + "px";
     }
 
     _bindEvent(graph) {
@@ -126,21 +135,22 @@ class RenderObject extends EventTarget {
                 if (!msTouch) return;
             }
             that.wrapObj_.addEventListener(eventName, function (e) {
-                let x = e.offsetX;
-                let y = e.offsetY;
+                // let x = e.offsetX;
+                // let y = e.offsetY;
                 let bubbling = true;
+                // 是否执行geom事件
                 if (graph.isEnabledGeomEvent() && geomEvent.indexOf(eventName) >= 0) {
                     // 先执行geom事件
-                    if (graph.handleEvent(eventName, { x, y, e }) !== false) {
+                    if (graph.handleEvent(eventName, e) !== false) {
                         // 然后执行graph事件
-                        if (that.isWorkable_ === true) {
-                            bubbling = that.handleEvent(eventName, { x, y, e });
+                        if (that.isEventable_ === true) {
+                            bubbling = that.handleEvent(eventName, e);
                         }
                     }
                 } else {
-                    //if (that.isWorkable_ === true) {
-                    bubbling = that.handleEvent(eventName, { x, y, e });
-                    //}
+                    if (that.isEventable_ === true) {
+                        bubbling = that.handleEvent(eventName, e);
+                    }
                 }
                 if (bubbling === false) {
                     DomUtil.stop(e);
@@ -158,8 +168,8 @@ class RenderObject extends EventTarget {
         let oheight = this.canvas_.height;
         let width = (this.containerObj_.offsetWidth - this.borderLeftWidth - this.borderRightWidth);       // 像素宽
         let height = (this.containerObj_.offsetHeight - this.borderTopWidth - this.borderBottomWidth);    // 像素高;
-        width = (width > 300 ? width : owidth);
-        height = (height > 200 ? height : oheight);
+        width = (width > 20 ? width : owidth);
+        height = (height > 20 ? height : oheight);
 
         // 支持改变画板大小，而不改变容器大小
         // *** 修改画板的宽高将会清空画板中的内容 ***
@@ -198,7 +208,7 @@ class RenderObject extends EventTarget {
     }
 
     /**
-     * 外部控制执行鼠标操作
+     * 增加自定义鼠标事件
      * @param {Object} event event如果为function，则表示mouseUp事件所执行的function，否则event需为对象类型
      * @example event的对象格式为{mouseUp, mouseDown, mouseMove, mapMove, rclick, dblclick, mouseHover, mouseHoverEnd}，属性值为各事件所执行的function
      * 其参数均为对象，包含e, x, y, mouse等属性，Object.assign(e, {x, y, mouse:this})
@@ -214,6 +224,7 @@ class RenderObject extends EventTarget {
         } else {
             throw new Error("参数错误");
         }
+        return event;
     }
 
     /**
@@ -255,27 +266,28 @@ class RenderObject extends EventTarget {
     /**
      * 事件分发，从target中通过该方法将鼠标事件分发至 click()、dblclick()等方法中
      * @param {*} name 
-     * @param {*} args 
+     * @param {*} event 
      */
-    handleEvent(name, args) {
+    handleEvent(name, event) {
 
         // 触发已绑定的事件
-        this.triggerEvent(name, args.e);
+        this.triggerEvent(name, event);
 
         // 触发图形事件
+        let rtn;
         let that = this;
         switch (name) {
             case "wheel":
-                this.graphMouseOp.onWheel(args.e);
+                rtn = this.graphMouseOp.onWheel(event);
                 break;
             case "click":
-                this.graphMouseOp.onClick(args.e);
+                rtn = this.graphMouseOp.onClick(event);
                 break;
             case "dblclick":
-                this.graphMouseOp.onDblclick(args.e)
+                rtn = this.graphMouseOp.onDblclick(event)
                 break;
             case "mousemove":
-                this.graphMouseOp.onMouseMove(args.e)
+                rtn = this.graphMouseOp.onMouseMove(event)
                 break;
             case "mousedown":
                 // 添加mouseUp事件
@@ -288,35 +300,33 @@ class RenderObject extends EventTarget {
                     }
                     return rtn;
                 }, { "once": true });
-                this.graphMouseOp.onMouseDown(args.e)
+                rtn = this.graphMouseOp.onMouseDown(event)
                 break;
             case "mouseout":
-                this.graphMouseOp.onMouseOut(args.e)
+                rtn = this.graphMouseOp.onMouseOut(event)
                 break;
             case "mouseenter":
-                this.graphMouseOp.onMouseEnter(args.e)
+                rtn = this.graphMouseOp.onMouseEnter(event)
                 break;
             case "touchstart":
-                this.graphMouseOp.onTouchStart(args.e)
+                rtn = this.graphMouseOp.onTouchStart(event)
                 break;
             case "touchend":
-                this.graphMouseOp.onTouchEnd(args.e)
+                rtn = this.graphMouseOp.onTouchEnd(event)
                 break;
             case "touchmove":
-                this.graphMouseOp.onTouchMove(args.e)
+                rtn = this.graphMouseOp.onTouchMove(event)
                 break;
             case "keydown":
-                this.graphMouseOp.onKeyDown(args.e)
+                rtn = this.graphMouseOp.onKeyDown(event)
                 break;
             default:
                 // if (this[name]) {
-                //     this[name](args.e);
+                //     this[name](event);
                 // }
                 break;
         }
-        if (this.eventObj != null && this.eventObj.cursor != null) {
-            this.setPointer(this.eventObj.cursor);
-        }
+        if(rtn === true || rtn === false) return rtn;
     }
 }
 

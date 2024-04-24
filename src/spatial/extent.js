@@ -51,7 +51,7 @@ class Extent {
      */
     static isExtent(extent) {
         if (typeof (extent) === "object" && extent.length === 4) {
-            return true;
+            return (extent[2] - extent[0] > 0 && extent[3] - extent[1] > 0);
         } else {
             return false;
         }

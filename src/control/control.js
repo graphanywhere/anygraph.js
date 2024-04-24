@@ -1,7 +1,10 @@
+/**
+ * 图形控件基础类
+ */
 class Control {
-	constructor(options) {
-		this.div = "";
-	}
+    constructor(options) {
+        this.div = "";
+    }
 
     setGraph(graph) {
         if (graph) {
@@ -11,7 +14,7 @@ class Control {
     }
 
     rebuild() {
-        
+
     }
 
     show() {
@@ -21,7 +24,6 @@ class Control {
     hide() {
 
     }
-} 
+}
 
 export default Control;
-

@@ -1,74 +1,92 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit
+}
+
 /* 图层控件层样式设置 */
-.layerControl{
-    position:absolute;
-    min-width:120px;
-    max-height:300px;
-    padding: 2px; 
-    right:1px;  
-    bottom:1px;
-    z-index:2001;   /*在地图容器中的层，要设置z-index的值让其显示在地图上层*/
-    background-color:#F2F2F2;
-    border-width: 8px;    /*边缘的宽度*/
-    border-radius: 8px;    /*圆角的大小 */ 
-    border:1px solid #404040;
+.layerControl {
+    position: absolute;
+    min-width: 120px;
+    max-height: 300px;
+    padding: 2px;
+    right: 1px;
+    bottom: 1px;
+    /*在地图容器中的层，要设置z-index的值让其显示在地图上层*/
+    z-index: 2001;
+    background-color: #F2F2F2;    
+    /*边缘的宽度*/
+    border-width: 8px;
+    /*圆角的大小 */
+    border-radius: 5px;
+    border: 1px solid #404040;
 }
 
 .layerControl .title {
-    font-weight:bold;
-    font-size:15px;
-    margin:10px;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px;
     border-bottom: 1px solid #CCC;
 }
 
 .layerControl .list {
-    height:170px;
+    height: 170px;
     overflow-y: auto;
 }
 
 .layerTree {
-	padding:0;
-	margin:0;
+    padding: 0;
+    margin: 0;
 }
 
 .layerTree li {
-     list-style:none; 
-     margin:5px 10px; 
+    list-style: none;
+    margin: 5px 10px;
 }
 
 /* 鼠标位置控件层样式设置 */
 .mouse-position {
-	position: absolute;
-	display:block;
-	bottom: 30px;
-	font-size: 20px;
-	left: 20px;
-	height: 20px;
-	padding: 5px 5px 10px 5px;
-	background-color: #CCCCCC80;
-	z-index: 2000; /*在地图容器中的层，要设置z-index的值让其显示在地图上层*/
+    position: absolute;
+    display: block;
+    bottom: 30px;
+    font-size: 16px;
+    left: 20px;
+    padding: 5px;
+    background-color: #CCCCCC80;
+    z-index: 2000;
 }
 
 .zoom-buttom {
-	position: absolute;
-	display:block;
-	top: 20px;
-	font-size: 20px;
-	left: 20px;
-	width: 30px;
-	height: 40px;
-	z-index: 2000; /*在地图容器中的层，要设置z-index的值让其显示在地图上层*/
+    position: absolute;
+    display: block;
+    top: 20px;
+    font-size: 20px;
+    left: 20px;
+    width: 30px;
+    height: 40px;
+    z-index: 2010;
 }
 
 .zoom-buttom button {
-	padding: 3px 5px;
-	margin-bottom: 2px;
+    padding: 3px 5px;
+    margin-bottom: 2px;
 }
 
 /* 鼠标位置信息自定义样式设置 */
 .custom-mouse-position {
-	color: Red;
-	font-size: 16px;
-	font-family: "微软雅黑";
+    color: Red;
+    font-size: 16px;
+    font-family: "微软雅黑";
 }
 
 .no-select {
@@ -88,33 +106,37 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: rgba(0,0,0,.65);
+    color: rgba(0, 0, 0, .65);
     font-size: 14px;
     line-height: 1.5;
     list-style: none;
     position: absolute;
     display: none;
-    z-index: 110;
+    z-index: 2110;
 }
-.og-tooltip-placement-top{
+
+.og-tooltip-placement-top {
     padding-bottom: 8px;
     transform: translateX(-50%) translateY(-100%);
 }
-.og-tooltip-placement-bottom{
+
+.og-tooltip-placement-bottom {
     padding-top: 8px;
     transform: translateX(-50%);
 }
+
 .og-tooltip-text {
     min-width: 30px;
     padding: 6px 8px;
-    color: rgba(0,0,0,.65);
+    color: rgba(0, 0, 0, .65);
     text-align: left;
     text-decoration: none;
     word-wrap: break-word;
     background-color: #fff;
     border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
 }
+
 .og-tooltip-arrow {
     position: absolute;
     display: block;
@@ -124,16 +146,19 @@
     background: transparent;
     pointer-events: none;
 }
-.og-tooltip-arrow-placement-top{
+
+.og-tooltip-arrow-placement-top {
     left: 50%;
     transform: translateX(-50%);
     bottom: -5px;
 }
-.og-tooltip-arrow-placement-bottom{
+
+.og-tooltip-arrow-placement-bottom {
     left: 50%;
     transform: translateX(-50%);
     top: -5px;
 }
+
 .og-tooltip-arrow:before {
     position: absolute;
     top: 0;
@@ -148,11 +173,175 @@
     content: "";
     pointer-events: auto;
 }
+
 .og-tooltip-arrow-placement-top:before {
-     box-shadow: 3px 3px 7px rgba(0, 0, 0, .07);
-     transform: translateY(-6.53px) rotate(45deg);
- }
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, .07);
+    transform: translateY(-6.53px) rotate(45deg);
+}
+
 .og-tooltip-arrow-placement-bottom:before {
     box-shadow: 3px 3px 7px rgba(0, 0, 0, .07);
     transform: translateY(6.53px) rotate(-45deg);
+}
+
+/* -------------------- 自定义下拉框样式 --------------------*/
+.panel-item {
+    margin: 5px 6px;
+}
+
+.dropdown-border {
+    border: 1px solid #CCC;
+    padding: 5px 5px 5px 10px;
+}
+
+.dropdown-box {
+    border-radius: 3px;
+    width: 200px;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+}
+
+.dropdown-box .dropdown-trigger {
+    display: block;
+    background: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
+.dropdown-box .dropdown-trigger span {
+    margin: 0px 5px;
+}
+
+.dropdown-box .dropdown-icon {
+    display: block;
+    pointer-events: none;
+    height: 16px;
+    width: 16px;
+    background-size: cover;
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    background: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgICA8cGF0aCBkPSJNNy40MSA3Ljg0TDEyIDEyLjQybDQuNTktNC41OEwxOCA5LjI1bC02IDYtNi02eiIvPgogICAgPHBhdGggZD0iTTAtLjc1aDI0djI0SDB6IiBmaWxsPSJub25lIi8+Cjwvc3ZnPgo=) no-repeat center;
+}
+
+.dropdown-box .dropdown-icon-hide {
+    background: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgICA8cGF0aCBkPSJNNy40MSAxNS40MUwxMiAxMC44M2w0LjU5IDQuNThMMTggMTRsLTYtNi02IDZ6Ii8+CiAgICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+Cjwvc3ZnPgo=) no-repeat center;
+}
+
+.dropdown-box .color-value {
+    display: block;
+    width: 100%;
+    height: 20px;
+    padding: 0px 5px;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.dropdown-box .color-panel {
+    display: none;
+    position: absolute;
+    z-index: 2100;
+    top: 100%;
+    right: 0;
+    margin: 2px;
+    width: 290px;
+    height: 245px;
+    border: 1px #CCC solid;
+    border-radius: 2px;
+    background-color: #eee;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-box .color-panel .title {
+    margin:2px 10px;
+    font-size: 14px;
+}
+
+.dropdown-box .color-panel .color-canvas {
+    width: 290px;
+    height: 140px;
+}
+
+.dropdown-box .color-panel .color-stand {
+    width: 290px;
+    height: 26px;
+}
+
+.dropdown-box .canvas-value {
+    width: 150px;
+    height: 20px;
+    pointer-events: none;
+}
+
+.dropdown-box .dropdown-canvas {
+    height: 200px;
+}
+
+.dropdown-box .dropdown-panel {
+    display: none;
+    position: absolute;
+    z-index: 2100;
+    top: 100%;
+    right: 0;
+    margin-top: 5px;
+    width: 200px;
+    min-height: 200px;
+    border: 1px #CCC solid;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+.dropdown-box .value {
+    pointer-events: none;
+}
+
+.dropdown-box .text-value {
+    border: 0px #CCC solid;
+    outline: 0px #CCC solid;
+}
+
+.dropdown-panel li a {
+    padding: 5px 10px;
+    display: block;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown-panel li a:hover {
+    background: #CCC;
+}
+
+.dropdown-text {
+    overflow-y: auto;
+    list-style: none;
+    padding: 5px;
+}
+
+/* 视图控制widget */
+.view-control-panel {
+    font-size: 10px;
+    min-width: 140px;
+}
+
+.view-control-panel button {
+    padding: 0px;
+    outline: none;
+    font-size: 0px;
+    margin: 0px 6px;
+}
+
+.view-control-panel button:focus {
+    outline: 0;
+}
+
+.view-control-panel .dropdownView {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 80px;
+    height: 16px;
+    font-size: 12px;
+    cursor: pointer;
 }

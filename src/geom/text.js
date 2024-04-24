@@ -65,7 +65,7 @@ class Text extends Geometry {
         this.vectorSize = (this.vectorSize === false ? false : true);
 
         // 字体大小 (缩放时根据此变量计算style.fontSize)
-        this._fontHeight = this.style ? this.style.fontSize || 12 : 12;
+        this._fontHeight = options._fontHeight > 0 ? options._fontHeight : (this.style ? this.style.fontSize || 12 : 12);
 
         // 临时变量
         this._allowMaxWidth = 0;
@@ -338,7 +338,7 @@ class Text extends Geometry {
     }
 
     _drawText(ctx, text, style, x, y, textWidth, textHeight, frameState) {
-        if (textHeight <= 4 && (frameState == null || !frameState.getLayer().isUseTransform())) {
+        if (textHeight <= 4 && (frameState == null || !frameState.getLayer().isUseTransform() || !frameState.useTransform)) {
             ctx.lineWidth = 1;
             ctx.fillStyle = (style.fillColor == null || style.fillColor == "none") ? (style.color == null ? "#D0D0D0" : style.color) : style.fillColor;
             ctx.fillStyle = ctx.fillStyle + "50";   // 透明度

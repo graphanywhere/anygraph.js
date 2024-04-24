@@ -4,10 +4,12 @@ import Extent from "../spatial/extent.js";
 import ImageCache from "../basetype/cache.js";
 import { default as ImageObject, ImageState } from "../basetype/image.js";
 import { default as BaseSource, IMAGE_CACHE_SIZE } from "./base.js";
-import { default as FeatureFormat, GeometryFormat, createGeom } from "../format/feature.js";
+import { default as FeatureFormat, GeometryFormat } from "../format/feature.js";
+import GeomFactory from "../geom/factory.js"
 import Counter from "../util/counter.js";
 import EventType from "../basetype/event.type.js";
-import { default as AjaxUtil } from "../util/ajax.js";
+import AjaxUtil from "../util/ajax.js";
+import OperationManager from "../edit/operationManager.js";
 
 /**
  * 矢量数据数据源
@@ -73,7 +75,7 @@ class VectorSource extends BaseSource {
             dataType: this.dataType,
             success: function (features) {
                 if (that.format != null && that.format instanceof FeatureFormat) {
-                    let listData = that.format.readFeatures(features, that.projection)
+                    let listData = that.format.readData(features, that.projection)
                     // 加载数据
                     that.add(listData);
                 } else {
@@ -111,7 +113,7 @@ class VectorSource extends BaseSource {
 
         // 格式化数据
         if (this.format != null && this.format instanceof FeatureFormat) {
-            listData = this.format.readFeatures(features, this.projection)
+            listData = this.format.readData(features, this.projection)
             // 加载数据
             this.add(listData);
         } else {
@@ -135,7 +137,7 @@ class VectorSource extends BaseSource {
                     that._add(geom);
                 } else {
                     //console.debug("add()参数错误", geomList);
-                    that._add(createGeom(geom));
+                    that._add(GeomFactory.create(geom));
                 }
             })
         } else {
@@ -143,7 +145,7 @@ class VectorSource extends BaseSource {
                 that._add(geomList);
             } else {
                 //console.debug("add()参数错误", geomList);
-                that._add(createGeom(geomList));
+                that._add(GeomFactory.create(geomList));
             }
         }
         if (this.getLayer() && this.getLayer().getGraph()) {
@@ -158,7 +160,11 @@ class VectorSource extends BaseSource {
     _add(geom) {
         if (geom instanceof Geometry) {
             geom.innerSeqId = this._getNextSeq();
+            geom.setLayer(this.getLayer());
+            OperationManager.saveCreateNode(geom);
             this.dataBuffer.push(geom);
+            if (this.getLayer() && this.getLayer().getGraph() && (geom.getType() == GGeometryType.GRAPHEDGE || geom.getType() == GGeometryType.GRAPHNODE))
+                geom.addCB(this.getLayer().getGraph());
             if (geom.getType() === GGeometryType.MARK) {
                 this.add2Cache(geom.filePath);
             } else if (geom.getType() === GGeometryType.IMAGE) {
@@ -285,7 +291,9 @@ class VectorSource extends BaseSource {
         let imageObj = this.getImageFromCache(src);
         if (imageObj == null) {
             imageObj = this.add2Cache(src)
-            imageObj.setCallback(asyncCallback);
+            if (imageObj != null && imageObj != undefined) {
+                imageObj.setCallback(asyncCallback);
+            }
         } else {
             if (imageObj.getState() === ImageState.LOADED) {
                 callback(imageObj.getImage());
@@ -301,12 +309,37 @@ class VectorSource extends BaseSource {
     buildIndex() {
         if (!this.getLayer() || !this.getLayer().isUsePixelCoord()) {
             let maxExtent = this.extent == null ? this.getBBox() : this.extent;
-            if ( this.quadTree ) {
-            	this.quadTree.clear();
-            	delete this.quadTree;
+            if (this.quadTree) {
+                this.quadTree.clear();
+                delete this.quadTree;
             }
             this.quadTree = new QuadTree({ x: maxExtent[0], y: maxExtent[1], width: maxExtent[2] - maxExtent[0], height: maxExtent[3] - maxExtent[1] });
             this.quadTree.insert(this.dataBuffer);
+        }
+    }
+
+    /**
+     * 四叉树索引删节点
+     */
+    indexDeleteObj(obj) {
+        if (!this.getLayer() || !this.getLayer().isUsePixelCoord()) {
+            let maxExtent = this.extent == null ? this.getBBox() : this.extent;
+            if (this.quadTree) {
+                this.quadTree.delete(obj);
+            }
+        }
+    }
+
+    /**
+     * 四叉树索引加节点
+     */
+    indexAddObj(obj) {
+        if (!this.getLayer() || !this.getLayer().isUsePixelCoord()) {
+            let maxExtent = this.extent == null ? this.getBBox() : this.extent;
+            if (this.quadTree == null) {
+                this.quadTree = new QuadTree({ x: maxExtent[0], y: maxExtent[1], width: maxExtent[2] - maxExtent[0], height: maxExtent[3] - maxExtent[1] });
+            }
+            this.quadTree.insert(obj);
         }
     }
 
@@ -334,6 +367,7 @@ class VectorSource extends BaseSource {
         for (let i = 0; i < this.dataBuffer.length; i++) {
             let geom = this.dataBuffer[i];
             if (geom instanceof Geometry) {
+                if (geom.isVisible() == false) continue;
                 let obbox = geom.getBBox();
                 bbox = Extent.merge(obbox, bbox);
             }
@@ -379,8 +413,9 @@ class VectorSource extends BaseSource {
      */
     toData(options = {}) {
         let features = [];
-        for (let i = 0; i < this.dataBuffer.length; i++) {
-            let geom = this.dataBuffer[i];
+        let databuffer = this.getData(null, true, true); //排序后输出,只输出可见节点
+        for (let i = 0; i < databuffer.length; i++) {
+            let geom = databuffer[i];
             if (options.string === true) {
                 features.push(JSON.stringify(geom.toData(options)));
             } else {
@@ -388,6 +423,22 @@ class VectorSource extends BaseSource {
             }
         }
         return features;
+    }
+
+    /**
+     * 读取数据
+     */
+    getData(id = null, sort = false, visibleonly = false) {
+        let databuffer = super.getData(id);
+        if (databuffer.length > 0 && visibleonly == true) {
+            databuffer = databuffer.filter(geom => geom.isVisible() == true);
+        }
+        if (sort) {
+            databuffer.sort(function (obj1, obj2) {
+                return obj1.innerSeqId - obj2.innerSeqId;
+            });
+        }
+        return databuffer;
     }
 }
 

@@ -61,8 +61,8 @@ export const GGGeoJsonType = {
     MULTI_LINE: "MultiLineString",
 }
 
-Object.freeze(GGeometryType);
-Object.freeze(GGShapeType);
+// Object.freeze(GGeometryType);
+// Object.freeze(GGShapeType);
 
 /**
  * 几何对象类型基础类
@@ -140,21 +140,30 @@ class Geometry extends EventTarget {
 
         /**
          * 是否激活状态
-         * @type {boolean}
+         * @type {Boolean}
          * @private
          */
         this._focus = false;
 
+        /**
+         * 是否属于锁定状态
+         */
+        this.lockState = false;
+
         // 初始化
         this.attrNames = attrNames || [];
         // this.initialize(options, attrNames);
+        this.layer = null;
+
+        // 是否可见
+        this.invisible = false;
     }
 
     /**
      * 初始化, 通过options赋值给属性
      */
-    initialize(options={}) {
-        let attrs = ["coords", "rotation", "origin", "properties", "style", "innerSeqId", "uid", "labelStyle"];
+    initialize(options = {}) {
+        let attrs = ["title", "coords", "rotation", "origin", "properties", "style", "innerSeqId", "uid", "labelStyle", "lockState"];
         this.attrNames = this.attrNames.concat(attrs);
 
         // 将options赋值给对象属性
@@ -203,8 +212,12 @@ class Geometry extends EventTarget {
      * 获取对象样式
      * @returns style
      */
-    getStyle() {
-        return this.style;
+    getStyle(attr) {
+        if (attr) {
+            return this.style[attr];
+        } else {
+            return this.style;
+        }
     }
 
     /**
@@ -212,7 +225,7 @@ class Geometry extends EventTarget {
      * @param {Object} style 
      */
     setStyle(style) {
-        if (style instanceof Object) {
+        if (typeof (style) == "object") {
             if (style.override === true) {
                 this.style = null;
             }
@@ -226,8 +239,8 @@ class Geometry extends EventTarget {
                     keys = Object.keys(LineStyle);
                     break;
                 case GGShapeType.SURFACE:
-                        keys = Object.keys(SurfaceStyle);
-                        break;
+                    keys = Object.keys(SurfaceStyle);
+                    break;
                 case GGShapeType.SYMBOL:
                     keys = Object.keys(SymbolStyle);
                     break;
@@ -249,7 +262,7 @@ class Geometry extends EventTarget {
     /**
      * 对象是否具有焦点
      * 具有焦点的对象将会绘制外框，通常在编辑的时候需激活对象，然后进行编辑
-     * @returns boolean
+     * @returns Boolean
      */
     isFocus() {
         return this._focus;
@@ -262,6 +275,40 @@ class Geometry extends EventTarget {
     setFocus(bool) {
         this._focus = (bool === true);
     }
+
+    /**
+     * 是否可见
+     * @returns Boolean
+     */
+    isVisible() {
+        return ! this.invisible;
+    }
+
+    /**
+     * 设置对象可见属性
+     * @param {Boolean} bool 
+     */
+    setVisible(bool) {
+        this.invisible = (bool == false);
+    }
+
+    /**
+     * 对象是否锁定
+     * 非锁定状态时，控制外框上将显示控制点，可通过控制点拉伸对象大小
+     * @returns Boolean
+     */
+    isLocked() {
+        return this.lockState;
+    }
+
+    /**
+     * 设置对象的锁定状态
+     * @param {Boolean} bool 
+     */
+    setLockState(bool) {
+        this.lockState = (bool === true);
+    }
+
 
     /**
      * 获取对象坐标
@@ -279,7 +326,7 @@ class Geometry extends EventTarget {
         if (coords == null) {
             // throw new Error("坐标值不能为空");
         } else {
-            this.coords = coords;
+            this.coords = coords.slice();
             this.pixel = coords.slice();
         }
     }
@@ -393,14 +440,14 @@ class Geometry extends EventTarget {
      * 判断某点是否在当前对象的边框内，拾取时可根据此返回值判断是否被拾取到
      * @abstract
      * @param {Coord} point 点坐标
-     * @param {Boolean} useCoord 是否像素坐标
+     * @param {Boolean} useCoord 为true时表示图形坐标，为false时表示画布坐标
      * @returns Boolean
      */
     contain(point, useCoord = true) {
+        if ( this.invisible == true ) return false;
         let bbox = this.getBBox(useCoord);
         return Collide.pointRect({ "x": point[0], "y": point[1] }, { "x": bbox[0], "y": bbox[1], "width": bbox[2] - bbox[0], "height": bbox[3] - bbox[1] });
     }
-
 
     // TODO 可参考 openLayer 中的定义
     distanceTo(geometry, options) {
@@ -418,10 +465,34 @@ class Geometry extends EventTarget {
      * @param {*} propValue 
      */
     prop(propName, propValue) {
-        if (propValue) {
-            this[propName] = propValue;
-        } else {
-            return this[propName];
+        // 当修改了以下几个位置/尺寸属性时，需重新更新对象坐标属性
+        let that = this;
+        let positionProp = ["x", "y", "radius", "width", "height"];
+        let updateSize = function (key) {
+            if (positionProp.indexOf(key) >= 0) {
+                that.setCoord();
+            }
+        }
+
+        // 当propName=null时，返回当前对象属性
+        if (propName == null) {
+            return this.toData();
+        }
+        // 当propName为属性名称时，修改或返回该属性值
+        else if (typeof (propName) == "string") {
+            if (propValue) {
+                this[propName] = propValue;
+                updateSize();
+            } else {
+                return this[propName];
+            }
+        }
+        // 当propName为对象时，则表示将propName中的属性赋值给this对象
+        else if (typeof (propName) == "object") {
+            Object.keys(propName).forEach(key => {
+                that[key] = propName[key];
+                updateSize(key);
+            })
         }
     }
 
@@ -429,7 +500,7 @@ class Geometry extends EventTarget {
      * 克隆对象
      * @returns Geometry
      */
-    clone() {
+    clone(options) {
         return ClassUtil.abstract();
     }
 
@@ -456,10 +527,19 @@ class Geometry extends EventTarget {
      * @param {CanvasRenderingContext2D} ctx 
      * @param {Object} style 
      */
-    drawBorder(ctx, style) {
+    drawBorder(ctx, style, frameState) {
         let bbox = this.getBBox(false);
+        let fs = Object.assign({}, frameState);
+        fs.useTransform = frameState.useTransform || this.getLayer().isUseTransform();
+
         if (Extent.getWidth(bbox) > 16 || Extent.getHeight(bbox) > 16) {
-            this.getBorder().draw(ctx, { "extent": bbox, "prop": this.ctrlBorderProp });
+            this.getBorder().draw(ctx, style, {
+                "extent": bbox,               // 像素坐标
+                "prop": this.ctrlBorderProp,  // 控制点属性
+                "lockState": this.lockState,  // 是否绘制控制点
+                "shapeType": this.shapeType,  // 几何类型
+                "frameState": fs
+            });
         }
     }
 
@@ -597,7 +677,7 @@ class Geometry extends EventTarget {
         // paint-order是一个新的属性，可设置是描边和填充的顺序，包含了三个值：markers stroke fill
         // 如果没有指定值，默认顺序将是 fill, stroke, markers
         // 当只指定一个值的时候，这个值将会被首先渲染，然后剩下的两个值将会以默认顺序渲染，当只指定两个值的时候，这两个值会以指定的顺序渲染，接着渲染剩下的未指定的那个。
-        if (style.fillStyle == 1 && style.fillColor != "none") {
+        if (style.fillStyle == 1 && style.fillColor != "none" && this.shapeType != GGShapeType.LINE) {
             ctx.fillStyle = this.getColor(style.fillColor, ctx);
             if (style.fillRule === 'evenodd') {
                 // 填充属性：evenodd, nonzero(缺省值)
@@ -903,6 +983,21 @@ class Geometry extends EventTarget {
     }
 
     /**
+     * graph.removeGeom时调用，删除节点前调用
+     */
+    removeCB() {
+        return true;
+    }
+
+    /**
+     * graph.removeGeom时调用，删除节点前调用,获取删除当前节点前，自动删除的节点
+     */
+    getAutoRemoveList() {
+        let removelist = [];
+        return removelist;
+    }
+
+    /**
      * 获取当前对象属性
      * @returns Object
      */
@@ -945,6 +1040,21 @@ class Geometry extends EventTarget {
             obj.pixel = this.getPixel();
         }
         return obj;
+    }
+
+    /**
+     * 取图层
+     */
+    getLayer() {
+        return this.layer;
+    }
+
+    /**
+     * 设置图层
+     * 插入图层时调用
+     */
+    setLayer(layer) {
+        this.layer = layer;
     }
 }
 

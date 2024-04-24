@@ -13,7 +13,7 @@ import { getLayerId } from "./global.js";
 class Layer extends EventTarget {
     /**
      * 构造函数
-     * @param {Object} options 图层选项{source, renderer, zIndex, name, visible, style, maxResolution, minResolution, opacity, usePixelCoord}
+     * @param {Object} options 图层选项{source, renderer, zIndex, name, visible, style, maxResolution, minResolution, opacity, usePixelCoord, useTransform}
      */
     constructor(options = {}) {
         super();
@@ -90,6 +90,14 @@ class Layer extends EventTarget {
      */
     isUseTransform() {
         return this.useTransform_;
+    }
+
+    /**
+     * 设置是否使用矩阵变换实现图形缩放交互操作
+     * @param {*} bool 
+     */
+    setUseTransform(bool) {
+        this.useTransform_ = (bool === true);
     }
 
     /**
@@ -175,7 +183,7 @@ class Layer extends EventTarget {
      * 是否显示该图层
      * @returns boolean
      */
-    getVisible() {
+    isVisible() {
         return this.visible_;
     }
 
@@ -281,7 +289,7 @@ class Layer extends EventTarget {
      */
     getLayerState() {
         this.state_.opacity = this.getOpacity();
-        this.state_.visible = this.getVisible();
+        this.state_.visible = this.isVisible();
         this.state_.zIndex = this.getZIndex();
         this.state_.maxResolution = this.getMaxResolution();
         this.state_.minResolution = Math.max(this.getMinResolution(), 0);

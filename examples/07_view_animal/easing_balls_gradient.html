@@ -62,14 +62,8 @@
             let colorBand = Color.band(colorSet[i % colorSet.length], 10);
             let gradient = new Gradient({
                 "type": "radial",
-                "coords": {
-                    "x1": defs[i].x + defs[i].radius / 2,
-                    "y1": defs[i].y - defs[i].radius / 2,
-                    "r1": 0,
-                    "x2": defs[i].x,
-                    "y2": defs[i].y,
-                    "r2": defs[i].radius
-                },
+                "coords": { "x1": 0.7, "y1": 0.7, "r1": 0, "x2": 0.7, "y2": 0.7, "r2": 0.8 },
+                "gradientUnits": "percentage",
                 "colorStops": [{
                     "offset": "0.1",
                     "color": colorBand[2]
@@ -86,7 +80,7 @@
                         "x": defs[i].x,
                         "y": defs[i].y,
                         "radius": defs[i].radius,
-                        "style": { "color": "none", "fillStyle": 1, "fillColor": colorBand[7] }
+                        "style": { "color": "none", "fillStyle": 1, "fillColor": gradient }
                     }))
             });
 

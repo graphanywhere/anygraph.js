@@ -1,5 +1,3 @@
-import Layer from "../layer.js";
-import VectorSource from "../source/vector.js";
 import Draggable from "./draggable.js";
 import { Polygon } from "../geom/index.js";
 
@@ -14,15 +12,13 @@ class DragBox extends Draggable {
          * 图形对象
          */
         this.graph = options.graph;
-        
+
         /**
          * 拉框结束时的回调函数
          */
         this.callback = options.callback;
 
         // 
-        this.overlayId_ = 211;                   // 覆盖层图层ID （度量尺、空间查询矩形框等）
-        this.overlayDesc_ = "覆盖层图层";
         this.defaultStyle = {
             "color": "red",
             "fillColor": "rgba(255, 159, 159, 0.5)",
@@ -40,16 +36,7 @@ class DragBox extends Draggable {
      * @returns Layer
      */
     getOverLayer() {
-        let layer = this.graph.getLayer(this.overlayId_);
-        if (layer == null) {
-            layer = new Layer({
-                "source": new VectorSource(),
-                zIndex: this.overlayId_,
-                name: this.overlayDesc_
-            });
-            this.graph.addLayer(layer);
-        }
-        return layer;
+        return this.graph.getOverLayer();
     }
 
     onMouseDown(e) {
@@ -60,7 +47,7 @@ class DragBox extends Draggable {
     }
 
     onMouseMove(e, isDrag) {
-        if(isDrag === true) {
+        if (isDrag === true) {
             let p1 = this.graph.getCoordinateFromPixel(this.startPoint, true);
             let p2 = this.graph.getCoordinateFromPixel(this.endPoint, true);
             let point1Coords = [p1[0], p1[1]];

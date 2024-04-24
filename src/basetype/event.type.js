@@ -1,3 +1,6 @@
+/**
+ * 事件类型
+ */
 const EventType = {
     RenderBefore: 201,          // graph, 图形渲染之前触发
     RenderAfter: 202,           // graph, 图形渲染之后触发
@@ -7,7 +10,9 @@ const EventType = {
     Loader: 221,                // source
 };
 
-
+/**
+ * 按键代码
+ */
 const EventKeyCode = {
 
     /**
@@ -29,10 +34,10 @@ const EventKeyCode = {
     KEY_TAB: 9,
 
     /** 
-     * Constant: KEY_RETURN 
+     * Constant: KEY_ENTER 
      * {int} 
      */
-    KEY_RETURN: 13,
+    KEY_ENTER: 13,
 
     /** 
      * Constant: KEY_ESC 
@@ -68,7 +73,13 @@ const EventKeyCode = {
      * Constant: KEY_DELETE 
      * {int} 
      */
-    KEY_DELETE: 46
+    KEY_DELETE: 46,
+
+    /** 
+     * Constant: KEY_A 
+     * {int} 
+     */
+    KEY_A: 65
 }
 
 export default EventType;

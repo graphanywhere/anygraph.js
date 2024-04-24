@@ -11,7 +11,7 @@ class Draggable extends GraphEvent {
 
         // 是否开始拖拽
         this.startDrag = false;
-        
+
         // 拖拽结束坐标
         this.endPoint = [];
 
@@ -30,11 +30,13 @@ class Draggable extends GraphEvent {
          * @param {Event} e 
          */
         this.mouseDown = function (e) {
+            let rtn;
             if (e.button === 0) {
-                this.startDrag = true;
-                this.startPoint = [e.offsetX, e.offsetY];
-                this.onMouseDown(e);
+                that.startDrag = true;
+                that.startPoint = [e.offsetX, e.offsetY];
+                rtn = that.onMouseDown(e);
             }
+            return rtn;
         }
 
         /**
@@ -42,13 +44,15 @@ class Draggable extends GraphEvent {
          * @param {Event} e 
          */
         this.mouseMove = function (e) {
-            if (this.startDrag === true) {
-                this.movePoint = [e.offsetX, e.offsetY];
-                this.endPoint = [e.offsetX, e.offsetY];
-                this.onMouseMove(e, true);
+            let rtn;
+            if (that.startDrag === true) {
+                that.movePoint = [e.offsetX, e.offsetY];
+                that.endPoint = [e.offsetX, e.offsetY];
+                rtn = that.onMouseMove(e, true);
             } else {
-                this.onMouseMove(e, false);
+                rtn = that.onMouseMove(e, false);
             }
+            return rtn;
         }
 
         /**
@@ -56,19 +60,48 @@ class Draggable extends GraphEvent {
          * @param {Event} e 
          */
         this.mouseUp = function (e) {
+            let rtn;
             if (that.startDrag === true) {
                 that.endPoint = [e.offsetX, e.offsetY];
-                that.onMouseUp(e);
+                rtn = that.onMouseUp(e);
                 that.startDrag = false;
             }
+            return rtn;
+        }
+
+        this.rclick = function(e) {
+            that.endPoint = [e.offsetX, e.offsetY];
+            return that.onRightClick(e);
+        }
+
+        /**
+         * 事件: dblclick
+         * @param {Event} e 
+         */
+        this.dblclick = function (e) {
+            return that.onDblclick(e);
         }
     }
 
-    onMouseDown(e) { }
+    onMouseDown(e) {
+        return null;
+    }
 
-    onMouseUp(e) { }
+    onMouseUp(e) {
+        return null;
+    }
 
-    onMouseMove(e) { }
+    onMouseMove(e, isDrag) {
+        return null;
+    }
+
+    onDblclick(e) {
+        return null;
+    }
+
+    onRightClick(e) {
+        return null;
+    }
 
     setCursor(cursorName) {
         this.cursor = cursorName

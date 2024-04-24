@@ -185,7 +185,7 @@ const BgUtil = {};
             zIndex: WATER_LAYER_ZINDEX,
             name: "水印层",
             type: "aux",
-            style: { "color": "rgb(220, 220, 220)", "fillColor": "rgb(220, 220, 220)", "fontSize": 30, "fontName": "宋体", "textAlign": "center" },
+            style: { "fillColor": "#EEEEEE", "fontSize": 30, "fontName": "宋体", "textAlign": "center" },
             usePixelCoord: true,
             visible: true
         });

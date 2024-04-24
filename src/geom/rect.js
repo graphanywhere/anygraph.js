@@ -22,16 +22,17 @@ class Rect extends Geometry {
         // 几何类型
         this.shapeType = GGShapeType.SURFACE;
 
+         // 坐标
+        this.x = this.x || 0;
+        this.y = this.y || 0;
+
+        // 宽和高
+        this.width = this.width || 60;
+        this.height = this.height || 30;
+        
         // 初始化
         this.initialize(options);
 
-        // 坐标
-        this.x;
-        this.y;
-
-        // 宽和高
-        this.width = this.width || 0;
-        this.height = this.height || 0;
 
         // 圆角矩形半径
         this.rx = this.rx || 0;

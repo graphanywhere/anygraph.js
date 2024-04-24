@@ -66,7 +66,7 @@ class AxfgsFormat extends FeatureFormat {
      * @param {Dataset} dataset
      * @returns Array Geomerty设备节点数组
      */
-    readFeatures(file, dataset) {
+    readData(file, dataset) {
         let listData = [];
         let listMark = [];
         // 逐个对象分析属性、样式和几何形状

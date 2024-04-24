@@ -113,7 +113,7 @@ const AjaxUtil = {};
             // 将url中?后的数据和args.data合并为查询字符串
             let qs = _getParam(Object.assign(_url2Object(url), args.data));
             if (url.indexOf("?") > 0) {
-                url = url.substr(0, args.url.indexOf("?"));
+                url = url.substring(0, args.url.indexOf("?"));
             }
 
             // 创建一个 get 请求, 

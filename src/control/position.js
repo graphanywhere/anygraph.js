@@ -1,11 +1,11 @@
-import { default as GraphControl } from "./control.js";
+import Control from "./control.js";
 import DomUtil from "../util/dom.js";
 import MathUtil from "../util/math.js";
 
 /**
  * 鼠标当前位置控件
  */
-class MousePositionControl extends GraphControl {
+class MousePositionControl extends Control {
     constructor(options = {}) {
         super(options);
         this.element;
@@ -35,13 +35,13 @@ class MousePositionControl extends GraphControl {
     redraw(e) {
         let posi = [e.offsetX, e.offsetY];
         let coord = this.graph.getCoordinateFromPixel(posi, true);
-        
-        if(this.showRes) {
-			let res = this.graph.getFrameState().resolution;
-            this.element.innerHTML = this.formatOutput(coord) + "," + MathUtil.toFixed(res, 2);			
-		} else {
-			this.element.innerHTML = this.formatOutput(coord);
-		}
+
+        if (this.showRes) {
+            let res = this.graph.getFrameState().resolution;
+            this.element.innerHTML = this.formatOutput(coord) + "," + MathUtil.toFixed(res, 2);
+        } else {
+            this.element.innerHTML = this.formatOutput(coord);
+        }
     }
 
     reset() {

@@ -164,7 +164,8 @@ function _getEdgeIntersection(a, b, code, bounds) {
         y = a[1] + dy * (min[0] - a[0]) / dx;
     }
 
-    return [Math.round(x), Math.round(y)];
+    //return [Math.round(x), Math.round(y)];
+    return [x, y];
 }
 
 export default clipSegments;

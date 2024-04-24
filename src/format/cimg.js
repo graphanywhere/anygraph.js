@@ -25,7 +25,7 @@ class CimgFormat extends FeatureFormat {
      *     {"type":"Text", "lineWidth":1, "lineType":1, "text":"国", "fontName":"宋体", "fontSize":0.086581, "scaleX":1.000000, "scaleY":1.000000, "rotate":0.000000, "color":"185,72,66", "fillColor":"185,72,66", "coords":"1562.815186,1058.258057,1562.901733,1058.344604"},
      * ] 
      */
-    readFeatures(file) {
+    readData(file) {
         let listData = [];
         let unknow = [];
 

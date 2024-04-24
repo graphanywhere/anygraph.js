@@ -76,7 +76,7 @@ class PolygonAdd extends GraphEvent {
                 // 与第一个点的距离小于20像素，结束绘制
                 if (Measure.dist(that.startPoint, that.endPoint) < 10) {
                     that.polygonCoord.push(that.graph.getCoordinateFromPixel(that.endPoint));
-                    if(that.polygonCoord.length > 2) {
+                    if (that.polygonCoord.length > 2) {
                         that.drawPolygon(true);
                         that.end();
                     }
@@ -90,12 +90,12 @@ class PolygonAdd extends GraphEvent {
             }
         }
 
-        this.rclick = function(e) {
+        this.rclick = function (e) {
             that.operation == -1;
             that.drawPolygon(true);
             that.end();
         }
-    }   
+    }
 
     /**
      * mouseDown event
@@ -144,9 +144,9 @@ class PolygonAdd extends GraphEvent {
         if (this.polygonCoord && this.polygonCoord.length > 2) {
             if (over === true) {
                 this.graph.removeGeom(this.ruleLine);
-                if(this.ring) {
+                if (this.ring) {
                     this.graph.removeGeom(this.polyline);
-                    this.layer.getSource().add(new Polygon({ "coords": this.polygonCoord, "style": Object.assign({ "fillColor": this.fillColor }, this.style) }));    
+                    this.layer.getSource().add(new Polygon({ "coords": this.polygonCoord, "style": Object.assign({ "fillColor": this.fillColor }, this.style) }));
                 } else {
                     this.polyline.setCoord(this.polygonCoord);
                 }

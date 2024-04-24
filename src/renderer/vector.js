@@ -55,7 +55,7 @@ class VectorRenderer extends LayerRenderer {
             beginTime = Date.now();
 
             // 在画板中渲染矢量数据
-            if (this.getLayer().isUseTransform()) {
+            if (frameState.useTransform || this.getLayer().isUseTransform()) {
                 this._context.save();
                 let trans = frameState.coordinateToPixelTransform;
                 this._context.setTransform(trans[0], trans[1], trans[2], trans[3], trans[4], trans[5]);
@@ -86,7 +86,7 @@ class VectorRenderer extends LayerRenderer {
      */
     _convert2Pixel(list, frameState) {
         let pointCount = 0;
-        if (this.getLayer().isUsePixelCoord() || this.getLayer().isUseTransform()) {
+        if (this.getLayer().isUsePixelCoord() || this.getLayer().isUseTransform() || frameState.useTransform) {
             let transform = Transform.create();
             for (let i = 0; i < list.length; i++) {
                 let obj = list[i];
@@ -144,6 +144,7 @@ class VectorRenderer extends LayerRenderer {
         for (let i = 0, ii = list.length; i < ii; i++) {
             let goon = true;
             let obj = list[i];
+            if (obj.isVisible() == false) continue;
             let style = this._getStyle(obj);
 
             // 动态样式
@@ -164,7 +165,7 @@ class VectorRenderer extends LayerRenderer {
                     obj.draw(ctx, style, frameState);
                     // 绘制边框
                     if (LOG_LEVEL > 3 || obj.isFocus()) {
-                        obj.drawBorder(ctx, style);
+                        obj.drawBorder(ctx, style, frameState);
                     }
                     // 当frameState.viewGeomList不为空时，绘制用于拾取的颜色框
                     if (this._hitContext && frameState.viewGeomList != null && !this.getLayer().isAuxLayer()) {

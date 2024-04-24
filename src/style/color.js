@@ -469,7 +469,7 @@ class Color {
         let interval = (count == null ? 10 : 100 / count);
         let colorSet = [];
         let hsl = color.toHSL();
-        for (let l = 100; l > 0; l -= interval) {
+        for (let l = 100; l >= 0; l -= interval) {
             let hslColor = "hsl(" + hsl.H + ", " + hsl.S + "%, " + Math.round(l) + "%)";
             let ncolor = this.fromHSL(hslColor);
             let hex = ncolor.toHex();

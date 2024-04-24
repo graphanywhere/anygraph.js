@@ -1,3 +1,5 @@
+import UrlUtil from "./url.js";
+
 /**
  * 定义鼠标光标类型<br/>
  * 鼠标移动到“说明”时，可查看该光标的形状
@@ -12,6 +14,9 @@ const Cursor = {
 
     /** <span style="cursor:pointer">Pointer type</span> */
     POINTER: 'pointer',
+
+    /** <span style="cursor:pointer">Pointer type</span> */
+    PAN: "url(" + UrlUtil.getContextPath() + "/adam.lib/images/cursor/hand-close.cur), move",
 
     /** <span style="cursor:move">Move type</span> */
     MOVE: 'move',

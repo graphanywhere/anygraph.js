@@ -11,7 +11,8 @@ class Arrow {
         /**
          * 空心箭头的背景色
          */
-        this.background = options.background || "transparent";
+        //this.background = options.background || "transparent";
+        this.background = options.background || null;
     }
 
     /**
@@ -56,8 +57,8 @@ class Arrow {
         ctx.lineTo(fromX, point.y + this.arrowSize / 4);
         ctx.closePath();
         ctx.stroke();
-        //ctx.fillStyle = this.background || '#ffffff';
-        //ctx.fill();
+        ctx.fillStyle = this.background || '#ffffff';
+        ctx.fill();
         ctx.restore();
     }
 
@@ -80,7 +81,7 @@ class Arrow {
         ctx.restore();
     }
 
-    
+
     /**
      * 空心圆
      * @param {CanvasRenderingContext2D} ctx 
@@ -147,7 +148,34 @@ class Arrow {
         ctx.fill();
         ctx.restore();
     }
-    
+
+    /**
+     * 交叉箭头
+     * @param {CanvasRenderingContext2D} ctx 
+     * @param {Object} point {x, y, angle}
+     */
+    cross(ctx, point) {
+        ctx.save();
+        if (ctx.lineWidth < 2) {
+            ctx.lineWidth = 2;
+        }
+        ctx.translate(point.x, point.y);
+        ctx.rotate((point.angle * Math.PI) / 180);
+        ctx.translate(-point.x, -point.y);
+        var fromX = point.x - this.arrowSize;
+        ctx.beginPath();
+        ctx.moveTo(fromX, point.y - this.arrowSize / 2);
+        ctx.lineTo(point.x, point.y + this.arrowSize / 2);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(point.x, point.y - this.arrowSize / 2);
+        ctx.lineTo(fromX, point.y + this.arrowSize / 2);
+        ctx.stroke();
+        //ctx.fillStyle = this.background || '#ffffff';
+        //ctx.fill();
+        ctx.restore();
+    }
+
     /**
      * 单线箭头
      * @param {CanvasRenderingContext2D} ctx 
@@ -202,7 +230,7 @@ class Arrow {
         ctx.stroke();
         ctx.restore();
     }
-    
+
     /**
      * 上线箭头
      * @param {CanvasRenderingContext2D} ctx 

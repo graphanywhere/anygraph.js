@@ -37,27 +37,24 @@ class Gradient {
         this.objTransform_ = null;
 
         /**
-         * 坐标单位. 可选值：像素、百分数
-         * If `pixels`, the number of coords are in the same unit of width / height.
-         * If set as `percentage` the coords are still a number, but 1 means 100% of width
-         * for the X and 100% of the height for the y. It can be bigger than 1 and negative.
-         * allowed values pixels or percentage.
+         * 坐标单位. 可选值：像素(pixels)、百分数(percentage)
+         * 当单位为百分数时，坐标值需采用小数值， 例如当值为50%时需使用0.5表示
          * @type String
          * @default 'pixels'
          */
         this.gradientUnits = 'pixels';
 
         /**
-         * Gradient type linear or radial
+         * 渐变对象类型
          * @type String
-         * @default 'pixels'
+         * @default 'linear'
          */
         this.type = 'linear';
 
         if (options == null) (options = {});
         if (options.coords == null) (options.coords = {});
 
-        // sets everything, then coords and colorstops get sets again
+        // 根据options设置对象属性
         let that = this;
         Object.keys(options).forEach(function (option) {
             that[option] = options[option];
@@ -196,7 +193,7 @@ class Gradient {
             pixels = Coordinate.transform2D(tool, nc, false);
         } else {
             // 如果坐标为百分比，且存在transform属性，则应先transform，然后计算为具体像素值
-            coords = this._gradientTransform(coords, radius, [0, 0, 1, 1]);
+            // coords = this._gradientTransform(coords, radius, [0, 0, 1, 1]);   // 百分比单位不进行变形操作 20240418 hjq
             let width = Extent.getWidth(bbox);
             let height = Extent.getHeight(bbox);
 
@@ -204,6 +201,11 @@ class Gradient {
                 // bbox[0] + 宽度*百分比
                 // bbox[1] + 高度*百分比
                 pixels.push([bbox[0] + width * coords[i][0], bbox[1] + height * coords[i][1]]);
+            }
+
+            // 将半径信息添加到pixel数组中
+            if (this.type === "radial") {
+                pixels.push([pixels[0][0] + width * radius[0], pixels[1][1] + height * radius[1]])
             }
         }
 
@@ -245,7 +247,7 @@ class Gradient {
         }
 
         // 将半径信息添加到pixel数组中
-        if (radius[0] >= 0 && radius[1] > 0) {
+        if (this.type === "radial") {
             pixels.push([pixels[0][0] + radius[0], pixels[1][1] + radius[1]])
         }
 

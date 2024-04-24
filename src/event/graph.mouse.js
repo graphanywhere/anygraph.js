@@ -1,6 +1,6 @@
 import Extent from "../spatial/extent.js";
 import DomUtil from "../util/dom.js";
-import UrlUtil from "../util/url.js";
+import Cursor from "../util/cursor.js";
 
 /**
  * 图形鼠标操作
@@ -30,11 +30,14 @@ class GraphMouseOp {
         this._beginZoom = false;
         this.touchZoonDist = 0;
 
-        //  缺省缩放方法
+        // 缺省缩放方法
         this.defaultMapZoom = options.mapZoom;     //MouseWheelZoom
 
-        //  缺省漫游方法
+        // 缺省漫游方法
         this.defaultMapMove = options.mapMove;
+
+        // 缺省漫游的鼠标按键（0：鼠标左键，1：鼠标中键）
+        this.defaultMapMoveKey = 1;
 
         /**
          * time事件，用于监视鼠标移动的位置
@@ -45,6 +48,7 @@ class GraphMouseOp {
          * 鼠标最近移动时的位置和时间
          */
         this.lastMovePointer_ = { "time": Infinity, "position": [Infinity, Infinity], "clientPosition": [Infinity, Infinity] };
+        this.mouseHovering = false;
 
         /**
          * 最后一次单击时间
@@ -52,19 +56,21 @@ class GraphMouseOp {
         this.lastClickTime = 0;
         this.lastClickTimeFunc = 0;
 
-        // 
+        /**
+         * GraphEvent 自定义事件类型
+         */
         this.eventObj = null;
 
-        // 
+        // 滚轮缩放/漫游功能是否可用
         this.isWorkable_ = true;
     }
 
     /**
-     * 单击事件是否可用
+     * 滚轮缩放/漫游功能是否可用
      */
     enabled(bool) {
         if (bool) {
-            DomUtil.setStyle(this.targetElement, "cursor", "");
+            this.getRender().setPointer("");
             if (this.isWorkable_ === false) {
                 this.isWorkable_ = true;
                 // this.mouseenter({ "offsetX": 0, "offsetY": 0 });
@@ -104,7 +110,7 @@ class GraphMouseOp {
                 return this.defaultMapZoom({ op: delta, x: offsetX, y: offsetY });
             }
         } else {
-            return false;
+            return true;
         }
     }
 
@@ -135,15 +141,22 @@ class GraphMouseOp {
      * @param {int} y 
      */
     onMouseMove(e) {
+        let rtn = false;
         let [x, y] = [e.offsetX, e.offsetY];
-        // 鼠标中键移动
-        if (this._beginMove === true) {
-            return this._doMapMove(x, y);
-        }
 
+        // 鼠标中键移动
+        if (this._beginMove === true && this.isWorkable_ === true) {
+            rtn = this._doMapMove(x, y);
+        }
         // 自定义鼠标操作
-        if (this.eventObj != null && typeof (this.eventObj.mouseMove) === "function") {
-            this.eventObj.mouseMove(e); //Object.assign({}, e, { x, y, "mouse": this }));
+        else {
+            if (this.eventObj != null && typeof (this.eventObj.mouseMove) === "function") {
+                rtn = this.eventObj.mouseMove(e); //Object.assign({}, e, { x, y, "mouse": this }));
+                if (this.eventObj.cursor != null) {
+                    this.getRender().setPointer(this.eventObj.cursor);
+                }
+                if (rtn === false) return false;
+            }
         }
 
         // 分析hover状态
@@ -154,11 +167,20 @@ class GraphMouseOp {
                 "position": [x, y],
                 "clientPosition": [e.clientX, e.clientY]
             };
-            if (this.eventObj != null && typeof (this.eventObj.mouseHoverEnd) == "function") {
-                this.eventObj.mouseHoverEnd(e); //Object.assign({}, e, { "x": x, "y": y, "mouse": this }));
+            if (this.mouseHovering === true && this.eventObj != null && typeof (this.eventObj.mouseHoverEnd) == "function") {
+                this.mouseHovering = false;
+                this.eventObj.mouseHoverEnd({
+                    "x": e.offsetX,
+                    "y": e.offsetY,
+                    "offsetX": e.offsetX,
+                    "offsetY": e.offsetY,
+                    "clientX": e.clientX,
+                    "clientY": e.clientY
+                });
             }
         }
-        return false;
+
+        return rtn;
     }
 
     /**
@@ -174,18 +196,22 @@ class GraphMouseOp {
         if (e.button == 0) {    // 鼠标左键
             if (that.eventObj != null && typeof (that.eventObj.mouseDown) === "function") {
                 rtn = that.eventObj.mouseDown(e);  // Object.assign({}, e, { x, y, "mouse": that });
+                if (that.eventObj.cursor != null) {
+                    that.getRender().setPointer(that.eventObj.cursor);
+                }
+                if (rtn == false) return false;
             }
         }
 
-        if (e.button == 1) {    // 鼠标中键
+        if (e.button == this.defaultMapMoveKey) {    // 鼠标中键/左键
             this.previousCursor_ = DomUtil.getStyle(this.targetElement, "cursor");
-            DomUtil.setStyle(this.targetElement, "cursor", "url(" + UrlUtil.getContextPath() + "/adam.lib/images/cursor/hand-close.cur), move");
+            this.getRender().setPointer(Cursor.PAN);
             this._lastClientX = x; //e.offsetX;
             this._lastClientY = y; //e.offsetY;
             this._beginMove = true;
         }
 
-        return rtn == null ? false : rtn;
+        return rtn;
     }
 
     /**
@@ -193,9 +219,15 @@ class GraphMouseOp {
      * @param {Object} e 
      */
     onMouseUp(e) {
-        let rtn = true;
+        let rtn = false;
         let that = this;
 
+        // 结束漫游状态（鼠标中键）
+        if (that._beginMove === true) {
+            this.getRender().setPointer(that.previousCursor_);
+            that._beginMove = false;
+        }
+        // 处理扩展的鼠标事件
         if (that.eventObj != null) {
             if (e.button == 0) {         //IE:1, FF:0 鼠标左键
                 let callback = (typeof (that.eventObj) === "function" ? that.eventObj : that.eventObj.mouseUp);
@@ -208,17 +240,15 @@ class GraphMouseOp {
                 if (typeof (callback) === "function") {
                     rtn = callback(e);
                 }
-
+            }
+            if (that.eventObj.cursor != null) {
+                that.getRender().setPointer(that.eventObj.cursor);
             }
             if (rtn === false) return rtn;
         }
-        if (e.button == 1) {    // 鼠标中键
-            DomUtil.setStyle(that.targetElement, "cursor", that.previousCursor_);
-        }
 
-        that._beginMove = false;
         that.lastClickTime = Date.now();
-        return rtn || false;
+        return rtn;
     }
 
     /**
@@ -247,7 +277,15 @@ class GraphMouseOp {
         this.intervalTimeId_ = window.setInterval(function () {
             if ((new Date()).getTime() - that.lastMovePointer_.time > 1100) {
                 that.lastMovePointer_.time = Infinity;
-                that._doMouseHover(e);
+                that._doMouseHover({
+                    "x": that.lastMovePointer_.position[0],
+                    "y": that.lastMovePointer_.position[1],
+                    "offsetX": that.lastMovePointer_.position[0],
+                    "offsetY": that.lastMovePointer_.position[1],
+                    "clientX": that.lastMovePointer_.clientPosition[0],
+                    "clientY": that.lastMovePointer_.clientPosition[1],
+                    "targetElement": that.targetElement
+                });
             }
         }, 400);
         return false;
@@ -258,20 +296,9 @@ class GraphMouseOp {
      * @param {Object} e 
      */
     _doMouseHover(e) {
-        // let that = this;
-        // let pos = this.lastMovePointer_.position;
-        // let clientPos = this.lastMovePointer_.clientPosition;
-
+        this.mouseHovering = true;
         if (this.eventObj != null && typeof (this.eventObj.mouseHover) === "function") {
             this.eventObj.mouseHover(e);
-            //Object.assign({}, e, {
-            //    "x": pos[0],
-            //    "y": pos[1],
-            //    "clientX": clientPos[0],
-            //    "clientY": clientPos[1],
-            //    "mouse": this,
-            //    "targetElement": that.targetElement
-            //}));
         }
         return false;
     }
@@ -314,7 +341,7 @@ class GraphMouseOp {
         //阻止触摸时浏览器的缩放、滚动条滚动等
         e.preventDefault();
         const touches = e.touches;
-        if (this._beginMove === true && touches.length === 1) {
+        if (this._beginMove === true && touches.length === 1 && this.isWorkable_ === true) {
             // 单指触摸移动
             let touch = touches[0]; //获取第一个触点
             this._doMapMove(parseInt(touch.clientX), parseInt(touch.clientY));

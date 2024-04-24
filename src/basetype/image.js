@@ -108,6 +108,7 @@ class ImageObject {
 class ImageLoader {
     constructor() {
     }
+    static ImageCollection = new Map();
 
     /**
      * 加载图片
@@ -144,7 +145,6 @@ class ImageLoader {
         this.ImageCollection.delete(src);
     }
 }
-ImageLoader.ImageCollection = new Map();
 
 export { ImageObject, ImageState, ImageLoader };
 

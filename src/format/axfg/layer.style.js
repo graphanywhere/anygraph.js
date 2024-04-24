@@ -6,7 +6,7 @@ import {AjaxUtil, UrlUtil, ClassUtil} from "../../util/index.js";
 const GROW_STYLE_FILE_NAME = UrlUtil.getContextPath() + "/adam.lib/meta/meta_layer_style.json";
 
 /**
- * 由GROW转出的以CIMG格式的符号集合
+ * 图层样式配置
  */
 class AxfgLayerStyle {
     /**

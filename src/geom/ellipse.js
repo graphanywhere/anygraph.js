@@ -145,7 +145,6 @@ class Ellipse extends Geometry {
         return extent;
     }
 
-
     /**
      * 是否包含该点，拾取时可根据此返回值判断是否被拾取到
      * @param {Coord} point 点坐标

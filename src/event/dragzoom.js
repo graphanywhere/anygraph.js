@@ -8,7 +8,7 @@ class DragZoom extends Draggable {
 
     constructor(options = {}) {
         super();
-        
+
         /**
          * 
          */

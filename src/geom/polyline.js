@@ -158,7 +158,7 @@ class Polyline extends Geometry {
         }
 
         // 绘制动态路名
-        if (style.labelStyle != null && this.properties.name != null && this.properties.name.length > 0) {
+        if (style.labelStyle != null && this.properties != null && this.properties.name != null && this.properties.name.length > 0) {
             _drawDynamicRoadName(ctx, this, style.labelStyle, frameState);
         }
         ctx.restore();
@@ -172,11 +172,13 @@ class Polyline extends Geometry {
      * @param {*} arraySize 
      */
     drawArrow(ctx, segment, arrawType, arraySize) {
+        let arrow = new Arrow({ "arrowSize": arraySize });
         let [x0, y0] = [segment[0][0], segment[0][1]];
         let [x1, y1] = [segment[1][0], segment[1][1]];
         let [w, h] = [x1 - x0, y1 - y0]
-        let arrow = new Arrow({ "arrowSize": arraySize });
-
+        let maxlen = Math.max(Math.abs(w), Math.abs(h));
+        //if (maxlen <= arraySize * 2) return; //当视点变高，箭头占线的比例太大时,不画箭头
+            
         // 计算直线与X轴正方形的夹角角度
         let angle;
         if (w >= 0 && h >= 0) {
@@ -188,19 +190,33 @@ class Polyline extends Geometry {
         } else {
             angle = 360 - MathUtil.toDegrees(Math.atan(-h / w));
         }
-
+        let dash = [10,0];
+        ctx.setLineDash( dash ); //取消可能的dash的影响
         switch (arrawType) {
-            case 1:   // 实心三角箭头
+            case 1:    // 实心三角箭头
                 arrow.triangleSolid(ctx, { "x": x1, "y": y1, angle });
                 break;
-            case 2:   // 实心菱形箭头
+            case 2:    // 实心菱形箭头
+            case 5:    // 实心菱形
                 arrow.diamondSolid(ctx, { "x": x1, "y": y1, angle });
                 break;
-            case 9:   // 距离标识
+            case 3:    // 实心圆箭头
+                arrow.circleSolid(ctx, { "x": x1, "y": y1, angle });
+                break;
+            case 4:    // 交叉
+                arrow.cross(ctx, { "x": x1, "y": y1, angle });
+                break;
+            case 6:    // 单线箭头
+                arrow.line(ctx, { "x": x1, "y": y1, angle });
+                break;
+            case 9:    // 距离标识
                 arrow.lineEnd(ctx, { "x": x1, "y": y1, angle });
                 break;
-            default:   // 单线箭头
-                arrow.line(ctx, { "x": x1, "y": y1, angle });
+            case 11:   // 空心三角箭头
+                arrow.triangle(ctx, { "x": x1, "y": y1, angle });
+                break;
+            case 15:    // 空心菱形
+                arrow.diamond(ctx, { "x": x1, "y": y1, angle });
                 break;
         }
     }

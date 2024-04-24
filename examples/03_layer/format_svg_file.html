@@ -64,7 +64,7 @@
                 if (document != null) {
                     // 加入到数据源中
                     layer.getSource().clearData();
-                    let listData = layer.getSource().getFormat().readFeatures(document);
+                    let listData = layer.getSource().getFormat().readData(document);
                     layer.getSource().add(listData);
 
                     // 建立空间索引

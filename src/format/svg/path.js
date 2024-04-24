@@ -542,7 +542,7 @@ let svgPathParse = (function () {
         return parser.lastToken.toUpperCase() === 'E'
     }
 
-    class Point {  
+    class __Point {  
         constructor(x, y) {  
             const base = { x: 0, y: 0 }
     
@@ -569,8 +569,8 @@ let svgPathParse = (function () {
             pointSeen: false,
             hasExponent: false,
             absolute: toAbsolute,
-            p0: new Point(),
-            p: new Point()
+            p0: new __Point(),
+            p: new __Point()
         }
 
         while ((parser.lastToken = token, token = d.charAt(index++))) {

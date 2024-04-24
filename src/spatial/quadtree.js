@@ -189,6 +189,33 @@ class QuadTree {
     };
 
     /*
+     * 删除指定节点
+     */
+    delete(obj) {
+        let qd = this.getQuadTree(obj.getBBox());
+        if (qd != null) {
+            for (let i = 0; i < qd.objects.length; i++) {
+                if (qd.objects[i] == obj) {
+                    qd.objects.splice(i, 1);
+                    return;
+                }
+            }
+        }
+        //万一obj的Bbox已经发生变化，上面可能删除失败
+        for (let j = 0; j < this.nodes.length; j++) {
+            let qd = this.nodes[j];
+            if (qd != null) {
+                for (let i = 0; i < qd.objects.length; i++) {
+                    if (qd.objects[i] == obj) {
+                        qd.objects.splice(i, 1);
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    /*
      * 确定对象属于哪个节点。-1表示对象不能完全适应节点，并且是当前节点的一部分
      */
     getIndex(extent) {

@@ -1,3 +1,4 @@
+export { default as GraphEvent } from "./graph.event.js";
 export { default as DragBox } from "./dragbox.js";
 export { default as DragPan } from "./dragpan.js";
 export { default as DragZoom } from "./dragzoom.js";

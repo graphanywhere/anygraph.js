@@ -860,7 +860,7 @@ class Extent {
      */
     static isExtent(extent) {
         if (typeof (extent) === "object" && extent.length === 4) {
-            return true;
+            return (extent[2] - extent[0] > 0 && extent[3] - extent[1] > 0);
         } else {
             return false;
         }
@@ -1314,7 +1314,7 @@ class Measure {
         // 计算线段两端点的差值
         const dx = p2[0] - p1[0];
         const dy = p2[1] - p1[1];
-    
+
         // 如果dx和dy都不等于0, p1p2是一个线段，否则p1p2为同一个点
         if (dx !== 0 || dy !== 0) {
             // 计算p到线段p1p2的投影点 在线段上的相对位置t
@@ -1329,7 +1329,7 @@ class Measure {
                 p1[1] += dy * t;
             }
         }
-    
+
         // 计算并返回两点之间的距离
         return this.dist(p, p1);
     }
@@ -1505,6 +1505,10 @@ class Measure {
 
             d += t;
         }
+        if (i == vtxp.length) {
+            //console.log("len=" + vtxp.length + " d =" + d + " t=" + t);
+            i = vtxp.length - 1;
+        }
         ratio = (dist - d) / t;
         retval.out = [vtxp[i - 1][0] + ratio * x, vtxp[i - 1][1] + ratio * y];
         retval.angle = this.calcAngle(vtxp[i], vtxp[i - 1]);
@@ -1512,6 +1516,358 @@ class Measure {
         return retval;
     }
 
+    static unit_circle = [
+        { a: 0.0000000000, c: 1.0000000000, s: 0.0000000000 },	//  0/18*PI
+        { a: 0.1745329252, c: 0.9848077530, s: 0.1736481777 },	//  1/18*PI
+        { a: 0.3490658504, c: 0.9396926208, s: 0.3420201433 },	//  2/18*PI
+        { a: 0.5235987756, c: 0.8660254038, s: 0.5000000000 },	//  3/18*PI
+        { a: 0.6981317008, c: 0.7660444431, s: 0.6427876097 },	//  4/18*PI
+        { a: 0.8726646260, c: 0.6427876097, s: 0.7660444431 },	//  5/18*PI
+        { a: 1.0471975512, c: 0.5000000000, s: 0.8660254038 },	//  6/18*PI
+        { a: 1.2217304764, c: 0.3420201433, s: 0.9396926208 },	//  7/18*PI
+        { a: 1.3962634016, c: 0.1736481777, s: 0.9848077530 },	//  8/18*PI
+        { a: 1.5707963268, c: 0.0000000000, s: 1.0000000000 },	//  9/18*PI
+        { a: 1.7453292520, c: -0.1736481777, s: 0.9848077530 },	// 10/18*PI
+        { a: 1.9198621772, c: -0.3420201433, s: 0.9396926208 },	// 11/18*PI
+        { a: 2.0943951024, c: -0.5000000000, s: 0.8660254038 },	// 12/18*PI
+        { a: 2.2689280276, c: -0.6427876097, s: 0.7660444431 },	// 13/18*PI
+        { a: 2.4434609528, c: -0.7660444431, s: 0.6427876097 },	// 14/18*PI
+        { a: 2.6179938780, c: -0.8660254038, s: 0.5000000000 },	// 15/18*PI
+        { a: 2.7925268032, c: -0.9396926208, s: 0.3420201433 },	// 16/18*PI
+        { a: 2.9670597284, c: -0.9848077530, s: 0.1736481777 },	// 17/18*PI
+        { a: 3.1415926536, c: -1.0000000000, s: 0.0000000000 },	// 18/18*PI
+        { a: 3.3161255788, c: -0.9848077530, s: -0.1736481777 },	// 19/18*PI
+        { a: 3.4906585040, c: -0.9396926208, s: -0.3420201433 },	// 20/18*PI
+        { a: 3.6651914292, c: -0.8660254038, s: -0.5000000000 },	// 21/18*PI
+        { a: 3.8397243544, c: -0.7660444431, s: -0.6427876097 },	// 22/18*PI
+        { a: 4.0142572796, c: -0.6427876097, s: -0.7660444431 },	// 23/18*PI
+        { a: 4.1887902048, c: -0.5000000000, s: -0.8660254038 },	// 24/18*PI
+        { a: 4.3633231300, c: -0.3420201433, s: -0.9396926208 },	// 25/18*PI
+        { a: 4.5378560552, c: -0.1736481777, s: -0.9848077530 },	// 26/18*PI
+        { a: 4.7123889804, c: 0.0000000000, s: -1.0000000000 },	// 27/18*PI
+        { a: 4.8869219056, c: 0.1736481777, s: -0.9848077530 },	// 28/18*PI
+        { a: 5.0614548308, c: 0.5000000000, s: -0.8660254038 },	// 30/18*PI
+        { a: 5.4105206812, c: 0.7660444431, s: -0.6427876097 },	// 32/18*PI
+        { a: 5.7595865316, c: 0.8660254038, s: -0.5000000000 },	// 33/18*PI
+        { a: 5.9341194568, c: 0.9396926208, s: -0.3420201433 },	// 34/18*PI
+        { a: 6.1086523820, c: 0.9848077530, s: -0.1736481777 }	// 35/18*PI
+    ];
+
+    /**
+      * 生成圆的坐标
+     */
+    static genCircleVtx(cx, cy, radius, ccw = true) {
+        let i, j;
+        let circle = [];
+        let len = this.unit_circle.length;
+
+        if (ccw) {
+            for (i = 0; i < len; i++) {
+                circle.push([cx + radius * this.unit_circle[i].c, cy + radius * this.unit_circle[i].s]);
+            }
+        } else {
+            for (i = 0, j = len - 1; i < len; i++, j--) {
+                circle.push([cx + radius * this.unit_circle[j].c, cy + radius * this.unit_circle[j].s]);
+            }
+        }
+        return circle;
+    }
+
+    static GK_2PI = 2 * Math.PI;
+
+    /*
+    /* 生成从ab至ae的弧段坐标
+    */
+    static genArcVtx(x, y, radius, ab, ae, ccw = true) {
+        let arc = [];
+        let data = [];
+        let b, e, i, n;
+
+        let len = this.unit_circle.length;
+        // 根据unit_circle生成一个[0,GK_4PI]区间的大数组以简化算法
+        data = this.unit_circle.slice();
+        for (i = 0; i < len; i++) {
+            let tmp = { a: data[i].a, c: data[i].c, s: data[i].s };
+            data.push(tmp);
+        }
+        n = data.length;
+        for (i = len; i < n; i++) {
+            data[i].a += this.GK_2PI;
+        }
+        data.push({ a: data[0].a, c: data[0].c, s: data[0].s });
+        data[n].a = 2 * this.GK_2PI;
+        n++;
+
+        // 角度标准化在[0,GK_2PI)区间内
+        while (ab < 0.0) ab += this.GK_2PI;
+        while (ab >= this.GK_2PI) ab -= this.GK_2PI;
+        while (ae < 0.0) ae += this.GK_2PI;
+        while (ae >= this.GK_2PI) ae -= this.GK_2PI;
+
+        if (!ccw) {
+            let tmp = ab, ab = ae, ae = tmp;	// 逆时针，交换ab和ae
+        }
+        if (ae <= ab) ae += this.GK_2PI;			// 确保ab < ae
+
+        // 在data中找ab，如找不到则插入，令其下标为b
+        for (b = 0; b < len; b++) {
+            if (ab <= data[b].a)
+                break;
+        }
+
+        // 在data中找ae，如找不到则插入，令其下标为e
+        for (e = b + 1; e < n; e++) {
+            if (ae <= data[e].a)
+                break;
+        }
+
+        // 生成坐标数据
+        if (ccw) {
+            /*if ( ab != data[b].a ) {
+                arc.push( [x + radius * Math.cos( ab ), y + Math.sin( ab )] );
+            }*/
+            for (i = b; i <= e; i++) {
+                arc.push([x + radius * data[i].c, y + radius * data[i].s]);
+            }
+            /*if ( ae != data[e].a ) {
+                arc.push( [x + radius * Math.cos( ae ), y + Math.sin( ae )] );
+            }*/
+        } else {
+            /*if ( ae != data[e].a ) {
+                arc.push( [x + radius * Math.cos( ae ), y + Math.sin( ae )] );
+            }*/
+            for (i = e; i >= b; i--) {
+                arc.push([x + radius * data[i].c, y + radius * data[i].s]);
+            }
+            /*if ( ab != data[b].a ) {
+                arc.push( [x + radius * Math.cos( ab ), y + Math.sin( ab) ] );
+            }*/
+        }
+        return arc;
+    }
+
+    // 求两线段的交点
+    //
+    // 线段AB的参数方程：x = xa + (xb - xa) * t, y = ya + (yb - ya) * t
+    // 线段CD的参数方程：x = xc + (xd - xc) * u, y = yc + (yd - yc) * u
+    // 消去变量x,y,u，可解出：
+    //	( yd - yc ) * ( xc - xa ) - ( xd - xc ) * ( yc - ya )
+    // t = -------------------------------------------------------
+    //	( yd - yc ) * ( xb - xa ) - ( xd - xc ) * ( yb - ya )
+    // 如果ext=null，则只能路段相交，去掉与延长线相交的情况
+    // 如果ext=ABCD，则可延长线相交
+    static solveCrossPointSegment(A, B, C, D, ext = null) {
+        let retval = { out: null, tab: null, tcd: null, cross: false };
+        let ba0 = B[0] - A[0];
+        let ba1 = B[1] - A[1];
+        let dc0 = D[0] - C[0];
+        let dc1 = D[1] - C[1];
+        let ca0 = C[0] - A[0];
+        let ca1 = C[1] - A[1];
+        let d, t, u;
+        let checkA, checkB, checkC, checkD;
+
+        checkA = checkB = checkC = checkD = true;
+        if (ext != null) {
+            for (let i = 0; i < ext.length; i++) {
+                switch (ext[i]) {
+                    case 'A': checkA = false; break;
+                    case 'B': checkB = false; break;
+                    case 'C': checkC = false; break;
+                    case 'D': checkD = false; break;
+                }
+            }
+        }
+
+        d = dc1 * ba0 - dc0 * ba1;
+        if (Math.abs(d) < 0.00001) {
+            //if ( tab ) *tab = GK_INFINITY;
+            //if ( tcd ) *tcd = GK_INFINITY;
+            //return false;	// 两线段平行
+            return retval;
+        }
+        t = (dc1 * ca0 - dc0 * ca1) / d;
+        u = (ba1 * ca0 - ba0 * ca1) / d;
+        retval.tab = t;
+        retval.tcd = u;
+        retval.out = [A[0] + ba0 * t, A[1] + ba1 * t];
+        retval.cross = true;
+        if (checkA && t < 0)
+            retval.cross = false;	// 交点超出A端
+        if (checkB && t > 1)
+            retval.cross = false;	// 交点超出B端
+        if (checkC && u < 0)
+            retval.cross = false;	// 交点超出C端
+        if (checkD && u > 1)
+            retval.cross = false;	// 交点超出D端
+        return retval;
+    }
+
+    /** 
+     * 求线段与polyline的交点
+     */
+    static solveCrossPoint(A, B, polyline) {
+        for (let i = 0; i < polyline.length - 1; i++) {
+            let retval = this.solveCrossPointSegment(A, B, polyline[i], polyline[i + 1]);
+            if (retval.cross) {
+                return retval.out;
+            }
+        }
+        return null;
+    }
+    /**
+     * 求线段与polyline的交点,并返回相交折线段的中间点
+     */
+    static solveCrossPointMidSegment(A, B, polyline) {
+        for (let i = 0; i < polyline.length - 1; i++) {
+            let retval = this.solveCrossPointSegment(A, B, polyline[i], polyline[i + 1]);
+            if (retval.cross) {
+                if (this.dist(retval.out, polyline[i]) < 0.0001)
+                    return retval.out;
+                if (this.dist(retval.out, polyline[i + 1]) < 0.0001)
+                    return retval.out;
+                let out = [];
+                out.push((polyline[i][0] + polyline[i + 1][0]) * 0.5, (polyline[i][1] + polyline[i + 1][1]) * 0.5);
+                return out;
+            }
+        }
+        return null;
+    }
+
+    static GK_LENGTH_2D(dx, dy) {
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    static GK_TOO_SMALL(d) {
+        if (Math.abs(d) < 0.000001)
+            return true;
+        else
+            return false;
+    }
+
+    static GK_DOT_PRODUCT_2D(x1, y1, x2, y2) {
+        return ((x1) * (x2) + (y1) * (y2));
+    }
+
+    static GK_RIGHT_OF_LINE(x1, y1, x2, y2, x, y) {
+        return (((x2) - (x1)) * ((y) - (y1)) < ((y2) - (y1)) * ((x) - (x1)));
+    }
+
+    /**
+     * 求线段AB与BC所构成的角度，返回值在区间[0,GK_PI]内
+     * @param {*} A 
+     * @param {*} B 
+     * @param {*} C 
+     * @returns 角度
+     */
+    static calculateAngle(A, B, C) {
+        let xa = A[0] - B[0];
+        let ya = A[1] - B[1];
+        let xc = C[0] - B[0];
+        let yc = C[1] - B[1];
+        let da = this.GK_LENGTH_2D(xa, ya);
+        let dc = this.GK_LENGTH_2D(xc, yc);
+        let ca;
+
+        if (this.GK_TOO_SMALL(da) || this.GK_TOO_SMALL(dc)) return 0.0;	// 线段AB或CB长度为0
+
+        ca = this.GK_DOT_PRODUCT_2D(xa, ya, xc, yc) / (da * dc);
+
+        // 尽管ca的理论绝对值不会大于1，但为防止因计算误差而导致超界，并尽量避免调用三角函数，特进行如下判断
+        if (ca >= 1.0) return 0.0;
+        if (ca <= -1.0) return Math.PI;
+
+        return acos(ca);
+    }
+
+    /**
+     * 求距离给定边为base+offset和base-offset的两个对称点，其中out1位于前进方向左侧，out2位于右侧
+     * @param {*} v1 
+     * @param {*} v2 
+     * @param {*} v3 
+     * @param {*} offset 偏移距离
+     * @param {*} detail "Head"/"Coor"/"Tail"
+     * 当detail="Head"时，对称点位于v1处且与v2方向垂直（此时参数v3无意义）
+     * 当detail="Coor"时，对称点位于v2处、v1v2和v2v3的角平分线上
+     * 当detail="Tail"时，对称点位于v1处且与-v2方向垂直（此时参数v3无意义）
+     * @param {*} base 
+     * @returns 对称点坐标
+     */
+    static solveOffsetPoint(v1, v2, v3, offset, detail, base = 0) {
+        let x, y, d, x1, y1, d1, x3, y3, d3;
+        let retval = {};
+        retval.out1 = null;
+        retval.out2 = null;
+
+        switch (detail) {
+            case "Head":
+            case "Tail":
+                x = v2[0] - v1[0];
+                y = v2[1] - v1[1];
+                d = this.GK_LENGTH_2D(x, y);
+                if (this.GK_TOO_SMALL(d)) {
+                    retval.out1 = v1;
+                    retval.out2 = v1;
+                    return;
+                }
+                x /= d;
+                y /= d;
+                // 此时x,y为v1v2方向的单位矢量，乘相应偏移量后分别逆时针和顺时针旋转90度即可
+                if (detail == "Head") {
+                    retval.out1 = [v1[0] - y * (base + offset), v1[1] + x * (base + offset)];
+                    retval.out2 = [v1[0] - y * (base - offset), v1[1] + x * (base - offset)];
+                } else {
+                    retval.out1 = [v1[0] + y * (base + offset), v1[1] - x * (base + offset)];
+                    retval.out2 = [v1[0] + y * (base - offset), v1[1] - x * (base - offset)];
+                }
+                break;
+            case "Coor":
+                x1 = v1[0] - v2[0];
+                y1 = v1[1] - v2[1];
+                d1 = this.GK_LENGTH_2D(x1, y1);
+                x3 = v3[0] - v2[0];
+                y3 = v3[1] - v2[1];
+                d3 = this.GK_LENGTH_2D(x3, y3);
+                if (this.GK_TOO_SMALL(d1) || this.GK_TOO_SMALL(d3)) {
+                    retval.out1 = v2;
+                    retval.out2 = v2;
+                    return;
+                }
+                x1 /= d1;
+                y1 /= d1;
+                x3 /= d3;
+                y3 /= d3;
+
+                // 此时x1,y1为v2沿v1方向的单位矢量，x3,y3为v2沿v3方向的单位矢量，两者的矢量和即为角平分线
+                x = x1 + x3;
+                y = y1 + y3;
+                d = this.GK_LENGTH_2D(x, y);
+                if (this.GK_TOO_SMALL(d)) {
+                    // 两单位矢量相互抵消（即v1,v2,v3共线），此时利用x3,y3设置长度后逆时针旋转90度即可
+                    retval.out1 = [v2[0] - y3 * (base + offset), v2[1] + x3 * (base + offset)];
+                    retval.out2 = [v2[0] - y3 * (base - offset), v2[1] + x3 * (base - offset)];
+                } else {
+                    x /= d;
+                    y /= d;
+                    d = this.calculateAngle(v1, v2, v3);	// 夹角
+                    if (this.GK_TOO_SMALL(d)) {
+                        d = 1.0;			// 夹角过小时距离将很大，现实中没有意义
+                    } else {
+                        d = 1.0 / sin(d / 2);	// 距离
+                    }
+                    // 此时x,y为角平分线上的单位矢量，但尚需判别左右侧
+                    if (this.GK_RIGHT_OF_LINE(0.0, 0.0, x1, y1, x, y)) {
+                        retval.out1 = [v2[0] + x * (base + offset) * d, v2[1] + y * (base + offset) * d];
+                        retval.out1 = [v2[0] + x * (base - offset) * d, v2[1] + y * (base - offset) * d];
+                    } else {
+                        retval.out1 = [v2[0] - x * (base + offset) * d, v2[1] - y * (base + offset) * d];
+                        retval.out2 = [v2[0] - x * (base - offset) * d, v2[1] - y * (base - offset) * d];
+                    }
+                }
+                break;
+        }
+        return retval;
+    }
 }
 
 /**
@@ -2774,7 +3130,7 @@ class Color {
         let interval = (count == null ? 10 : 100 / count);
         let colorSet = [];
         let hsl = color.toHSL();
-        for (let l = 100; l > 0; l -= interval) {
+        for (let l = 100; l >= 0; l -= interval) {
             let hslColor = "hsl(" + hsl.H + ", " + hsl.S + "%, " + Math.round(l) + "%)";
             let ncolor = this.fromHSL(hslColor);
             let hex = ncolor.toHex();
@@ -3105,27 +3461,24 @@ class Gradient {
         this.objTransform_ = null;
 
         /**
-         * 坐标单位. 可选值：像素、百分数
-         * If `pixels`, the number of coords are in the same unit of width / height.
-         * If set as `percentage` the coords are still a number, but 1 means 100% of width
-         * for the X and 100% of the height for the y. It can be bigger than 1 and negative.
-         * allowed values pixels or percentage.
+         * 坐标单位. 可选值：像素(pixels)、百分数(percentage)
+         * 当单位为百分数时，坐标值需采用小数值， 例如当值为50%时需使用0.5表示
          * @type String
          * @default 'pixels'
          */
         this.gradientUnits = 'pixels';
 
         /**
-         * Gradient type linear or radial
+         * 渐变对象类型
          * @type String
-         * @default 'pixels'
+         * @default 'linear'
          */
         this.type = 'linear';
 
         if (options == null) (options = {});
         if (options.coords == null) (options.coords = {});
 
-        // sets everything, then coords and colorstops get sets again
+        // 根据options设置对象属性
         let that = this;
         Object.keys(options).forEach(function (option) {
             that[option] = options[option];
@@ -3264,7 +3617,7 @@ class Gradient {
             pixels = Coordinate.transform2D(tool, nc, false);
         } else {
             // 如果坐标为百分比，且存在transform属性，则应先transform，然后计算为具体像素值
-            coords = this._gradientTransform(coords, radius, [0, 0, 1, 1]);
+            // coords = this._gradientTransform(coords, radius, [0, 0, 1, 1]);   // 百分比单位不进行变形操作 20240418 hjq
             let width = Extent.getWidth(bbox);
             let height = Extent.getHeight(bbox);
 
@@ -3272,6 +3625,11 @@ class Gradient {
                 // bbox[0] + 宽度*百分比
                 // bbox[1] + 高度*百分比
                 pixels.push([bbox[0] + width * coords[i][0], bbox[1] + height * coords[i][1]]);
+            }
+
+            // 将半径信息添加到pixel数组中
+            if (this.type === "radial") {
+                pixels.push([pixels[0][0] + width * radius[0], pixels[1][1] + height * radius[1]]);
             }
         }
 
@@ -3313,7 +3671,7 @@ class Gradient {
         }
 
         // 将半径信息添加到pixel数组中
-        if (radius[0] >= 0 && radius[1] > 0) {
+        if (this.type === "radial") {
             pixels.push([pixels[0][0] + radius[0], pixels[1][1] + radius[1]]);
         }
 
@@ -3466,6 +3824,7 @@ class ImageObject {
 class ImageLoader {
     constructor() {
     }
+    static ImageCollection = new Map();
 
     /**
      * 加载图片
@@ -3502,7 +3861,6 @@ class ImageLoader {
         this.ImageCollection.delete(src);
     }
 }
-ImageLoader.ImageCollection = new Map();
 
 /**
  * 图案填充效果类
@@ -3780,6 +4138,97 @@ function getLayerId() {
     return layerId;
 }
 
+var app = { "version": "4.4.24" };
+
+/**
+ * Url工具类
+ * @class
+ */
+const UrlUtil = {};
+
+(function () {
+    /**
+     * 在非浏览器环境下初始化该类时，返回空对象
+     */
+    if (typeof window === "undefined") return;
+
+    /**
+     * 获取url上携带的参数
+     * @returns {Array}
+     */
+    UrlUtil.getUrlArgs = function() {
+        if (location.search === "") return [];
+        let searchString = location.search.split("?"),  param = [];
+        let seg = searchString[1].split("&");
+        for (let i = 0; i < seg.length; i++) {
+            let val = seg[i].split("=");
+            if (val.length <= 1) continue;
+            param[i] = val[1];
+        }
+        return param;
+    };
+
+    /**
+     * 获取通过Url传递的参数
+     * @param {String} sHref 
+     * @param {String} sArgName 
+     * @returns param
+     */
+    UrlUtil.getArgsFromHref = function(sHref, sArgName) {
+        var args = sHref.split("?");
+        var retval = null;
+        var str;
+
+        if (args[0] === sHref) { /*参数为空*/
+            return retval;
+            /*无需做任何处理*/
+        } else {
+            args = args[1].split("&");
+            for (var i = 0; i < args.length; i++) {
+                str = args[i];
+                var arg = str.split("=");
+                if (arg.length <= 1) continue;
+                if (arg[0] == sArgName) {
+                    retval = arg[1];
+                    break;
+                }
+            }
+            return decodeURIComponent(retval);
+        }
+    };
+
+    /**
+     * 获取web路径 2016-7-18 
+     * @returns String
+     * @example 
+     * 当前服务地址为：http://localhost:8080/web/frame/frame.jsp时，该方法返回： "http://localhost:8080/web"
+     */
+    UrlUtil.getRootPathOfWeb = function() {
+        //获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp
+        var currentPath = window.document.location.href;
+        //获取主机地址之后的目录，如： uimcardprj/share/meun.jsp
+        var pathName = window.document.location.pathname;
+        var pos = currentPath.indexOf(pathName);
+        //获取主机地址，如： http://localhost:8083
+        var localhostPaht = currentPath.substring(0, pos);
+        //获取带"/"的项目名，如：/uimcardprj
+        var projectName = pathName.substring(0, pathName.substring(1).indexOf('/') + 1);
+        return (localhostPaht + projectName);
+    };
+
+    /**
+     * 获取根路径
+     * @returns {string} 
+     * @example 
+     * 当前服务地址为：http://localhost:8080/web/frame/frame.jsp时，该方法返回： "/web"
+     */
+    UrlUtil.getContextPath = function() {
+        let pathName = document.location.pathname;
+        let index = pathName.substring(1).indexOf("/");
+        return pathName.substring(0, index + 1);
+    };
+}());
+
 /**
  * 定义鼠标光标类型<br/>
  * 鼠标移动到“说明”时，可查看该光标的形状
@@ -3794,6 +4243,9 @@ const Cursor = {
 
     /** <span style="cursor:pointer">Pointer type</span> */
     POINTER: 'pointer',
+
+    /** <span style="cursor:pointer">Pointer type</span> */
+    PAN: "url(" + UrlUtil.getContextPath() + "/adam.lib/images/cursor/hand-close.cur), move",
 
     /** <span style="cursor:move">Move type</span> */
     MOVE: 'move',
@@ -3844,6 +4296,12 @@ const Cursor = {
     NESW_RESIZE: 'nesw-resize'
 };
 
+/**
+ * 缺省控制点属性 <br>
+ *   tl(1)  mt(2) tr(3)  <br>
+ *   ml(4) mid(5) mr(6)  <br>
+ *   bl(7)  mb(8) br(9)
+ */
 const defaultCtrlBorderProp = {
     "ml": {    // middle left
         cmd: 4,
@@ -3897,18 +4355,27 @@ class GeomBorder {
          * 控制点大小
          */
         this.borderSize = size || 10;
+
+        this.controlColor = "#FF0000";  // "#007F80"
+        this.controlFillColor = "#FF0000";      // "#00E5E6"
     }
 
+    /**
+     * 返回坐标位置的控制点
+     * @param {Point} coord 
+     * @returns {Object} 控制点对象 {cmd, cursor}
+     */
     getControlPoint(coord) {
         let controlPoint;
         for (let i = 0, len = this.controlPoints.length; i < len; i++) {
             let p = this.controlPoints[i];
             let buffer = 4;
-            if (Collide.pointRect({ "x": coord[0], "y": coord[1] },
-                {
-                    "x": p.x - p.width / 2 - buffer, "y": p.y - p.width / 2 - buffer,
-                    "width": p.width + 2 * buffer, "height": p.height + 2 * buffer
-                })) {
+            if (Collide.pointRect({ "x": coord[0], "y": coord[1] }, {
+                "x": p.x - p.width / 2 - buffer,
+                "y": p.y - p.width / 2 - buffer,
+                "width": p.width + 2 * buffer,
+                "height": p.height + 2 * buffer
+            })) {
                 controlPoint = p;
                 break;
             }
@@ -3917,34 +4384,15 @@ class GeomBorder {
     }
 
     /**
-     * 
-     * @param {*} ctx 
-     * @param {*} options 
+     * 绘制geom对象外框（焦点框）
+     * @param {CanvasRenderingContext2D} ctx 
+     * @param {Object} options 
      */
-    draw(ctx, options) {
-
+    draw(ctx, style={}, options={}) {
         let boxProp = options.prop;
         let bbox = options.extent;
-
-        ctx.save();
-        let pixels = [[bbox[0], bbox[1]], [bbox[2], bbox[1]], [bbox[2], bbox[3]], [bbox[0], bbox[3]], [bbox[0], bbox[1]]];
-        ctx.beginPath();
-        for (let i = 0; i < pixels.length; i++) {
-            let pixel = pixels[i];
-            if (i == 0) {
-                ctx.moveTo(pixel[0], pixel[1]);
-            } else {
-                ctx.lineTo(pixel[0], pixel[1]);
-            }
-        }
-        ctx.closePath();
-        ctx.lineWidth = 2;
-        ctx.strokeStyle = "#007F80";
-        ctx.setLineDash([4, 4]);
-        ctx.stroke();
-
-        // 绘制控制点
-        let size = this.borderSize;
+        let scale = options.frameState.useTransform ? Transform.getScale(options.frameState.pixelToCoordinateTransform) : 1;
+        // 计算控制点位置（像素坐标）
         let getPosition = function (cmd) {
             let y = (cmd === 1 || cmd === 2 || cmd === 3 ?
                 (bbox[1]) :
@@ -3955,29 +4403,96 @@ class GeomBorder {
             return [x, y];
         };
 
-        // 绘制编辑控件
-        let that = this;
-        this.controlPoints = [];
-        let points = Object.keys(boxProp);
-        ctx.fillStyle = "#00E5E6";
-        points.forEach(c => {
-            let p = boxProp[c];
-            if (p.cmd > 0 && p.enabled != false) {
-                // cmd == 11 多边形顶点移动编辑
-                let pos = p.cmd == 11 ? p.coord : getPosition(p.cmd);
-                ctx.fillRect(pos[0] - size / 2, pos[1] - size / 2, size, size);
-                that.controlPoints.push({
-                    x: pos[0],
-                    y: pos[1],
-                    width: size,
-                    height: size,
-                    cursor: p.cursor,
-                    cmd: p.cmd,
-                    ringIdx: p.ringIdx >= 0 ? p.ringIdx : -1,
-                    idx: p.idx == null ? -1 : p.idx
-                });
+        ctx.save();
+        // 绘制外框(线类型的geom对象不绘制外框)
+        if (options.shapeType != 3) { // GGShapeType.LINE) {
+            let pixels = [[bbox[0], bbox[1]], [bbox[2], bbox[1]], [bbox[2], bbox[3]], [bbox[0], bbox[3]], [bbox[0], bbox[1]]];
+            ctx.beginPath();
+            for (let i = 0; i < pixels.length; i++) {
+                let pixel = pixels[i];
+                if (i == 0) {
+                    ctx.moveTo(pixel[0], pixel[1]);
+                } else {
+                    ctx.lineTo(pixel[0], pixel[1]);
+                }
             }
-        });
+            ctx.closePath();
+            ctx.lineWidth = 4 * scale;
+            ctx.strokeStyle = style.controlColor || this.controlColor;
+            // 锁定时绘制实线，否则绘制虚线
+            if (!options.lockState) ctx.setLineDash([4, 4]);
+            ctx.stroke();
+        }
+        // 线类型的geom对象，沿顶点绘制虚线（不适合弧线类型的geom对象，例如GraphEdge）
+        else {
+            if (options.drawLine === true) {
+                let points = Object.keys(boxProp);
+                let i = 0;
+                ctx.beginPath();
+                points.forEach(c => {
+                    let p = boxProp[c];
+                    if (p.cmd == 11) {
+                        let pos = p.coord;
+                        if (i == 0) {
+                            ctx.moveTo(pos[0], pos[1]);
+                        } else {
+                            ctx.lineTo(pos[0], pos[1]);
+                        }
+                        i++;
+                    }
+                });
+                ctx.lineWidth = 2 * scale;
+                ctx.strokeStyle = style.controlColor || this.controlColor;
+                // 锁定时绘制实线，否则绘制虚线
+                if (!options.lockState) ctx.setLineDash([4, 4]);
+                ctx.stroke();
+            } 
+            // 绘制线的端点
+            else {
+                if (options.lockState == true) {
+                    let size = this.borderSize * scale;
+                    let points = Object.keys(boxProp);
+                    ctx.fillStyle = style.controlFillColor || this.controlFillColor;
+                    if (points.length >= 2) {
+                        let p = boxProp[0];
+                        let pos = p.cmd == 11 ? p.coord : getPosition(p.cmd);
+                        ctx.fillRect(pos[0] - size / 2, pos[1] - size / 2, size, size);
+                        p = boxProp[points.length - 1];
+                        pos = p.cmd == 11 ? p.coord : getPosition(p.cmd);
+                        ctx.fillRect(pos[0] - size / 2, pos[1] - size / 2, size, size);
+                    }
+                }
+            }
+        }
+
+        // 非锁定状态时，绘制编辑控件
+        let size = this.borderSize * scale;
+        if (options.lockState == false) {
+            let that = this;
+            this.controlPoints = [];
+            let points = Object.keys(boxProp);
+            ctx.fillStyle = style.controlFillColor || this.controlFillColor;
+            points.forEach(c => {
+                let p = boxProp[c];
+                if (p.cmd > 0 && p.enabled != false) {
+                    // cmd == 11 多边形顶点,移动编辑
+                    let pos = p.cmd == 11 ? p.coord : getPosition(p.cmd);
+                    ctx.fillRect(pos[0] - size / 2, pos[1] - size / 2, size, size);
+                    let coord = options.frameState.useTransform ?
+                        Coordinate.transform2D(options.frameState.coordinateToPixelTransform, pos, false) : pos;
+                    that.controlPoints.push({
+                        x: coord[0],
+                        y: coord[1],
+                        width: this.borderSize,
+                        height: this.borderSize,
+                        cursor: p.cursor,
+                        cmd: p.cmd,
+                        ringIdx: p.ringIdx >= 0 ? p.ringIdx : -1,
+                        idx: p.idx == null ? -1 : p.idx
+                    });
+                }
+            });
+        }
 
         ctx.restore();
     }
@@ -4234,6 +4749,7 @@ Object.assign(ImageStyle, __GemoStyle);
 
 /**
  * 几何类型名称
+ * @enum {string}
  */
 const GGeometryType = {
     POINT: "Point",
@@ -4254,6 +4770,7 @@ const GGeometryType = {
 
 /**
  * 几何名称
+ * @enum {int}
  */
 const GGShapeType = {
     POINT: 1,
@@ -4267,6 +4784,7 @@ const GGShapeType = {
 
 /**
  * GeoJSON对象类型
+ * @enum {string}
  */
 const GGGeoJsonType = {
     POINT: "Point",
@@ -4277,8 +4795,8 @@ const GGGeoJsonType = {
     MULTI_LINE: "MultiLineString",
 };
 
-Object.freeze(GGeometryType);
-Object.freeze(GGShapeType);
+// Object.freeze(GGeometryType);
+// Object.freeze(GGShapeType);
 
 /**
  * 几何对象类型基础类
@@ -4292,22 +4810,26 @@ class Geometry extends EventTarget {
     constructor(options = {}, attrNames) {
         super();
         /**
-         * GGeometryType
+         * Geom类型
+         * @type {GGeometryType}
          */
         this.type;
 
         /**
          * 对象ID
+         * @type {String}
          */
         this.uid;
 
         /**
-         * GGShapeType
+         * 几何类型
+         * @type {GGShapeType}
          */
         this.shapeType;
 
         /**
          * 坐标
+         * @type {Array}
          */
         this.coords = [];
         this.pixel = [];
@@ -4321,45 +4843,61 @@ class Geometry extends EventTarget {
 
         /**
          * 样式
+         * @type {Object}
          */
         this.style = {};
         this._styleScale = 1;
 
         /**
          * 附加样式
+         * @type {Object}
          */
         this.addStyle = null;
 
         /**
          * 属性
+         * @type {Object}
          */
         this.properties = null;
 
         /**
          * 边框对象（在getBorder()时构造该对象)
+         * @type {GeomBorder}
          */
         this.ctrlBorder;
 
         /**
          * 控制外框属性，缺省控制外框包含了9个点，对于某些几何对象可能不需要这么多控制点，可通过该属性控制
+         * @type {Object}
          */
         this.ctrlBorderProp = Object.assign({}, defaultCtrlBorderProp);
 
         /**
          * 是否激活状态
+         * @type {Boolean}
+         * @private
          */
         this._focus = false;
+
+        /**
+         * 是否属于锁定状态
+         */
+        this.lockState = false;
 
         // 初始化
         this.attrNames = attrNames || [];
         // this.initialize(options, attrNames);
+        this.layer = null;
+
+        // 是否可见
+        this.invisible = false;
     }
 
     /**
      * 初始化, 通过options赋值给属性
      */
-    initialize(options={}) {
-        let attrs = ["coords", "rotation", "origin", "properties", "style", "innerSeqId", "uid", "labelStyle"];
+    initialize(options = {}) {
+        let attrs = ["title", "coords", "rotation", "origin", "properties", "style", "innerSeqId", "uid", "labelStyle", "lockState"];
         this.attrNames = this.attrNames.concat(attrs);
 
         // 将options赋值给对象属性
@@ -4408,8 +4946,12 @@ class Geometry extends EventTarget {
      * 获取对象样式
      * @returns style
      */
-    getStyle() {
-        return this.style;
+    getStyle(attr) {
+        if (attr) {
+            return this.style[attr];
+        } else {
+            return this.style;
+        }
     }
 
     /**
@@ -4417,7 +4959,7 @@ class Geometry extends EventTarget {
      * @param {Object} style 
      */
     setStyle(style) {
-        if (style instanceof Object) {
+        if (typeof (style) == "object") {
             if (style.override === true) {
                 this.style = null;
             }
@@ -4431,8 +4973,8 @@ class Geometry extends EventTarget {
                     keys = Object.keys(LineStyle);
                     break;
                 case GGShapeType.SURFACE:
-                        keys = Object.keys(SurfaceStyle);
-                        break;
+                    keys = Object.keys(SurfaceStyle);
+                    break;
                 case GGShapeType.SYMBOL:
                     keys = Object.keys(SymbolStyle);
                     break;
@@ -4454,7 +4996,7 @@ class Geometry extends EventTarget {
     /**
      * 对象是否具有焦点
      * 具有焦点的对象将会绘制外框，通常在编辑的时候需激活对象，然后进行编辑
-     * @returns boolean
+     * @returns Boolean
      */
     isFocus() {
         return this._focus;
@@ -4467,6 +5009,40 @@ class Geometry extends EventTarget {
     setFocus(bool) {
         this._focus = (bool === true);
     }
+
+    /**
+     * 是否可见
+     * @returns Boolean
+     */
+    isVisible() {
+        return ! this.invisible;
+    }
+
+    /**
+     * 设置对象可见属性
+     * @param {Boolean} bool 
+     */
+    setVisible(bool) {
+        this.invisible = (bool == false);
+    }
+
+    /**
+     * 对象是否锁定
+     * 非锁定状态时，控制外框上将显示控制点，可通过控制点拉伸对象大小
+     * @returns Boolean
+     */
+    isLocked() {
+        return this.lockState;
+    }
+
+    /**
+     * 设置对象的锁定状态
+     * @param {Boolean} bool 
+     */
+    setLockState(bool) {
+        this.lockState = (bool === true);
+    }
+
 
     /**
      * 获取对象坐标
@@ -4482,7 +5058,7 @@ class Geometry extends EventTarget {
      */
     setCoord(coords) {
         if (coords == null) ; else {
-            this.coords = coords;
+            this.coords = coords.slice();
             this.pixel = coords.slice();
         }
     }
@@ -4596,14 +5172,14 @@ class Geometry extends EventTarget {
      * 判断某点是否在当前对象的边框内，拾取时可根据此返回值判断是否被拾取到
      * @abstract
      * @param {Coord} point 点坐标
-     * @param {Boolean} useCoord 是否像素坐标
+     * @param {Boolean} useCoord 为true时表示图形坐标，为false时表示画布坐标
      * @returns Boolean
      */
     contain(point, useCoord = true) {
+        if ( this.invisible == true ) return false;
         let bbox = this.getBBox(useCoord);
         return Collide.pointRect({ "x": point[0], "y": point[1] }, { "x": bbox[0], "y": bbox[1], "width": bbox[2] - bbox[0], "height": bbox[3] - bbox[1] });
     }
-
 
     // TODO 可参考 openLayer 中的定义
     distanceTo(geometry, options) {
@@ -4621,10 +5197,34 @@ class Geometry extends EventTarget {
      * @param {*} propValue 
      */
     prop(propName, propValue) {
-        if (propValue) {
-            this[propName] = propValue;
-        } else {
-            return this[propName];
+        // 当修改了以下几个位置/尺寸属性时，需重新更新对象坐标属性
+        let that = this;
+        let positionProp = ["x", "y", "radius", "width", "height"];
+        let updateSize = function (key) {
+            if (positionProp.indexOf(key) >= 0) {
+                that.setCoord();
+            }
+        };
+
+        // 当propName=null时，返回当前对象属性
+        if (propName == null) {
+            return this.toData();
+        }
+        // 当propName为属性名称时，修改或返回该属性值
+        else if (typeof (propName) == "string") {
+            if (propValue) {
+                this[propName] = propValue;
+                updateSize();
+            } else {
+                return this[propName];
+            }
+        }
+        // 当propName为对象时，则表示将propName中的属性赋值给this对象
+        else if (typeof (propName) == "object") {
+            Object.keys(propName).forEach(key => {
+                that[key] = propName[key];
+                updateSize(key);
+            });
         }
     }
 
@@ -4632,7 +5232,7 @@ class Geometry extends EventTarget {
      * 克隆对象
      * @returns Geometry
      */
-    clone() {
+    clone(options) {
         return ClassUtil.abstract();
     }
 
@@ -4659,10 +5259,19 @@ class Geometry extends EventTarget {
      * @param {CanvasRenderingContext2D} ctx 
      * @param {Object} style 
      */
-    drawBorder(ctx, style) {
+    drawBorder(ctx, style, frameState) {
         let bbox = this.getBBox(false);
+        let fs = Object.assign({}, frameState);
+        fs.useTransform = frameState.useTransform || this.getLayer().isUseTransform();
+
         if (Extent.getWidth(bbox) > 16 || Extent.getHeight(bbox) > 16) {
-            this.getBorder().draw(ctx, { "extent": bbox, "prop": this.ctrlBorderProp });
+            this.getBorder().draw(ctx, style, {
+                "extent": bbox,               // 像素坐标
+                "prop": this.ctrlBorderProp,  // 控制点属性
+                "lockState": this.lockState,  // 是否绘制控制点
+                "shapeType": this.shapeType,  // 几何类型
+                "frameState": fs
+            });
         }
     }
 
@@ -4800,7 +5409,7 @@ class Geometry extends EventTarget {
         // paint-order是一个新的属性，可设置是描边和填充的顺序，包含了三个值：markers stroke fill
         // 如果没有指定值，默认顺序将是 fill, stroke, markers
         // 当只指定一个值的时候，这个值将会被首先渲染，然后剩下的两个值将会以默认顺序渲染，当只指定两个值的时候，这两个值会以指定的顺序渲染，接着渲染剩下的未指定的那个。
-        if (style.fillStyle == 1 && style.fillColor != "none") {
+        if (style.fillStyle == 1 && style.fillColor != "none" && this.shapeType != GGShapeType.LINE) {
             ctx.fillStyle = this.getColor(style.fillColor, ctx);
             if (style.fillRule === 'evenodd') {
                 // 填充属性：evenodd, nonzero(缺省值)
@@ -5100,6 +5709,21 @@ class Geometry extends EventTarget {
     }
 
     /**
+     * graph.removeGeom时调用，删除节点前调用
+     */
+    removeCB() {
+        return true;
+    }
+
+    /**
+     * graph.removeGeom时调用，删除节点前调用,获取删除当前节点前，自动删除的节点
+     */
+    getAutoRemoveList() {
+        let removelist = [];
+        return removelist;
+    }
+
+    /**
      * 获取当前对象属性
      * @returns Object
      */
@@ -5142,6 +5766,21 @@ class Geometry extends EventTarget {
             obj.pixel = this.getPixel();
         }
         return obj;
+    }
+
+    /**
+     * 取图层
+     */
+    getLayer() {
+        return this.layer;
+    }
+
+    /**
+     * 设置图层
+     * 插入图层时调用
+     */
+    setLayer(layer) {
+        this.layer = layer;
     }
 }
 
@@ -6703,7 +7342,6 @@ class Ellipse extends Geometry {
         return extent;
     }
 
-
     /**
      * 是否包含该点，拾取时可根据此返回值判断是否被拾取到
      * @param {Coord} point 点坐标
@@ -6802,7 +7440,8 @@ class Arrow {
         /**
          * 空心箭头的背景色
          */
-        this.background = options.background || "transparent";
+        //this.background = options.background || "transparent";
+        this.background = options.background || null;
     }
 
     /**
@@ -6847,8 +7486,8 @@ class Arrow {
         ctx.lineTo(fromX, point.y + this.arrowSize / 4);
         ctx.closePath();
         ctx.stroke();
-        //ctx.fillStyle = this.background || '#ffffff';
-        //ctx.fill();
+        ctx.fillStyle = this.background || '#ffffff';
+        ctx.fill();
         ctx.restore();
     }
 
@@ -6871,7 +7510,7 @@ class Arrow {
         ctx.restore();
     }
 
-    
+
     /**
      * 空心圆
      * @param {CanvasRenderingContext2D} ctx 
@@ -6938,7 +7577,34 @@ class Arrow {
         ctx.fill();
         ctx.restore();
     }
-    
+
+    /**
+     * 交叉箭头
+     * @param {CanvasRenderingContext2D} ctx 
+     * @param {Object} point {x, y, angle}
+     */
+    cross(ctx, point) {
+        ctx.save();
+        if (ctx.lineWidth < 2) {
+            ctx.lineWidth = 2;
+        }
+        ctx.translate(point.x, point.y);
+        ctx.rotate((point.angle * Math.PI) / 180);
+        ctx.translate(-point.x, -point.y);
+        var fromX = point.x - this.arrowSize;
+        ctx.beginPath();
+        ctx.moveTo(fromX, point.y - this.arrowSize / 2);
+        ctx.lineTo(point.x, point.y + this.arrowSize / 2);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(point.x, point.y - this.arrowSize / 2);
+        ctx.lineTo(fromX, point.y + this.arrowSize / 2);
+        ctx.stroke();
+        //ctx.fillStyle = this.background || '#ffffff';
+        //ctx.fill();
+        ctx.restore();
+    }
+
     /**
      * 单线箭头
      * @param {CanvasRenderingContext2D} ctx 
@@ -6993,7 +7659,7 @@ class Arrow {
         ctx.stroke();
         ctx.restore();
     }
-    
+
     /**
      * 上线箭头
      * @param {CanvasRenderingContext2D} ctx 
@@ -7178,7 +7844,8 @@ function _getEdgeIntersection(a, b, code, bounds) {
         y = a[1] + dy * (min[0] - a[0]) / dx;
     }
 
-    return [Math.round(x), Math.round(y)];
+    //return [Math.round(x), Math.round(y)];
+    return [x, y];
 }
 
 /**
@@ -7331,7 +7998,7 @@ class Polyline extends Geometry {
         }
 
         // 绘制动态路名
-        if (style.labelStyle != null && this.properties.name != null && this.properties.name.length > 0) {
+        if (style.labelStyle != null && this.properties != null && this.properties.name != null && this.properties.name.length > 0) {
             _drawDynamicRoadName(ctx, this, style.labelStyle, frameState);
         }
         ctx.restore();
@@ -7345,11 +8012,12 @@ class Polyline extends Geometry {
      * @param {*} arraySize 
      */
     drawArrow(ctx, segment, arrawType, arraySize) {
+        let arrow = new Arrow({ "arrowSize": arraySize });
         let [x0, y0] = [segment[0][0], segment[0][1]];
         let [x1, y1] = [segment[1][0], segment[1][1]];
         let [w, h] = [x1 - x0, y1 - y0];
-        let arrow = new Arrow({ "arrowSize": arraySize });
-
+        //if (maxlen <= arraySize * 2) return; //当视点变高，箭头占线的比例太大时,不画箭头
+            
         // 计算直线与X轴正方形的夹角角度
         let angle;
         if (w >= 0 && h >= 0) {
@@ -7361,19 +8029,33 @@ class Polyline extends Geometry {
         } else {
             angle = 360 - MathUtil.toDegrees(Math.atan(-h / w));
         }
-
+        let dash = [10,0];
+        ctx.setLineDash( dash ); //取消可能的dash的影响
         switch (arrawType) {
-            case 1:   // 实心三角箭头
+            case 1:    // 实心三角箭头
                 arrow.triangleSolid(ctx, { "x": x1, "y": y1, angle });
                 break;
-            case 2:   // 实心菱形箭头
+            case 2:    // 实心菱形箭头
+            case 5:    // 实心菱形
                 arrow.diamondSolid(ctx, { "x": x1, "y": y1, angle });
                 break;
-            case 9:   // 距离标识
+            case 3:    // 实心圆箭头
+                arrow.circleSolid(ctx, { "x": x1, "y": y1, angle });
+                break;
+            case 4:    // 交叉
+                arrow.cross(ctx, { "x": x1, "y": y1, angle });
+                break;
+            case 6:    // 单线箭头
+                arrow.line(ctx, { "x": x1, "y": y1, angle });
+                break;
+            case 9:    // 距离标识
                 arrow.lineEnd(ctx, { "x": x1, "y": y1, angle });
                 break;
-            default:   // 单线箭头
-                arrow.line(ctx, { "x": x1, "y": y1, angle });
+            case 11:   // 空心三角箭头
+                arrow.triangle(ctx, { "x": x1, "y": y1, angle });
+                break;
+            case 15:    // 空心菱形
+                arrow.diamond(ctx, { "x": x1, "y": y1, angle });
                 break;
         }
     }
@@ -7789,10 +8471,10 @@ class MultiPolyline extends Geometry {
     }
 
     /**
-  * 返回对象边界
-  * @param {Boolean} useCoord 为true时返回坐标Bound，为false时返回屏幕像素Bound
-  * @returns {Extent} extent
-  */
+     * 返回对象边界
+     * @param {Boolean} useCoord 为true时返回坐标Bound，为false时返回屏幕像素Bound
+     * @returns {Extent} extent
+     */
     getBBoxInsideSymbol(useCoord = true) {
         let coords = useCoord === false ? this.getPixel() : this.getCoord();
         let extent = Extent.createEmpty();
@@ -8083,16 +8765,17 @@ class Rect extends Geometry {
         // 几何类型
         this.shapeType = GGShapeType.SURFACE;
 
+         // 坐标
+        this.x = this.x || 0;
+        this.y = this.y || 0;
+
+        // 宽和高
+        this.width = this.width || 60;
+        this.height = this.height || 30;
+        
         // 初始化
         this.initialize(options);
 
-        // 坐标
-        this.x;
-        this.y;
-
-        // 宽和高
-        this.width = this.width || 0;
-        this.height = this.height || 0;
 
         // 圆角矩形半径
         this.rx = this.rx || 0;
@@ -9617,7 +10300,7 @@ class Text extends Geometry {
         this.vectorSize = (this.vectorSize === false ? false : true);
 
         // 字体大小 (缩放时根据此变量计算style.fontSize)
-        this._fontHeight = this.style ? this.style.fontSize || 12 : 12;
+        this._fontHeight = options._fontHeight > 0 ? options._fontHeight : (this.style ? this.style.fontSize || 12 : 12);
 
         // 临时变量
         this._allowMaxWidth = 0;
@@ -9889,7 +10572,7 @@ class Text extends Geometry {
     }
 
     _drawText(ctx, text, style, x, y, textWidth, textHeight, frameState) {
-        if (textHeight <= 4 && (frameState == null || !frameState.getLayer().isUseTransform())) {
+        if (textHeight <= 4 && (frameState == null || !frameState.getLayer().isUseTransform() || !frameState.useTransform)) {
             ctx.lineWidth = 1;
             ctx.fillStyle = (style.fillColor == null || style.fillColor == "none") ? (style.color == null ? "#D0D0D0" : style.color) : style.fillColor;
             ctx.fillStyle = ctx.fillStyle + "50";   // 透明度
@@ -10247,8 +10930,13 @@ function getTypeStyle(shapeType, layerStyle) {
             if (layerStyle.lineType != null) {
                 Object.assign(style, getLineType(layerStyle.lineType));
             }
+            // 虚线偏移位置
             if (layerStyle.dashOffset != null) {
                 style.dashOffset = layerStyle.dashOffset;
+            }
+            // 虚线属性
+            if (layerStyle.dash != null) {
+                style.dash = layerStyle.dash;
             }
             // 线宽
             if (layerStyle.lineWidth != null) {
@@ -10329,6 +11017,9 @@ function getLineType(type) {
     // }	GkLineStyleType;
 }
 
+/**
+ * 事件类型
+ */
 const EventType = {
     RenderBefore: 201,          // graph, 图形渲染之前触发
     RenderAfter: 202,           // graph, 图形渲染之后触发
@@ -10338,7 +11029,9 @@ const EventType = {
     Loader: 221,                // source
 };
 
-
+/**
+ * 按键代码
+ */
 const EventKeyCode = {
 
     /**
@@ -10360,10 +11053,10 @@ const EventKeyCode = {
     KEY_TAB: 9,
 
     /** 
-     * Constant: KEY_RETURN 
+     * Constant: KEY_ENTER 
      * {int} 
      */
-    KEY_RETURN: 13,
+    KEY_ENTER: 13,
 
     /** 
      * Constant: KEY_ESC 
@@ -10399,7 +11092,13 @@ const EventKeyCode = {
      * Constant: KEY_DELETE 
      * {int} 
      */
-    KEY_DELETE: 46
+    KEY_DELETE: 46,
+
+    /** 
+     * Constant: KEY_A 
+     * {int} 
+     */
+    KEY_A: 65
 };
 
 /**
@@ -11783,7 +12482,7 @@ class VectorRenderer extends LayerRenderer {
             beginTime = Date.now();
 
             // 在画板中渲染矢量数据
-            if (this.getLayer().isUseTransform()) {
+            if (frameState.useTransform || this.getLayer().isUseTransform()) {
                 this._context.save();
                 let trans = frameState.coordinateToPixelTransform;
                 this._context.setTransform(trans[0], trans[1], trans[2], trans[3], trans[4], trans[5]);
@@ -11814,7 +12513,7 @@ class VectorRenderer extends LayerRenderer {
      */
     _convert2Pixel(list, frameState) {
         let pointCount = 0;
-        if (this.getLayer().isUsePixelCoord() || this.getLayer().isUseTransform()) {
+        if (this.getLayer().isUsePixelCoord() || this.getLayer().isUseTransform() || frameState.useTransform) {
             let transform = Transform.create();
             for (let i = 0; i < list.length; i++) {
                 let obj = list[i];
@@ -11872,6 +12571,7 @@ class VectorRenderer extends LayerRenderer {
         for (let i = 0, ii = list.length; i < ii; i++) {
             let goon = true;
             let obj = list[i];
+            if (obj.isVisible() == false) continue;
             let style = this._getStyle(obj);
 
             // 动态样式
@@ -11892,7 +12592,7 @@ class VectorRenderer extends LayerRenderer {
                     obj.draw(ctx, style, frameState);
                     // 绘制边框
                     if (obj.isFocus()) {
-                        obj.drawBorder(ctx, style);
+                        obj.drawBorder(ctx, style, frameState);
                     }
                     // 当frameState.viewGeomList不为空时，绘制用于拾取的颜色框
                     if (this._hitContext && frameState.viewGeomList != null && !this.getLayer().isAuxLayer()) {
@@ -12189,6 +12889,33 @@ class QuadTree {
             }
         }
     };
+
+    /*
+     * 删除指定节点
+     */
+    delete(obj) {
+        let qd = this.getQuadTree(obj.getBBox());
+        if (qd != null) {
+            for (let i = 0; i < qd.objects.length; i++) {
+                if (qd.objects[i] == obj) {
+                    qd.objects.splice(i, 1);
+                    return;
+                }
+            }
+        }
+        //万一obj的Bbox已经发生变化，上面可能删除失败
+        for (let j = 0; j < this.nodes.length; j++) {
+            let qd = this.nodes[j];
+            if (qd != null) {
+                for (let i = 0; i < qd.objects.length; i++) {
+                    if (qd.objects[i] == obj) {
+                        qd.objects.splice(i, 1);
+                        return;
+                    }
+                }
+            }
+        }
+    }
 
     /*
      * 确定对象属于哪个节点。-1表示对象不能完全适应节点，并且是当前节点的一部分
@@ -12599,11 +13326,65 @@ class BaseSource extends EventTarget {
     }
 }
 
+class GeomFactory {
+    static factory = new Map();
+
+    static add2Factory(key, Class) {
+        this.factory.set(key, Class);
+    }
+
+    /**
+     * 根据Geom数据创建Geometry对象
+     * @param {Object} obj 
+     * @returns GeometryObject
+     */
+    static create(obj) {
+        let geomObj;
+        if (obj.type === GGeometryType.POINT) {
+            geomObj = new Point(obj);
+        } else if (obj.type === GGeometryType.CIRCLE) {
+            geomObj = new Circle(obj);
+        } else if (obj.type === GGeometryType.ELLIPSE) {
+            geomObj = new Ellipse(obj);
+        } else if (obj.type === GGeometryType.POLYLINE) {
+            geomObj = new Polyline(obj);
+        } else if (obj.type === GGeometryType.POLYGON) {
+            geomObj = new Polygon(obj);
+        } else if (obj.type === GGeometryType.RECT) {
+            geomObj = new Rect(obj);
+        } else if (obj.type === GGeometryType.TRIANGLE) {
+            geomObj = new Triangle(obj);
+        } else if (obj.type === GGeometryType.MARK) {
+            geomObj = new Mark(obj);
+        } else if (obj.type === GGeometryType.SYMBOL) {
+            geomObj = new Symbol(obj);
+        } else if (obj.type === GGeometryType.TEXT) {
+            geomObj = new Text(obj);
+        } else if (obj.type === GGeometryType.IMAGE) {
+            geomObj = new Image(obj);
+        } else if (obj.type === GGeometryType.PATH) {
+            geomObj = new Path(obj);
+        // } else if (obj.type === GGeometryType.GRAPHNODE) {
+        //     geomObj = new GraphNode(obj);
+        // } else if (obj.type === GGeometryType.GRAPHEDGE) {
+        //     geomObj = new GraphEdge(obj);
+        } else {
+            if (this.factory.has(obj.type)) {
+                let fun = this.factory.get(obj.type);
+                geomObj = fun(obj);
+            } else {
+                console.info("unsupport object", geomObj);
+            }
+        }
+        return geomObj;
+    }
+}
+
 /**
  * 矢量数据源解析格式抽象类
  */
 class FeatureFormat {
-    readFeatures(source, options) {
+    readData(source, options) {
         return ClassUtil.abstract(source, options);
     }
 }
@@ -12625,13 +13406,13 @@ class GeometryFormat extends FeatureFormat {
      * @param {*} file 
      * @param {Projection} proj  坐标投影
      */
-    readFeatures(features) {
+    readData(features) {
         let listData = [];
-        
+
         // 单图层数据
         if (features.length > 0 && features[0].name == null) {
             listData = this._loadData(features);
-        } 
+        }
         // 多图层数据
         else {
             for (let i = 0; i < features.length; i++) {
@@ -12640,56 +13421,19 @@ class GeometryFormat extends FeatureFormat {
         }
         return listData;
     }
-    
+
     _loadData(features) {
-		let listData = [];
-		for (let i = 0, ii = features.length; i < ii; i++) {
-				if ( features[i] instanceof Geometry) {
-              listData.push(features[i]);
+        let listData = [];
+        for (let i = 0, ii = features.length; i < ii; i++) {
+            if (features[i] instanceof Geometry) {
+                listData.push(features[i]);
             } else {
-            	let geomObj = createGeom(features[i]);           
-            	listData.push(geomObj);
+                let geomObj = GeomFactory.create(features[i]);
+                listData.push(geomObj);
             }
         }
         return listData;
-	}
-}
-
-/**
- * 根据Geom数据创建Geometry对象
- * @param {Object} obj 
- * @returns GeometryObject
- */
-function createGeom(obj) {
-    let geomObj;
-    if (obj.type === GGeometryType.POINT) {
-        geomObj = new Point(obj);
-    } else if (obj.type === GGeometryType.CIRCLE) {
-        geomObj = new Circle(obj);
-    } else if (obj.type === GGeometryType.ELLIPSE) {
-        geomObj = new Ellipse(obj);
-    } else if (obj.type === GGeometryType.POLYLINE) {
-        geomObj = new Polyline(obj);
-    } else if (obj.type === GGeometryType.POLYGON) {
-        geomObj = new Polygon(obj);
-    } else if (obj.type === GGeometryType.RECT) {
-        geomObj = new Rect(obj);
-    } else if (obj.type === GGeometryType.TRIANGLE) {
-        geomObj = new Triangle(obj);
-    } else if (obj.type === GGeometryType.MARK) {
-        geomObj = new Mark(obj);
-    } else if (obj.type === GGeometryType.SYMBOL) {
-        geomObj = new Symbol(obj);
-    } else if (obj.type === GGeometryType.TEXT) {
-        geomObj = new Text(obj);
-    } else if (obj.type === GGeometryType.IMAGE) {
-        geomObj = new Image(obj);
-    } else if (obj.type === GGeometryType.PATH) {
-        geomObj = new Path(obj);
-    } else {
-        console.info("unsupport object", geomObj);
     }
-    return geomObj;
 }
 
 /**
@@ -12890,7 +13634,7 @@ const AjaxUtil = {};
             // 将url中?后的数据和args.data合并为查询字符串
             let qs = _getParam(Object.assign(_url2Object(url), args.data));
             if (url.indexOf("?") > 0) {
-                url = url.substr(0, args.url.indexOf("?"));
+                url = url.substring(0, args.url.indexOf("?"));
             }
 
             // 创建一个 get 请求, 
@@ -13146,6 +13890,414 @@ const AjaxUtil = {};
 //     9、触发xhr.onloadend
 // 若xhr请求成功，就会触发xhr.onreadystatechange和xhr.onload两个事件
 
+/*
+ * 操作类，记录数据变化，以便实现回退
+ */
+class Operation {
+    constructor() {
+        this.m_Level = 1;
+        this.m_DataList = [];
+    }
+
+    begin() {
+        return;
+    }
+
+    getLayer() {
+        if (this.m_DataList.length > 0) {
+            if (this.m_DataList[0].Layer != null)
+                return this.m_DataList[0].Layer;
+        }
+        return null;
+    }
+
+    end(success) {
+        if (success) {
+            if (this.m_Level <= 0) {
+                for (let i = 0; i < this.m_DataList.length; i++) {
+                    let uid = null;
+                    if (this.m_DataList[i].old_node)
+                        uid = this.m_DataList[i].old_node.uid;
+                    else if (this.m_DataList[i].new_node)
+                        uid = this.m_DataList[i].new_node.uid;
+                    else
+                        continue;
+                    let node = this.m_DataList[i].Layer.getSource().queryDataById(uid);
+                    if (this.m_DataList[i].old_node != null) {
+                        if (!node)
+                            continue;
+                        else {
+                            if (this.m_DataList[i].new_node)
+                                delete this.m_DataList[i].new_node;
+                            this.m_DataList[i].new_node = node.clone();
+                            this.m_DataList[i].new_node.setVisible(node.isVisible());
+                        }
+                    } else {
+                        if (!node) {
+                            if (this.m_DataList[i].new_node)
+                                delete this.m_DataList[i].new_node;
+                            this.m_DataList[i].new_node = null;
+                            continue;
+                        } else {
+                            if (this.m_DataList[i].new_node)
+                                delete this.m_DataList[i].new_node;
+                            this.m_DataList[i].new_node = node.clone();
+                            this.m_DataList[i].new_node.setVisible(node.isVisible());
+                        }
+                    }
+                }
+            } else {
+                let i;
+                for (i = 0; i < this.m_DataList.length; i++) {
+                    if (this.m_DataList[i].m_Level > this.m_Level)
+                        break;
+                }
+                for (let j = i; j < this.m_DataList.length; j++) {
+                    if (this.m_DataList[j].new_node == null)
+                        continue;
+                    let node = this.m_DataList[j].Layer.getSource().queryDataById(this.m_DataList[j].new_node.uid);
+                    if (this.m_DataList[j].new_node)
+                        delete this.m_DataList[j].new_node;
+                    this.m_DataList[j].new_node = null;
+                    if (node) {
+                        this.m_DataList[i].new_node = node.clone();
+                        this.m_DataList[i].new_node.setVisible(node.isVisible());
+                    }
+                }
+            }
+        }
+    }
+
+    undo() {
+        let edges = [];
+        for (let i = this.m_DataList.length - 1; i >= 0; i--) {
+            if (this.m_DataList[i].old_node == null &&
+                this.m_DataList[i].new_node == null)
+                continue;
+            if (this.m_DataList[i].old_node == null) {
+                this.m_DataList[i].Layer.graph.removeGeom(this.m_DataList[i].new_node);
+            } else {
+                let node = this.m_DataList[i].Layer.getSource().queryDataById(this.m_DataList[i].old_node.uid);
+                if (node) {
+                    this.m_DataList[i].Layer.graph.removeGeom(node);
+                }
+                let nnode = this.m_DataList[i].old_node.clone();
+                this.m_DataList[i].Layer.getSource().add(nnode);
+                nnode.innerSeqId = this.m_DataList[i].old_node.innerSeqId;
+                if (this.m_DataList[i].old_node.isVisible() == false) nnode.setVisible(false);
+                if (nnode.getType() == "GraphEdge" ||
+                    (nnode.getType() == "GraphNode" && nnode.insideshapeType == "SubGraph"))
+                    edges.push(nnode);
+            }
+        }
+        for (let i = 0; i < edges.length; i++)
+            edges[i].addCB(edges[i].getLayer().graph);
+    }
+
+    redo() {
+        let edges = [];
+        for (let i = 0; i < this.m_DataList.length; i++) {
+            if (this.m_DataList[i].old_node == null &&
+                this.m_DataList[i].new_node == null)
+                continue;
+            if (this.m_DataList[i].old_node == null) {
+                let node = this.m_DataList[i].Layer.getSource().queryDataById(this.m_DataList[i].new_node.uid);
+                if (node) {
+                    this.m_DataList[i].Layer.graph.removeGeom(node);
+                }
+                let nnode = this.m_DataList[i].new_node.clone();
+                this.m_DataList[i].Layer.getSource().add(nnode);
+                if (this.m_DataList[i].new_node.isVisible() == false) nnode.setVisible(false);
+                nnode.innerSeqId = this.m_DataList[i].new_node.innerSeqId;
+                if (nnode.getType() == "GraphEdge" ||
+                    (nnode.getType() == "GraphNode" && nnode.insideshapeType == "SubGraph"))
+                    edges.push(nnode);
+            } else {
+                let node = this.m_DataList[i].Layer.getSource().queryDataById(this.m_DataList[i].old_node.uid);
+                if (node) {
+                    this.m_DataList[i].Layer.graph.removeGeom(node);
+                }
+                if (this.m_DataList[i].new_node != null) {
+                    let nnode = this.m_DataList[i].new_node.clone();
+                    this.m_DataList[i].Layer.getSource().add(nnode);
+                    nnode.innerSeqId = this.m_DataList[i].new_node.innerSeqId;
+                    if (this.m_DataList[i].new_node.isVisible() == false) nnode.setVisible(false);
+                    if (nnode.getType() == "GraphEdge" ||
+                        (nnode.getType() == "GraphNode" && nnode.insideshapeType == "SubGraph"))
+                        edges.push(nnode);
+                }
+            }
+        }
+        for (let i = 0; i < edges.length; i++)
+            edges[i].addCB(edges[i].getLayer().graph);
+    }
+
+    saveDropNode(geom) {
+        let Layer = geom.getLayer();
+        for (let i = this.m_DataList.length - 1; i >= 0; i--) {
+            if (this.m_DataList[i].old_node != null && this.m_DataList[i].old_node.uid == geom.uid) {
+                return;
+            } else if (this.m_DataList[i].new_node != null && this.m_DataList[i].new_node.uid == geom.uid) {
+                return;
+            }
+        }
+        let oneoperation = {};
+        oneoperation.old_node = geom.clone();
+        if (geom.isVisible() == false) oneoperation.old_node.setVisible(false);
+        oneoperation.new_node = null;
+        oneoperation.Layer = Layer;
+        this.m_DataList.push(oneoperation);
+    }
+    saveCreateNode(geom) {
+        let Layer = geom.getLayer();
+        for (let i = this.m_DataList.length - 1; i >= 0; i--) {
+            if (this.m_DataList[i].old_node != null && this.m_DataList[i].old_node.uid == geom.uid) {
+                return;
+            }
+        }
+        let oneoperation = {};
+        oneoperation.old_node = null;
+        oneoperation.new_node = geom.clone();
+        oneoperation.Layer = Layer;
+        this.m_DataList.push(oneoperation);
+    }
+}
+
+/*
+ * 操作管理类，记录数据变化，以便实现回退
+ */
+class OperationManager {
+    static m_OperationArray = [];
+    static m_CurOperationID = -1;
+    static m_RecordEnable = true;
+    static insideundoredo = false;
+    static loading = 0; //正在装入数据
+    static loadingnode = [];
+    static graphediting = false;
+    constructor() {
+
+    }
+
+    /**
+     * 设置是否记录数据变化
+     * @param {*} flag 
+     */
+    static operationEnable(flag) {
+        this.m_RecordEnable = flag;
+    }
+
+    /**
+     * 获取是否记录数据变化
+     * @returns 
+     */
+    static operationIsEnable() {
+        return this.m_RecordEnable;
+    }
+
+    /**
+     * 清除记录的数据变化
+     */
+    static clearAllOperation() {
+        for (let i = this.m_OperationArray.length - 1; i >= 0; i--) {
+            delete this.m_OperationArray[i];
+        }
+        this.m_OperationArray = [];
+        this.m_CurOperationID = -1;
+        //console.log("clearAllOperation");
+    }
+
+    /**
+     * 开始一个数据操作
+     * @param {boolean} [graphediting=false] 是否来自于图形编辑
+     * @returns 
+     */
+    static beginOperation( graphediting = false ) {
+        //console.log("beginOperation");
+        this.graphediting = graphediting;
+        if (!this.m_RecordEnable)
+            return;
+        if (this.m_CurOperationID != -1) {
+            if (this.m_OperationArray[this.m_CurOperationID].m_Level > 0) {
+                this.m_OperationArray[this.m_CurOperationID].m_Level++;
+                //console.log("m_CurOperationID="+this.m_CurOperationID);
+                return;
+            }
+        }
+        let operation = new Operation();
+        if (this.m_CurOperationID + 1 < this.m_OperationArray.length) {
+            for (let i = this.m_OperationArray.length - 1; i > this.m_CurOperationID; i--) {
+                delete this.m_OperationArray[i];
+                this.m_OperationArray.splice(i, 1);
+            }
+        }
+        if ( typeof(graph) != "undefined" && graph.saveParam != undefined ) {
+            operation.param = graph.saveParam();
+        }
+        this.m_OperationArray.push(operation);
+        this.m_CurOperationID = this.m_OperationArray.length - 1;
+        //console.log("m_CurOperationID="+this.m_CurOperationID);
+    }
+
+    /**
+     * 结束数据操作
+     * @param {*} success 
+     * @returns 
+     */
+    static endOperation(success=true) {
+        //console.log("endOperation");
+        if (!this.m_RecordEnable)
+            return;
+        if (this.m_CurOperationID != -1) {
+            this.m_OperationArray[this.m_CurOperationID].m_Level--;
+            this.m_OperationArray[this.m_CurOperationID].end(success);
+            if (this.m_OperationArray[this.m_CurOperationID].m_Level <= 0) {
+                this.graphediting = false;
+                if ( success == true && typeof(graph) != "undefined" && graph.saveParam != undefined ) {
+                    this.m_OperationArray[this.m_CurOperationID].param = graph.saveParam();
+                }
+                if (!success) {
+                    this.m_CurOperationID--;
+                }
+            }
+        }
+        return;
+    }
+
+    /**
+     * 判断是否在BeginOperation与EndOperation间
+     * @returns 
+     */
+    static insideOperation()
+    {
+        if (this.m_CurOperationID != -1) {
+            if ( this.m_OperationArray[this.m_CurOperationID].m_Level >= 0 )
+                return true;
+        }
+        return false;
+    }
+
+    static IsGraphEditing()
+    {
+        return this.graphediting;
+    }
+    
+    /**
+     * 撤销
+     */
+    static undoOperation() {
+        if (this.m_CurOperationID >= 0) {
+            this.insideundoredo = true;
+            this.m_OperationArray[this.m_CurOperationID].undo();
+            this.insideundoredo = false;
+            this.m_CurOperationID--;
+            if ( this.m_CurOperationID >= 0 && 
+                typeof(graph) != "undefined" && graph.loadParam != undefined &&
+                this.m_OperationArray[this.m_CurOperationID].param != undefined )
+                graph.loadParam( this.m_OperationArray[this.m_CurOperationID].param );
+        }
+    }
+
+    /**
+     * 重做
+     */
+    static redoOperation() {
+        if (this.m_CurOperationID + 1 < this.m_OperationArray.length) {
+            this.m_CurOperationID++;
+            this.insideundoredo = true;
+            this.m_OperationArray[this.m_CurOperationID].redo();
+            if ( typeof(graph) != "undefined" && graph.loadParam != undefined && this.m_OperationArray[this.m_CurOperationID].param != undefined )
+                graph.loadParam( this.m_OperationArray[this.m_CurOperationID].param );
+            this.insideundoredo = false;
+        }
+    }
+
+    /**
+     * 判断是否在Undo/Redo中
+     * @returns 
+     */
+    static insideUndoRedo() {
+        return this.insideundoredo;
+    }
+
+    /**
+     * 修改或删除节点前记录变化前的数据
+     * @param {*} geom 
+     * @returns 
+     */
+    static saveDropNode(geom) {
+        if (!this.m_RecordEnable)
+            return;
+        if (this.insideundoredo)
+            return;
+        if (this.m_CurOperationID != -1) {
+            if (this.m_OperationArray[this.m_CurOperationID].m_Level <= 0)
+                return;
+            this.m_OperationArray[this.m_CurOperationID].saveDropNode(geom);
+        }
+    }
+
+    /**
+     * 记录新增了一节点
+     * @param {*} geom 
+     * @returns 
+     */
+    static saveCreateNode(geom) {
+        if (!this.m_RecordEnable)
+            return;
+        if (this.insideundoredo)
+            return;
+        if (this.m_CurOperationID != -1) {
+            if (this.m_OperationArray[this.m_CurOperationID].m_Level <= 0)
+                return;
+            this.m_OperationArray[this.m_CurOperationID].saveCreateNode(geom);
+        }
+    }
+
+    /**
+     * 开始装入数据
+     */
+    static loadStart()
+    {
+        this.loading = 1;
+        this.loadingnode = [];
+    }
+
+    /**
+     * 记录装入的数据需要在最后进行后处理，确保节点关联数据的完整性
+     * @param {*} node 
+     */
+    static loadAddNode( node )
+    {
+        this.loadingnode.push( node );
+    }
+
+    /**
+     * 数据装载结束，后处理关联数据
+     * @param {*} graph 
+     */
+    static loadFinish( graph )
+    {
+        //装入结束时，处理节点的关联关系，避免由于路段在路口前装入导致数据不完整的问题。
+        this.loading = 2;
+        for ( let i = 0; i < this.loadingnode.length; i++ ) {
+            this.loadingnode[i].addCB( graph );
+        }
+        this.loading = 0;
+       /* for ( let i = 0; i < this.loadingnode.length; i++ ) {
+            if ( this.loadingnode[i].getType() == "GraphEdge") {
+                if ( this.loadingnode[i].headnode == null )
+                    console.log("err")
+                if ( this.loadingnode[i].tailnode == null )
+                    console.log("err")
+            } else if ( this.loadingnode[i].getType() == "GraphNode") {
+                if ( this.loadingnode[i].subnodes.length != this.loadingnode[i].subnodeids.length )
+                    console.log("err")
+            }
+
+        } */
+    }
+}
+
 /**
  * 矢量数据数据源
  */
@@ -13210,7 +14362,7 @@ class VectorSource extends BaseSource {
             dataType: this.dataType,
             success: function (features) {
                 if (that.format != null && that.format instanceof FeatureFormat) {
-                    let listData = that.format.readFeatures(features, that.projection);
+                    let listData = that.format.readData(features, that.projection);
                     // 加载数据
                     that.add(listData);
                 } else {
@@ -13248,7 +14400,7 @@ class VectorSource extends BaseSource {
 
         // 格式化数据
         if (this.format != null && this.format instanceof FeatureFormat) {
-            listData = this.format.readFeatures(features, this.projection);
+            listData = this.format.readData(features, this.projection);
             // 加载数据
             this.add(listData);
         } else {
@@ -13272,7 +14424,7 @@ class VectorSource extends BaseSource {
                     that._add(geom);
                 } else {
                     //console.debug("add()参数错误", geomList);
-                    that._add(createGeom(geom));
+                    that._add(GeomFactory.create(geom));
                 }
             });
         } else {
@@ -13280,7 +14432,7 @@ class VectorSource extends BaseSource {
                 that._add(geomList);
             } else {
                 //console.debug("add()参数错误", geomList);
-                that._add(createGeom(geomList));
+                that._add(GeomFactory.create(geomList));
             }
         }
         if (this.getLayer() && this.getLayer().getGraph()) {
@@ -13295,7 +14447,11 @@ class VectorSource extends BaseSource {
     _add(geom) {
         if (geom instanceof Geometry) {
             geom.innerSeqId = this._getNextSeq();
+            geom.setLayer(this.getLayer());
+            OperationManager.saveCreateNode(geom);
             this.dataBuffer.push(geom);
+            if (this.getLayer() && this.getLayer().getGraph() && (geom.getType() == GGeometryType.GRAPHEDGE || geom.getType() == GGeometryType.GRAPHNODE))
+                geom.addCB(this.getLayer().getGraph());
             if (geom.getType() === GGeometryType.MARK) {
                 this.add2Cache(geom.filePath);
             } else if (geom.getType() === GGeometryType.IMAGE) {
@@ -13422,7 +14578,9 @@ class VectorSource extends BaseSource {
         let imageObj = this.getImageFromCache(src);
         if (imageObj == null) {
             imageObj = this.add2Cache(src);
-            imageObj.setCallback(asyncCallback);
+            if (imageObj != null && imageObj != undefined) {
+                imageObj.setCallback(asyncCallback);
+            }
         } else {
             if (imageObj.getState() === ImageState.LOADED) {
                 callback(imageObj.getImage());
@@ -13438,12 +14596,37 @@ class VectorSource extends BaseSource {
     buildIndex() {
         if (!this.getLayer() || !this.getLayer().isUsePixelCoord()) {
             let maxExtent = this.extent == null ? this.getBBox() : this.extent;
-            if ( this.quadTree ) {
-            	this.quadTree.clear();
-            	delete this.quadTree;
+            if (this.quadTree) {
+                this.quadTree.clear();
+                delete this.quadTree;
             }
             this.quadTree = new QuadTree({ x: maxExtent[0], y: maxExtent[1], width: maxExtent[2] - maxExtent[0], height: maxExtent[3] - maxExtent[1] });
             this.quadTree.insert(this.dataBuffer);
+        }
+    }
+
+    /**
+     * 四叉树索引删节点
+     */
+    indexDeleteObj(obj) {
+        if (!this.getLayer() || !this.getLayer().isUsePixelCoord()) {
+            this.extent == null ? this.getBBox() : this.extent;
+            if (this.quadTree) {
+                this.quadTree.delete(obj);
+            }
+        }
+    }
+
+    /**
+     * 四叉树索引加节点
+     */
+    indexAddObj(obj) {
+        if (!this.getLayer() || !this.getLayer().isUsePixelCoord()) {
+            let maxExtent = this.extent == null ? this.getBBox() : this.extent;
+            if (this.quadTree == null) {
+                this.quadTree = new QuadTree({ x: maxExtent[0], y: maxExtent[1], width: maxExtent[2] - maxExtent[0], height: maxExtent[3] - maxExtent[1] });
+            }
+            this.quadTree.insert(obj);
         }
     }
 
@@ -13471,6 +14654,7 @@ class VectorSource extends BaseSource {
         for (let i = 0; i < this.dataBuffer.length; i++) {
             let geom = this.dataBuffer[i];
             if (geom instanceof Geometry) {
+                if (geom.isVisible() == false) continue;
                 let obbox = geom.getBBox();
                 bbox = Extent.merge(obbox, bbox);
             }
@@ -13516,8 +14700,9 @@ class VectorSource extends BaseSource {
      */
     toData(options = {}) {
         let features = [];
-        for (let i = 0; i < this.dataBuffer.length; i++) {
-            let geom = this.dataBuffer[i];
+        let databuffer = this.getData(null, true, true); //排序后输出,只输出可见节点
+        for (let i = 0; i < databuffer.length; i++) {
+            let geom = databuffer[i];
             if (options.string === true) {
                 features.push(JSON.stringify(geom.toData(options)));
             } else {
@@ -13525,6 +14710,22 @@ class VectorSource extends BaseSource {
             }
         }
         return features;
+    }
+
+    /**
+     * 读取数据
+     */
+    getData(id = null, sort = false, visibleonly = false) {
+        let databuffer = super.getData(id);
+        if (databuffer.length > 0 && visibleonly == true) {
+            databuffer = databuffer.filter(geom => geom.isVisible() == true);
+        }
+        if (sort) {
+            databuffer.sort(function (obj1, obj2) {
+                return obj1.innerSeqId - obj2.innerSeqId;
+            });
+        }
+        return databuffer;
     }
 }
 
@@ -13535,7 +14736,7 @@ class VectorSource extends BaseSource {
 class Layer extends EventTarget {
     /**
      * 构造函数
-     * @param {Object} options 图层选项{source, renderer, zIndex, name, visible, style, maxResolution, minResolution, opacity, usePixelCoord}
+     * @param {Object} options 图层选项{source, renderer, zIndex, name, visible, style, maxResolution, minResolution, opacity, usePixelCoord, useTransform}
      */
     constructor(options = {}) {
         super();
@@ -13612,6 +14813,14 @@ class Layer extends EventTarget {
      */
     isUseTransform() {
         return this.useTransform_;
+    }
+
+    /**
+     * 设置是否使用矩阵变换实现图形缩放交互操作
+     * @param {*} bool 
+     */
+    setUseTransform(bool) {
+        this.useTransform_ = (bool === true);
     }
 
     /**
@@ -13697,7 +14906,7 @@ class Layer extends EventTarget {
      * 是否显示该图层
      * @returns boolean
      */
-    getVisible() {
+    isVisible() {
         return this.visible_;
     }
 
@@ -13803,7 +15012,7 @@ class Layer extends EventTarget {
      */
     getLayerState() {
         this.state_.opacity = this.getOpacity();
-        this.state_.visible = this.getVisible();
+        this.state_.visible = this.isVisible();
         this.state_.zIndex = this.getZIndex();
         this.state_.maxResolution = this.getMaxResolution();
         this.state_.minResolution = Math.max(this.getMinResolution(), 0);
@@ -14399,7 +15608,7 @@ class GraphRenderer extends RendererBase {
         // 逐个图层合成图形
         let layers = this.getGraph().getLayers();
         for (let i = 0; i < layers.length; i++) {
-            if (layers[i].getVisible() && layers[i].visibleAtResolution() && layers[i].visibleAtDistinct()) {
+            if (layers[i].isVisible() && layers[i].visibleAtResolution() && layers[i].visibleAtDistinct()) {
                 let goon = true;
                 // 动态样式
                 let style = layers[i].getStyle();
@@ -14446,7 +15655,7 @@ class GraphRenderer extends RendererBase {
         // 将各图层已合成的图形合并至工作画板中, 图层渲染顺序：按照数组顺序排序
         let layers = this.getGraph().getLayers();
         for (let i = 0; i < layers.length; i++) {
-            if (layers[i].getVisible() && layers[i].visibleAtResolution() && layers[i].visibleAtDistinct()) {
+            if (layers[i].isVisible() && layers[i].visibleAtResolution() && layers[i].visibleAtDistinct()) {
                 let layerRenderer = layers[i].getRenderer();
                 //layerRenderer.getImage().toDataURL()  可在控制台中预览该图层
                 let opacity = layers[i].getOpacity();
@@ -14572,7 +15781,7 @@ const DomUtil = {};
      */
     DomUtil.create = function (tagName, className, container) {
         let el = document.createElement(tagName);
-        el.className = className || '';
+        if(className) el.className = className || '';
 
         if (container) {
             container.appendChild(el);
@@ -14854,95 +16063,6 @@ const DomUtil = {};
 }());
 
 /**
- * Url工具类
- * @class
- */
-const UrlUtil = {};
-
-(function () {
-    /**
-     * 在非浏览器环境下初始化该类时，返回空对象
-     */
-    if (typeof window === "undefined") return;
-
-    /**
-     * 获取url上携带的参数
-     * @returns {Array}
-     */
-    UrlUtil.getUrlArgs = function() {
-        if (location.search === "") return [];
-        let searchString = location.search.split("?"),  param = [];
-        let seg = searchString[1].split("&");
-        for (let i = 0; i < seg.length; i++) {
-            let val = seg[i].split("=");
-            if (val.length <= 1) continue;
-            param[i] = val[1];
-        }
-        return param;
-    };
-
-    /**
-     * 获取通过Url传递的参数
-     * @param {String} sHref 
-     * @param {String} sArgName 
-     * @returns param
-     */
-    UrlUtil.getArgsFromHref = function(sHref, sArgName) {
-        var args = sHref.split("?");
-        var retval = null;
-        var str;
-
-        if (args[0] === sHref) { /*参数为空*/
-            return retval;
-            /*无需做任何处理*/
-        } else {
-            args = args[1].split("&");
-            for (var i = 0; i < args.length; i++) {
-                str = args[i];
-                var arg = str.split("=");
-                if (arg.length <= 1) continue;
-                if (arg[0] == sArgName) {
-                    retval = arg[1];
-                    break;
-                }
-            }
-            return decodeURIComponent(retval);
-        }
-    };
-
-    /**
-     * 获取web路径 2016-7-18 
-     * @returns String
-     * @example 
-     * 当前服务地址为：http://localhost:8080/web/frame/frame.jsp时，该方法返回： "http://localhost:8080/web"
-     */
-    UrlUtil.getRootPathOfWeb = function() {
-        //获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp
-        var currentPath = window.document.location.href;
-        //获取主机地址之后的目录，如： uimcardprj/share/meun.jsp
-        var pathName = window.document.location.pathname;
-        var pos = currentPath.indexOf(pathName);
-        //获取主机地址，如： http://localhost:8083
-        var localhostPaht = currentPath.substring(0, pos);
-        //获取带"/"的项目名，如：/uimcardprj
-        var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
-        return (localhostPaht + projectName);
-    };
-
-    /**
-     * 获取根路径
-     * @returns {string} 
-     * @example 
-     * 当前服务地址为：http://localhost:8080/web/frame/frame.jsp时，该方法返回： "/web"
-     */
-    UrlUtil.getContextPath = function() {
-        let pathName = document.location.pathname;
-        let index = pathName.substring(1).indexOf("/");
-        return pathName.substring(0, index + 1);
-    };
-}());
-
-/**
  * 图形鼠标操作
  * 滚轮缩放、鼠标移动、鼠标中键漫游、hover、触摸缩放
  */
@@ -14970,11 +16090,14 @@ class GraphMouseOp {
         this._beginZoom = false;
         this.touchZoonDist = 0;
 
-        //  缺省缩放方法
+        // 缺省缩放方法
         this.defaultMapZoom = options.mapZoom;     //MouseWheelZoom
 
-        //  缺省漫游方法
+        // 缺省漫游方法
         this.defaultMapMove = options.mapMove;
+
+        // 缺省漫游的鼠标按键（0：鼠标左键，1：鼠标中键）
+        this.defaultMapMoveKey = 1;
 
         /**
          * time事件，用于监视鼠标移动的位置
@@ -14985,6 +16108,7 @@ class GraphMouseOp {
          * 鼠标最近移动时的位置和时间
          */
         this.lastMovePointer_ = { "time": Infinity, "position": [Infinity, Infinity], "clientPosition": [Infinity, Infinity] };
+        this.mouseHovering = false;
 
         /**
          * 最后一次单击时间
@@ -14992,19 +16116,21 @@ class GraphMouseOp {
         this.lastClickTime = 0;
         this.lastClickTimeFunc = 0;
 
-        // 
+        /**
+         * GraphEvent 自定义事件类型
+         */
         this.eventObj = null;
 
-        // 
+        // 滚轮缩放/漫游功能是否可用
         this.isWorkable_ = true;
     }
 
     /**
-     * 单击事件是否可用
+     * 滚轮缩放/漫游功能是否可用
      */
     enabled(bool) {
         if (bool) {
-            DomUtil.setStyle(this.targetElement, "cursor", "");
+            this.getRender().setPointer("");
             if (this.isWorkable_ === false) {
                 this.isWorkable_ = true;
                 // this.mouseenter({ "offsetX": 0, "offsetY": 0 });
@@ -15044,7 +16170,7 @@ class GraphMouseOp {
                 return this.defaultMapZoom({ op: delta, x: offsetX, y: offsetY });
             }
         } else {
-            return false;
+            return true;
         }
     }
 
@@ -15075,15 +16201,22 @@ class GraphMouseOp {
      * @param {int} y 
      */
     onMouseMove(e) {
+        let rtn = false;
         let [x, y] = [e.offsetX, e.offsetY];
-        // 鼠标中键移动
-        if (this._beginMove === true) {
-            return this._doMapMove(x, y);
-        }
 
+        // 鼠标中键移动
+        if (this._beginMove === true && this.isWorkable_ === true) {
+            rtn = this._doMapMove(x, y);
+        }
         // 自定义鼠标操作
-        if (this.eventObj != null && typeof (this.eventObj.mouseMove) === "function") {
-            this.eventObj.mouseMove(e); //Object.assign({}, e, { x, y, "mouse": this }));
+        else {
+            if (this.eventObj != null && typeof (this.eventObj.mouseMove) === "function") {
+                rtn = this.eventObj.mouseMove(e); //Object.assign({}, e, { x, y, "mouse": this }));
+                if (this.eventObj.cursor != null) {
+                    this.getRender().setPointer(this.eventObj.cursor);
+                }
+                if (rtn === false) return false;
+            }
         }
 
         // 分析hover状态
@@ -15094,11 +16227,20 @@ class GraphMouseOp {
                 "position": [x, y],
                 "clientPosition": [e.clientX, e.clientY]
             };
-            if (this.eventObj != null && typeof (this.eventObj.mouseHoverEnd) == "function") {
-                this.eventObj.mouseHoverEnd(e); //Object.assign({}, e, { "x": x, "y": y, "mouse": this }));
+            if (this.mouseHovering === true && this.eventObj != null && typeof (this.eventObj.mouseHoverEnd) == "function") {
+                this.mouseHovering = false;
+                this.eventObj.mouseHoverEnd({
+                    "x": e.offsetX,
+                    "y": e.offsetY,
+                    "offsetX": e.offsetX,
+                    "offsetY": e.offsetY,
+                    "clientX": e.clientX,
+                    "clientY": e.clientY
+                });
             }
         }
-        return false;
+
+        return rtn;
     }
 
     /**
@@ -15114,18 +16256,22 @@ class GraphMouseOp {
         if (e.button == 0) {    // 鼠标左键
             if (that.eventObj != null && typeof (that.eventObj.mouseDown) === "function") {
                 rtn = that.eventObj.mouseDown(e);  // Object.assign({}, e, { x, y, "mouse": that });
+                if (that.eventObj.cursor != null) {
+                    that.getRender().setPointer(that.eventObj.cursor);
+                }
+                if (rtn == false) return false;
             }
         }
 
-        if (e.button == 1) {    // 鼠标中键
+        if (e.button == this.defaultMapMoveKey) {    // 鼠标中键/左键
             this.previousCursor_ = DomUtil.getStyle(this.targetElement, "cursor");
-            DomUtil.setStyle(this.targetElement, "cursor", "url(" + UrlUtil.getContextPath() + "/adam.lib/images/cursor/hand-close.cur), move");
+            this.getRender().setPointer(Cursor.PAN);
             this._lastClientX = x; //e.offsetX;
             this._lastClientY = y; //e.offsetY;
             this._beginMove = true;
         }
 
-        return rtn == null ? false : rtn;
+        return rtn;
     }
 
     /**
@@ -15133,9 +16279,15 @@ class GraphMouseOp {
      * @param {Object} e 
      */
     onMouseUp(e) {
-        let rtn = true;
+        let rtn = false;
         let that = this;
 
+        // 结束漫游状态（鼠标中键）
+        if (that._beginMove === true) {
+            this.getRender().setPointer(that.previousCursor_);
+            that._beginMove = false;
+        }
+        // 处理扩展的鼠标事件
         if (that.eventObj != null) {
             if (e.button == 0) {         //IE:1, FF:0 鼠标左键
                 let callback = (typeof (that.eventObj) === "function" ? that.eventObj : that.eventObj.mouseUp);
@@ -15148,17 +16300,15 @@ class GraphMouseOp {
                 if (typeof (callback) === "function") {
                     rtn = callback(e);
                 }
-
+            }
+            if (that.eventObj.cursor != null) {
+                that.getRender().setPointer(that.eventObj.cursor);
             }
             if (rtn === false) return rtn;
         }
-        if (e.button == 1) {    // 鼠标中键
-            DomUtil.setStyle(that.targetElement, "cursor", that.previousCursor_);
-        }
 
-        that._beginMove = false;
         that.lastClickTime = Date.now();
-        return rtn || false;
+        return rtn;
     }
 
     /**
@@ -15185,7 +16335,15 @@ class GraphMouseOp {
         this.intervalTimeId_ = window.setInterval(function () {
             if ((new Date()).getTime() - that.lastMovePointer_.time > 1100) {
                 that.lastMovePointer_.time = Infinity;
-                that._doMouseHover(e);
+                that._doMouseHover({
+                    "x": that.lastMovePointer_.position[0],
+                    "y": that.lastMovePointer_.position[1],
+                    "offsetX": that.lastMovePointer_.position[0],
+                    "offsetY": that.lastMovePointer_.position[1],
+                    "clientX": that.lastMovePointer_.clientPosition[0],
+                    "clientY": that.lastMovePointer_.clientPosition[1],
+                    "targetElement": that.targetElement
+                });
             }
         }, 400);
         return false;
@@ -15196,20 +16354,9 @@ class GraphMouseOp {
      * @param {Object} e 
      */
     _doMouseHover(e) {
-        // let that = this;
-        // let pos = this.lastMovePointer_.position;
-        // let clientPos = this.lastMovePointer_.clientPosition;
-
+        this.mouseHovering = true;
         if (this.eventObj != null && typeof (this.eventObj.mouseHover) === "function") {
             this.eventObj.mouseHover(e);
-            //Object.assign({}, e, {
-            //    "x": pos[0],
-            //    "y": pos[1],
-            //    "clientX": clientPos[0],
-            //    "clientY": clientPos[1],
-            //    "mouse": this,
-            //    "targetElement": that.targetElement
-            //}));
         }
         return false;
     }
@@ -15252,7 +16399,7 @@ class GraphMouseOp {
         //阻止触摸时浏览器的缩放、滚动条滚动等
         e.preventDefault();
         const touches = e.touches;
-        if (this._beginMove === true && touches.length === 1) {
+        if (this._beginMove === true && touches.length === 1 && this.isWorkable_ === true) {
             // 单指触摸移动
             let touch = touches[0]; //获取第一个触点
             this._doMapMove(parseInt(touch.clientX), parseInt(touch.clientY));
@@ -15323,7 +16470,16 @@ class GraphMouseOp {
 }
 
 /**
- * 图形事件父类
+ * 图形事件对象类型 <br>
+ * canvas事件分发过程如下： <br>
+ * 1) 构造RenderObject时通过_bindEvent()方法将事件绑定至 render.wrapObj_ 对象上；<br>
+ * 2) 各个事件均通过 RenderObject的handleEvent()分发；<br>
+ * 3) RenderObject对象中 通过 graphMouseOp 类处理所有分发的事件；<br>
+ * 4）graphMouseOp 可处理一些常规事件，例如滚轮缩放、漫游等；<br>
+ * 5) graphMouseOp 中包含了 eventObj 事件对象，可处理自定义的 mouseUp、mouseDown 等事件；<br>
+ * 6) 自定义事件（eventObj事件对象）类型需为GraphEvent的子类型；<br>
+ * 7) eventObj事件对象各方法的返回值定义： true执行了该事件，false执行了该事件，并禁止冒泡，null未执行事件
+ * 8) RenderObject对象提供了addEvent()和endEvent() 管理自定义事件类型；
  */
 class GraphEvent {
     constructor(options) {
@@ -15341,6 +16497,10 @@ class GraphEvent {
          * 鼠标形状
          */
         this.cursor = Cursor.DEFAULT;
+
+        // callback
+        this.mouseHoverCallback = options.mouseHover;
+        this.mouseHoverEndCallback = options.mouseHoverEnd;
     }
 
     /**
@@ -15366,13 +16526,49 @@ class GraphEvent {
         this.render.endEvent();
     }
 
-    /**
-     * 事件：键盘按键
-     * @param {Event} e 
-     */
-    keyDown(e) {
-        e.keyCode;
+    mouseUp(e) {
+        return null;
     }
+    mouseDown(e) {
+        return null;
+    }
+    mouseMove(e) {
+        return null;
+    }
+    rclick(e) {
+        return null;
+    }
+    dblclick(e) {
+        return null;
+    }
+    mouseHover(e) {
+        if (typeof (this.mouseHoverCallback) === "function") {
+            return this.mouseHoverCallback(e);
+        } else {
+            return null;
+        }
+    }
+    mouseHoverEnd(e) {
+        if (typeof (this.mouseHoverEndCallback) === "function") {
+            return this.mouseHoverEndCallback(e);
+        } else {
+            return null;
+        }
+    }
+    keyDown(e) {
+        return null;
+    }
+
+    // /**
+    //  * 事件：键盘按键
+    //  * @param {Event} e 
+    //  */
+    // keyDown(e) {
+    //     let key = e.keyCode;
+    //     if (key === EventKeyCode.KEY_ESC) {
+    //         // this.end();
+    //     }
+    // }
 }
 
 /*----------------------------------------------------------------------------
@@ -15690,9 +16886,14 @@ class RenderObject extends EventTarget {
         }
 
         /**
-         * 是否可用
+         * 是否可用滚轮缩放和中键漫游
          */
         this.isWorkable_ = (options.mouse == null ? true : options.mouse == true);
+
+        /**
+         * 是否允许触发事件
+         */
+        this.isEventable_ = (options.eventable == null ? true : options.eventable == true);
 
         // 创建画布对象
         this._createCanvas(container);
@@ -15719,9 +16920,13 @@ class RenderObject extends EventTarget {
         this.pointerName_ = "default";
     }
 
-    enabledMouse(enabled) {
+    mouseEnabled(enabled) {
         this.isWorkable_ = (enabled === true);
         this.graphMouseOp.enabled(this.isWorkable_);
+    }
+
+    getMouseEnabled() {
+        return this.isWorkable_ === true;
     }
 
     /**
@@ -15742,9 +16947,9 @@ class RenderObject extends EventTarget {
             // wrap
             this.wrapObj_ = DomUtil.create("div", "", body);
             this.wrapObj_.id = wrapId;
-            this.wrapObj_.tabIndex = -1;
+            this.wrapObj_.tabIndex = 0;
             this.wrapObj_.style.outline = "blue solid 0px";
-
+            
             // canvas
             this.canvas_ = DomUtil.create("canvas", "", this.wrapObj_);
             this.canvas_.oncontextmenu = function () { return false };
@@ -15773,8 +16978,8 @@ class RenderObject extends EventTarget {
         let canvasHeight = (this.containerObj_.offsetHeight > 0 ? this.containerObj_.offsetHeight : parseInt(DomUtil.getStyle(this.containerObj_, "height"))) - this.borderTopWidth - this.borderBottomWidth;    // 像素高
         this.canvas_.width = canvasWidth > 20 ? canvasWidth : 20;
         this.canvas_.height = canvasHeight > 20 ? canvasHeight : 20;
-        this.wrapObj_.style.height = canvasHeight + "px";
-        this.wrapObj_.parentElement.style.height = canvasHeight + "px";
+        this.wrapObj_.style.height = "100%"; //canvasHeight + "px";
+        this.wrapObj_.parentElement.style.height = "100%"; //canvasHeight + "px";
     }
 
     _bindEvent(graph) {
@@ -15796,21 +17001,22 @@ class RenderObject extends EventTarget {
                 if (!msTouch) return;
             }
             that.wrapObj_.addEventListener(eventName, function (e) {
-                let x = e.offsetX;
-                let y = e.offsetY;
+                // let x = e.offsetX;
+                // let y = e.offsetY;
                 let bubbling = true;
+                // 是否执行geom事件
                 if (graph.isEnabledGeomEvent() && geomEvent.indexOf(eventName) >= 0) {
                     // 先执行geom事件
-                    if (graph.handleEvent(eventName, { x, y, e }) !== false) {
+                    if (graph.handleEvent(eventName, e) !== false) {
                         // 然后执行graph事件
-                        if (that.isWorkable_ === true) {
-                            bubbling = that.handleEvent(eventName, { x, y, e });
+                        if (that.isEventable_ === true) {
+                            bubbling = that.handleEvent(eventName, e);
                         }
                     }
                 } else {
-                    //if (that.isWorkable_ === true) {
-                    bubbling = that.handleEvent(eventName, { x, y, e });
-                    //}
+                    if (that.isEventable_ === true) {
+                        bubbling = that.handleEvent(eventName, e);
+                    }
                 }
                 if (bubbling === false) {
                     DomUtil.stop(e);
@@ -15828,8 +17034,8 @@ class RenderObject extends EventTarget {
         let oheight = this.canvas_.height;
         let width = (this.containerObj_.offsetWidth - this.borderLeftWidth - this.borderRightWidth);       // 像素宽
         let height = (this.containerObj_.offsetHeight - this.borderTopWidth - this.borderBottomWidth);    // 像素高;
-        width = (width > 300 ? width : owidth);
-        height = (height > 200 ? height : oheight);
+        width = (width > 20 ? width : owidth);
+        height = (height > 20 ? height : oheight);
 
         // 支持改变画板大小，而不改变容器大小
         // *** 修改画板的宽高将会清空画板中的内容 ***
@@ -15868,7 +17074,7 @@ class RenderObject extends EventTarget {
     }
 
     /**
-     * 外部控制执行鼠标操作
+     * 增加自定义鼠标事件
      * @param {Object} event event如果为function，则表示mouseUp事件所执行的function，否则event需为对象类型
      * @example event的对象格式为{mouseUp, mouseDown, mouseMove, mapMove, rclick, dblclick, mouseHover, mouseHoverEnd}，属性值为各事件所执行的function
      * 其参数均为对象，包含e, x, y, mouse等属性，Object.assign(e, {x, y, mouse:this})
@@ -15884,6 +17090,7 @@ class RenderObject extends EventTarget {
         } else {
             throw new Error("参数错误");
         }
+        return event;
     }
 
     /**
@@ -15925,27 +17132,28 @@ class RenderObject extends EventTarget {
     /**
      * 事件分发，从target中通过该方法将鼠标事件分发至 click()、dblclick()等方法中
      * @param {*} name 
-     * @param {*} args 
+     * @param {*} event 
      */
-    handleEvent(name, args) {
+    handleEvent(name, event) {
 
         // 触发已绑定的事件
-        this.triggerEvent(name, args.e);
+        this.triggerEvent(name, event);
 
         // 触发图形事件
+        let rtn;
         let that = this;
         switch (name) {
             case "wheel":
-                this.graphMouseOp.onWheel(args.e);
+                rtn = this.graphMouseOp.onWheel(event);
                 break;
             case "click":
-                this.graphMouseOp.onClick(args.e);
+                rtn = this.graphMouseOp.onClick(event);
                 break;
             case "dblclick":
-                this.graphMouseOp.onDblclick(args.e);
+                rtn = this.graphMouseOp.onDblclick(event);
                 break;
             case "mousemove":
-                this.graphMouseOp.onMouseMove(args.e);
+                rtn = this.graphMouseOp.onMouseMove(event);
                 break;
             case "mousedown":
                 // 添加mouseUp事件
@@ -15958,37 +17166,38 @@ class RenderObject extends EventTarget {
                     }
                     return rtn;
                 }, { "once": true });
-                this.graphMouseOp.onMouseDown(args.e);
+                rtn = this.graphMouseOp.onMouseDown(event);
                 break;
             case "mouseout":
-                this.graphMouseOp.onMouseOut(args.e);
+                rtn = this.graphMouseOp.onMouseOut(event);
                 break;
             case "mouseenter":
-                this.graphMouseOp.onMouseEnter(args.e);
+                rtn = this.graphMouseOp.onMouseEnter(event);
                 break;
             case "touchstart":
-                this.graphMouseOp.onTouchStart(args.e);
+                rtn = this.graphMouseOp.onTouchStart(event);
                 break;
             case "touchend":
-                this.graphMouseOp.onTouchEnd(args.e);
+                rtn = this.graphMouseOp.onTouchEnd(event);
                 break;
             case "touchmove":
-                this.graphMouseOp.onTouchMove(args.e);
+                rtn = this.graphMouseOp.onTouchMove(event);
                 break;
             case "keydown":
-                this.graphMouseOp.onKeyDown(args.e);
+                rtn = this.graphMouseOp.onKeyDown(event);
                 break;
         }
-        if (this.eventObj != null && this.eventObj.cursor != null) {
-            this.setPointer(this.eventObj.cursor);
-        }
+        if(rtn === true || rtn === false) return rtn;
     }
 }
 
+/**
+ * 图形控件基础类
+ */
 class Control {
-	constructor(options) {
-		this.div = "";
-	}
+    constructor(options) {
+        this.div = "";
+    }
 
     setGraph(graph) {
         if (graph) {
@@ -15998,7 +17207,7 @@ class Control {
     }
 
     rebuild() {
-        
+
     }
 
     show() {
@@ -16257,7 +17466,7 @@ const Animation = {};
 class Graph extends EventTarget {
     /**
      * 构造函数
-     * @param {Object} options {target, mouse, layers, view, originAtLeftTop, bgColor, useMatrix}  
+     * @param {Object} options {target, mouse, eventable, layers, view, originAtLeftTop, useTransform, bgColor, useMatrix}  
      */
     constructor(options = {}) {
         super();
@@ -16285,7 +17494,7 @@ class Graph extends EventTarget {
          * 是否显示全图
          * @private
          */
-        this.showFullView_ = this.defaultFullView_; 
+        this.showFullView_ = this.defaultFullView_;
 
         /**
          * 视图对象
@@ -16310,6 +17519,12 @@ class Graph extends EventTarget {
          * @private
          */
         this.originAtLeftTop = options.originAtLeftTop === true || options.originAtLeftTop == null;     // true:左下， false:左上（同屏幕坐标）
+
+        /**
+         * 是否使用矩阵变换坐标
+         * @private
+         */
+        this.useTransform_ = (options.useTransform == undefined || options.useTransform == null ? false : options.useTransform);
 
         /**
          * 坐标 转换为 像素
@@ -16345,7 +17560,7 @@ class Graph extends EventTarget {
          * target大小发生变化时的处理
          */
         //this.resizeObserver_ = new ResizeObserver(() => this._renderGraph());   // 页面初始化时会自动执行一次，导致重复渲染，因此暂时屏蔽 2024/1/12
-        
+
         /**
          * Render对象，即包含画板和鼠标事件的对象，图形渲染载体
          */
@@ -16355,6 +17570,7 @@ class Graph extends EventTarget {
         if (typeof (target) == "string") {
             render = new RenderObject(document.getElementById(options.target), {
                 "mouse": options.mouse,
+                "eventable": options.eventable,
                 "mapZoom": function (args) {
                     let anchor = that.getCoordinateFromPixel([args.x, args.y]);
                     let scale = (args.scale == null ? (args.op > 0 ? 0.8 : 1.25) : args.scale);
@@ -16521,17 +17737,23 @@ class Graph extends EventTarget {
      * 增加浮动层
      * 浮动层通常在数据层的上层，用于突出显示或绘制橡皮线
      */
-    addOverLayer(options = {}) {
-        let overLayer = new Layer({
-            "source": new VectorSource(),
-            "zIndex": options.overlayId > 0 ? options.overlayId : getLayerId() * 2,
-            "type": "aux",
-            "name": options.name ? options.name : "浮动层",
-            "style": options.style ? options.style : { "color": "blue", "fillColor": "#FF8080" },
-            "visible": true
-        });
-
-        return this.addLayer(overLayer);
+    getOverLayer(options = {}) {
+        if (this.overlayId == null) {
+            this.overlayId = getLayerId() * 2;
+        }
+        let overLayer = this.getLayer(this.overlayId);
+        if (overLayer == null) {
+            overLayer = new Layer({
+                "source": new VectorSource(),
+                "zIndex": this.overlayId,
+                "type": "aux",
+                "name": options.name ? options.name : "浮动层",
+                "style": options.style ? options.style : { "color": "blue", "fillColor": "#FF8080" },
+                "visible": true
+            });
+            this.addLayer(overLayer);
+        }
+        return overLayer;
     }
 
     /**
@@ -16606,6 +17828,22 @@ class Graph extends EventTarget {
     }
 
     /**
+     * 是否使用矩阵变换实现图形缩放交互操作
+     * @returns Boolean
+     */
+    isUseTransform() {
+        return this.useTransform_;
+    }
+
+    /**
+     * 设置是否使用矩阵变换实现图形缩放交互操作
+     * @param {*} bool 
+     */
+    setUseTransform(bool) {
+        this.useTransform_ = (bool === true);
+    }
+
+    /**
      * 返回当前视图
      */
     getView() {
@@ -16664,49 +17902,63 @@ class Graph extends EventTarget {
         let selectedGeomList = [];
         let extent = this.getExtent();
         let layers = this.getLayers();
-        let point = (coord.length == 2 && !Array.isArray(coord[0]));
 
-        for (let i = 0; i < layers.length; i++) {
-            let layer = layers[i];
-            // 仅判断可见图层中的对象
-            if (layer.getVisible() && layer.visibleAtResolution() && layer.visibleAtDistinct() && !layer.isAuxLayer()) {
-                let geomList = layer.getSource().getExtentData(extent);
+        // 当坐标为空时为查询所有
+        if (coord == null) {
+            for (let i = 0; i < layers.length; i++) {
+                let layer = layers[i];
+                // 仅判断可见图层中的对象
+                if (layer.isVisible() && layer.visibleAtResolution() && layer.visibleAtDistinct() && !layer.isAuxLayer()) {
+                    selectedGeomList = selectedGeomList.concat(layer.getSource().getData());
+                }
+            }
+        }
+        // 根据点坐标或矩形坐标进行查询
+        else {
+            let point = (coord.length == 2 && !Array.isArray(coord[0]));
 
-                // 逐个对象判断是否相交
-                if (geomList != null && geomList.length > 0) {
+            for (let i = 0; i < layers.length; i++) {
+                let layer = layers[i];
+                // 仅判断可见图层中的对象
+                if (layer.isVisible() && layer.visibleAtResolution() && layer.visibleAtDistinct() && !layer.isAuxLayer()) {
+                    let geomList = layer.getSource().getExtentData(extent);
 
-                    let minX = Math.min(coord[0][0], coord[1][0]);
-                    let minY = Math.min(coord[0][1], coord[1][1]);
-                    let maxX = Math.max(coord[0][0], coord[1][0]);
-                    let maxY = Math.max(coord[0][1], coord[1][1]);
-                    let coordExtent = [minX, minY, maxX, maxY];
+                    // 逐个对象判断是否相交
+                    if (geomList != null && geomList.length > 0) {
 
-                    for (let j = 0, len = geomList.length; j < len; j++) {
+                        let minX = Math.min(coord[0][0], coord[1][0]);
+                        let minY = Math.min(coord[0][1], coord[1][1]);
+                        let maxX = Math.max(coord[0][0], coord[1][0]);
+                        let maxY = Math.max(coord[0][1], coord[1][1]);
+                        let coordExtent = [minX, minY, maxX, maxY];
 
-                        // 根据点坐标进行查询
-                        if (point) {
-                            if (geomList[j].contain(coord, true)) {
-                                selectedGeomList.push(geomList[j]);
+                        for (let j = 0, len = geomList.length; j < len; j++) {
+                            if (geomList[j].isVisible() == false) continue;
+                            // 根据点坐标进行查询
+                            if (point) {
+                                if (geomList[j].contain(coord, true)) {
+                                    selectedGeomList.push(geomList[j]);
+                                }
                             }
-                        }
-                        // 判断coord与bbox是否相交
-                        else {
-                            let bbox = geomList[j].getBBox();
-                            if (Extent.intersects(coordExtent, bbox)) {
-                                selectedGeomList.push(geomList[j]);
+                            // 判断coord与bbox是否相交
+                            else {
+                                let bbox = geomList[j].getBBox();
+                                if (Extent.intersects(coordExtent, bbox)) {
+                                    selectedGeomList.push(geomList[j]);
+                                }
                             }
                         }
                     }
                 }
             }
-        }
 
-        // 按对象类别，与中心点距离等因素对相交的对象进行排序
-        selectedGeomList.sort(function (a, b) {
-            let extentA = a.getBBox(false);
-            let extentB = b.getBBox(false);
-            return Extent.getArea(extentA) - Extent.getArea(extentB);
-        });
+            // 按对象类别，与中心点距离等因素对相交的对象进行排序
+            selectedGeomList.sort(function (a, b) {
+                let extentA = a.getBBox(false);
+                let extentB = b.getBBox(false);
+                return Extent.getArea(extentA) - Extent.getArea(extentB);
+            });
+        }
 
         return selectedGeomList;
     }
@@ -16814,8 +18066,20 @@ class Graph extends EventTarget {
             if (geomList && geomList.length > 0) {
                 for (let j = 0, len = geomList.length; j < len; j++) {
                     if (geomList[j].getUid() === uid) {
-                        geomList.splice(j, 1);
-                        break;
+                        let removefirst = geomList[j].getAutoRemoveList();
+                        if (removefirst.length > 0) {
+                            removefirst.push(geomList[j]);
+                            for (let k = 0; k < removefirst.length; k++) {
+                                this.removeGeom(removefirst[k]);
+                            }
+                            return;
+                        } else {
+                            if (!geomList[j].removeCB()) {
+                                return;
+                            }
+                            geomList.splice(j, 1);
+                            break;
+                        }
                     }
                 }
             }
@@ -16838,6 +18102,7 @@ class Graph extends EventTarget {
             "dynamicProjection": this.dynamicProjection_,
             "useMatrix": this.useMatrix_,
             "originAtLeftTop": this.originAtLeftTop,
+            "useTransform": this.useTransform_,
             "viewGeomList": this.viewGeomList
         }, this.getView().getState());
         return frameState;
@@ -16877,8 +18142,21 @@ class Graph extends EventTarget {
         this.render();
     }
 
+    /**
+     * 显示全图
+     */
     showFullView() {
         this.showFullView_ = true;
+        this.setView();
+    }
+
+    /**
+     * 居中显示指定位置
+     */
+    showCenterView(coord) {
+        let view = this.getView();
+        view.setCenter(coord == null ? Extent.getCenter(this.getFullExtent()) : coord);
+        this.render();
     }
 
     /**
@@ -16931,7 +18209,7 @@ class Graph extends EventTarget {
         let start = Date.now();
         let that = this;
         // 缺省锚点为中心点
-        if(anchor == null) {
+        if (anchor == null) {
             anchor = Extent.getCenter(this.getExtent());
         }
         // 开始动画
@@ -16948,11 +18226,11 @@ class Graph extends EventTarget {
 
     /**
      * 具有动画效果的图形移动
-     * @param {Coord} center 中心点坐标
+     * @param {Coord} coord 中心点坐标
      * @param {Number} resolution 新的分辨率，如果为空则不改变分辨率 
      * @param {int} duration 延时时间
      */
-    animailMove(center, resolution, duration = 500) {
+    animailMove(coord, resolution, duration = 500) {
         let start = Date.now();
         let that = this;
         let originalCenter = this.getView().getCenter();
@@ -16962,8 +18240,8 @@ class Graph extends EventTarget {
         Animation.start(function () {
             let drawTime = Date.now() - 1;
             let delta = Easing.easeOut((drawTime - start) / duration);
-            let centerX = originalCenter[0] + delta * (center[0] - originalCenter[0]);
-            let centerY = originalCenter[1] + delta * (center[1] - originalCenter[1]);
+            let centerX = originalCenter[0] + delta * (coord[0] - originalCenter[0]);
+            let centerY = originalCenter[1] + delta * (coord[1] - originalCenter[1]);
             that.getView().setCenter([centerX, centerY]);
             if (resolution != null && resolution > 0) {
                 let res = originalRes + delta * (resolution - originalRes);
@@ -17061,7 +18339,7 @@ class GeoJSONFormat extends FeatureFormat {
      * @param {*} file 
      * @param {Projection} proj  坐标投影
      */
-    readFeatures(data, proj) {
+    readData(data, proj) {
         let that = this;
         let listData = [];
         for (let i = 0, ii = data.features.length; i < ii; i++) {
@@ -17226,7 +18504,7 @@ class XNGeoJsonData extends FeatureFormat {
      * @param {*} file 
      * @param {Projection} proj  坐标投影
      */
-    readFeatures(data, proj) {
+    readData(data, proj) {
         let that = this;
         let listData = [];
         for (let i = 0, ii = data.features.length; i < ii; i++) {
@@ -17295,7 +18573,7 @@ class CimgFormat extends FeatureFormat {
      *     {"type":"Text", "lineWidth":1, "lineType":1, "text":"国", "fontName":"宋体", "fontSize":0.086581, "scaleX":1.000000, "scaleY":1.000000, "rotate":0.000000, "color":"185,72,66", "fillColor":"185,72,66", "coords":"1562.815186,1058.258057,1562.901733,1058.344604"},
      * ] 
      */
-    readFeatures(file) {
+    readData(file) {
         let listData = [];
         let unknow = [];
 
@@ -18204,7 +19482,7 @@ const BgUtil = {};
             zIndex: WATER_LAYER_ZINDEX,
             name: "水印层",
             type: "aux",
-            style: { "color": "rgb(220, 220, 220)", "fillColor": "rgb(220, 220, 220)", "fontSize": 30, "fontName": "宋体", "textAlign": "center" },
+            style: { "fillColor": "#EEEEEE", "fontSize": 30, "fontName": "宋体", "textAlign": "center" },
             usePixelCoord: true,
             visible: true
         });
@@ -19564,7 +20842,7 @@ let svgPathParse = (function () {
         return parser.lastToken.toUpperCase() === 'E'
     }
 
-    class Point {  
+    class __Point {  
         constructor(x, y) {  
             const base = { x: 0, y: 0 };
     
@@ -19591,8 +20869,8 @@ let svgPathParse = (function () {
             pointSeen: false,
             hasExponent: false,
             absolute: toAbsolute,
-            p0: new Point(),
-            p: new Point()
+            p0: new __Point(),
+            p: new __Point()
         };
 
         while ((parser.lastToken = token, token = d.charAt(index++))) {
@@ -21480,7 +22758,7 @@ class SvgFormat extends FeatureFormat {
      * @param {Document} xmldoc 
      * @returns featureList
      */
-    readFeatures(xmldoc) {
+    readData(xmldoc) {
         if (xmldoc == null) {
             throw new Error("SVG文档错误");
         }
@@ -21572,7 +22850,7 @@ function loadSVGFile(options) {
             }
         }, loadCallback);
     } else if (document != null) {
-        let listData = source.getFormat().readFeatures(document);
+        let listData = source.getFormat().readData(document);
 
         // 加入到数据源中
         source.clearData();
@@ -22644,6 +23922,12 @@ class TileLayerRenderer extends LayerRenderer {
  * 闪烁类
  */
 class Flicker {
+    static times = 0;
+    static defaultDuration = 3;
+    static flickerLayer_ = null;
+    static animationKey_ = 0;
+    static beginFlicker = false;
+
     constructor() {
     }
 
@@ -22680,9 +23964,19 @@ class Flicker {
      * @param {Graph} graph 
      */
     static end(graph) {
-        window.cancelAnimationFrame(this.animationKey_);
-        graph.removeLayer(this.flickerLayer_);
-        graph.render();
+        if (this.flickerLayer_ != null) {
+            window.cancelAnimationFrame(this.animationKey_);
+            graph.removeLayer(this.flickerLayer_);
+            this.flickerLayer_ = null;
+            graph.render();
+        }
+    }
+
+    static isFlicking() {
+        if (this.flickerLayer_ == null)
+            return false;
+        else
+            return true;
     }
 
     static _add2Layer(graph, data, type = 1) {
@@ -22701,6 +23995,8 @@ class Flicker {
                         that._styleFn1(layer, frameState);
                     } else if (type === 2) {
                         that._styleFn2(layer, frameState);
+                    } else if (type === 3) {
+                        that._styleFn3(layer, frameState);
                     } else {
                         that._styleFn(layer, frameState);
                     }
@@ -22717,9 +24013,9 @@ class Flicker {
         let idx = 0;
         let loop = function () {
             let speed;
-            if(data.length > 120) {
+            if (data.length > 120) {
                 speed = 1;
-            } else if(data.length > 80) {
+            } else if (data.length > 80) {
                 speed = 2;
             } else {
                 speed = 4;
@@ -22727,7 +24023,9 @@ class Flicker {
             if (that.times % speed === 0) {
                 if (idx < data.length) {
                     let geom = data[idx];
-                    Object.assign(geom.style, {"color":"red", "fillColor":"red", "lineWidth":4});
+                    if (geom.getType() == "GraphNode")
+                        geom.translate(0, 0);
+                    Object.assign(geom.style, { "color": "red", "fillColor": "red", "lineWidth": 4 });
                     that.flickerLayer_.getSource().add(geom);
                     idx += 1;
                 } else {
@@ -22735,14 +24033,16 @@ class Flicker {
                 }
             }
             that.times++;
-            if (Date.now() <= start + (duration > 0 ? duration * 1000 : 0)) {
+            if (that.flickerLayer_ != null && Date.now() <= start + (duration > 0 ? duration * 1000 : 0)) {
                 if (that.times % 2 === 0) {
                     // graph.renderSync();
                     graph.renderLayer(that.flickerLayer_);
+                    //console.log("flicking");
                 }
                 that.animationKey_ = window.requestAnimationFrame(loop);
             } else {
                 graph.removeLayer(that.flickerLayer_);
+                that.flickerLayer_ = null;
                 graph.render();
                 return false;
             }
@@ -22801,13 +24101,32 @@ class Flicker {
             layer.setStyle(style);
         }
     }
-}
 
-Flicker.times = 0;
-Flicker.defaultDuration = 3;
-Flicker.flickerLayer_ = null;
-Flicker.animationKey_ = 0;
-Flicker.beginFlicker = false;
+    /**
+     * 虚线滚动效果（反方向）
+     * @param {*} layer 
+     * @param {*} frameState 
+     */
+    static _styleFn3(layer, frameState) {
+        if (this.beginFlicker) {
+            let style = layer.getStyle();
+
+            // 点和面的颜色变化
+            let delta = Easing.easeOut(this.times % 20 / 20);
+            let color = "rgb(255," + Math.floor(255 * delta) + "," + Math.floor(255 * delta) + ")";
+            style.pointColor = color;
+            style.surfaceColor = color;
+
+            // 虚线流动
+            delta = Easing.linear(this.times % 20 / 20);
+            style.lineColor = "rgb(255,0,0)";
+            style.lineType = 10;
+            // style.dash = [2, 2];
+            style.dashOffset = -delta * 30;
+            layer.setStyle(style);
+        }
+    }
+}
 
 /**
  * 切片地图数据源
@@ -23075,7 +24394,7 @@ class Draggable extends GraphEvent {
 
         // 是否开始拖拽
         this.startDrag = false;
-        
+
         // 拖拽结束坐标
         this.endPoint = [];
 
@@ -23094,11 +24413,13 @@ class Draggable extends GraphEvent {
          * @param {Event} e 
          */
         this.mouseDown = function (e) {
+            let rtn;
             if (e.button === 0) {
-                this.startDrag = true;
-                this.startPoint = [e.offsetX, e.offsetY];
-                this.onMouseDown(e);
+                that.startDrag = true;
+                that.startPoint = [e.offsetX, e.offsetY];
+                rtn = that.onMouseDown(e);
             }
+            return rtn;
         };
 
         /**
@@ -23106,13 +24427,15 @@ class Draggable extends GraphEvent {
          * @param {Event} e 
          */
         this.mouseMove = function (e) {
-            if (this.startDrag === true) {
-                this.movePoint = [e.offsetX, e.offsetY];
-                this.endPoint = [e.offsetX, e.offsetY];
-                this.onMouseMove(e, true);
+            let rtn;
+            if (that.startDrag === true) {
+                that.movePoint = [e.offsetX, e.offsetY];
+                that.endPoint = [e.offsetX, e.offsetY];
+                rtn = that.onMouseMove(e, true);
             } else {
-                this.onMouseMove(e, false);
+                rtn = that.onMouseMove(e, false);
             }
+            return rtn;
         };
 
         /**
@@ -23120,19 +24443,48 @@ class Draggable extends GraphEvent {
          * @param {Event} e 
          */
         this.mouseUp = function (e) {
+            let rtn;
             if (that.startDrag === true) {
                 that.endPoint = [e.offsetX, e.offsetY];
-                that.onMouseUp(e);
+                rtn = that.onMouseUp(e);
                 that.startDrag = false;
             }
+            return rtn;
+        };
+
+        this.rclick = function(e) {
+            that.endPoint = [e.offsetX, e.offsetY];
+            return that.onRightClick(e);
+        };
+
+        /**
+         * 事件: dblclick
+         * @param {Event} e 
+         */
+        this.dblclick = function (e) {
+            return that.onDblclick(e);
         };
     }
 
-    onMouseDown(e) { }
+    onMouseDown(e) {
+        return null;
+    }
 
-    onMouseUp(e) { }
+    onMouseUp(e) {
+        return null;
+    }
 
-    onMouseMove(e) { }
+    onMouseMove(e, isDrag) {
+        return null;
+    }
+
+    onDblclick(e) {
+        return null;
+    }
+
+    onRightClick(e) {
+        return null;
+    }
 
     setCursor(cursorName) {
         this.cursor = cursorName;
@@ -23150,15 +24502,13 @@ class DragBox extends Draggable {
          * 图形对象
          */
         this.graph = options.graph;
-        
+
         /**
          * 拉框结束时的回调函数
          */
         this.callback = options.callback;
 
         // 
-        this.overlayId_ = 211;                   // 覆盖层图层ID （度量尺、空间查询矩形框等）
-        this.overlayDesc_ = "覆盖层图层";
         this.defaultStyle = {
             "color": "red",
             "fillColor": "rgba(255, 159, 159, 0.5)",
@@ -23176,16 +24526,7 @@ class DragBox extends Draggable {
      * @returns Layer
      */
     getOverLayer() {
-        let layer = this.graph.getLayer(this.overlayId_);
-        if (layer == null) {
-            layer = new Layer({
-                "source": new VectorSource(),
-                zIndex: this.overlayId_,
-                name: this.overlayDesc_
-            });
-            this.graph.addLayer(layer);
-        }
-        return layer;
+        return this.graph.getOverLayer();
     }
 
     onMouseDown(e) {
@@ -23196,7 +24537,7 @@ class DragBox extends Draggable {
     }
 
     onMouseMove(e, isDrag) {
-        if(isDrag === true) {
+        if (isDrag === true) {
             let p1 = this.graph.getCoordinateFromPixel(this.startPoint, true);
             let p2 = this.graph.getCoordinateFromPixel(this.endPoint, true);
             let point1Coords = [p1[0], p1[1]];
@@ -23245,7 +24586,7 @@ class DragPan extends Draggable {
     }
 
     onMouseMove(e, isDrag) {
-        if(isDrag === true) {
+        if (isDrag === true) {
             let dist;
             if (this.lastPoint) {
                 let p1 = this.lastPoint; //this.graph.getCoordinateFromPixel(this.lastPoint, true);
@@ -23273,7 +24614,7 @@ class DragZoom extends Draggable {
 
     constructor(options = {}) {
         super();
-        
+
         /**
          * 
          */
@@ -23371,7 +24712,7 @@ class PolygonAdd extends GraphEvent {
                 // 与第一个点的距离小于20像素，结束绘制
                 if (Measure.dist(that.startPoint, that.endPoint) < 10) {
                     that.polygonCoord.push(that.graph.getCoordinateFromPixel(that.endPoint));
-                    if(that.polygonCoord.length > 2) {
+                    if (that.polygonCoord.length > 2) {
                         that.drawPolygon(true);
                         that.end();
                     }
@@ -23385,12 +24726,12 @@ class PolygonAdd extends GraphEvent {
             }
         };
 
-        this.rclick = function(e) {
+        this.rclick = function (e) {
             that.operation == -1;
             that.drawPolygon(true);
             that.end();
         };
-    }   
+    }
 
     /**
      * mouseDown event
@@ -23439,9 +24780,9 @@ class PolygonAdd extends GraphEvent {
         if (this.polygonCoord && this.polygonCoord.length > 2) {
             if (over === true) {
                 this.graph.removeGeom(this.ruleLine);
-                if(this.ring) {
+                if (this.ring) {
                     this.graph.removeGeom(this.polyline);
-                    this.layer.getSource().add(new Polygon({ "coords": this.polygonCoord, "style": Object.assign({ "fillColor": this.fillColor }, this.style) }));    
+                    this.layer.getSource().add(new Polygon({ "coords": this.polygonCoord, "style": Object.assign({ "fillColor": this.fillColor }, this.style) }));
                 } else {
                     this.polyline.setCoord(this.polygonCoord);
                 }
@@ -23473,7 +24814,7 @@ class PolygonAdd extends GraphEvent {
  */
 class GeomAdd extends Draggable {
 
-    constructor(options={}) {
+    constructor(options = {}) {
         super(options);
 
         /**
@@ -23494,12 +24835,6 @@ class GeomAdd extends Draggable {
         // 绘制的对象
         this.drawObj;
 
-        // 绘图层图层ID
-        this.overlayId_ = 211;                   // 覆盖层图层ID （度量尺、空间查询矩形框等）
-        
-        //  绘图层说明
-        this.overlayDesc_ = "绘图层";
-
         // 拖拽结束坐标
         this.endPoint = [];
 
@@ -23515,7 +24850,7 @@ class GeomAdd extends Draggable {
      * @param {Geometry} geom 
      */
     setTemplate(geom) {
-        if(geom instanceof Geometry || geom.type != null) {
+        if (geom instanceof Geometry || geom.type != null) {
             this.templateGeom = geom;
         }
     }
@@ -23525,16 +24860,7 @@ class GeomAdd extends Draggable {
      * @returns Layer
      */
     getOverLayer() {
-        let layer = this.graph.getLayer(this.overlayId_);
-        if (layer == null) {
-            layer = new Layer({
-                "source": new VectorSource(),
-                zIndex: this.overlayId_,
-                name: this.overlayDesc_
-            });
-            this.graph.addLayer(layer);
-        }
-        return layer;
+        return this.graph.getOverLayer();
     }
 
     onMouseDown(e) {
@@ -23543,24 +24869,24 @@ class GeomAdd extends Draggable {
         }
         let p = this.graph.getCoordinateFromPixel(this.startPoint, true);
         let prop = Object.assign(this.templateGeom, { "x": p[0], "y": p[1] });
-//        if(prop.getType() === GGeometryType.POINT) {
-//            delete prop.coords;
-//        }
+        //        if(prop.getType() === GGeometryType.POINT) {
+        //            delete prop.coords;
+        //        }
         this.drawObj = this.getOverLayer().getSource().add(prop);
         this.drawObj.moveTo(p[0], p[1]);
     }
 
     onMouseMove(e, isDrag) {
-        if(isDrag === true) {
+        if (isDrag === true) {
             this.graph.getCoordinateFromPixel(this.startPoint, true);
             this.graph.getCoordinateFromPixel(this.endPoint, true);
-            if(this.drawObj) ;
-            this.graph.renderLayer(this.getOverLayer());    
+            if (this.drawObj) ;
+            this.graph.renderLayer(this.getOverLayer());
         }
     }
 
     onMouseUp(e) {
-		let that = this;
+        let that = this;
         this.graph.renderLayer(this.getOverLayer());
         if (typeof (this.callback) === "function") {
             this.callback(that.drawObj, this.graph.getCoordinateFromPixel(this.endPoint, true));
@@ -23572,7 +24898,7 @@ class GeomAdd extends Draggable {
 }
 
 /**
- * 几何对象操作（单选、多选、移动、缩放）
+ * 几何对象操作（单选、多选、移动、修改）
  */
 class GeomControl extends Draggable {
 
@@ -23602,13 +24928,17 @@ class GeomControl extends Draggable {
         this.mouseDownCallback = options.mouseDown;
         this.mouseMoveCallback = options.mouseMove;
         this.keyDownCallback = options.keyDown;
+        this.dblCallback = options.dblCallback;
+        this.rightClickCallback = options.rclick;
+        this.mapMove = options.mapMove;
 
         /**
-         * 当前的操作， -1:无操作，10:移动， 1~9：控制点pos值， 11:顶点操作
+         * 当前的操作， -1:无操作，1~9：控制点cmd值，10:移动， 11:顶点操作（线/多边形)，  20:漫游, 30:拉框
          */
         this.operation = -1;
         this.ringIdx = -1;
         this.coordIdx = -1;
+        this.scaleOp = false;
 
         // 上一次移动时的坐标
         this.__lastPoint;
@@ -23617,9 +24947,7 @@ class GeomControl extends Draggable {
         this.cursor = Cursor.DEFAULT;
 
         // 选择框属性
-        this.overlayId_ = 211;
-        this.overlayDesc_ = "浮动交互层";
-        this.defaultStyle = {
+        this.overlayObjStyle = {
             "color": "red",
             "fillColor": "rgba(255, 159, 159, 0.5)",
             "fillStyle": 1,
@@ -23633,7 +24961,9 @@ class GeomControl extends Draggable {
         /**
          * 激活的Geom对象
          */
-        this.activeGeomList = null;
+        this.activeGeomList = [];
+
+        this.insideoperation = false;
     }
 
     /**
@@ -23641,16 +24971,15 @@ class GeomControl extends Draggable {
      * @returns Layer
      */
     getOverLayer() {
-        let layer = this.graph.getLayer(this.overlayId_);
-        if (layer == null) {
-            layer = new Layer({
-                "source": new VectorSource(),
-                zIndex: this.overlayId_,
-                name: this.overlayDesc_
-            });
-            this.graph.addLayer(layer);
-        }
-        return layer;
+        return this.graph.getOverLayer();
+    }
+
+    /**
+     * 设置是否为框选操作
+     * @param {Boolean} bool 
+     */
+    setMultiple(bool) {
+        this.multiple = bool;
     }
 
     /**
@@ -23658,94 +24987,158 @@ class GeomControl extends Draggable {
      * @param {Event} e 
      */
     onMouseDown(e) {
+        e.currentTarget.focus();
         let clickPoint = this.graph.getCoordinateFromPixel([e.offsetX, e.offsetY]);
         let isClickGeom = false;
-        // 判断是否选中了activeGeomList
-        // (1)是：对这些geom进行移动或缩放操作
-        // (2)否：清除原activeGeomList焦点框
-        if (this.activeGeomList) {
-            // (1)选中了多个节点是判断是否要批量移动
-            if (this.activeGeomList.length > 1) {
-                this.activeGeomList.forEach(geom => {
-                    //geom.setFocus(false);
-                    if (geom.contain(clickPoint, true)) {
-                        isClickGeom = true;
-                        return;
-                    }
-                });
-            }
+        let shiftKey = e.shiftKey || e.ctrlKey;
+        let rtn = null;
+        let that = this;
+        this.scaleOp = false;
 
-            // (2) 清除原activeGeomList焦点框
-            if (!isClickGeom) {
-                this.activeGeomList.forEach(geom => {
-                    geom.setFocus(false);
-                });
-            }
+        // 处理逻辑：
+        // graph TB
+        // A[鼠标左键mouseDown] --> B{B判断点击位置是否存在对象}
+        // B -->  |存在| D{D判断是否已选中对象}
+        // B -->  |不存在| C[开始漫游/拉框]
+        // D -->  |已选中对象| M{M是否为当前位置选中的对象}
+        // D -->  |未选中对象| N(N激活该对象)
+        // M --> |是|K3[开始移动该对象]
+        // M --> |否|Q(激活该对象，清除已激活对象)
+        // Q --> L{判断控制点}
+        // L --> |是|K1[开始编辑]
+        // L --> |否|K2[开始移动该对象]
+        // N --> L{判断控制点}
+
+        // B判断是否已选中对象和控制点
+        // (1)是：后续判断
+        // (2)否：开始漫游
+        let geomList = this.graph.queryGeomList(clickPoint);
+        let cp;
+        if (geomList.length > 0) {
+            cp = this._getControlPoint([e.offsetX, e.offsetY], geomList);
+        }
+        // 控制点的范围比 activeGeom bbox 大一点，如果有选中的geom，则需要判断是否移动在激活的geom控制点上
+        else if (this.activeGeomList.length > 0) {
+            cp = this._getControlPoint([e.offsetX, e.offsetY], this.activeGeomList);
         }
 
-        if (isClickGeom === true) {
-            this.operation = 100;
-        } else {
-            // 判断是否选中了geom
-            let geomList = this.graph.queryGeomList(clickPoint);
-
-            // 1 如果选中了geom，则激活该geom，判断是否点中了控制点，且不进行多选
-            if (geomList.length > 0) {
-                this.activeGeomList = [geomList[0]]; //(this.multiple ? geomList : [geomList[0]]);
-                let that = this;
-                this.activeGeomList.forEach(geom => {
-                    geom.setFocus(true);
-                    // 判断鼠标位置是否为编辑框控制点
-                    let cp = that.getControlPoint([e.offsetX, e.offsetY], [geom]);
-                    if (cp == null) {
-                        that.operation = 100;
-                    } else {
-                        that.operation = cp.cmd;
-                        that.ringIdx = cp.ringIdx > -1 ? cp.ringIdx : -1;
-                        that.coordIdx = cp.idx;
+        // C[开始漫游/拉框]
+        if (geomList.length == 0) {
+            // --既没有点中控制点，之前也没有选中对象，则开始漫游或拉框操作--
+            if (cp == null || this.activeGeomList.length == 0) {
+                this.activeGeomList = [];
+                // 开始拉框操作
+                if (this.multiple) {
+                    if (this.polygon != null) {
+                        this.getOverLayer().getSource().clearData(this.polygon.getUid());
                     }
-                    //console.info("mouseDown1", cp);
-                });
-            }
-            // (1)如果没有点中geom，则根据之前是否选中了geom，要是则判断是否点中了控制点
-            // (2)如果没有点中控制点，则开始多选（拉框）
-            else {
+                    let oldflag = OperationManager.operationIsEnable();
+                    OperationManager.operationEnable(false);
+                    this.polygon = this.getOverLayer().getSource().add(new Polygon({ "coords": [[0, 0], [0, 0], [0, 0]], "style": this.overlayObjStyle }));
+                    OperationManager.operationEnable(oldflag);
+                    this.operation = 30;
+                }
+                // 开始漫游操作
+                else {
+                    this.operation = 20;
+                    this._lastClientX = e.offsetX;
+                    this._lastClientY = e.offsetY;
+                }
+            } else {
                 // (1)控制点的范围比 activeGeom bbox 大一点，因此即使没有选中设备，也需要判断是否点中了激活设备的控制点
-                if (this.activeGeomList && this.activeGeomList.length > 0) {
-                    let cp = this.getControlPoint([e.offsetX, e.offsetY], [this.activeGeomList[0]]);
-                    if (cp) {
-                        this.activeGeomList[0].setFocus(true);
-                        this.operation = cp.cmd;
-                        this.ringIdx = cp.ringIdx > -1 ? cp.ringIdx : -1;
-                        this.coordIdx = cp.idx;
-                    } else {
-                        this.activeGeomList = [];
-                        this.operation = -1;
-                    }
-                    //console.info("mouseDown2", cp);
+                if (cp) {
+                    this.activeGeomList[0].setFocus(true);
+                    this.operation = cp.cmd;
+                    this.ringIdx = cp.ringIdx > -1 ? cp.ringIdx : -1;
+                    this.coordIdx = cp.idx;
+                    rtn = false;
+                } else {
+                    this.activeGeomList = [];
+                    this.operation = -1;
                 }
-                // (2)没有点中控制点，则开始多选（拉框）
-                if (!(this.activeGeomList && this.activeGeomList.length > 0)) {
-                    // 多选：开始拉框
-                    if (this.multiple) {
-                        if (this.polygon != null) {
-                            this.getOverLayer().getSource().clearData(this.polygon.getUid());
+            }
+
+            // D判断是否已选中对象
+        } else {
+            // (1)是：对这些geom进行移动或缩放操作
+            // (2)否：清除原activeGeomList焦点框
+            if (this.activeGeomList.length > 0) {
+                // (1)选中了多个节点则判断是否要批量移动
+                if (this.activeGeomList.length > 1) {  // 如果已选择多个节点(>1)则无需处理通过控制点修改对象大小
+                    this.activeGeomList.forEach(geom => {
+                        if (geom.contain(clickPoint, true)) {
+                            isClickGeom = true;
+                            return false;
                         }
-                        this.polygon = this.getOverLayer().getSource().add(new Polygon({ "coords": [[0, 0], [0, 0], [0, 0]], "style": this.defaultStyle }));
+                    });
+                }
+
+                // (2) 清除原activeGeomList焦点框
+                if (!isClickGeom && !shiftKey) {
+                    this.activeGeomList.forEach(geom => {
+                        geom.setFocus(false);
+                    });
+                }
+            }
+
+            // M判断是否为当前位置选中的对象
+            if (isClickGeom === true) {
+                rtn = false;
+                if (shiftKey === true) {
+                    // --开始选则操作--
+                    this.operation = 30;
+                } else {
+                    // --开始移动操作--
+                    this.operation = 10;
+                }
+            } else {
+                // 1 如果选中了geom，则激活该geom，并判断是否点中了控制点
+
+                // 需根据是否按下了shift键判断是否点中了控制点
+                if (geomList.length == 1) {
+                    if (shiftKey === true) {
+                        this.operation = 30;
+                    } else {
+                        OperationManager.beginOperation( true );
+                        this.insideoperation = true;
+
+                        this.activeGeomList = [geomList[0]];
+                        this.activeGeomList.forEach(geom => {
+                            geom.setFocus(true);
+                            OperationManager.saveDropNode(geom);
+                            // 判断鼠标位置是否为编辑框控制点
+                            if (cp == null) {
+                                that.operation = 10;
+                            } else {
+                                that.operation = cp.cmd;
+                                that.ringIdx = cp.ringIdx > -1 ? cp.ringIdx : -1;
+                                that.coordIdx = cp.idx;
+                            }
+                        });
+                    }
+                    rtn = false;
+                } else {
+                    if (shiftKey === true) {
+                        // --开始选则操作--
+                        this.operation = 30;
+                    } else {
+                        // --开始移动操作--
+                        this.operation = 10;
                     }
                 }
             }
+
+            if (this.operation != 20 && typeof (this.mouseDownCallback) === "function") {
+                this.mouseDownCallback({
+                    "geomList": this.activeGeomList,
+                    "coord": clickPoint
+                });
+            }
+
+            this.graph.render();
         }
 
-        if (typeof (this.mouseDownCallback) === "function") {
-            this.mouseDownCallback({
-                "geomList": this.activeGeomList,
-                "coord": clickPoint
-            });
-        }
-
-        // console.info("mouseDown", this.activeGeomList == null ? "none" : this.activeGeomList[0].getUid(), this.operation, this.activeGeomList);
-        this.graph.render();
+        return rtn;
     }
 
     /**
@@ -23754,65 +25147,20 @@ class GeomControl extends Draggable {
      * @param {*} isDrag 
      */
     onMouseMove(e, isDrag) {
+        let rtn;
+        let shiftKey = e.shiftKey || e.ctrlKey;
 
         // 如果是在单击拖拽状态，则根据mouseDown是否选中了设备进行操作
         // (1)选中了设备，则要么变形、要么移动
-        // (2)没有选中设备，则开始多选（拉框）
+        // (2)没有选中设备，则开始漫游或多选（拉框）
         if (isDrag === true) {
 
-            // (1)选中了设备，则要么变形、要么移动
-            if (this.activeGeomList && this.activeGeomList.length > 0) {
-                // 计算操作幅度
-                let distX, distY;
-                if (this.__lastPoint) {
-                    let p1 = this.graph.getCoordinateFromPixel(this.__lastPoint, true);
-                    let p2 = this.graph.getCoordinateFromPixel(this.movePoint, true);
-                    [distX, distY] = [p2[0] - p1[0], p2[1] - p1[1]];
-                } else {
-                    let p1 = this.graph.getCoordinateFromPixel(this.startPoint, true);
-                    let p2 = this.graph.getCoordinateFromPixel(this.movePoint, true);
-                    [distX, distY] = [p2[0] - p1[0], p2[1] - p1[1]];
-                }
-                this.__lastPoint = this.movePoint.slice();
-
-                // 回调
-                if (typeof (this.mouseMoveCallback) === "function") {
-                    let rtn = this.mouseMoveCallback({
-                        "geomList": this.activeGeomList,
-                        "dist": [distX, distY],
-                        "operation": this.operation
-                    });
-                    // 回调函数返回false，则不进行下面的缺省按键操作
-                    if (rtn === false) return;
-                }
-
-                // 缺省平移或缩放
-                let that = this;
-                this.activeGeomList.forEach(geom => {
-                    if (that.operation == 100 || that.operation == 5) {
-                        // 对象平移
-                        geom.translate(distX, distY);
-                    }
-                    // 多边形/折线 顶点移动
-                    else if (that.operation == 11) {
-                        let coord = geom.getCoord();
-                        if(that.ringIdx >= 0) {
-                            coord[that.ringIdx][that.coordIdx] = this.graph.getCoordinateFromPixel(this.movePoint, true);
-                        } else {
-                            coord[that.coordIdx] = this.graph.getCoordinateFromPixel(this.movePoint, true);
-                        }
-                        geom.setCoord(coord);
-                    }
-                    // 对象缩放
-                    else {
-                        that.scaleGeom(that.operation, geom, distX, distY);
-                    }
-                });
-                this.graph.render();
-            }
-
-            // (2)没有选中设备，则开始多选（拉框）
-            else {
+            // 开始漫游
+            if (this.operation == 20) {
+                rtn = this._doMapMove(e.offsetX, e.offsetY);
+                this.scaleOp = true;
+                // 拉框
+            } else if (this.operation == 30) {
                 if (this.multiple && this.polygon != null) {
                     let p1 = this.graph.getCoordinateFromPixel(this.startPoint, true);
                     let p2 = this.graph.getCoordinateFromPixel(this.endPoint, true);
@@ -23825,6 +25173,70 @@ class GeomControl extends Draggable {
                     this.graph.renderLayer(this.getOverLayer());
                 }
             }
+            // 变形操作
+            else {
+                // (1)选中了设备，则要么变形、要么移动
+                if (!shiftKey && this.activeGeomList.length > 0) {
+                    // 计算操作幅度
+                    let distX, distY;
+                    if (this.__lastPoint) {
+                        let p1 = this.graph.getCoordinateFromPixel(this.__lastPoint, true);
+                        let p2 = this.graph.getCoordinateFromPixel(this.movePoint, true);
+                        [distX, distY] = [p2[0] - p1[0], p2[1] - p1[1]];
+                    } else {
+                        let p1 = this.graph.getCoordinateFromPixel(this.startPoint, true);
+                        let p2 = this.graph.getCoordinateFromPixel(this.movePoint, true);
+                        [distX, distY] = [p2[0] - p1[0], p2[1] - p1[1]];
+                    }
+                    if (Math.abs(distX) > 2 || Math.abs(distY) > 2) {
+                        this.__lastPoint = this.movePoint.slice();
+
+                        // 回调
+                        if (typeof (this.mouseMoveCallback) === "function") {
+                            rtn = this.mouseMoveCallback({
+                                "geomList": this.activeGeomList,
+                                "dist": [distX, distY],
+                                "operation": this.operation
+                            });
+                            // 回调函数返回false，则不进行下面的缺省按键操作
+                            if (rtn === false) return false;
+                        }
+
+                        // 缺省平移或缩放
+                        let that = this;
+                        this.activeGeomList.forEach(geom => {
+                            if (geom.getLayer() != this.getOverLayer()) {
+                                if (!this.insideoperation) {
+                                    OperationManager.beginOperation( true );
+                                    this.insideoperation = true;
+                                }
+
+                                OperationManager.saveDropNode(geom);
+                            }
+                            if (that.operation == 10 || that.operation == 5) {
+                                // 对象平移
+                                geom.translate(distX, distY);
+                            }
+                            // 多边形/折线 顶点移动
+                            else if (that.operation == 11) {
+                                let coord = geom.getCoord();
+                                if (that.ringIdx >= 0) {
+                                    coord[that.ringIdx][that.coordIdx] = this.graph.getCoordinateFromPixel(this.movePoint, true);
+                                } else {
+                                    coord[that.coordIdx] = this.graph.getCoordinateFromPixel(this.movePoint, true);
+                                }
+                                geom.setCoord(coord);
+                            }
+                            // 对象编辑/缩放
+                            else {
+                                that._scaleGeom(that.operation, geom, distX, distY);
+                            }
+                            that.scaleOp = true;
+                        });
+                        this.graph.render();
+                    }
+                }
+            }
         }
         // 非拖拽状态，判断是否移动到了geom中，设置鼠标形状
         else {
@@ -23834,7 +25246,7 @@ class GeomControl extends Draggable {
                 if (this.activeGeomList && this.activeGeomList.length > 1) {
                     this.cursor = Cursor.MOVE;
                 } else {
-                    let cp = this.getControlPoint([e.offsetX, e.offsetY], geomList);
+                    let cp = this._getControlPoint([e.offsetX, e.offsetY], geomList);
                     if (cp) {
                         this.cursor = cp.cursor;
                     } else {
@@ -23845,7 +25257,7 @@ class GeomControl extends Draggable {
             // 控制点的范围比 activeGeom bbox 大一点，如果有选中的geom，则需要判断是否移动在激活的geom控制点上
             else {
                 if (this.activeGeomList && this.activeGeomList.length > 0) {
-                    let cp = this.getControlPoint([e.offsetX, e.offsetY], [this.activeGeomList[0]]);
+                    let cp = this._getControlPoint([e.offsetX, e.offsetY], [this.activeGeomList[0]]);
                     if (cp) {
                         this.cursor = cp.cursor;
                     } else {
@@ -23856,6 +25268,7 @@ class GeomControl extends Draggable {
                 }
             }
         }
+        return rtn;
     }
 
     /**
@@ -23863,36 +25276,86 @@ class GeomControl extends Draggable {
      * @param {*} e 
      */
     onMouseUp(e) {
-
+        let shiftKey = e.shiftKey || e.ctrlKey;
         this.__lastPoint = null;
-        this.operation = -1;
-
-        // 允许多选时，根据矩形框查询选中的设备
-        if (this.multiple) {
-            if (this.polygon && Extent.getArea(this.polygon.getBBox(false)) > 100) {
-                this.polygon.setStyle({ "lineWidth": 2, "fillStyle": 0 });
-                this.graph.renderLayer(this.getOverLayer());
-                let coord = this.polygon.getCoord();
-                this.activeGeomList = this.graph.queryGeomList([coord[0][0], coord[0][2]]);
-                if (this.activeGeomList) {
-                    this.activeGeomList.forEach(geom => {
-                        geom.setFocus(true);
-                    });
-                    this.graph.render();
-                }
-                this.getOverLayer().getSource().clearData(this.polygon.getUid());
-            }
-            this.polygon = null;
+        if (this.insideoperation) {
+            OperationManager.endOperation(true);
+            this.insideoperation = false;
         }
 
-        // 执行回调
-        if (this.startDrag === true) {
+        // 选则
+        if ((this.operation == 10 || this.operation == 20 || this.operation == 30) && this.scaleOp === false) {
+            // 取消之前选中对象的激活状态
+            if (Array.isArray(this.activeGeomList)) {
+                this.activeGeomList.forEach(geom => {
+                    geom.setFocus(false);
+                });
+            }
+
+            let selectGeomList = [];
+            // 允许多选时，根据矩形框查询选中的设备
+            if (this.multiple && this.polygon) {
+                // 合并选中的节点
+                if (Extent.getArea(this.polygon.getBBox(false)) > 100) {
+                    this.polygon.setStyle({ "lineWidth": 2, "fillStyle": 0 });
+                    this.graph.renderLayer(this.getOverLayer());
+                    let coord = this.polygon.getCoord();
+                    selectGeomList = this.graph.queryGeomList([coord[0][0], coord[0][2]]);
+                }
+                this.getOverLayer().getSource().clearData(this.polygon.getUid());
+                this.polygon = null;
+            }
+            // 否则，查询鼠标点中的设备 
+            else {
+                let clickPoint = this.graph.getCoordinateFromPixel([e.offsetX, e.offsetY]);
+                selectGeomList = this.graph.queryGeomList(clickPoint);
+            }
+
+            // 合并选中的geom
+            if (shiftKey) {
+                this.activeGeomList = this._concat(selectGeomList, true, false);
+            } else {
+                this.activeGeomList = selectGeomList;
+            }
+
+            // 设置激活状态
+            if (Array.isArray(this.activeGeomList)) {
+                this.activeGeomList.forEach(geom => {
+                    geom.setFocus(true);
+                });
+            }
+            
+            // 执行回调
+            //if (this.startDrag === true) {
+                if (typeof (this.mouseUpCallback) === "function") {
+                    this.mouseUpCallback({
+                        "geomList": this.activeGeomList,
+                        "coord": this.graph.getCoordinateFromPixel(this.endPoint, true)
+                    });
+                }
+            //}
+            this.graph.render();
+        } else {
             if (typeof (this.mouseUpCallback) === "function") {
                 this.mouseUpCallback({
                     "geomList": this.activeGeomList,
                     "coord": this.graph.getCoordinateFromPixel(this.endPoint, true)
                 });
             }
+            this.graph.render();
+        }
+        this.operation = -1;
+        this.scaleOp = false;
+        return false;
+    }
+
+    onRightClick(e) {
+        if (typeof (this.rightClickCallback) === "function") {
+            let geomList = this.graph.queryGeomList(this.graph.getCoordinateFromPixel([e.offsetX, e.offsetY]));
+            this.rightClickCallback({
+                "geomList": geomList,
+                "e": e
+            });
         }
     }
 
@@ -23901,10 +25364,42 @@ class GeomControl extends Draggable {
      * @param {Event} e 
      */
     keyDown(e) {
+        let shiftKey = e.shiftKey || e.ctrlKey;
         let key = e.keyCode;
+        let mouseEnabled = this.graph.getRenderObject().getMouseEnabled();
+
+        if (mouseEnabled && key === EventKeyCode.KEY_A) {
+            // 选则
+            if (shiftKey === true) {
+                this.activeGeomList = this._concat(this.graph.queryGeomList(), false, true);
+                DomUtil.stop(e);
+            }
+        }
+
+        // 回调
+        if (typeof (this.keyDownCallback) === "function") {
+            let rtn = this.keyDownCallback({
+                "geomList": this.activeGeomList,
+                "keyCode": key
+            });
+            // 回调函数返回false，则不进行下面的缺省按键操作
+            if (rtn === false) return false;
+        }
+
+        if (mouseEnabled && key === EventKeyCode.KEY_A) {
+            // 选则
+            if (shiftKey === true) {
+                this.activeGeomList.forEach(geom => {
+                    geom.setFocus(true);
+                });
+                this.graph.render();
+            }
+        }
+
+        // 响应按键
         let distX, distY;
         let validateKey = false;
-        if (this.activeGeomList && this.activeGeomList.length > 0) {
+        if (mouseEnabled && this.activeGeomList && this.activeGeomList.length > 0) {
             switch (key) {
                 case EventKeyCode.KEY_DELETE:
                     validateKey = true;
@@ -23928,21 +25423,13 @@ class GeomControl extends Draggable {
             }
 
             if (validateKey === true) {
-                // 回调
-                if (typeof (this.keyDownCallback) === "function") {
-                    let rtn = this.keyDownCallback({
-                        "geomList": this.activeGeomList,
-                        "dist": [distX, distY],
-                        "keyCode": key
-                    });
-
-                    // 回调函数返回false，则不进行下面的缺省按键操作
-                    if (rtn === false) return;
-                }
-
                 // 缺省按键操作
                 let that = this;
+                OperationManager.beginOperation( true );
                 this.activeGeomList.forEach(geom => {
+                    if (geom.getLayer() != this.getOverLayer()) {
+                        OperationManager.saveDropNode(geom);
+                    }
                     if (distX != null && distY != null) {
                         geom.translate(distX, distY);
                     } else {
@@ -23950,9 +25437,18 @@ class GeomControl extends Draggable {
                         that.graph.removeGeom(geom.getUid());
                     }
                 });
-
+                OperationManager.endOperation(true);
                 this.graph.render();
             }
+        }
+    }
+
+    onDblclick(e) {
+        if (typeof (this.dblCallback) === "function") {
+            return this.dblCallback({
+                "event": e,
+                "geomList": this.activeGeomList
+            });
         }
     }
 
@@ -23962,22 +25458,71 @@ class GeomControl extends Draggable {
      * @param {*} geomList 
      * @returns {Object} 控制点对象{x, y, width, height, cursor, cmd, idx, ringIdx}
      */
-    getControlPoint(coord, geomList) {
+    _getControlPoint(coord, geomList) {
         let controlPoint;
         for (let i = 0, len = geomList.length; i < len; i++) {
-            controlPoint = geomList[i].getBorder().getControlPoint(coord);
-            if (controlPoint) {
-                break;
+            if (!geomList[i].isLocked()) {
+                controlPoint = geomList[i].getBorder().getControlPoint(coord);
+                if (controlPoint) {
+                    break;
+                }
             }
         }
         return controlPoint;
     }
 
     /**
+     * 合并选项项
+     * @param {Array} geomList 
+     * @param {Boolean} xor true:追加  false:异或
+     * @param {Boolean} typeOnly 仅合并已有activeGeomList中的类型
+     * @returns Array
+     * @private
+     */
+    _concat(geomList, xor = false, typeOnly = false) {
+        let list = this.activeGeomList.slice();
+        let foundList = [];
+        let geomType = null;
+
+        if (this.activeGeomList.length != 1) {
+            typeOnly = false;
+        } else {
+            geomType = typeOnly === true ? this.activeGeomList[0].getType() : null;
+        }
+
+        for (let i = 0, len = geomList.length; i < len; i++) {
+            if (typeOnly && geomType != null) {
+                if (geomList[i].getType() != geomType) {
+                    continue;
+                }
+            }
+            let found = false;
+            for (let j = this.activeGeomList.length - 1; j >= 0; j--) {
+                if (geomList[i] == this.activeGeomList[j]) {
+                    found = true;
+                    foundList.push(j);
+                    break;
+                }
+            }
+            if (found === false) {
+                list.push(geomList[i]);
+            }
+        }
+
+        if (xor === true) {
+            for (let j = foundList.length - 1; j >= 0; j--) {
+                list.splice(foundList[j], 1);
+            }
+        }
+
+        return list;
+    }
+
+    /**
      * geom对象放大/缩小操作
      * @param {*} operation 
      */
-    scaleGeom(operation, geom, distX, distY) {
+    _scaleGeom(operation, geom, distX, distY) {
         // console.info(distX, distY);
         let anchor = [];
         let bbox = geom.getBBox();
@@ -24033,7 +25578,42 @@ class GeomControl extends Draggable {
                 anchor = leftTop;
                 break;
         }
-        geom.scale(scaleX, scaleY, anchor);
+        if (anchor.length > 0) {
+            geom.scale(scaleX, scaleY, anchor);
+        }
+    }
+
+    /**
+     * 漫游
+     * @param {int} x 
+     * @param {int} y 
+     */
+    _doMapMove(x, y) {
+        let that = this;
+        if (typeof (that.mapMove) != "function") {
+            return;
+        }
+
+        if (this.operation === 20) {
+            this.cursor = Cursor.PAN;
+            if (this.moveing) {
+                return false;
+            } else {
+                this.moveing = true;
+                window.setTimeout(function () {
+                    let xdist = x - that._lastClientX;
+                    let ydist = y - that._lastClientY;
+                    if (Math.abs(xdist) > 10 || Math.abs(ydist) > 10) {
+                        that.mapMove(Object.assign({ xdist, ydist }, { x, y, "mouse": that }));
+                        that._lastClientX = x;
+                        that._lastClientY = y;
+                    }
+                    that.moveing = false;
+                });
+                return true;
+            }
+        }
+        return false;
     }
 }
 
@@ -24070,13 +25650,13 @@ class MousePositionControl extends Control {
     redraw(e) {
         let posi = [e.offsetX, e.offsetY];
         let coord = this.graph.getCoordinateFromPixel(posi, true);
-        
-        if(this.showRes) {
-			let res = this.graph.getFrameState().resolution;
-            this.element.innerHTML = this.formatOutput(coord) + "," + MathUtil.toFixed(res, 2);			
-		} else {
-			this.element.innerHTML = this.formatOutput(coord);
-		}
+
+        if (this.showRes) {
+            let res = this.graph.getFrameState().resolution;
+            this.element.innerHTML = this.formatOutput(coord) + "," + MathUtil.toFixed(res, 2);
+        } else {
+            this.element.innerHTML = this.formatOutput(coord);
+        }
     }
 
     reset() {
@@ -24121,7 +25701,8 @@ class LayerControl extends Control {
             //获取每个图层的名称、是否可见属性
             let layer = layers[i];
             let layerName = layer.getName();
-            let visible = layer.getVisible();
+            let visible = layer.isVisible();
+            if(layerName == "浮动层") continue;
 
             //新增li元素，用来承载图层项
             let elementLi = document.createElement('li');
@@ -24790,7 +26371,7 @@ class AxfgFormat extends FeatureFormat {
      * @param {Dataset} dataset
      * @returns Array Geomerty设备节点数组
      */
-    readFeatures(file, dataset) {
+    readData(file, dataset) {
         let listData = [];
         let listMark = [];
         // 逐个对象分析属性、样式和几何形状
@@ -25547,7 +27128,7 @@ class Blob {
 const GROW_STYLE_FILE_NAME = UrlUtil.getContextPath() + "/adam.lib/meta/meta_layer_style.json";
 
 /**
- * 由GROW转出的以CIMG格式的符号集合
+ * 图层样式配置
  */
 class AxfgLayerStyle {
     /**
@@ -26596,7 +28177,7 @@ class AxfgsFormat extends FeatureFormat {
      * @param {Dataset} dataset
      * @returns Array Geomerty设备节点数组
      */
-    readFeatures(file, dataset) {
+    readData(file, dataset) {
         let listData = [];
         let listMark = [];
         // 逐个对象分析属性、样式和几何形状
@@ -27158,7 +28739,7 @@ class AxfgLoader {
             axfgfile = JSON.parse(axfgfile);
         }
         let format = this.getFeatureFormat(axfgfile);
-        let listData = format.readFeatures(axfgfile, this._dataset);
+        let listData = format.readData(axfgfile, this._dataset);
 
         // 增加至渲染数据源中
         this._loadGeomeryData(listData, { "mergeLine": format.mergeLine, "dynamic": format.layerDynamicStyle });
@@ -27301,4 +28882,8 @@ class AxfgLoader {
     }
 }
 
-export { AjaxUtil, Animation, Arrow, AxfgFormat, AxfgLoader, BgUtil, BrowserUtil, CimgFormat, CimgSymbol, Circle, ClassUtil, Clip, Collide, Color, Coordinate, DomUtil, DragBox, DragPan, DragZoom, Easing, Ellipse, EventType, Extent, FeatureFormat, Filter, Flicker, GGShapeType, GGeometryType, GeoJSONFormat, GeomAdd, GeomControl, Geometry, Gradient, Graph, GraphRenderer, Group, Image, ImageLoader, ImageObject, ImageState, Ladder, Layer, LayerControl, LayerRenderer, LayerRendererState, LineString, Mark, MathUtil, Measure, MousePositionControl, MultiPolyline, Path, Pattern, Point, PointClass, PointSharp, Polygon, PolygonAdd, Polyline, Ratio, Rect, RendererBase, SvgFormat, SvgSymbol, Symbol, Text, TileCoord, TileGrid, TileLayerRenderer, TileRange, TileSource, Transform, Triangle, Tween, TweenEasing, UrlUtil, VectorRenderer, VectorSource, View, WebMercator, XNGeoJsonData, XmlUtil, ZoomControl, circle2LineRing, clipPolygon, clipSegments, getCimgColor, getStarLineRing, rect2LineRing, simplify };
+const version = app.version;
+
+console.log(["   __    __  __ _  __  ___   ____   __  ___  _   _", "  /  |  / | / /| |/ / / __| / _  | /  ||   || |_| | ", " / ' | / /|/ / | ' / / /_^ / / _/ / ' ||  _||  _  |", "/_/|_|/_/ |_/  /__/  |___|/_/ \\_\\/_/|_||_|  |_| |_|", `AnyGraph.js v${version} - Dev by https://graphanywhere.com`].join("\n"));
+
+export { AjaxUtil, Animation, Arrow, AxfgFormat, AxfgLoader, BgUtil, BrowserUtil, CimgFormat, CimgSymbol, Circle, ClassUtil, Clip, Collide, Color, Coordinate, Cursor, DomUtil, DragBox, DragPan, DragZoom, Easing, Ellipse, EventKeyCode, EventType, Extent, FeatureFormat, Filter, Flicker, GGShapeType, GGeometryType, GeoJSONFormat, GeomAdd, GeomControl, GeomFactory, Geometry, Gradient, Graph, GraphEvent, GraphRenderer, Group, Image, ImageLoader, ImageObject, ImageState, Ladder, Layer, LayerControl, LayerRenderer, LayerRendererState, LineString, Mark, MathUtil, Measure, MousePositionControl, MultiPolyline, OperationManager, Path, Pattern, Point, PointClass, PointSharp, Polygon, PolygonAdd, Polyline, Ratio, Rect, RendererBase, BaseSource as Source, SvgFormat, SvgSymbol, Symbol, Text, TileCoord, TileGrid, TileLayerRenderer, TileRange, TileSource, Transform, Triangle, Tween, TweenEasing, UrlUtil, VectorRenderer, VectorSource, View, WebMercator, XNGeoJsonData, XmlUtil, ZoomControl, circle2LineRing, clipPolygon, clipSegments, getCimgColor, getStarLineRing, rect2LineRing, simplify, version };

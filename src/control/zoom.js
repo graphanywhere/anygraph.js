@@ -1,10 +1,10 @@
-import { default as GraphControl } from "./control.js";
+import Control from "./control.js";
 import DomUtil from "../util/dom.js";
 
 /**
  * 放大/缩小控件
  */
-class ZoomControl extends GraphControl {
+class ZoomControl extends Control {
     constructor(options = {}) {
         super(options);
         this.element;

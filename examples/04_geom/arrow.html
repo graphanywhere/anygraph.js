@@ -45,6 +45,8 @@
                 drawCircle(ctx, 100 * (i + 1), 50 * 8);
                 arrow.lineDown(ctx, { x: 100 * (i + 1), y: 50 * 9, rotation: i * 20 });
                 drawCircle(ctx, 100 * (i + 1), 50 * 9);
+                arrow.cross(ctx, { x: 100 * (i + 1), y: 50 * 10, rotation: i * 20 });
+                drawCircle(ctx, 100 * (i + 1), 50 * 10);
             }
         });
 
@@ -61,7 +63,7 @@
 
 <body>
     <div style="margin-left:0px;">
-        <canvas id="canvas" width="1200px" height="500px" style="background-color:white; border: 2px #CCCCCC solid"></canvas>
+        <canvas id="canvas" width="1200px" height="540px" style="background-color:white; border: 2px #CCCCCC solid"></canvas>
     </div>
 </body>
 

@@ -175,7 +175,7 @@ class AxfgLoader {
             axfgfile = JSON.parse(axfgfile);
         }
         let format = this.getFeatureFormat(axfgfile);
-        let listData = format.readFeatures(axfgfile, this._dataset);
+        let listData = format.readData(axfgfile, this._dataset);
 
         // 增加至渲染数据源中
         this._loadGeomeryData(listData, { "mergeLine": format.mergeLine, "dynamic": format.layerDynamicStyle });

@@ -6,6 +6,12 @@ import Easing from "../util/easing.js";
  * 闪烁类
  */
 class Flicker {
+    static times = 0;
+    static defaultDuration = 3;
+    static flickerLayer_ = null;
+    static animationKey_ = 0;
+    static beginFlicker = false;
+
     constructor() {
     }
 
@@ -42,9 +48,19 @@ class Flicker {
      * @param {Graph} graph 
      */
     static end(graph) {
-        window.cancelAnimationFrame(this.animationKey_);
-        graph.removeLayer(this.flickerLayer_);
-        graph.render();
+        if (this.flickerLayer_ != null) {
+            window.cancelAnimationFrame(this.animationKey_);
+            graph.removeLayer(this.flickerLayer_);
+            this.flickerLayer_ = null;
+            graph.render();
+        }
+    }
+
+    static isFlicking() {
+        if (this.flickerLayer_ == null)
+            return false;
+        else
+            return true;
     }
 
     static _add2Layer(graph, data, type = 1) {
@@ -63,6 +79,8 @@ class Flicker {
                         that._styleFn1(layer, frameState);
                     } else if (type === 2) {
                         that._styleFn2(layer, frameState);
+                    } else if (type === 3) {
+                        that._styleFn3(layer, frameState);
                     } else {
                         that._styleFn(layer, frameState);
                     }
@@ -79,9 +97,9 @@ class Flicker {
         let idx = 0;
         let loop = function () {
             let speed;
-            if(data.length > 120) {
+            if (data.length > 120) {
                 speed = 1;
-            } else if(data.length > 80) {
+            } else if (data.length > 80) {
                 speed = 2;
             } else {
                 speed = 4;
@@ -89,7 +107,9 @@ class Flicker {
             if (that.times % speed === 0) {
                 if (idx < data.length) {
                     let geom = data[idx];
-                    Object.assign(geom.style, {"color":"red", "fillColor":"red", "lineWidth":4});
+                    if (geom.getType() == "GraphNode")
+                        geom.translate(0, 0);
+                    Object.assign(geom.style, { "color": "red", "fillColor": "red", "lineWidth": 4 });
                     that.flickerLayer_.getSource().add(geom);
                     idx += 1;
                 } else {
@@ -97,14 +117,16 @@ class Flicker {
                 }
             }
             that.times++;
-            if (Date.now() <= start + (duration > 0 ? duration * 1000 : 0)) {
+            if (that.flickerLayer_ != null && Date.now() <= start + (duration > 0 ? duration * 1000 : 0)) {
                 if (that.times % 2 === 0) {
                     // graph.renderSync();
                     graph.renderLayer(that.flickerLayer_);
+                    //console.log("flicking");
                 }
                 that.animationKey_ = window.requestAnimationFrame(loop);
             } else {
                 graph.removeLayer(that.flickerLayer_);
+                that.flickerLayer_ = null;
                 graph.render();
                 return false;
             }
@@ -163,11 +185,31 @@ class Flicker {
             layer.setStyle(style);
         }
     }
+
+    /**
+     * 虚线滚动效果（反方向）
+     * @param {*} layer 
+     * @param {*} frameState 
+     */
+    static _styleFn3(layer, frameState) {
+        if (this.beginFlicker) {
+            let style = layer.getStyle();
+
+            // 点和面的颜色变化
+            let delta = Easing.easeOut(this.times % 20 / 20);
+            let color = "rgb(255," + Math.floor(255 * delta) + "," + Math.floor(255 * delta) + ")";
+            style.pointColor = color;
+            style.surfaceColor = color;
+
+            // 虚线流动
+            delta = Easing.linear(this.times % 20 / 20);
+            style.lineColor = "rgb(255,0,0)";
+            style.lineType = 10;
+            // style.dash = [2, 2];
+            style.dashOffset = -delta * 30;
+            layer.setStyle(style);
+        }
+    }
 }
 
-Flicker.times = 0;
-Flicker.defaultDuration = 3;
-Flicker.flickerLayer_ = null;
-Flicker.animationKey_ = 0;
-Flicker.beginFlicker = false;
 export default Flicker;

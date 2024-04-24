@@ -85,7 +85,7 @@ function loadSVGFile(options) {
             }
         }, loadCallback)
     } else if (document != null) {
-        let listData = source.getFormat().readFeatures(document);
+        let listData = source.getFormat().readData(document);
 
         // 加入到数据源中
         source.clearData();

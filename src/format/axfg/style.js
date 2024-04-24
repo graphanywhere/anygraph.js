@@ -149,8 +149,13 @@ function getTypeStyle(shapeType, layerStyle) {
             if (layerStyle.lineType != null) {
                 Object.assign(style, getLineType(layerStyle.lineType))
             }
+            // 虚线偏移位置
             if (layerStyle.dashOffset != null) {
                 style.dashOffset = layerStyle.dashOffset;
+            }
+            // 虚线属性
+            if (layerStyle.dash != null) {
+                style.dash = layerStyle.dash;
             }
             // 线宽
             if (layerStyle.lineWidth != null) {

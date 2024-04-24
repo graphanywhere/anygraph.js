@@ -103,7 +103,9 @@
                     // 渐变对象
                     let gradient = new Gradient({
                         "type": "radial",
-                        "coords": { "x1": x + radius / 2, "y1": y + radius / 2, "r1": 0, "x2": x, "y2": y, "r2": radius },
+                        // "coords": { "x1": x + radius / 2, "y1": y + radius / 2, "r1": 0, "x2": x, "y2": y, "r2": radius }, // 使用绝对坐标
+                        "coords": { "x1": 0.75, "y1": 0.75, "r1": 0, "x2": 0.5, "y2": 0.5, "r2": 0.5 },  // 使用百分比坐标(推荐)
+                        "gradientUnits": "percentage",
                         "colorStops": [{
                             "offset": "0.1",
                             "color": colorBand[2],
